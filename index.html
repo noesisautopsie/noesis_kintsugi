@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noesis Kintsugi — Plateforme pré-clinique d'analyse de l'emprise</title>
+    <meta name="description" content="Analyse transdisciplinaire des mécanismes d'emprise, du trauma complexe relationnel et de la destruction identitaire. Clarifier pour rendre le soin possible.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ═══════════════════════════════════════════════════════════════
+           CSS VARIABLES — PALETTE NOESIS KINTSUGI OPTIMISÉE
+           ═══════════════════════════════════════════════════════════════ */
+        :root {
+            /* ─────────── NOIRS PROFONDS ─────────── */
+            --noir-principal: #121514;
+            --noir-profond: #111313;
+            --noir-clair: #161817;
+            
+            /* ─────────── GRIS ANTHRACITE ─────────── */
+            --gris-anthracite: #2E3130;
+            --gris-ceramique: #2D2F2F;
+            --gris-moyen-fonce: #424446;
+            
+            /* ─────────── GRIS MOYENS ─────────── */
+            --gris-pierre: #97948C;
+            --gris-neutre: #989694;
+            --gris-medium: #999999;
+            
+            /* ─────────── ORS SOMBRES ─────────── */
+            --or-antique: #8F6B2E;
+            --or-bronze: #967523;
+            --or-vieilli: #996B26;
+            --or-cuivre: #AE752B;
+            
+            /* ─────────── ORS MOYENS ─────────── */
+            --or-moyen: #9D7034;
+            --or-mat: #98764D;
+            --or-terreux: #99845E;
+            
+            /* ─────────── ORS BRILLANTS ─────────── */
+            --or-clair: #C9AA6E;
+            --or-lumineux: #CCA464;
+            --or-eclatant: #D7BE67;
+            --or-intense: #DDB569;
+            
+            /* ─────────── BLANCS/IVOIRE ─────────── */
+            --blanc-casse: #C9CBCB;
+            --ivoire: #CBCBC9;
+            
+            /* ─────────── FOND CLAIR ─────────── */
+            --fond-clair: #f8f7f5;
+            --fond-clair-alt: #f4f3f0;
+            
+            /* ─────────── EFFETS KINTSUGI ─────────── */
+            --glow-or: 0 0 20px rgba(201, 170, 110, 0.3);
+            --glow-or-intense: 0 0 30px rgba(215, 190, 103, 0.4);
+            --shadow-gold: 0 4px 20px rgba(143, 107, 46, 0.25);
+            --shadow-deep: 0 12px 40px rgba(0, 0, 0, 0.4);
+            --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
+            --gradient-fissure: linear-gradient(90deg, var(--or-vieilli), var(--or-clair), var(--or-intense), var(--or-clair), var(--or-vieilli));
+            
+            /* Typography */
+            --font-display: 'Megrim', cursive;
+            --font-body: 'Crimson Pro', serif;
+            
+            /* Spacing */
+            --section-padding: clamp(80px, 12vh, 140px);
+            --container-max: 1200px;
+            --container-padding: clamp(20px, 5vw, 60px);
+            
+            /* Transitions */
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RESET & BASE
+           ═══════════════════════════════════════════════════════════════ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--noir-principal);
+            color: var(--blanc-casse);
+            line-height: 1.65;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Texture grain subtile premium */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.025;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Sélection dorée */
+        ::selection {
+            background: var(--or-vieilli);
+            color: var(--noir-principal);
+        }
+
+        ::-moz-selection {
+            background: var(--or-vieilli);
+            color: var(--noir-principal);
+        }
+
+        /* Scrollbar personnalisée */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--noir-profond);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--or-vieilli);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--or-clair);
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           TYPOGRAPHY
+           ═══════════════════════════════════════════════════════════════ */
+        .title-display {
+            font-family: var(--font-display);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+        }
+
+        .title-section {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--or-clair);
+            margin-bottom: 0.5em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .title-section::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-or);
+        }
+
+        .subtitle {
+            font-family: var(--font-body);
+            font-style: italic;
+            color: var(--gris-medium);
+            font-size: 1.1rem;
+        }
+
+        .surtitre {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gris-medium);
+            margin-bottom: 1rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           BUTTONS — EFFETS PREMIUM
+           ═══════════════════════════════════════════════════════════════ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--or-clair);
+            color: var(--noir-principal);
+        }
+
+        .btn-primary:hover {
+            background: var(--or-eclatant);
+            box-shadow: var(--glow-or), 0 8px 32px rgba(201, 170, 110, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--or-clair);
+            color: var(--or-clair);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(201, 170, 110, 0.1);
+            border-color: var(--or-eclatant);
+            color: var(--or-eclatant);
+            box-shadow: var(--glow-or);
+        }
+
+        .link-subtle {
+            color: var(--gris-medium);
+            font-size: 0.95rem;
+            border-bottom: 1px solid transparent;
+            transition: var(--transition-smooth);
+        }
+
+        .link-subtle:hover {
+            color: var(--or-clair);
+            border-bottom-color: var(--or-clair);
+        }
+
+        .link-gold {
+            color: var(--or-clair);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .link-gold:hover {
+            color: var(--or-eclatant);
+            gap: 0.75rem;
+            text-shadow: 0 0 20px rgba(215, 190, 103, 0.3);
+        }
+
+        .link-gold svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .link-gold:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           NAVIGATION — EFFETS PREMIUM
+           ═══════════════════════════════════════════════════════════════ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition-smooth);
+        }
+
+        .nav .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--noir-principal);
+            letter-spacing: 0.05em;
+            transition: var(--transition-smooth);
+        }
+
+        .nav .logo span {
+            color: var(--gris-moyen-fonce);
+            font-size: 0.9em;
+            transition: var(--transition-smooth);
+        }
+
+        .nav .nav-links a {
+            font-size: 0.9rem;
+            color: var(--noir-principal);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .nav.scrolled {
+            background: rgba(17, 19, 19, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(153, 107, 38, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav.scrolled .logo {
+            color: var(--or-clair);
+        }
+
+        .nav.scrolled .logo:hover {
+            color: var(--or-eclatant);
+            text-shadow: var(--glow-or);
+        }
+
+        .nav.scrolled .logo span {
+            color: var(--gris-medium);
+        }
+
+        .nav.scrolled .nav-links a {
+            color: var(--blanc-casse);
+        }
+
+        .nav.scrolled .nav-links a:hover {
+            color: var(--or-clair);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gradient-or);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 1px;
+            background: var(--noir-principal);
+            transition: var(--transition-smooth);
+        }
+
+        .nav.scrolled .nav-toggle span {
+            background: var(--or-clair);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           HERO SECTION — HOOK DE HAUTE QUALITÉ
+           ═══════════════════════════════════════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: var(--fond-clair);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(248, 247, 245, 0.15) 0%, 
+                rgba(248, 247, 245, 0.02) 50%,
+                rgba(248, 247, 245, 0.2) 100%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10rem 0 8rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        /* Hook principal */
+        .hero-hook-main {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            color: var(--noir-principal);
+            margin-bottom: 0.3em;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-hook-sub {
+            font-family: var(--font-body);
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: var(--gris-moyen-fonce);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        /* Ligne de séparation dorée */
+        .hero-divider {
+            width: 80px;
+            height: 2px;
+            background: var(--gradient-or);
+            margin: 2.5rem auto;
+            position: relative;
+        }
+
+        .hero-divider::before,
+        .hero-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            background: var(--or-clair);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hero-divider::before {
+            left: -12px;
+        }
+
+        .hero-divider::after {
+            right: -12px;
+        }
+
+        /* Explication */
+        .hero-explain {
+            font-family: var(--font-body);
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            color: var(--gris-moyen-fonce);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        /* CTA */
+        .hero-cta {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero .btn-primary {
+            background: var(--noir-principal);
+            color: var(--or-clair);
+            border: 1px solid var(--noir-principal);
+            padding: 1.1rem 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .hero .btn-primary:hover {
+            background: var(--gris-anthracite);
+            box-shadow: 0 12px 40px rgba(18, 21, 20, 0.35);
+        }
+
+        .hero .link-subtle {
+            color: var(--gris-moyen-fonce);
+            font-size: 1rem;
+        }
+
+        .hero .link-subtle:hover {
+            color: var(--or-vieilli);
+            border-bottom-color: var(--or-vieilli);
+        }
+
+        /* Animations séquentielles */
+        .reveal-hero {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        .reveal-hero-1 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s; }
+        .reveal-hero-2 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s; }
+        .reveal-hero-3 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.9s; }
+        .reveal-hero-4 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.2s; }
+        .reveal-hero-5 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.5s; }
+
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll indicator amélioré */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 1.2s;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--or-clair), transparent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, transparent, var(--or-eclatant), transparent);
+            animation: scrollFlow 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollFlow {
+            0% { top: -50%; opacity: 0; }
+            50% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION MÉTHODE - 5 AXES
+           ═══════════════════════════════════════════════════════════════ */
+        .methode {
+            padding: var(--section-padding) 0;
+            background: var(--noir-principal);
+            position: relative;
+        }
+
+        .methode::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, #f8f7f5 0%, var(--noir-principal) 100%);
+            pointer-events: none;
+        }
+
+        .methode::after {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.5), transparent);
+        }
+
+        .methode-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-top: 40px;
+        }
+
+        .methode-header .title-section::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .methode-intro {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .methode-intro p {
+            font-size: 1.1rem;
+            color: var(--blanc-casse);
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+
+        .methode-intro .methode-conclusion {
+            color: var(--or-clair);
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .axes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .axes-bottom {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 820px;
+            margin: 2rem auto 0;
+        }
+
+        .axe {
+            background: var(--noir-clair);
+            padding: 2rem;
+            position: relative;
+            transition: var(--transition-smooth);
+            border-left: 2px solid var(--or-vieilli);
+        }
+
+        .axe::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2px;
+            width: 2px;
+            height: 0;
+            background: var(--gradient-or);
+            transition: height 0.4s ease;
+        }
+
+        .axe:hover {
+            transform: translateY(-6px);
+            border-left-color: transparent;
+            box-shadow: var(--shadow-deep), var(--glow-or);
+        }
+
+        .axe:hover::before {
+            height: 100%;
+        }
+
+        .axe-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .axe-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .axe-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--or-clair);
+            stroke-width: 1.5;
+            fill: none;
+            transition: all 0.4s ease;
+        }
+
+        .axe:hover .axe-icon svg {
+            stroke: var(--or-eclatant);
+            filter: drop-shadow(0 0 6px rgba(215, 190, 103, 0.3));
+        }
+
+        .axe-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: var(--or-eclatant);
+            margin: 0;
+        }
+
+        .axe-keywords {
+            font-size: 0.85rem;
+            color: var(--or-mat);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .axe-text {
+            font-size: 1rem;
+            color: var(--blanc-casse);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION AUTOTEST
+           ═══════════════════════════════════════════════════════════════ */
+        .autotest {
+            padding: var(--section-padding) 0;
+            background: var(--gris-anthracite);
+            position: relative;
+        }
+
+        .autotest::before,
+        .autotest::after {
+            content: '';
+            position: absolute;
+            left: 5%;
+            right: 5%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.6), transparent);
+        }
+
+        .autotest::before { top: 0; }
+        .autotest::after { bottom: 0; }
+
+        .autotest-inner {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .autotest-content {
+            position: relative;
+        }
+
+        .autotest-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--or-intense);
+            margin-bottom: 1.5rem;
+        }
+
+        .autotest-text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--blanc-casse);
+        }
+
+        .autotest-specs {
+            font-style: italic;
+            color: var(--gris-medium);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .autotest-disclaimer {
+            font-size: 0.85rem;
+            color: var(--gris-medium);
+            font-style: italic;
+            margin-top: 1.5rem;
+        }
+
+        .autotest-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        .test-cell {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--gris-moyen-fonce);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .test-cell:hover {
+            border-color: var(--or-clair);
+            transform: scale(1.1);
+        }
+
+        .test-cell.checked {
+            background: rgba(201, 170, 110, 0.1);
+            border-color: var(--or-clair);
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .test-cell.checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--or-clair);
+            font-size: 14px;
+        }
+
+        .test-cell.critical {
+            background: linear-gradient(135deg, transparent 40%, rgba(215, 190, 103, 0.3) 100%);
+            border-color: var(--or-eclatant);
+            box-shadow: 0 0 12px rgba(215, 190, 103, 0.3);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION ARTICLES
+           ═══════════════════════════════════════════════════════════════ */
+        .articles {
+            padding: var(--section-padding) 0;
+            background: var(--noir-principal);
+        }
+
+        .articles-header {
+            margin-bottom: 3rem;
+        }
+
+        .articles-header .title-section::after {
+            left: 0;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .article-card {
+            background: var(--noir-clair);
+            transition: var(--transition-smooth);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-or);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-deep);
+        }
+
+        .article-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .article-image {
+            aspect-ratio: 16/9;
+            background: var(--gris-anthracite);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 50%, rgba(153, 107, 38, 0.15));
+            z-index: 1;
+            transition: var(--transition-smooth);
+        }
+
+        .article-card:hover .article-image::before {
+            background: linear-gradient(135deg, transparent 30%, rgba(153, 107, 38, 0.25));
+        }
+
+        /* Lignes décoratives abstraites dans l'image */
+        .article-image::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
+            opacity: 0.5;
+            transition: var(--transition-smooth);
+        }
+
+        .article-card:hover .article-image::after {
+            opacity: 0.8;
+            box-shadow: var(--glow-or);
+        }
+
+        .article-body {
+            padding: 1.5rem;
+        }
+
+        .article-category {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-bottom: 0.75rem;
+        }
+
+        .article-title {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--blanc-casse);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .article-card:hover .article-title {
+            color: var(--or-clair);
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: var(--gris-medium);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-link {
+            font-size: 0.9rem;
+            color: var(--or-clair);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .article-link span {
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-link span {
+            transform: translateX(4px);
+        }
+
+        .articles-footer {
+            text-align: center;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION ÉTAPE ZÉRO
+           ═══════════════════════════════════════════════════════════════ */
+        .etape-zero {
+            padding: var(--section-padding) 0;
+            background: linear-gradient(180deg, var(--noir-principal) 0%, var(--noir-clair) 100%);
+        }
+
+        .etape-inner {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .etape-content {
+            position: relative;
+        }
+
+        .etape-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: var(--or-intense);
+            margin-bottom: 0.5rem;
+        }
+
+        .etape-subtitle {
+            font-style: italic;
+            color: var(--blanc-casse);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .etape-text {
+            font-size: 1.1rem;
+            color: var(--blanc-casse);
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+        }
+
+        .etape-points {
+            font-size: 1rem;
+            color: var(--gris-medium);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .etape-disclaimer {
+            font-size: 0.85rem;
+            color: var(--gris-medium);
+            font-style: italic;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(153, 107, 38, 0.2);
+        }
+
+        .etape-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .document-visual {
+            width: 200px;
+            height: 280px;
+            background: var(--noir-profond);
+            border: 1px solid var(--gris-moyen-fonce);
+            position: relative;
+            box-shadow: 
+                10px 10px 30px rgba(0, 0, 0, 0.3),
+                -5px -5px 20px rgba(46, 49, 48, 0.2);
+        }
+
+        .document-visual::before {
+            content: '';
+            position: absolute;
+            top: 15%;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: var(--or-vieilli);
+            box-shadow: 
+                0 20px 0 var(--gris-moyen-fonce),
+                0 40px 0 var(--gris-moyen-fonce),
+                0 60px 0 var(--gris-moyen-fonce),
+                0 80px 0 var(--or-vieilli),
+                0 100px 0 var(--gris-moyen-fonce),
+                0 120px 0 var(--gris-moyen-fonce),
+                0 140px 0 var(--gris-moyen-fonce),
+                0 160px 0 var(--or-clair);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION RÉSEAUX SOCIAUX
+           ═══════════════════════════════════════════════════════════════ */
+        .social {
+            padding: var(--section-padding) 0;
+            background: var(--gris-anthracite);
+            position: relative;
+        }
+
+        .social::before,
+        .social::after {
+            content: '';
+            position: absolute;
+            left: 5%;
+            right: 5%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.5), transparent);
+        }
+
+        .social::before { top: 0; }
+        .social::after { bottom: 0; }
+
+        .social-inner {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .social-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .social-text {
+            font-size: 1.1rem;
+            color: var(--blanc-casse);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition-bounce);
+        }
+
+        .social-link:hover {
+            transform: translateY(-6px);
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--or-clair);
+            border-radius: 50%;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            transition: var(--transition-smooth);
+        }
+
+        .social-link:hover .social-icon {
+            background: var(--or-clair);
+            border-color: var(--or-eclatant);
+            box-shadow: var(--glow-or-intense);
+        }
+
+        .social-link:hover .social-icon::before {
+            border-color: var(--or-vieilli);
+        }
+
+        .social-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--or-clair);
+            stroke-width: 1.5;
+            fill: none;
+            transition: var(--transition-smooth);
+        }
+
+        .social-link:hover .social-icon svg {
+            stroke: var(--noir-principal);
+        }
+
+        .social-link.youtube .social-icon {
+            width: 56px;
+            height: 56px;
+        }
+
+        .social-label {
+            font-size: 0.8rem;
+            color: var(--gris-medium);
+            font-style: italic;
+        }
+
+        .social-note {
+            font-size: 0.9rem;
+            color: var(--gris-medium);
+            font-style: italic;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION CONTACT - FOND CLAIR
+           ═══════════════════════════════════════════════════════════════ */
+        .contact {
+            padding: calc(var(--section-padding) + 40px) 0 calc(var(--section-padding) + 40px);
+            background: #f8f7f5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, var(--gris-anthracite) 0%, #f8f7f5 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .contact::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, #f8f7f5 0%, var(--noir-profond) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .contact-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        .contact .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            padding-top: 20px;
+        }
+
+        .contact-title {
+            color: var(--noir-principal);
+        }
+
+        .contact-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .contact-subtitle {
+            font-family: var(--font-body);
+            font-style: italic;
+            color: var(--gris-moyen-fonce);
+            font-size: 1.1rem;
+        }
+
+        .contact-main {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Carte principale Accompagnement */
+        .contact-card-accent {
+            background: var(--noir-principal);
+            padding: 3rem;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .contact-card-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-or);
+        }
+
+        .contact-card-accent::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(143, 107, 46, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .contact-card-accent-icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card-accent-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--or-clair);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .contact-card-accent h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--or-eclatant);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card-accent p {
+            font-size: 1.1rem;
+            color: var(--blanc-casse);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .btn-dark {
+            background: var(--or-clair);
+            color: var(--noir-principal);
+            padding: 1rem 2rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-align: center;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-dark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-dark:hover {
+            background: var(--or-eclatant);
+            transform: translateY(-3px);
+            box-shadow: var(--glow-or-intense);
+        }
+
+        .btn-dark:hover::before {
+            left: 100%;
+        }
+
+        /* Cartes secondaires */
+        .contact-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-card-simple {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 1.75rem 2rem;
+            border: 1px solid rgba(153, 107, 38, 0.15);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card-simple::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 0;
+            background: var(--gradient-or);
+            transition: height 0.4s ease;
+        }
+
+        .contact-card-simple:hover {
+            background: rgba(255, 255, 255, 0.98);
+            border-color: var(--or-clair);
+            transform: translateX(8px);
+            box-shadow: -4px 0 20px rgba(143, 107, 46, 0.15), 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-card-simple:hover::before {
+            height: 100%;
+        }
+
+        .contact-card-simple-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-card-simple-header svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--or-vieilli);
+            stroke-width: 1.5;
+            fill: none;
+            flex-shrink: 0;
+            transition: stroke 0.3s ease;
+        }
+
+        .contact-card-simple:hover .contact-card-simple-header svg {
+            stroke: var(--or-clair);
+        }
+
+        .contact-card-simple-header h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--noir-principal);
+            margin: 0;
+        }
+
+        .contact-card-simple p {
+            font-size: 0.95rem;
+            color: var(--gris-moyen-fonce);
+            line-height: 1.65;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--or-vieilli);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--or-clair);
+            gap: 0.75rem;
+        }
+
+        .contact-link span {
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card-simple:hover .contact-link span {
+            transform: translateX(4px);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FOOTER — EFFETS PREMIUM
+           ═══════════════════════════════════════════════════════════════ */
+        .footer {
+            padding: 4rem 0 2rem;
+            background: var(--noir-profond);
+            position: relative;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 0.75rem;
+            color: var(--or-clair);
+            transition: var(--transition-smooth);
+        }
+
+        .footer-brand .logo:hover {
+            color: var(--or-eclatant);
+            text-shadow: var(--glow-or);
+        }
+
+        .footer-brand .logo span {
+            color: var(--gris-medium);
+        }
+
+        .footer-tagline {
+            font-style: italic;
+            color: var(--gris-medium);
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--blanc-casse);
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--or-clair);
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--or-clair);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .footer-social-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-bounce);
+        }
+
+        .footer-social-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        .footer-social-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--gris-medium);
+            stroke-width: 1.5;
+            fill: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-social-icon:hover svg {
+            stroke: var(--or-clair);
+            filter: drop-shadow(0 0 8px rgba(201, 170, 110, 0.4));
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
+            margin-bottom: 2rem;
+            opacity: 0.4;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-legal {
+            font-size: 0.8rem;
+            color: var(--gris-medium);
+        }
+
+        .footer-legal a {
+            color: var(--gris-medium);
+            margin-left: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-legal a:hover {
+            color: var(--or-clair);
+        }
+
+        .footer-disclaimer {
+            font-size: 0.8rem;
+            color: var(--gris-medium);
+            font-style: italic;
+            max-width: 600px;
+            text-align: right;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ANIMATIONS PREMIUM
+           ═══════════════════════════════════════════════════════════════ */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 5px rgba(201, 170, 110, 0.2);
+            }
+            50% { 
+                box-shadow: 0 0 20px rgba(201, 170, 110, 0.4), 0 0 40px rgba(201, 170, 110, 0.2);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Intersection Observer animations améliorées */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* Effet de ligne dorée animée */
+        .gold-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--or-clair), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                padding: 8rem 0 6rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 1.25rem;
+            }
+
+            .axes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .axes-grid .axe:last-child {
+                grid-column: 1 / -1;
+                max-width: 500px;
+                justify-self: center;
+            }
+
+            .axes-bottom {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .autotest-inner,
+            .etape-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .autotest-visual,
+            .etape-visual {
+                order: -1;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-disclaimer {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-hook-main {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .hero-hook-sub {
+                font-size: 1.1rem;
+            }
+
+            .hero-explain {
+                font-size: 1rem;
+            }
+
+            .axes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .axes-grid .axe:last-child {
+                max-width: none;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--noir-profond);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid rgba(153, 107, 38, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                color: var(--blanc-casse) !important;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .social-icons {
+                gap: 2rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-main {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card-accent {
+                padding: 2rem;
+            }
+
+            .contact-card-simple:hover {
+                transform: translateY(-4px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                padding: 0.875rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .test-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .test-cell {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#piliers">Méthode</a></li>
+                    <li><a href="autotest.html">Autotests</a></li>
+                    <li><a href="articles.html">Analyses</a></li>
+                    <li><a href="etape-zero.html">L'Étape Zéro</a></li>
+                    <li><a href="mailto:contact@noesiskintsugi.com">Contact</a></li>
+                </ul>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1 class="hero-hook-main reveal-hero reveal-hero-1">Vous aviez raison depuis le début.</h1>
+                    <p class="hero-hook-sub reveal-hero reveal-hero-2">On vous a juste convaincu du contraire.</p>
+                    
+                    <div class="hero-divider reveal-hero reveal-hero-3"></div>
+                    
+                    <p class="hero-explain reveal-hero reveal-hero-4">Gaslighting. Triangulation. Dette invisible. Ces mécanismes ont un nom — et une fois qu'on les voit, on ne peut plus les ignorer.</p>
+                    
+                    <div class="hero-cta reveal-hero reveal-hero-5">
+                        <a href="autotest.html" class="btn btn-primary">Évaluer ma situation</a>
+                        <a href="#piliers" class="link-subtle">Comprendre les mécanismes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Section Méthode - 5 Axes -->
+    <section class="methode" id="piliers">
+        <div class="container">
+            <div class="methode-header reveal">
+                <h2 class="title-section">La Méthode Noesis</h2>
+                <p class="subtitle">Cinq axes transdisciplinaires pour comprendre l'emprise et le trauma</p>
+            </div>
+            <div class="methode-intro reveal">
+                <p>L'emprise et le trauma ne s'expliquent jamais par un seul facteur. Dire "c'était un pervers narcissique" ne suffit pas. Dire "j'étais fragile" non plus. Dire "la société est patriarcale" est vrai mais incomplet.</p>
+                <p>Votre cerveau réagit biologiquement. Vos pensées sont altérées psychologiquement. Un agresseur déploie des stratégies criminologiques. La culture normalise ou justifie. Le système social multiplie les obstacles. Noesis articule ces cinq dimensions parce que c'est la seule manière de comprendre vraiment ce qui s'est passé.</p>
+                <p class="methode-conclusion">Et comprendre, c'est le premier levier pour que ça ne se reproduise plus.</p>
+            </div>
+            <div class="axes-grid">
+                <div class="axe reveal">
+                    <div class="axe-header">
+                        <div class="axe-icon">
+                            <svg viewBox="0 0 64 64">
+                                <circle cx="32" cy="24" r="12" />
+                                <path d="M16 52 Q32 36, 48 52" />
+                                <circle cx="32" cy="24" r="4" />
+                            </svg>
+                        </div>
+                        <h3 class="axe-title">Neuropsychologie</h3>
+                    </div>
+                    <p class="axe-keywords">Cortisol · Amygdale · Mémoire traumatique · Trauma bonding · Dissociation · Système polyvagal</p>
+                    <p class="axe-text">Vos réactions sont normales, prévisibles et réversibles. Non, vous n'êtes pas "trop sensible". Votre cerveau fonctionne exactement comme il est censé fonctionner quand on le soumet à un stress chronique.</p>
+                </div>
+                <div class="axe reveal">
+                    <div class="axe-header">
+                        <div class="axe-icon">
+                            <svg viewBox="0 0 64 64">
+                                <circle cx="32" cy="32" r="18" />
+                                <path d="M20 32 L28 32 L32 24 L36 40 L40 32 L44 32" />
+                            </svg>
+                        </div>
+                        <h3 class="axe-title">Psychologie Cognitive</h3>
+                    </div>
+                    <p class="axe-keywords">Gaslighting · Dissonance cognitive · Biais exploités · Charge cognitive</p>
+                    <p class="axe-text">Pourquoi vous avez douté de vous-même alors que votre perception était exacte. Pourquoi vous vous êtes excusé pour des choses que vous n'aviez pas faites.</p>
+                </div>
+                <div class="axe reveal">
+                    <div class="axe-header">
+                        <div class="axe-icon">
+                            <svg viewBox="0 0 64 64">
+                                <polygon points="32,8 56,52 8,52" fill="none" />
+                                <line x1="32" y1="24" x2="32" y2="38" />
+                                <circle cx="32" cy="44" r="2" />
+                            </svg>
+                        </div>
+                        <h3 class="axe-title">Criminologie</h3>
+                    </div>
+                    <p class="axe-keywords">Narcissisme · Psychopathie · Lovebombing · Isolation · Triangulation</p>
+                    <p class="axe-text">Vous n'avez pas provoqué ni mérité cette violence. Peu importe ce qu'on vous a dit. Vous êtes tombé sur quelqu'un qui savait exactement ce qu'il faisait.</p>
+                </div>
+            </div>
+            <div class="axes-bottom">
+                <div class="axe reveal">
+                    <div class="axe-header">
+                        <div class="axe-icon">
+                            <svg viewBox="0 0 64 64">
+                                <circle cx="32" cy="32" r="20" />
+                                <ellipse cx="32" cy="32" rx="20" ry="8" />
+                                <line x1="32" y1="12" x2="32" y2="52" />
+                            </svg>
+                        </div>
+                        <h3 class="axe-title">Anthropologie</h3>
+                    </div>
+                    <p class="axe-keywords">Mythes romantiques toxiques · Victim-blaming · Normes genrées · Sacralisation familiale</p>
+                    <p class="axe-text">Identifier les croyances collectives invisibles qui ont rendu l'emprise "acceptable". "C'est quand même ta mère." La culture vous a menti. Vous n'avez pas à jouer le jeu.</p>
+                </div>
+                <div class="axe reveal">
+                    <div class="axe-header">
+                        <div class="axe-icon">
+                            <svg viewBox="0 0 64 64">
+                                <rect x="12" y="20" width="40" height="28" rx="2" />
+                                <line x1="12" y1="32" x2="52" y2="32" />
+                                <line x1="32" y1="20" x2="32" y2="48" />
+                                <circle cx="22" cy="26" r="3" />
+                                <circle cx="42" cy="26" r="3" />
+                                <circle cx="22" cy="40" r="3" />
+                                <circle cx="42" cy="40" r="3" />
+                            </svg>
+                        </div>
+                        <h3 class="axe-title">Sciences Sociales</h3>
+                    </div>
+                    <p class="axe-keywords">Dépendance économique · Isolement · Inadaptation institutionnelle · Délais judiciaires</p>
+                    <p class="axe-text">Partir n'est pas une question de "volonté" mais de navigation dans un système de contraintes. Facile de dire "pourquoi tu pars pas ?" quand on n'a jamais eu à choisir entre un toit et sa sécurité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Autotest -->
+    <section class="autotest" id="autotest">
+        <div class="container">
+            <div class="autotest-inner">
+                <div class="autotest-content reveal">
+                    <p class="surtitre">Outils d'orientation</p>
+                    <h2 class="autotest-title title-display">Pas des quiz BuzzFeed à trois questions.</h2>
+                    <p class="autotest-text">Des grilles d'évaluation de 40 à 50 questions conçues pour identifier votre situation avec rigueur. TDAH, burn-out, trauma bonding, harcèlement moral, CPTSD. Des outils d'orientation — pas des diagnostics, pas des étiquettes, pas de "vous êtes à 73% sous emprise".</p>
+                    <p class="autotest-specs">Si vous vous posez la question, c'est probablement que quelque chose ne va pas. Mais entre "quelque chose ne va pas" et "savoir précisément quoi", il y a un gouffre. Noesis occupe ce gouffre.</p>
+                    <a href="#" class="btn btn-primary">Commencer un test</a>
+                    <p class="autotest-disclaimer">Outil d'auto-évaluation. Ne remplace pas un diagnostic professionnel. Résultats indicatifs.</p>
+                </div>
+                <div class="autotest-visual reveal reveal-delay-1">
+                    <div class="test-grid">
+                        <div class="test-cell checked"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell critical"></div>
+                        <div class="test-cell checked"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell checked"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell checked"></div>
+                        <div class="test-cell critical"></div>
+                        <div class="test-cell checked"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell critical"></div>
+                        <div class="test-cell checked"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell checked"></div>
+                        <div class="test-cell checked"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell critical"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell checked"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell checked"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Articles -->
+    <section class="articles" id="articles">
+        <div class="container">
+            <div class="articles-header reveal">
+                <h2 class="title-section">Analyses</h2>
+                <p class="subtitle">Sans jargon opaque. Sans simplification abusive. Sans vous prendre pour un idiot.</p>
+            </div>
+            <div class="articles-grid">
+                <article class="article-card reveal reveal-delay-1">
+                    <div class="article-image"></div>
+                    <div class="article-body">
+                        <p class="article-category">Mécanismes</p>
+                        <h3 class="article-title">Dissonance cognitive coercitive</h3>
+                        <p class="article-excerpt">Pourquoi vous avez fini par croire que noir = blanc alors que vous n'êtes pas idiot. Comment le cerveau perd ses repères quand le réel est systématiquement réécrit.</p>
+                        <a href="#" class="article-link">Lire <span>→</span></a>
+                    </div>
+                </article>
+                <article class="article-card reveal reveal-delay-2">
+                    <div class="article-image"></div>
+                    <div class="article-body">
+                        <p class="article-category">Doctrine</p>
+                        <h3 class="article-title">La fin du pardon obligatoire</h3>
+                        <p class="article-excerpt">Non, vous n'avez pas à pardonner. Oui, vous avez le droit d'être en colère. Oui, cette colère est saine. La paix sans vérité est une anesthésie.</p>
+                        <a href="#" class="article-link">Lire <span>→</span></a>
+                    </div>
+                </article>
+                <article class="article-card reveal reveal-delay-3">
+                    <div class="article-image"></div>
+                    <div class="article-body">
+                        <p class="article-category">Clinique</p>
+                        <h3 class="article-title">Asymétrie épistémique</h3>
+                        <p class="article-excerpt">Quand l'un sait et l'autre ignore. Comment on vous a fait croire que vous ne compreniez rien alors que c'est exactement l'inverse qui se passait.</p>
+                        <a href="#" class="article-link">Lire <span>→</span></a>
+                    </div>
+                </article>
+            </div>
+            <div class="articles-footer reveal">
+                <a href="#" class="link-gold">Tous les articles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Étape Zéro -->
+    <section class="etape-zero" id="etape-zero">
+        <div class="container">
+            <div class="etape-inner">
+                <div class="etape-content reveal">
+                    <p class="surtitre">Accompagnement sur mesure</p>
+                    <h2 class="etape-title title-display">L'Étape Zéro</h2>
+                    <p class="etape-subtitle">Pour ceux qui ne savent plus où ils en sont.</p>
+                    <p class="etape-text">Vous avez peut-être passé des heures à scroller des symptômes en ligne, à vous reconnaître dans trois TDAH différents, deux troubles de la personnalité et un burn-out. Les mots manquent, la chronologie s'effondre, les preuves sont dispersées. L'Étape Zéro transforme le chaos vécu en récit structuré.</p>
+                    <p class="etape-points">Pas de coaching motivant. Pas de développement personnel. Du travail de structuration cognitive, point. Questionnaire structuré, entretien 90 minutes, livrable cartographie + lexique personnalisé.</p>
+                    <a href="#" class="btn btn-secondary">Découvrir L'Étape Zéro</a>
+                    <p class="etape-disclaimer">L'accompagnement Noesis ne remplace pas une thérapie, un diagnostic médical ou un conseil juridique. Il vous aide à comprendre, nommer et organiser votre expérience pour optimiser le temps avec les professionnels.</p>
+                </div>
+                <div class="etape-visual reveal reveal-delay-1">
+                    <div class="document-visual"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Réseaux Sociaux -->
+    <section class="social" id="social">
+        <div class="container">
+            <div class="social-inner reveal">
+                <h2 class="social-title title-section">Suivez Noesis</h2>
+                <p class="social-text">Vidéos et formats courts pour explorer les mécanismes d'emprise, déconstruire les idées reçues et transmettre des outils de compréhension. Décryptages de cas concrets anonymisés, analyses transdisciplinaires, participation aux concours. Parce que la reconstruction passe aussi par le corps. Et parfois par un airfryer gagné à un concours. Nous ne jugeons pas.</p>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener" class="social-link youtube">
+                        <div class="social-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="social-label">Analyses longues</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener" class="social-link">
+                        <div class="social-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                            </svg>
+                        </div>
+                        <span class="social-label">Décryptages rapides</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <div class="social-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </div>
+                        <span class="social-label">Formats courts</span>
+                    </a>
+                </div>
+                <p class="social-note">Concours réguliers avec cadeaux justifiés cliniquement : luminothérapie, couvertures lestées, séjours spa. Parce que vous avez donné pendant des années sans recevoir.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-bg"></div>
+        <div class="container">
+            <div class="contact-header reveal">
+                <h2 class="title-section contact-title">Entrons en contact</h2>
+                <p class="contact-subtitle">Chaque demande est traitée avec attention et confidentialité</p>
+            </div>
+            <div class="contact-main">
+                <div class="contact-left reveal">
+                    <div class="contact-card-accent">
+                        <div class="contact-card-accent-icon">
+                            <svg viewBox="0 0 64 64">
+                                <circle cx="32" cy="20" r="12" />
+                                <path d="M12 56 C12 40, 52 40, 52 56" />
+                            </svg>
+                        </div>
+                        <h3>Accompagnement</h3>
+                        <p>Demandez un accompagnement individuel personnalisé pour clarifier votre situation et identifier vos options.</p>
+                        <a href="mailto:contact@noesiskintsugi.com?subject=Demande%20d%27accompagnement" class="btn btn-dark">Demander un accompagnement</a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <div class="contact-card-simple reveal">
+                        <div class="contact-card-simple-header">
+                            <svg viewBox="0 0 64 64">
+                                <rect x="8" y="16" width="20" height="32" rx="2" />
+                                <rect x="36" y="16" width="20" height="32" rx="2" />
+                                <line x1="28" y1="28" x2="36" y2="28" />
+                                <line x1="28" y1="36" x2="36" y2="36" />
+                            </svg>
+                            <h4>Partenariats</h4>
+                        </div>
+                        <p>Vous souhaitez donner de la visibilité à votre marque ? Intégration vidéo, promotion ciblée, concours, événementiel — des partenariats adaptés et impactants.</p>
+                        <a href="mailto:contact@noesiskintsugi.com?subject=Proposition%20de%20partenariat" class="contact-link">Proposer un partenariat <span>→</span></a>
+                    </div>
+                    <div class="contact-card-simple reveal">
+                        <div class="contact-card-simple-header">
+                            <svg viewBox="0 0 64 64">
+                                <circle cx="20" cy="32" r="10" />
+                                <circle cx="44" cy="32" r="10" />
+                                <line x1="30" y1="32" x2="34" y2="32" />
+                            </svg>
+                            <h4>Collaborations</h4>
+                        </div>
+                        <p>Proposez une collaboration professionnelle fondée sur la complémentarité et l'excellence.</p>
+                        <a href="mailto:contact@noesiskintsugi.com?subject=Proposition%20de%20collaboration" class="contact-link">Proposer une collaboration <span>→</span></a>
+                    </div>
+                    <div class="contact-card-simple reveal">
+                        <div class="contact-card-simple-header">
+                            <svg viewBox="0 0 64 64">
+                                <rect x="8" y="16" width="48" height="32" rx="2" />
+                                <polyline points="8,16 32,36 56,16" />
+                            </svg>
+                            <h4>Contact général</h4>
+                        </div>
+                        <p>Posez une question ou partagez vos réflexions.</p>
+                        <a href="mailto:contact@noesiskintsugi.com" class="contact-link">Me contacter <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                    <p class="footer-tagline">Noesis ne soigne pas. Noesis clarifie.</p>
+                </div>
+                <nav class="footer-links">
+                    <a href="autotest.html">Autotests</a>
+                    <a href="articles.html">Analyses</a>
+                    <a href="etape-zero.html">L'Étape Zéro</a>
+                    <a href="mailto:contact@noesiskintsugi.com">Contact</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener" class="footer-social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener" class="footer-social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer-social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p class="footer-legal">
+                    © 2026 Noesis Kintsugi
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                </p>
+                <p class="footer-disclaimer">Noesis Kintsugi est un espace d'analyse transdisciplinaire. Les contenus ne constituent pas un avis médical, psychologique ou juridique. La paix sans vérité est une anesthésie.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Parallax subtil sur le hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBg = document.querySelector('.hero-bg');
+            if (heroBg && scrolled < window.innerHeight) {
+                heroBg.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+    </script>
+
+</body>
+</html>
