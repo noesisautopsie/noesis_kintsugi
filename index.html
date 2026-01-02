@@ -322,20 +322,20 @@
         .nav .logo {
             font-family: var(--font-display);
             font-size: 1.5rem;
-            color: var(--noir-principal);
+            color: var(--or-clair);
             letter-spacing: 0.05em;
             transition: var(--transition-smooth);
         }
 
         .nav .logo span {
-            color: var(--gris-moyen-fonce);
+            color: var(--gris-medium);
             font-size: 0.9em;
             transition: var(--transition-smooth);
         }
 
         .nav .nav-links a {
             font-size: 0.9rem;
-            color: var(--noir-principal);
+            color: var(--blanc-casse);
             position: relative;
             transition: var(--transition-smooth);
         }
@@ -407,7 +407,7 @@
         .nav-toggle span {
             width: 24px;
             height: 1px;
-            background: var(--noir-principal);
+            background: var(--or-clair);
             transition: var(--transition-smooth);
         }
 
@@ -423,7 +423,7 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: var(--fond-clair);
+            background: var(--noir-principal);
             overflow: hidden;
         }
 
@@ -441,10 +441,10 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, 
-                rgba(248, 247, 245, 0.15) 0%, 
-                rgba(248, 247, 245, 0.02) 50%,
-                rgba(248, 247, 245, 0.2) 100%);
+            background: linear-gradient(135deg,
+                rgba(18, 21, 20, 0.75) 0%,
+                rgba(18, 21, 20, 0.6) 50%,
+                rgba(18, 21, 20, 0.8) 100%);
             pointer-events: none;
         }
 
@@ -468,18 +468,20 @@
         .hero-hook-main {
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 7vw, 5rem);
-            color: var(--noir-principal);
+            color: #ffffff;
             margin-bottom: 0.3em;
             line-height: 1.1;
             letter-spacing: -0.02em;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.8), 0 4px 60px rgba(0, 0, 0, 0.6);
         }
 
         .hero-hook-sub {
             font-family: var(--font-body);
             font-size: clamp(1.2rem, 3vw, 1.6rem);
-            color: var(--gris-moyen-fonce);
+            color: var(--or-eclatant);
             font-style: italic;
             margin-bottom: 0;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
         }
 
         /* Ligne de séparation dorée */
@@ -515,10 +517,11 @@
         .hero-explain {
             font-family: var(--font-body);
             font-size: clamp(1.05rem, 2vw, 1.2rem);
-            color: var(--gris-moyen-fonce);
+            color: #ffffff;
             max-width: 600px;
             margin: 0 auto 2.5rem;
             line-height: 1.8;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
         }
 
         /* CTA */
@@ -531,26 +534,27 @@
         }
 
         .hero .btn-primary {
-            background: var(--noir-principal);
-            color: var(--or-clair);
-            border: 1px solid var(--noir-principal);
+            background: var(--or-clair);
+            color: var(--noir-principal);
+            border: 1px solid var(--or-clair);
             padding: 1.1rem 2.5rem;
             font-size: 1.05rem;
         }
 
         .hero .btn-primary:hover {
-            background: var(--gris-anthracite);
-            box-shadow: 0 12px 40px rgba(18, 21, 20, 0.35);
+            background: var(--or-eclatant);
+            box-shadow: var(--glow-or-intense), 0 12px 40px rgba(201, 170, 110, 0.3);
         }
 
         .hero .link-subtle {
-            color: var(--gris-moyen-fonce);
+            color: #ffffff;
             font-size: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         .hero .link-subtle:hover {
-            color: var(--or-vieilli);
-            border-bottom-color: var(--or-vieilli);
+            color: var(--or-eclatant);
+            border-bottom-color: var(--or-eclatant);
         }
 
         /* Animations séquentielles */
@@ -632,7 +636,7 @@
             left: 0;
             right: 0;
             height: 120px;
-            background: linear-gradient(to bottom, #f8f7f5 0%, var(--noir-principal) 100%);
+            background: linear-gradient(to bottom, var(--noir-principal) 0%, var(--noir-principal) 100%);
             pointer-events: none;
         }
 
