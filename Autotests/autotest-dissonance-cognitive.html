@@ -1,0 +1,2344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autotest — Dissonance Cognitive Coercitive | Noesis Kintsugi</title>
+    <meta name="description" content="Outil d'orientation : identifier si le doute actuel provient d'une contradiction relationnelle imposée. Ce test ne constitue pas un diagnostic.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ═══════════════════════════════════════════════════════════════
+           CSS VARIABLES — PALETTE NOESIS KINTSUGI
+           ═══════════════════════════════════════════════════════════════ */
+        :root {
+            /* ─────────── NOIRS PROFONDS ─────────── */
+            --noir-principal: #121514;
+            --noir-profond: #111313;
+            --noir-clair: #161817;
+            
+            /* ─────────── GRIS ANTHRACITE ─────────── */
+            --gris-anthracite: #2E3130;
+            --gris-ceramique: #2D2F2F;
+            --gris-moyen-fonce: #424446;
+            
+            /* ─────────── GRIS MOYENS ─────────── */
+            --gris-pierre: #97948C;
+            --gris-neutre: #989694;
+            --gris-medium: #999999;
+            
+            /* ─────────── ORS SOMBRES ─────────── */
+            --or-antique: #8F6B2E;
+            --or-bronze: #967523;
+            --or-vieilli: #996B26;
+            --or-cuivre: #AE752B;
+            
+            /* ─────────── ORS MOYENS ─────────── */
+            --or-moyen: #9D7034;
+            --or-mat: #98764D;
+            --or-terreux: #99845E;
+            
+            /* ─────────── ORS BRILLANTS ─────────── */
+            --or-clair: #C9AA6E;
+            --or-lumineux: #CCA464;
+            --or-eclatant: #D7BE67;
+            --or-intense: #DDB569;
+            
+            /* ─────────── BLANCS/IVOIRE ─────────── */
+            --blanc-casse: #C9CBCB;
+            --ivoire: #CBCBC9;
+            
+            /* ─────────── COULEURS DIMENSIONS ─────────── */
+            --dim-phenomeno: #C9AA6E;
+            --dim-fonction: #7A9BA8;
+            --dim-context: #B8956E;
+            --dim-temporel: #8A9B6E;
+            --dim-somatique: #A87A85;
+            
+            /* ─────────── NIVEAUX ─────────── */
+            --level-high: #C47A7A;
+            --level-mid: #C9AA6E;
+            --level-low: #7AAD8A;
+            
+            /* ─────────── EFFETS KINTSUGI ─────────── */
+            --glow-or: 0 0 20px rgba(201, 170, 110, 0.3);
+            --glow-or-intense: 0 0 30px rgba(215, 190, 103, 0.4);
+            --shadow-gold: 0 4px 20px rgba(143, 107, 46, 0.25);
+            --shadow-deep: 0 12px 40px rgba(0, 0, 0, 0.4);
+            --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
+            --gradient-fissure: linear-gradient(90deg, var(--or-vieilli), var(--or-clair), var(--or-intense), var(--or-clair), var(--or-vieilli));
+            
+            /* Typography */
+            --font-display: 'Megrim', cursive;
+            --font-body: 'Crimson Pro', serif;
+            
+            /* Spacing */
+            --container-max: 900px;
+            --container-padding: clamp(20px, 5vw, 40px);
+            
+            /* Transitions */
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           NAVIGATION PRINCIPALE
+           ═══════════════════════════════════════════════════════════════ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition-smooth);
+        }
+
+        .nav.scrolled {
+            background: rgba(17, 19, 19, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(153, 107, 38, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--or-clair);
+            letter-spacing: 0.05em;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .nav .logo span {
+            color: var(--gris-medium);
+            font-size: 0.9em;
+            transition: var(--transition-smooth);
+        }
+
+        .nav .logo:hover {
+            color: var(--or-eclatant);
+            text-shadow: var(--glow-or);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--blanc-casse);
+            position: relative;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gradient-or);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--or-clair);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 1px;
+            background: var(--or-clair);
+            transition: var(--transition-smooth);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RESET & BASE
+           ═══════════════════════════════════════════════════════════════ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--noir-principal);
+            color: var(--blanc-casse);
+            line-height: 1.65;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Texture grain subtile premium */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.025;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Sélection dorée */
+        ::selection {
+            background: var(--or-vieilli);
+            color: var(--noir-principal);
+        }
+
+        /* Scrollbar personnalisée */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--noir-profond); }
+        ::-webkit-scrollbar-thumb { background: var(--or-vieilli); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--or-clair); }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           HEADER
+           ═══════════════════════════════════════════════════════════════ */
+        header {
+            padding: clamp(120px, 15vh, 160px) 0 clamp(30px, 5vh, 50px);
+            border-bottom: 1px solid var(--gris-anthracite);
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: var(--gradient-fissure);
+            box-shadow: var(--glow-or);
+        }
+
+        .brand {
+            font-family: var(--font-display);
+            font-size: clamp(12px, 2vw, 14px);
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-bottom: 20px;
+        }
+
+        .brand span {
+            color: var(--or-eclatant);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            color: var(--blanc-casse);
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-family: var(--font-body);
+            font-size: clamp(17px, 2.5vw, 20px);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--gris-pierre);
+            max-width: 60ch;
+            line-height: 1.5;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           NAVIGATION ÉTAPES
+           ═══════════════════════════════════════════════════════════════ */
+        .steps-nav {
+            background: var(--noir-profond);
+            border-bottom: 1px solid var(--gris-anthracite);
+            padding: 16px 0;
+            position: sticky;
+            top: 60px; /* Hauteur de la nav quand scrolled */
+            z-index: 99;
+        }
+
+        .steps-container {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .steps-container::-webkit-scrollbar { display: none; }
+
+        .step-indicator {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px 14px;
+            background: transparent;
+            border: 1px solid var(--gris-anthracite);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            color: var(--gris-medium);
+            text-align: center;
+            cursor: default;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .step-indicator .step-num {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            opacity: 0.6;
+            margin-bottom: 3px;
+        }
+
+        .step-indicator.active {
+            background: rgba(153, 107, 38, 0.12);
+            border-color: var(--or-vieilli);
+            color: var(--or-clair);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .step-indicator.completed {
+            background: rgba(122, 173, 138, 0.08);
+            border-color: rgba(122, 173, 138, 0.3);
+            color: var(--level-low);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTIONS / ÉCRANS
+           ═══════════════════════════════════════════════════════════════ */
+        .screen {
+            display: none;
+            padding: clamp(30px, 5vh, 50px) 0 clamp(60px, 10vh, 100px);
+            animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .screen.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CARTES
+           ═══════════════════════════════════════════════════════════════ */
+        .card {
+            background: linear-gradient(180deg, var(--gris-ceramique) 0%, var(--noir-clair) 100%);
+            border: 1px solid var(--gris-anthracite);
+            border-radius: 16px;
+            box-shadow: var(--shadow-deep);
+            overflow: hidden;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
+            opacity: 0.4;
+        }
+
+        .card-header {
+            padding: 22px 28px;
+            border-bottom: 1px solid var(--gris-anthracite);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .card-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(20px, 3vw, 26px);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: var(--blanc-casse);
+        }
+
+        .card-badge {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-style: italic;
+            color: var(--gris-pierre);
+            padding: 6px 14px;
+            border: 1px solid var(--gris-anthracite);
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .card-body { padding: 28px; }
+
+        .card-footer {
+            padding: 18px 28px;
+            border-top: 1px solid var(--gris-anthracite);
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           INTRO SECTIONS
+           ═══════════════════════════════════════════════════════════════ */
+        .intro-section {
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--gris-anthracite);
+        }
+
+        .intro-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .intro-section h3 {
+            font-family: var(--font-display);
+            font-size: 15px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-bottom: 14px;
+        }
+
+        .intro-section p {
+            font-size: 16px;
+            color: var(--gris-pierre);
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .intro-section p:last-child { margin-bottom: 0; }
+
+        .intro-section strong {
+            color: var(--blanc-casse);
+            font-weight: 500;
+        }
+
+        .intro-section ul {
+            margin: 12px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .intro-section li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: var(--gris-pierre);
+        }
+
+        .intro-section li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 2px;
+            background: var(--or-vieilli);
+        }
+
+        .dim-label {
+            font-weight: 500;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CONSENTEMENT
+           ═══════════════════════════════════════════════════════════════ */
+        .consent-box {
+            background: rgba(196, 122, 122, 0.06);
+            border: 1px solid rgba(196, 122, 122, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .consent-box h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--level-high);
+            margin-bottom: 16px;
+        }
+
+        .consent-box p {
+            font-size: 15px;
+            color: var(--gris-pierre);
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .consent-box ul {
+            margin: 14px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .consent-box li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--gris-pierre);
+        }
+
+        .consent-box li::before {
+            content: '×';
+            position: absolute;
+            left: 0;
+            color: var(--level-high);
+            font-weight: bold;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(196, 122, 122, 0.15);
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            margin: 0;
+            accent-color: var(--or-clair);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checkbox-wrapper label {
+            font-size: 15px;
+            color: var(--blanc-casse);
+            cursor: pointer;
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ANAMNÈSE
+           ═══════════════════════════════════════════════════════════════ */
+        .anamnese-note {
+            background: rgba(153, 107, 38, 0.08);
+            border: 1px solid rgba(153, 107, 38, 0.25);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 24px;
+            font-size: 15px;
+            color: var(--gris-pierre);
+            line-height: 1.6;
+        }
+
+        .anamnese-note strong {
+            color: var(--or-clair);
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--blanc-casse);
+            margin-bottom: 10px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--noir-principal);
+            border: 1px solid var(--gris-anthracite);
+            border-radius: 10px;
+            color: var(--blanc-casse);
+            font-family: var(--font-body);
+            font-size: 15px;
+            transition: var(--transition-smooth);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--or-vieilli);
+            box-shadow: 0 0 0 3px rgba(153, 107, 38, 0.15);
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 44px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           QUESTIONNAIRE
+           ═══════════════════════════════════════════════════════════════ */
+        .dimension-block {
+            margin-bottom: 32px;
+            border: 1px solid var(--gris-anthracite);
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--gris-ceramique) 0%, var(--noir-clair) 100%);
+            box-shadow: var(--shadow-deep);
+        }
+
+        .dimension-header {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-bottom: 1px solid var(--gris-anthracite);
+            position: relative;
+        }
+
+        .dimension-header::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+        }
+
+        .dim-phenomeno .dimension-header::before { background: var(--dim-phenomeno); }
+        .dim-fonction .dimension-header::before { background: var(--dim-fonction); }
+        .dim-context .dimension-header::before { background: var(--dim-context); }
+        .dim-temporel .dimension-header::before { background: var(--dim-temporel); }
+        .dim-somatique .dimension-header::before { background: var(--dim-somatique); }
+
+        .dimension-header h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin: 0;
+        }
+
+        .dim-phenomeno .dimension-header h3 { color: var(--dim-phenomeno); }
+        .dim-fonction .dimension-header h3 { color: var(--dim-fonction); }
+        .dim-context .dimension-header h3 { color: var(--dim-context); }
+        .dim-temporel .dimension-header h3 { color: var(--dim-temporel); }
+        .dim-somatique .dimension-header h3 { color: var(--dim-somatique); }
+
+        .dimension-header p {
+            font-size: 14px;
+            font-style: italic;
+            color: var(--gris-pierre);
+            margin: 4px 0 0;
+        }
+
+        .question-item {
+            padding: 22px 24px;
+            border-bottom: 1px solid var(--gris-anthracite);
+            transition: background 0.2s ease;
+        }
+
+        .question-item:last-child { border-bottom: none; }
+        .question-item:hover { background: rgba(255, 255, 255, 0.01); }
+        .question-item.answered { background: rgba(153, 107, 38, 0.04); }
+
+        .question-text {
+            font-size: 16px;
+            color: var(--blanc-casse);
+            line-height: 1.6;
+            margin: 0 0 16px;
+        }
+
+        .question-num {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gris-medium);
+            margin-right: 10px;
+            opacity: 0.7;
+        }
+
+        .choices {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .choices { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .choice {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 12px 14px;
+            background: var(--noir-principal);
+            border: 1px solid var(--gris-anthracite);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .choice:hover {
+            border-color: var(--or-vieilli);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .choice input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .choice span {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--gris-pierre);
+            transition: color 0.2s ease;
+            pointer-events: none;
+        }
+
+        .choice:has(input:checked) {
+            background: rgba(153, 107, 38, 0.15);
+            border-color: var(--or-vieilli);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .choice:has(input:checked) span {
+            color: var(--or-clair);
+            font-weight: 500;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           BARRE DE PROGRESSION
+           ═══════════════════════════════════════════════════════════════ */
+        .progress-bar {
+            position: sticky;
+            bottom: 0;
+            background: var(--noir-profond);
+            border-top: 1px solid var(--gris-anthracite);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        .progress-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+        }
+
+        .progress-count {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--gris-pierre);
+            white-space: nowrap;
+        }
+
+        .progress-track {
+            flex: 1;
+            height: 8px;
+            background: var(--gris-anthracite);
+            border-radius: 4px;
+            overflow: hidden;
+            min-width: 120px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--gradient-or);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            box-shadow: var(--glow-or);
+        }
+
+        .progress-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           BOUTONS
+           ═══════════════════════════════════════════════════════════════ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 24px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            border: 1px solid var(--or-vieilli);
+            border-radius: 10px;
+            background: rgba(153, 107, 38, 0.15);
+            color: var(--or-clair);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: rgba(153, 107, 38, 0.25);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border-color: var(--gris-anthracite);
+            color: var(--gris-pierre);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: var(--gris-moyen-fonce);
+            color: var(--blanc-casse);
+        }
+
+        .btn-primary {
+            background: var(--gradient-or);
+            border-color: var(--or-clair);
+            color: var(--noir-principal);
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            box-shadow: var(--glow-or-intense);
+        }
+
+        .btn-sm {
+            padding: 10px 18px;
+            font-size: 13px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RÉSULTATS
+           ═══════════════════════════════════════════════════════════════ */
+        .result-header {
+            text-align: center;
+            padding: 36px 28px;
+            border-bottom: 1px solid var(--gris-anthracite);
+            position: relative;
+        }
+
+        .result-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--gradient-fissure);
+        }
+
+        .result-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(26px, 4vw, 34px);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin-bottom: 16px;
+        }
+
+        .result-badge {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .result-badge.high {
+            background: rgba(196, 122, 122, 0.12);
+            border: 1px solid rgba(196, 122, 122, 0.35);
+            color: var(--level-high);
+        }
+
+        .result-badge.mid {
+            background: rgba(153, 107, 38, 0.12);
+            border: 1px solid rgba(153, 107, 38, 0.35);
+            color: var(--or-clair);
+        }
+
+        .result-badge.low {
+            background: rgba(122, 173, 138, 0.1);
+            border: 1px solid rgba(122, 173, 138, 0.3);
+            color: var(--level-low);
+        }
+
+        /* Graphique Radar */
+        .radar-container {
+            padding: 36px 28px;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid var(--gris-anthracite);
+        }
+
+        #radarCanvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Détail dimensions */
+        .dimensions-detail {
+            padding: 28px;
+            border-bottom: 1px solid var(--gris-anthracite);
+        }
+
+        .dim-result {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--gris-anthracite);
+        }
+
+        .dim-result:last-child { border-bottom: none; }
+
+        .dim-result .dim-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .dim-result .dim-name {
+            flex: 1;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--blanc-casse);
+        }
+
+        .dim-result .dim-score {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--gris-pierre);
+            min-width: 50px;
+            text-align: right;
+        }
+
+        .dim-result .dim-bar {
+            width: 120px;
+            height: 6px;
+            background: var(--gris-anthracite);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .dim-result .dim-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Interprétation */
+        .interpretation {
+            padding: 32px 28px;
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .interpretation h3 {
+            font-family: var(--font-display);
+            font-size: 15px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-bottom: 18px;
+        }
+
+        .interpretation p {
+            font-size: 16px;
+            color: var(--gris-pierre);
+            margin-bottom: 14px;
+            line-height: 1.75;
+        }
+
+        .interpretation p:last-child { margin-bottom: 0; }
+
+        .interpretation .lead {
+            font-size: 17px;
+            color: var(--blanc-casse);
+            font-weight: 500;
+        }
+
+        /* Export buttons */
+        .export-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 24px 28px;
+            border-top: 1px solid var(--gris-anthracite);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .export-actions .btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           DISCLAIMER
+           ═══════════════════════════════════════════════════════════════ */
+        .disclaimer {
+            padding: 20px 28px;
+            background: rgba(196, 122, 122, 0.05);
+            border-top: 1px solid rgba(196, 122, 122, 0.15);
+            font-size: 13px;
+            color: var(--gris-pierre);
+            line-height: 1.7;
+        }
+
+        .disclaimer strong {
+            color: var(--level-high);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════════ */
+        footer {
+            padding: 40px 0 60px;
+            border-top: 1px solid var(--gris-anthracite);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            color: var(--gris-pierre);
+        }
+
+        .footer-brand span {
+            color: var(--or-clair);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            font-size: 13px;
+        }
+
+        .footer-links a {
+            color: var(--gris-medium);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--or-clair);
+        }
+
+        .footer-legal {
+            width: 100%;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--gris-anthracite);
+            font-size: 12px;
+            color: var(--gris-medium);
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           UTILITAIRES
+           ═══════════════════════════════════════════════════════════════ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .text-gold { color: var(--or-clair); }
+        .text-muted { color: var(--gris-pierre); }
+
+        /* Print styles */
+        @media print {
+            body { background: white; color: black; }
+            body::before { display: none; }
+            .progress-bar, .btn, .steps-nav, .export-actions { display: none; }
+            .card { box-shadow: none; border: 1px solid #ddd; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--noir-profond);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid rgba(153, 107, 38, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                color: var(--blanc-casse) !important;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card-footer {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .card-footer .btn {
+                width: 100%;
+            }
+            .progress-bar {
+                flex-direction: column;
+                gap: 14px;
+            }
+            .progress-actions {
+                width: 100%;
+                justify-content: stretch;
+            }
+            .progress-actions .btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation principale -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#piliers">Méthode</a></li>
+                    <li><a href="autotest.html">Autotests</a></li>
+                    <li><a href="articles.html">Analyses</a></li>
+                    <li><a href="etape-zero.html">L'Étape Zéro</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="brand">Noesis <span>Kintsugi</span></div>
+            <h1>Dissonance Cognitive Coercitive</h1>
+            <p class="tagline">Identifier si le doute actuel provient d'une contradiction relationnelle imposée plutôt que d'une fragilité personnelle.</p>
+        </div>
+    </header>
+
+    <!-- Navigation étapes -->
+    <nav class="steps-nav" role="navigation" aria-label="Étapes du test">
+        <div class="container">
+            <div class="steps-container">
+                <div class="step-indicator active" data-step="1">
+                    <span class="step-num">01</span>
+                    Introduction
+                </div>
+                <div class="step-indicator" data-step="2">
+                    <span class="step-num">02</span>
+                    Anamnèse
+                </div>
+                <div class="step-indicator" data-step="3">
+                    <span class="step-num">03</span>
+                    Consentement
+                </div>
+                <div class="step-indicator" data-step="4">
+                    <span class="step-num">04</span>
+                    Questionnaire
+                </div>
+                <div class="step-indicator" data-step="5">
+                    <span class="step-num">05</span>
+                    Résultats
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <!-- ═══════════════════════════════════════════════════════════
+             ÉCRAN 1 : INTRODUCTION
+        ═══════════════════════════════════════════════════════════ -->
+        <section id="screen-intro" class="screen active" aria-labelledby="intro-title">
+            <div class="card">
+                <div class="card-header">
+                    <h2 id="intro-title">Présentation de l'outil</h2>
+                    <span class="card-badge">Temps estimé : 6–10 min</span>
+                </div>
+                <div class="card-body">
+                    
+                    <div class="intro-section">
+                        <h3>1. Objectif</h3>
+                        <p>Cet autotest explore la présence éventuelle d'une <strong>dissonance cognitive coercitive</strong> : un état où le doute sur sa propre perception, sa mémoire ou son jugement résulte non d'une fragilité intrinsèque, mais d'une dynamique relationnelle où contradictions imposées, invalidations répétées et réajustements unidirectionnels altèrent progressivement la capacité de vérification interne.</p>
+                        <p>L'outil ne mesure pas une pathologie. Il cartographie des marqueurs compatibles avec une altération induite du jugement.</p>
+                    </div>
+
+                    <div class="intro-section">
+                        <h3>2. Structure</h3>
+                        <p>Le questionnaire évalue 5 dimensions distinctes :</p>
+                        <ul>
+                            <li><span class="dim-label" style="color:var(--dim-phenomeno)">Phénoménologique</span> — Ce qui est vécu : doute induit, réécriture mentale, instabilité perceptive</li>
+                            <li><span class="dim-label" style="color:var(--dim-fonction)">Fonctionnelle</span> — Ce que cela coûte : décision, initiative, fatigue cognitive</li>
+                            <li><span class="dim-label" style="color:var(--dim-context)">Contextuelle</span> — Spécificité relationnelle : directionnalité, réversibilité</li>
+                            <li><span class="dim-label" style="color:var(--dim-temporel)">Temporelle</span> — Évolution : installation progressive, avant/après</li>
+                            <li><span class="dim-label" style="color:var(--dim-somatique)">Somatique</span> — Manifestations corporelles : tension, hypervigilance, signaux physiques</li>
+                        </ul>
+                    </div>
+
+                    <div class="intro-section">
+                        <h3>3. Méthodologie</h3>
+                        <p>Répondez en vous basant sur les <strong>3 à 6 derniers mois</strong>, pas sur un événement isolé. Choisissez l'option la plus proche de votre expérience, même si aucune ne correspond parfaitement.</p>
+                        <p>Les 20 items sont répartis en 5 dimensions (4 items chacune). Chaque réponse contribue à un score dimensionnel et à un score composite pondéré.</p>
+                    </div>
+
+                    <div class="intro-section">
+                        <h3>4. Limites</h3>
+                        <p>Cet outil ne constitue pas un diagnostic. Il ne remplace pas une évaluation clinique professionnelle. Ses résultats sont indicatifs et orientent vers des pistes d'exploration, non vers des conclusions définitives.</p>
+                        <p>La dissonance cognitive coercitive n'est pas une catégorie diagnostique officielle mais un concept opératoire utile pour penser certaines dynamiques relationnelles.</p>
+                    </div>
+
+                    <div class="intro-section">
+                        <h3>5. Confidentialité</h3>
+                        <p>Aucune donnée n'est transmise ni stockée sur un serveur. L'ensemble du traitement s'effectue localement dans votre navigateur. L'anamnèse optionnelle n'est pas conservée après fermeture de la page.</p>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <span class="text-muted" style="font-size:12px;">© 2025 NOÉSIS — Tous droits réservés</span>
+                    <button class="btn" onclick="goToStep(2)">Continuer →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             ÉCRAN 2 : ANAMNÈSE (optionnelle)
+        ═══════════════════════════════════════════════════════════ -->
+        <section id="screen-anamnese" class="screen" aria-labelledby="anamnese-title">
+            <div class="card">
+                <div class="card-header">
+                    <h2 id="anamnese-title">Anamnèse contextuelle</h2>
+                    <span class="card-badge">Optionnel</span>
+                </div>
+                <div class="card-body">
+                    
+                    <div class="anamnese-note">
+                        <strong>Ces informations ne sont pas obligatoires</strong> et ne sont pas stockées. Elles permettent de contextualiser vos résultats pour vous-même. Vous pouvez passer cette étape.
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ana-age">Tranche d'âge</label>
+                            <select id="ana-age">
+                                <option value="">— Sélectionner —</option>
+                                <option value="18-25">18-25 ans</option>
+                                <option value="26-35">26-35 ans</option>
+                                <option value="36-45">36-45 ans</option>
+                                <option value="46-55">46-55 ans</option>
+                                <option value="56+">56 ans et plus</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ana-context">Contexte principal</label>
+                            <select id="ana-context">
+                                <option value="">— Sélectionner —</option>
+                                <option value="couple">Relation de couple</option>
+                                <option value="famille">Relation familiale</option>
+                                <option value="travail">Contexte professionnel</option>
+                                <option value="amitie">Relation amicale</option>
+                                <option value="institution">Institution (santé, justice...)</option>
+                                <option value="autre">Autre / Multiple</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ana-duree">Durée de la situation</label>
+                            <select id="ana-duree">
+                                <option value="">— Sélectionner —</option>
+                                <option value="<6m">Moins de 6 mois</option>
+                                <option value="6m-2a">6 mois à 2 ans</option>
+                                <option value="2a-5a">2 à 5 ans</option>
+                                <option value="5a-10a">5 à 10 ans</option>
+                                <option value=">10a">Plus de 10 ans</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ana-statut">Statut actuel</label>
+                            <select id="ana-statut">
+                                <option value="">— Sélectionner —</option>
+                                <option value="en-cours">Situation en cours</option>
+                                <option value="recente">Sortie récente (&lt;1 an)</option>
+                                <option value="ancienne">Sortie ancienne (&gt;1 an)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ana-notes">Notes personnelles (pour vous uniquement)</label>
+                        <textarea id="ana-notes" placeholder="Éléments de contexte que vous souhaitez garder en mémoire pour interpréter vos résultats..."></textarea>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-ghost" onclick="goToStep(1)">← Retour</button>
+                    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                        <button class="btn btn-ghost" onclick="goToStep(3)">Passer cette étape</button>
+                        <button class="btn" onclick="goToStep(3)">Continuer →</button>
+                    </div>
+                </div>
+            </div>
+            <p class="text-muted" style="font-size:11px; text-align:center; margin-top:20px;">© 2025 NOÉSIS — Tous droits réservés</p>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             ÉCRAN 3 : CONSENTEMENT
+        ═══════════════════════════════════════════════════════════ -->
+        <section id="screen-consent" class="screen" aria-labelledby="consent-title">
+            <div class="card">
+                <div class="card-header">
+                    <h2 id="consent-title">Clause de non-diagnostic</h2>
+                </div>
+                <div class="card-body">
+                    
+                    <div class="consent-box">
+                        <h3>Avertissement important</h3>
+                        <p>Cet autotest est un <strong>outil d'orientation</strong>. Il ne constitue en aucun cas :</p>
+                        <ul>
+                            <li>Un diagnostic médical ou psychologique</li>
+                            <li>Un traitement ou une recommandation thérapeutique</li>
+                            <li>Un conseil juridique personnalisé</li>
+                            <li>Un substitut à une évaluation professionnelle</li>
+                        </ul>
+                        <p>Les résultats générés sont <strong>indicatifs et non normatifs</strong>. Ils visent à éclairer une réflexion personnelle, non à établir une vérité clinique.</p>
+                        <p>En situation de danger, de violence ou de détresse aiguë, contactez immédiatement des professionnels qualifiés et les services d'urgence appropriés.</p>
+                        
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="consent-check" aria-describedby="consent-desc">
+                            <label for="consent-check" id="consent-desc">Je comprends que cet outil ne constitue pas un diagnostic et que ses résultats sont purement indicatifs. Je m'engage à consulter un professionnel qualifié si ma situation le nécessite.</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-ghost" onclick="goToStep(2)">← Retour</button>
+                    <button id="btn-start-test" class="btn btn-primary" onclick="goToStep(4)" disabled>Commencer le questionnaire</button>
+                </div>
+            </div>
+            <p class="text-muted" style="font-size:11px; text-align:center; margin-top:20px;">© 2025 NOÉSIS — Tous droits réservés</p>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             ÉCRAN 4 : QUESTIONNAIRE
+        ═══════════════════════════════════════════════════════════ -->
+        <section id="screen-questionnaire" class="screen" aria-labelledby="questionnaire-title">
+            <h2 id="questionnaire-title" class="sr-only">Questionnaire</h2>
+            
+            <!-- Dimension 1 : Phénoménologique -->
+            <div class="dimension-block dim-phenomeno">
+                <div class="dimension-header">
+                    <div>
+                        <h3>Dimension Phénoménologique</h3>
+                        <p>Ce qui est vécu : stabilité de la perception, doute induit, réécriture mentale</p>
+                    </div>
+                </div>
+                
+                <div class="question-item" data-dim="P" data-q="1">
+                    <p class="question-text"><span class="question-num">P.1</span>Je peux être certain(e) d'un fait, puis douter fortement après une interaction précise, sans nouvel élément objectif.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question P1">
+                        <label class="choice"><input type="radio" name="P1" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="P1" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="P1" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="P1" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="P" data-q="2">
+                    <p class="question-text"><span class="question-num">P.2</span>Ma version initiale d'un épisode devient floue surtout <em>après</em> qu'elle a été contestée par quelqu'un.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question P2">
+                        <label class="choice"><input type="radio" name="P2" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="P2" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="P2" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="P2" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="P" data-q="3">
+                    <p class="question-text"><span class="question-num">P.3</span>Je peux expliquer rationnellement pourquoi je ne devrais pas douter, tout en continuant à douter malgré tout.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question P3">
+                        <label class="choice"><input type="radio" name="P3" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="P3" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="P3" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="P3" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="P" data-q="4">
+                    <p class="question-text"><span class="question-num">P.4</span>Je reformule mentalement une situation plusieurs fois pour la rendre compatible avec ce qu'une autre personne affirme.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question P4">
+                        <label class="choice"><input type="radio" name="P4" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="P4" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="P4" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="P4" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dimension 2 : Fonctionnelle -->
+            <div class="dimension-block dim-fonction">
+                <div class="dimension-header">
+                    <div>
+                        <h3>Dimension Fonctionnelle</h3>
+                        <p>Ce que cela coûte : décision, initiative, vérification, fatigue cognitive</p>
+                    </div>
+                </div>
+                
+                <div class="question-item" data-dim="F" data-q="1">
+                    <p class="question-text"><span class="question-num">F.1</span>Il m'est devenu difficile de prendre une décision simple sans demander confirmation.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question F1">
+                        <label class="choice"><input type="radio" name="F1" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="F1" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="F1" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="F1" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="F" data-q="2">
+                    <p class="question-text"><span class="question-num">F.2</span>Je passe plus de temps à vérifier que je ne me trompe pas qu'à agir.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question F2">
+                        <label class="choice"><input type="radio" name="F2" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="F2" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="F2" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="F2" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="F" data-q="3">
+                    <p class="question-text"><span class="question-num">F.3</span>Après certaines interactions, je ressens une fatigue mentale disproportionnée par rapport à l'enjeu.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question F3">
+                        <label class="choice"><input type="radio" name="F3" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="F3" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="F3" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="F3" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="F" data-q="4">
+                    <p class="question-text"><span class="question-num">F.4</span>J'anticipe que mon interprétation sera invalidée, même quand elle est fondée.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question F4">
+                        <label class="choice"><input type="radio" name="F4" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="F4" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="F4" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="F4" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dimension 3 : Contextuelle -->
+            <div class="dimension-block dim-context">
+                <div class="dimension-header">
+                    <div>
+                        <h3>Dimension Contextuelle</h3>
+                        <p>Spécificité relationnelle : directionnalité, localisation, réversibilité partielle</p>
+                    </div>
+                </div>
+                
+                <div class="question-item" data-dim="C" data-q="1">
+                    <p class="question-text"><span class="question-num">C.1</span>Ces doutes apparaissent principalement dans une relation, un service, une équipe, ou un contexte précis.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question C1">
+                        <label class="choice"><input type="radio" name="C1" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="C1" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="C1" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="C1" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="C" data-q="2">
+                    <p class="question-text"><span class="question-num">C.2</span>En dehors de ce contexte, mon jugement redevient plus stable (au moins partiellement).</p>
+                    <div class="choices" role="radiogroup" aria-label="Question C2">
+                        <label class="choice"><input type="radio" name="C2" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="C2" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="C2" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="C2" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="C" data-q="3">
+                    <p class="question-text"><span class="question-num">C.3</span>Quand il y a désaccord, l'ajustement se fait presque toujours dans le même sens : je me corrige, je m'excuse, je me tais.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question C3">
+                        <label class="choice"><input type="radio" name="C3" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="C3" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="C3" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="C3" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="C" data-q="4">
+                    <p class="question-text"><span class="question-num">C.4</span>Les mêmes thèmes reviennent : mémoire, intentions, "ton", logique, légitimité de mes émotions.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question C4">
+                        <label class="choice"><input type="radio" name="C4" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="C4" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="C4" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="C4" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dimension 4 : Temporelle -->
+            <div class="dimension-block dim-temporel">
+                <div class="dimension-header">
+                    <div>
+                        <h3>Dimension Temporelle</h3>
+                        <p>Évolution : installation progressive, contraste avant/après, aggravation</p>
+                    </div>
+                </div>
+                
+                <div class="question-item" data-dim="T" data-q="1">
+                    <p class="question-text"><span class="question-num">T.1</span>Avant cette relation/situation, je me faisais davantage confiance sur mes perceptions et jugements.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question T1">
+                        <label class="choice"><input type="radio" name="T1" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="T1" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="T1" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="T1" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="T" data-q="2">
+                    <p class="question-text"><span class="question-num">T.2</span>Le doute s'est installé progressivement, sans que je puisse identifier un point de départ net.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question T2">
+                        <label class="choice"><input type="radio" name="T2" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="T2" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="T2" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="T2" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="T" data-q="3">
+                    <p class="question-text"><span class="question-num">T.3</span>Avec le temps, les domaines où je doute de moi se sont élargis.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question T3">
+                        <label class="choice"><input type="radio" name="T3" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="T3" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="T3" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="T3" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="T" data-q="4">
+                    <p class="question-text"><span class="question-num">T.4</span>Quand je suis éloigné(e) de ce contexte pendant plusieurs jours, ma clarté mentale revient partiellement.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question T4">
+                        <label class="choice"><input type="radio" name="T4" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="T4" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="T4" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="T4" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dimension 5 : Somatique -->
+            <div class="dimension-block dim-somatique">
+                <div class="dimension-header">
+                    <div>
+                        <h3>Dimension Somatique</h3>
+                        <p>Manifestations corporelles : tension, hypervigilance, signaux physiques</p>
+                    </div>
+                </div>
+                
+                <div class="question-item" data-dim="S" data-q="1">
+                    <p class="question-text"><span class="question-num">S.1</span>Mon corps se tend (mâchoire, épaules, ventre) avant ou pendant certaines interactions.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question S1">
+                        <label class="choice"><input type="radio" name="S1" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="S1" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="S1" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="S1" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="S" data-q="2">
+                    <p class="question-text"><span class="question-num">S.2</span>Je ressens une vigilance physique accrue (sursauts, sommeil léger, difficultés à me détendre) liée à cette situation.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question S2">
+                        <label class="choice"><input type="radio" name="S2" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="S2" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="S2" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="S2" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="S" data-q="3">
+                    <p class="question-text"><span class="question-num">S.3</span>J'ai développé des symptômes physiques (maux de tête, troubles digestifs, fatigue chronique) depuis que cette situation dure.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question S3">
+                        <label class="choice"><input type="radio" name="S3" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="S3" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="S3" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="S3" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+
+                <div class="question-item" data-dim="S" data-q="4">
+                    <p class="question-text"><span class="question-num">S.4</span>Mon corps réagit avant ma pensée consciente : je sais que quelque chose ne va pas avant de pouvoir le formuler.</p>
+                    <div class="choices" role="radiogroup" aria-label="Question S4">
+                        <label class="choice"><input type="radio" name="S4" value="0"><span>Jamais</span></label>
+                        <label class="choice"><input type="radio" name="S4" value="1"><span>Rarement</span></label>
+                        <label class="choice"><input type="radio" name="S4" value="2"><span>Parfois</span></label>
+                        <label class="choice"><input type="radio" name="S4" value="3"><span>Souvent</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barre de progression sticky -->
+            <div class="progress-bar">
+                <div class="progress-info">
+                    <span id="progress-count" class="progress-count">0 / 20</span>
+                    <div class="progress-track">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="progress-actions">
+                    <button class="btn btn-ghost btn-sm" onclick="resetQuestionnaire()">Réinitialiser</button>
+                    <button id="btn-results" class="btn btn-sm" onclick="computeResults()" disabled>Voir les résultats</button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             ÉCRAN 5 : RÉSULTATS
+        ═══════════════════════════════════════════════════════════ -->
+        <section id="screen-results" class="screen" aria-labelledby="results-title">
+            <div class="card">
+                <div class="result-header">
+                    <h2 id="results-title">Lecture d'orientation</h2>
+                    <div id="result-badge" class="result-badge">—</div>
+                </div>
+
+                <!-- Graphique Radar -->
+                <div class="radar-container">
+                    <canvas id="radarCanvas" width="400" height="400" aria-label="Graphique radar des 5 dimensions"></canvas>
+                </div>
+
+                <!-- Détail par dimension -->
+                <div class="dimensions-detail">
+                    <div class="dim-result">
+                        <div class="dim-dot" style="background:var(--dim-phenomeno)"></div>
+                        <span class="dim-name">Phénoménologique</span>
+                        <span id="score-P" class="dim-score">0/12</span>
+                        <div class="dim-bar"><div id="bar-P" class="dim-bar-fill" style="background:var(--dim-phenomeno);width:0%"></div></div>
+                    </div>
+                    <div class="dim-result">
+                        <div class="dim-dot" style="background:var(--dim-fonction)"></div>
+                        <span class="dim-name">Fonctionnelle</span>
+                        <span id="score-F" class="dim-score">0/12</span>
+                        <div class="dim-bar"><div id="bar-F" class="dim-bar-fill" style="background:var(--dim-fonction);width:0%"></div></div>
+                    </div>
+                    <div class="dim-result">
+                        <div class="dim-dot" style="background:var(--dim-context)"></div>
+                        <span class="dim-name">Contextuelle</span>
+                        <span id="score-C" class="dim-score">0/12</span>
+                        <div class="dim-bar"><div id="bar-C" class="dim-bar-fill" style="background:var(--dim-context);width:0%"></div></div>
+                    </div>
+                    <div class="dim-result">
+                        <div class="dim-dot" style="background:var(--dim-temporel)"></div>
+                        <span class="dim-name">Temporelle</span>
+                        <span id="score-T" class="dim-score">0/12</span>
+                        <div class="dim-bar"><div id="bar-T" class="dim-bar-fill" style="background:var(--dim-temporel);width:0%"></div></div>
+                    </div>
+                    <div class="dim-result">
+                        <div class="dim-dot" style="background:var(--dim-somatique)"></div>
+                        <span class="dim-name">Somatique</span>
+                        <span id="score-S" class="dim-score">0/12</span>
+                        <div class="dim-bar"><div id="bar-S" class="dim-bar-fill" style="background:var(--dim-somatique);width:0%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Interprétation -->
+                <div class="interpretation">
+                    <h3>Analyse</h3>
+                    <p id="result-lead" class="lead"></p>
+                    <p id="result-detail"></p>
+                    <p id="result-next"></p>
+                </div>
+
+                <!-- Actions export -->
+                <div class="export-actions">
+                    <button class="btn btn-sm" onclick="exportPDF()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        Exporter PDF
+                    </button>
+                    <button class="btn btn-sm btn-ghost" onclick="exportEmail()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Envoyer par email
+                    </button>
+                    <button class="btn btn-sm btn-ghost" onclick="exportJSON()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Exporter JSON
+                    </button>
+                    <button class="btn btn-sm btn-ghost" onclick="goToStep(4)">← Modifier réponses</button>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="disclaimer">
+                    <strong>Rappel important :</strong> Ces résultats ne constituent pas un diagnostic. Ils sont fournis à titre indicatif pour orienter une réflexion personnelle. En cas de souffrance significative ou de situation de danger, consultez un professionnel de santé mentale ou contactez les services d'urgence appropriés.
+                </div>
+            </div>
+            <p class="text-muted" style="font-size:11px; text-align:center; margin-top:20px;">© 2025 NOÉSIS — Tous droits réservés</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">Noesis <span>Kintsugi</span></div>
+                <div class="footer-links">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="https://noesisanalyse.com" target="_blank" rel="noopener">noesisanalyse.com</a>
+                </div>
+            </div>
+            <p class="footer-legal">
+                © 2025 Noesis Kintsugi — Tous droits réservés<br>
+                Noesis ne soigne pas. Noesis clarifie. La paix sans vérité est une anesthésie.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        /* ═══════════════════════════════════════════════════════════
+           NAVIGATION
+        ═══════════════════════════════════════════════════════════ */
+        const nav = document.getElementById('nav');
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        // Scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile toggle
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        /* ═══════════════════════════════════════════════════════════
+           CONFIGURATION
+        ═══════════════════════════════════════════════════════════ */
+        const TOTAL_QUESTIONS = 20;
+        const DIMENSIONS = ['P', 'F', 'C', 'T', 'S'];
+        const DIM_NAMES = {
+            P: 'Phénoménologique',
+            F: 'Fonctionnelle', 
+            C: 'Contextuelle',
+            T: 'Temporelle',
+            S: 'Somatique'
+        };
+        const DIM_COLORS = {
+            P: '#C9AA6E',
+            F: '#7A9BA8',
+            C: '#B8956E',
+            T: '#8A9B6E',
+            S: '#A87A85'
+        };
+
+        let currentStep = 1;
+        let scores = { P: 0, F: 0, C: 0, T: 0, S: 0 };
+        let answeredQuestions = new Set();
+
+        /* ═══════════════════════════════════════════════════════════
+           NAVIGATION
+        ═══════════════════════════════════════════════════════════ */
+        function goToStep(step) {
+            if (step === 4 && !document.getElementById('consent-check').checked) {
+                alert('Veuillez accepter la clause de non-diagnostic pour continuer.');
+                return;
+            }
+
+            currentStep = step;
+            
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            
+            const screens = ['intro', 'anamnese', 'consent', 'questionnaire', 'results'];
+            document.getElementById(`screen-${screens[step - 1]}`).classList.add('active');
+            
+            document.querySelectorAll('.step-indicator').forEach((el, i) => {
+                el.classList.remove('active', 'completed');
+                if (i + 1 === step) el.classList.add('active');
+                if (i + 1 < step) el.classList.add('completed');
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           CONSENTEMENT
+        ═══════════════════════════════════════════════════════════ */
+        document.getElementById('consent-check').addEventListener('change', function() {
+            document.getElementById('btn-start-test').disabled = !this.checked;
+        });
+
+        /* ═══════════════════════════════════════════════════════════
+           QUESTIONNAIRE - PROGRESSION
+        ═══════════════════════════════════════════════════════════ */
+        function updateProgress() {
+            const count = answeredQuestions.size;
+            document.getElementById('progress-count').textContent = `${count} / ${TOTAL_QUESTIONS}`;
+            document.getElementById('progress-fill').style.width = `${(count / TOTAL_QUESTIONS) * 100}%`;
+            document.getElementById('btn-results').disabled = count < TOTAL_QUESTIONS;
+        }
+
+        document.querySelectorAll('.question-item input[type="radio"]').forEach(input => {
+            input.addEventListener('change', function() {
+                const questionItem = this.closest('.question-item');
+                const qName = this.name;
+                
+                answeredQuestions.add(qName);
+                questionItem.classList.add('answered');
+                
+                updateProgress();
+                
+                setTimeout(() => {
+                    const allItems = Array.from(document.querySelectorAll('.question-item'));
+                    const currentIndex = allItems.indexOf(questionItem);
+                    
+                    if (currentIndex < allItems.length - 1) {
+                        const nextItem = allItems[currentIndex + 1];
+                        nextItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 100);
+            });
+        });
+
+        function resetQuestionnaire() {
+            if (!confirm('Réinitialiser toutes les réponses ?')) return;
+            
+            document.querySelectorAll('.question-item input[type="radio"]').forEach(input => {
+                input.checked = false;
+            });
+            document.querySelectorAll('.question-item').forEach(item => {
+                item.classList.remove('answered');
+            });
+            
+            answeredQuestions.clear();
+            scores = { P: 0, F: 0, C: 0, T: 0, S: 0 };
+            updateProgress();
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           CALCUL DES RÉSULTATS
+        ═══════════════════════════════════════════════════════════ */
+        function computeResults() {
+            DIMENSIONS.forEach(dim => {
+                let total = 0;
+                for (let i = 1; i <= 4; i++) {
+                    const checked = document.querySelector(`input[name="${dim}${i}"]:checked`);
+                    if (checked) total += parseInt(checked.value, 10);
+                }
+                scores[dim] = total;
+            });
+
+            const weights = { P: 1.0, F: 1.0, C: 1.2, T: 1.0, S: 0.9 };
+            let composite = 0;
+            let maxComposite = 0;
+            
+            DIMENSIONS.forEach(dim => {
+                composite += scores[dim] * weights[dim];
+                maxComposite += 12 * weights[dim];
+            });
+            
+            const pct = composite / maxComposite;
+            const contextLow = scores.C <= 4;
+
+            goToStep(5);
+            
+            DIMENSIONS.forEach(dim => {
+                document.getElementById(`score-${dim}`).textContent = `${scores[dim]}/12`;
+                document.getElementById(`bar-${dim}`).style.width = `${(scores[dim] / 12) * 100}%`;
+            });
+
+            drawRadar();
+
+            const badge = document.getElementById('result-badge');
+            const lead = document.getElementById('result-lead');
+            const detail = document.getElementById('result-detail');
+            const next = document.getElementById('result-next');
+
+            if (contextLow && (scores.P + scores.F) >= 12) {
+                badge.className = 'result-badge mid';
+                badge.textContent = 'Activation modérée';
+                lead.textContent = 'Vos réponses décrivent une surcharge cognitive et un doute durable, mais la spécificité contextuelle est faible.';
+                detail.textContent = 'Ce profil rend moins probable une dissonance coercitive strictement relationnelle. Il oriente plutôt vers un état de stress diffus, une rumination anxieuse, ou une altération cognitive non centrée sur une relation unique. La question clé devient : qu\'est-ce qui entretient la charge mentale en continu, indépendamment d\'un interlocuteur précis ?';
+                next.textContent = 'Prochaine étape suggérée : documenter les situations déclenchantes sur 7 jours (moment, contexte, contenu, effet), puis explorer les autotests « Indice de réversibilité cognitive » et « Surcharge neuro-cognitive chronique ».';
+            } else if (pct >= 0.65) {
+                badge.className = 'result-badge high';
+                badge.textContent = 'Activation élevée';
+                lead.textContent = 'Vos réponses sont compatibles avec une dissonance cognitive induite : doute relationnel, coût fonctionnel et indices contextuels convergent.';
+                detail.textContent = 'Le schéma n\'évoque pas une simple « perte de confiance ». Il ressemble à une contrainte de cohérence : contradictions imposées, invalidations répétées, réajustements unidirectionnels. Ce type de dynamique altère la capacité de vérification interne et favorise la stabilisation de la narration d\'autrui.';
+                next.textContent = 'Prochaine étape suggérée : autotests « Asymétrie épistémique relationnelle » et « Effondrement de l\'agentivité décisionnelle ». Si la situation est liée au travail, envisager une documentation factuelle (dates, propos, témoins, emails) avant tout échange conflictuel.';
+            } else if (pct >= 0.40) {
+                badge.className = 'result-badge mid';
+                badge.textContent = 'Activation modérée';
+                lead.textContent = 'Vos réponses suggèrent une activation modérée : certains marqueurs sont présents, mais la convergence n\'est pas totale.';
+                detail.textContent = 'La dynamique peut correspondre à une relation ou un contexte instable sans mécanique coercitive systématique, ou à une phase d\'exposition intermittente (périodes de clarté puis réactivation). La précision dépend souvent d\'une cartographie plus fine des épisodes.';
+                next.textContent = 'Prochaine étape suggérée : journal de micro-transgressions sur 7 jours (événement → réaction initiale → contestation → réajustement). Puis vérifier la directionnalité : qui se corrige, qui se justifie, qui doute ?';
+            } else {
+                badge.className = 'result-badge low';
+                badge.textContent = 'Activation faible';
+                lead.textContent = 'Vos réponses n\'activent pas fortement le profil typique d\'une dissonance cognitive coercitive.';
+                detail.textContent = 'Cela n\'invalide pas une difficulté réelle. Cela signifie seulement que les marqueurs de doute induit, de coût fonctionnel et de spécificité contextuelle ne convergent pas à un niveau élevé dans vos réponses actuelles.';
+                next.textContent = 'Prochaine étape suggérée : si la souffrance persiste, explorer un autotest d\'état fonctionnel (burnout, surcharge chronique) ou une analyse ciblée de contexte (relation, institution, environnement de travail).';
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           GRAPHIQUE RADAR (Canvas)
+        ═══════════════════════════════════════════════════════════ */
+        function drawRadar() {
+            const canvas = document.getElementById('radarCanvas');
+            const ctx = canvas.getContext('2d');
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const maxRadius = 160;
+            const levels = 4;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const angleStep = (Math.PI * 2) / 5;
+            const startAngle = -Math.PI / 2;
+
+            // Grille
+            ctx.strokeStyle = 'rgba(151, 148, 140, 0.15)';
+            ctx.lineWidth = 1;
+
+            for (let level = 1; level <= levels; level++) {
+                const radius = (maxRadius / levels) * level;
+                ctx.beginPath();
+                for (let i = 0; i <= 5; i++) {
+                    const angle = startAngle + (i % 5) * angleStep;
+                    const x = centerX + radius * Math.cos(angle);
+                    const y = centerY + radius * Math.sin(angle);
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.closePath();
+                ctx.stroke();
+            }
+
+            // Axes
+            ctx.strokeStyle = 'rgba(151, 148, 140, 0.2)';
+            for (let i = 0; i < 5; i++) {
+                const angle = startAngle + i * angleStep;
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(centerX + maxRadius * Math.cos(angle), centerY + maxRadius * Math.sin(angle));
+                ctx.stroke();
+            }
+
+            // Données
+            const dimOrder = ['P', 'F', 'C', 'T', 'S'];
+            const dataPoints = [];
+
+            ctx.beginPath();
+            dimOrder.forEach((dim, i) => {
+                const value = scores[dim] / 12;
+                const radius = value * maxRadius;
+                const angle = startAngle + i * angleStep;
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+                dataPoints.push({ x, y, dim });
+                
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.closePath();
+
+            // Remplissage avec gradient
+            const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, maxRadius);
+            gradient.addColorStop(0, 'rgba(153, 107, 38, 0.3)');
+            gradient.addColorStop(1, 'rgba(201, 170, 110, 0.1)');
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            
+            // Contour doré
+            ctx.strokeStyle = '#C9AA6E';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Points
+            dataPoints.forEach(point => {
+                ctx.beginPath();
+                ctx.arc(point.x, point.y, 6, 0, Math.PI * 2);
+                ctx.fillStyle = DIM_COLORS[point.dim];
+                ctx.fill();
+                ctx.strokeStyle = 'rgba(201, 203, 203, 0.5)';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+            });
+
+            // Labels
+            ctx.font = '13px Crimson Pro, serif';
+            ctx.textAlign = 'center';
+            
+            const labelRadius = maxRadius + 30;
+            const labels = ['Phénoménologique', 'Fonctionnelle', 'Contextuelle', 'Temporelle', 'Somatique'];
+            
+            labels.forEach((label, i) => {
+                const angle = startAngle + i * angleStep;
+                let x = centerX + labelRadius * Math.cos(angle);
+                let y = centerY + labelRadius * Math.sin(angle);
+                
+                if (i === 0) y -= 5;
+                if (i === 1 || i === 4) x += (i === 1 ? 15 : -15);
+                if (i === 2 || i === 3) y += 12;
+                
+                ctx.fillStyle = DIM_COLORS[dimOrder[i]];
+                ctx.fillText(label, x, y);
+            });
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           EXPORTS
+        ═══════════════════════════════════════════════════════════ */
+        function getResultsData() {
+            const badge = document.getElementById('result-badge').textContent;
+            const lead = document.getElementById('result-lead').textContent;
+            const detail = document.getElementById('result-detail').textContent;
+            const next = document.getElementById('result-next').textContent;
+            
+            return {
+                timestamp: new Date().toISOString(),
+                test: 'Dissonance Cognitive Coercitive',
+                version: '2.0',
+                scores: {
+                    phenomenologique: { score: scores.P, max: 12, percent: Math.round((scores.P/12)*100) },
+                    fonctionnelle: { score: scores.F, max: 12, percent: Math.round((scores.F/12)*100) },
+                    contextuelle: { score: scores.C, max: 12, percent: Math.round((scores.C/12)*100) },
+                    temporelle: { score: scores.T, max: 12, percent: Math.round((scores.T/12)*100) },
+                    somatique: { score: scores.S, max: 12, percent: Math.round((scores.S/12)*100) }
+                },
+                composite: {
+                    total: scores.P + scores.F + scores.C + scores.T + scores.S,
+                    max: 60
+                },
+                interpretation: {
+                    level: badge,
+                    summary: lead,
+                    detail: detail,
+                    nextSteps: next
+                },
+                anamnese: {
+                    age: document.getElementById('ana-age').value || null,
+                    context: document.getElementById('ana-context').value || null,
+                    duration: document.getElementById('ana-duree').value || null,
+                    status: document.getElementById('ana-statut').value || null
+                },
+                disclaimer: 'Ces résultats ne constituent pas un diagnostic médical ou psychologique.'
+            };
+        }
+
+        function exportJSON() {
+            const data = getResultsData();
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `noesis-dcc-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function exportEmail() {
+            const data = getResultsData();
+            const subject = encodeURIComponent('Résultats Autotest NOESIS - Dissonance Cognitive Coercitive');
+            const body = encodeURIComponent(`
+RÉSULTATS AUTOTEST NOESIS
+Dissonance Cognitive Coercitive
+Date : ${new Date().toLocaleDateString('fr-FR')}
+
+═══════════════════════════════════════
+
+NIVEAU D'ACTIVATION : ${data.interpretation.level}
+
+SCORES PAR DIMENSION :
+• Phénoménologique : ${data.scores.phenomenologique.score}/12 (${data.scores.phenomenologique.percent}%)
+• Fonctionnelle : ${data.scores.fonctionnelle.score}/12 (${data.scores.fonctionnelle.percent}%)
+• Contextuelle : ${data.scores.contextuelle.score}/12 (${data.scores.contextuelle.percent}%)
+• Temporelle : ${data.scores.temporelle.score}/12 (${data.scores.temporelle.percent}%)
+• Somatique : ${data.scores.somatique.score}/12 (${data.scores.somatique.percent}%)
+
+Score total : ${data.composite.total}/60
+
+═══════════════════════════════════════
+
+ANALYSE :
+
+${data.interpretation.summary}
+
+${data.interpretation.detail}
+
+PROCHAINES ÉTAPES :
+${data.interpretation.nextSteps}
+
+═══════════════════════════════════════
+
+AVERTISSEMENT : Ces résultats ne constituent pas un diagnostic. Ils sont fournis à titre indicatif.
+
+© 2025 NOÉSIS — Tous droits réservés
+noesisanalyse.com
+            `);
+            
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+
+        function exportPDF() {
+            const printContent = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Résultats NOESIS - Dissonance Cognitive Coercitive</title>
+                    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=Megrim&display=swap" rel="stylesheet">
+                    <style>
+                        body { 
+                            font-family: 'Crimson Pro', Georgia, serif; 
+                            max-width: 700px; 
+                            margin: 50px auto; 
+                            color: #2E3130; 
+                            line-height: 1.7;
+                            padding: 0 30px;
+                        }
+                        h1 { 
+                            font-family: 'Megrim', cursive;
+                            font-size: 32px; 
+                            font-weight: 400;
+                            border-bottom: 2px solid #996B26; 
+                            padding-bottom: 15px;
+                            letter-spacing: 0.02em;
+                        }
+                        h2 { 
+                            font-family: 'Megrim', cursive;
+                            font-size: 20px; 
+                            color: #996B26; 
+                            margin-top: 35px;
+                            font-weight: 400;
+                            letter-spacing: 0.05em;
+                        }
+                        .badge { 
+                            display: inline-block; 
+                            padding: 10px 20px; 
+                            background: #f5f0e6; 
+                            border: 1px solid #996B26; 
+                            border-radius: 25px; 
+                            font-weight: 500;
+                            letter-spacing: 0.05em;
+                        }
+                        .scores { 
+                            display: grid; 
+                            grid-template-columns: 1fr 1fr; 
+                            gap: 12px; 
+                            margin: 25px 0;
+                        }
+                        .score-item { 
+                            padding: 14px; 
+                            background: #fafafa; 
+                            border-left: 4px solid #996B26;
+                        }
+                        .disclaimer { 
+                            margin-top: 50px; 
+                            padding: 20px; 
+                            background: #fff8f8; 
+                            border: 1px solid #C47A7A; 
+                            font-size: 13px;
+                        }
+                        .footer { 
+                            margin-top: 50px; 
+                            text-align: center; 
+                            font-size: 12px; 
+                            color: #97948C;
+                            padding-top: 20px;
+                            border-top: 1px solid #e0e0e0;
+                        }
+                        p { margin-bottom: 14px; }
+                    </style>
+                </head>
+                <body>
+                    <h1>Autotest NOESIS — Dissonance Cognitive Coercitive</h1>
+                    <p style="color:#97948C; font-style:italic;">Date : ${new Date().toLocaleDateString('fr-FR')}</p>
+                    
+                    <h2>Niveau d'activation</h2>
+                    <div class="badge">${document.getElementById('result-badge').textContent}</div>
+                    
+                    <h2>Scores par dimension</h2>
+                    <div class="scores">
+                        <div class="score-item"><strong>Phénoménologique</strong><br>${scores.P}/12</div>
+                        <div class="score-item"><strong>Fonctionnelle</strong><br>${scores.F}/12</div>
+                        <div class="score-item"><strong>Contextuelle</strong><br>${scores.C}/12</div>
+                        <div class="score-item"><strong>Temporelle</strong><br>${scores.T}/12</div>
+                        <div class="score-item"><strong>Somatique</strong><br>${scores.S}/12</div>
+                        <div class="score-item"><strong>Total</strong><br>${scores.P + scores.F + scores.C + scores.T + scores.S}/60</div>
+                    </div>
+                    
+                    <h2>Analyse</h2>
+                    <p><strong>${document.getElementById('result-lead').textContent}</strong></p>
+                    <p>${document.getElementById('result-detail').textContent}</p>
+                    
+                    <h2>Prochaines étapes suggérées</h2>
+                    <p>${document.getElementById('result-next').textContent}</p>
+                    
+                    <div class="disclaimer">
+                        <strong>Avertissement :</strong> Ces résultats ne constituent pas un diagnostic médical ou psychologique. Ils sont fournis à titre indicatif pour orienter une réflexion personnelle. En cas de souffrance significative, consultez un professionnel qualifié.
+                    </div>
+                    
+                    <div class="footer">
+                        © 2025 NOÉSIS — Tous droits réservés<br>
+                        noesisanalyse.com<br><br>
+                        <em>Noesis ne soigne pas. Noesis clarifie.</em>
+                    </div>
+                </body>
+                </html>
+            `;
+            
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(printContent);
+            printWindow.document.close();
+            printWindow.print();
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           INITIALISATION
+        ═══════════════════════════════════════════════════════════ */
+        updateProgress();
+    </script>
+</body>
+</html>
