@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noesis Kintsugi — Plateforme pré-clinique d'analyse de l'emprise</title>
-    <meta name="description" content="Analyse transdisciplinaire des mécanismes d'emprise, du trauma complexe relationnel et de la destruction identitaire. Clarifier pour rendre le soin possible.">
+    <title>L'Étape Zéro — Accompagnement sur mesure | Noesis Kintsugi</title>
+    <meta name="description" content="Accompagnement pré-clinique pour transformer le chaos vécu en récit structuré. Questionnaire, entretien 90 minutes, cartographie personnalisée.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -322,20 +322,20 @@
         .nav .logo {
             font-family: var(--font-display);
             font-size: 1.5rem;
-            color: var(--or-clair);
+            color: var(--noir-principal);
             letter-spacing: 0.05em;
             transition: var(--transition-smooth);
         }
 
         .nav .logo span {
-            color: var(--gris-medium);
+            color: var(--gris-moyen-fonce);
             font-size: 0.9em;
             transition: var(--transition-smooth);
         }
 
         .nav .nav-links a {
             font-size: 0.9rem;
-            color: var(--blanc-casse);
+            color: var(--noir-principal);
             position: relative;
             transition: var(--transition-smooth);
         }
@@ -407,7 +407,7 @@
         .nav-toggle span {
             width: 24px;
             height: 1px;
-            background: var(--or-clair);
+            background: var(--noir-principal);
             transition: var(--transition-smooth);
         }
 
@@ -423,7 +423,7 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: var(--noir-principal);
+            background: var(--fond-clair);
             overflow: hidden;
         }
 
@@ -441,10 +441,10 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg,
-                rgba(18, 21, 20, 0.75) 0%,
-                rgba(18, 21, 20, 0.6) 50%,
-                rgba(18, 21, 20, 0.8) 100%);
+            background: linear-gradient(135deg, 
+                rgba(248, 247, 245, 0.15) 0%, 
+                rgba(248, 247, 245, 0.02) 50%,
+                rgba(248, 247, 245, 0.2) 100%);
             pointer-events: none;
         }
 
@@ -468,20 +468,18 @@
         .hero-hook-main {
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 7vw, 5rem);
-            color: #ffffff;
+            color: var(--noir-principal);
             margin-bottom: 0.3em;
             line-height: 1.1;
             letter-spacing: -0.02em;
-            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.8), 0 4px 60px rgba(0, 0, 0, 0.6);
         }
 
         .hero-hook-sub {
             font-family: var(--font-body);
             font-size: clamp(1.2rem, 3vw, 1.6rem);
-            color: var(--or-eclatant);
+            color: var(--gris-moyen-fonce);
             font-style: italic;
             margin-bottom: 0;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
         }
 
         /* Ligne de séparation dorée */
@@ -517,11 +515,10 @@
         .hero-explain {
             font-family: var(--font-body);
             font-size: clamp(1.05rem, 2vw, 1.2rem);
-            color: #ffffff;
+            color: var(--gris-moyen-fonce);
             max-width: 600px;
             margin: 0 auto 2.5rem;
             line-height: 1.8;
-            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
         }
 
         /* CTA */
@@ -534,27 +531,26 @@
         }
 
         .hero .btn-primary {
-            background: var(--or-clair);
-            color: var(--noir-principal);
-            border: 1px solid var(--or-clair);
+            background: var(--noir-principal);
+            color: var(--or-clair);
+            border: 1px solid var(--noir-principal);
             padding: 1.1rem 2.5rem;
             font-size: 1.05rem;
         }
 
         .hero .btn-primary:hover {
-            background: var(--or-eclatant);
-            box-shadow: var(--glow-or-intense), 0 12px 40px rgba(201, 170, 110, 0.3);
+            background: var(--gris-anthracite);
+            box-shadow: 0 12px 40px rgba(18, 21, 20, 0.35);
         }
 
         .hero .link-subtle {
-            color: #ffffff;
+            color: var(--gris-moyen-fonce);
             font-size: 1rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         .hero .link-subtle:hover {
-            color: var(--or-eclatant);
-            border-bottom-color: var(--or-eclatant);
+            color: var(--or-vieilli);
+            border-bottom-color: var(--or-vieilli);
         }
 
         /* Animations séquentielles */
@@ -636,7 +632,7 @@
             left: 0;
             right: 0;
             height: 120px;
-            background: linear-gradient(to bottom, var(--noir-principal) 0%, var(--noir-principal) 100%);
+            background: linear-gradient(to bottom, #f8f7f5 0%, var(--noir-principal) 100%);
             pointer-events: none;
         }
 
@@ -1662,169 +1658,6 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SECTION SOUTENIR (TIPEEE)
-           ═══════════════════════════════════════════════════════════════ */
-        .soutenir {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, var(--noir-clair) 0%, var(--noir-principal) 100%);
-            position: relative;
-        }
-
-        .soutenir::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
-            opacity: 0.5;
-        }
-
-        .soutenir-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .soutenir-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
-            color: var(--or-intense);
-            margin-bottom: 0.75rem;
-        }
-
-        .soutenir-subtitle {
-            font-size: 1.2rem;
-            color: var(--gris-pierre);
-            font-style: italic;
-        }
-
-        .soutenir-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .soutenir-block {
-            background: rgba(46, 49, 48, 0.3);
-            border: 1px solid rgba(153, 107, 38, 0.15);
-            border-radius: 8px;
-            padding: 2rem;
-            transition: var(--transition-smooth);
-        }
-
-        .soutenir-block:hover {
-            border-color: rgba(153, 107, 38, 0.35);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        .soutenir-block-title {
-            font-family: var(--font-display);
-            font-size: 1.4rem;
-            color: var(--or-clair);
-            margin-bottom: 1.25rem;
-            letter-spacing: 0.05em;
-        }
-
-        .soutenir-block p {
-            color: var(--blanc-casse);
-            font-size: 1rem;
-            line-height: 1.75;
-            margin-bottom: 1rem;
-        }
-
-        .soutenir-block p:last-child {
-            margin-bottom: 0;
-        }
-
-        .soutenir-block ul {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0 0 0;
-        }
-
-        .soutenir-block li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--blanc-casse);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .soutenir-block li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--or-vieilli);
-        }
-
-        .soutenir-contrepartie {
-            grid-column: 1 / -1;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(143, 107, 46, 0.08) 0%, rgba(46, 49, 48, 0.3) 100%);
-            border: 1px solid rgba(153, 107, 38, 0.25);
-        }
-
-        .soutenir-contrepartie .soutenir-block-title {
-            color: var(--or-intense);
-        }
-
-        .soutenir-contrepartie-badge {
-            display: inline-block;
-            background: var(--gradient-or);
-            color: var(--noir-principal);
-            font-family: var(--font-display);
-            font-size: 1rem;
-            padding: 0.5rem 1.5rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            letter-spacing: 0.1em;
-        }
-
-        .soutenir-cta {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        .btn-tipeee {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--gradient-or);
-            color: var(--noir-principal);
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 1rem 2.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .btn-tipeee:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--glow-or-intense), var(--shadow-gold);
-        }
-
-        .btn-tipeee svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        @media (max-width: 768px) {
-            .soutenir-content {
-                grid-template-columns: 1fr;
-            }
-
-            .soutenir-contrepartie {
-                grid-column: 1;
-            }
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
            ANIMATIONS PREMIUM
            ═══════════════════════════════════════════════════════════════ */
         @keyframes fadeIn {
@@ -2035,19 +1868,53 @@
             }
         }
     </style>
+    <style>
+        /* Styles additionnels pour la page Accompagnement */
+        .nav.scrolled .nav-links a.active {
+            color: var(--or-clair);
+        }
+        
+        .nav.scrolled .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .reveal-hero {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        @media (max-width: 900px) {
+            section.methode > .container > div[style*="grid-template-columns"] {
+                display: block !important;
+            }
+            
+            section.methode > .container > div > div:last-child {
+                margin-top: 3rem;
+                position: static !important;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            div[style*="display: flex"][style*="gap: 1.5rem"] {
+                flex-direction: column;
+                gap: 1rem !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav">
+    <nav class="nav scrolled" id="nav">
         <div class="container">
             <div class="nav-inner">
-                <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#piliers">Méthode</a></li>
-                    <li><a href="Autotests/autotest.html">Autotests</a></li>
-                    <li><a href="Analyses/articles.html">Analyses</a></li>
-                    <li><a href="etape-zero/accompagnement.html">L'Étape Zéro</a></li>
+                    <li><a href="../index.html#piliers">Méthode</a></li>
+                    <li><a href="../Autotests/autotest.html">Autotests</a></li>
+                    <li><a href="../Analyses/articles.html">Analyses</a></li>
+                    <li><a href="accompagnement.html" class="active">L'Étape Zéro</a></li>
                     <li><a href="mailto:contact@noesiskintsugi.com">Contact</a></li>
                 </ul>
                 <div class="nav-toggle" id="navToggle">
@@ -2060,380 +1927,116 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"></div>
+    <section class="hero" style="min-height: 70vh;">
+        <div class="hero-bg" style="opacity: 0.3;"></div>
         <div class="container">
-            <div class="hero-inner">
+            <div class="hero-inner" style="padding: 12rem 0 6rem;">
                 <div class="hero-content">
-                    <h1 class="hero-hook-main reveal-hero reveal-hero-1">Vous aviez raison depuis le début.</h1>
-                    <p class="hero-hook-sub reveal-hero reveal-hero-2">On vous a juste convaincu du contraire.</p>
-                    
-                    <div class="hero-divider reveal-hero reveal-hero-3"></div>
-                    
-                    <p class="hero-explain reveal-hero reveal-hero-4">Gaslighting. Triangulation. Dette invisible. Ces mécanismes ont un nom — et une fois qu'on les voit, on ne peut plus les ignorer.</p>
-                    
-                    <div class="hero-cta reveal-hero reveal-hero-5">
-                        <a href="Autotests/autotest.html" class="btn btn-primary">Évaluer ma situation</a>
-                        <a href="#piliers" class="link-subtle">Comprendre les mécanismes</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- Section Méthode - 5 Axes -->
-    <section class="methode" id="piliers">
-        <div class="container">
-            <div class="methode-header reveal">
-                <h2 class="title-section">La Méthode Noesis</h2>
-                <p class="subtitle">Cinq axes transdisciplinaires pour comprendre l'emprise et le trauma</p>
-            </div>
-            <div class="methode-intro reveal">
-                <p>L'emprise et le trauma ne s'expliquent jamais par un seul facteur. Dire "c'était un pervers narcissique" ne suffit pas. Dire "j'étais fragile" non plus. Dire "la société est patriarcale" est vrai mais incomplet.</p>
-                <p>Votre cerveau réagit biologiquement. Vos pensées sont altérées psychologiquement. Un agresseur déploie des stratégies criminologiques. La culture normalise ou justifie. Le système social multiplie les obstacles. Noesis articule ces cinq dimensions parce que c'est la seule manière de comprendre vraiment ce qui s'est passé.</p>
-                <p class="methode-conclusion">Et comprendre, c'est le premier levier pour que ça ne se reproduise plus.</p>
-            </div>
-            <div class="axes-grid">
-                <div class="axe reveal">
-                    <div class="axe-header">
-                        <div class="axe-icon">
-                            <svg viewBox="0 0 64 64">
-                                <circle cx="32" cy="24" r="12" />
-                                <path d="M16 52 Q32 36, 48 52" />
-                                <circle cx="32" cy="24" r="4" />
-                            </svg>
-                        </div>
-                        <h3 class="axe-title">Neuropsychologie</h3>
-                    </div>
-                    <p class="axe-keywords">Cortisol · Amygdale · Mémoire traumatique · Trauma bonding · Dissociation · Système polyvagal</p>
-                    <p class="axe-text">Vos réactions sont normales, prévisibles et réversibles. Non, vous n'êtes pas "trop sensible". Votre cerveau fonctionne exactement comme il est censé fonctionner quand on le soumet à un stress chronique.</p>
-                </div>
-                <div class="axe reveal">
-                    <div class="axe-header">
-                        <div class="axe-icon">
-                            <svg viewBox="0 0 64 64">
-                                <circle cx="32" cy="32" r="18" />
-                                <path d="M20 32 L28 32 L32 24 L36 40 L40 32 L44 32" />
-                            </svg>
-                        </div>
-                        <h3 class="axe-title">Psychologie Cognitive</h3>
-                    </div>
-                    <p class="axe-keywords">Gaslighting · Dissonance cognitive · Biais exploités · Charge cognitive</p>
-                    <p class="axe-text">Pourquoi vous avez douté de vous-même alors que votre perception était exacte. Pourquoi vous vous êtes excusé pour des choses que vous n'aviez pas faites.</p>
-                </div>
-                <div class="axe reveal">
-                    <div class="axe-header">
-                        <div class="axe-icon">
-                            <svg viewBox="0 0 64 64">
-                                <polygon points="32,8 56,52 8,52" fill="none" />
-                                <line x1="32" y1="24" x2="32" y2="38" />
-                                <circle cx="32" cy="44" r="2" />
-                            </svg>
-                        </div>
-                        <h3 class="axe-title">Criminologie</h3>
-                    </div>
-                    <p class="axe-keywords">Narcissisme · Psychopathie · Lovebombing · Isolation · Triangulation</p>
-                    <p class="axe-text">Vous n'avez pas provoqué ni mérité cette violence. Peu importe ce qu'on vous a dit. Vous êtes tombé sur quelqu'un qui savait exactement ce qu'il faisait.</p>
-                </div>
-            </div>
-            <div class="axes-bottom">
-                <div class="axe reveal">
-                    <div class="axe-header">
-                        <div class="axe-icon">
-                            <svg viewBox="0 0 64 64">
-                                <circle cx="32" cy="32" r="20" />
-                                <ellipse cx="32" cy="32" rx="20" ry="8" />
-                                <line x1="32" y1="12" x2="32" y2="52" />
-                            </svg>
-                        </div>
-                        <h3 class="axe-title">Anthropologie</h3>
-                    </div>
-                    <p class="axe-keywords">Mythes romantiques toxiques · Victim-blaming · Normes genrées · Sacralisation familiale</p>
-                    <p class="axe-text">Identifier les croyances collectives invisibles qui ont rendu l'emprise "acceptable". "C'est quand même ta mère." La culture vous a menti. Vous n'avez pas à jouer le jeu.</p>
-                </div>
-                <div class="axe reveal">
-                    <div class="axe-header">
-                        <div class="axe-icon">
-                            <svg viewBox="0 0 64 64">
-                                <rect x="12" y="20" width="40" height="28" rx="2" />
-                                <line x1="12" y1="32" x2="52" y2="32" />
-                                <line x1="32" y1="20" x2="32" y2="48" />
-                                <circle cx="22" cy="26" r="3" />
-                                <circle cx="42" cy="26" r="3" />
-                                <circle cx="22" cy="40" r="3" />
-                                <circle cx="42" cy="40" r="3" />
-                            </svg>
-                        </div>
-                        <h3 class="axe-title">Sciences Sociales</h3>
-                    </div>
-                    <p class="axe-keywords">Dépendance économique · Isolement · Inadaptation institutionnelle · Délais judiciaires</p>
-                    <p class="axe-text">Partir n'est pas une question de "volonté" mais de navigation dans un système de contraintes. Facile de dire "pourquoi tu pars pas ?" quand on n'a jamais eu à choisir entre un toit et sa sécurité.</p>
+                    <p class="surtitre reveal-hero reveal-hero-1" style="color: var(--or-vieilli);">Accompagnement sur mesure</p>
+                    <h1 class="hero-hook-main reveal-hero reveal-hero-2">L'Étape Zéro</h1>
+                    <p class="hero-hook-sub reveal-hero reveal-hero-3">Pour ceux qui ne savent plus où ils en sont.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Autotest -->
-    <section class="autotest" id="autotest">
+    <!-- Section Principale -->
+    <section class="methode" style="background: var(--noir-principal);">
         <div class="container">
-            <div class="autotest-inner">
-                <div class="autotest-content reveal">
-                    <p class="surtitre">Outils d'orientation</p>
-                    <h2 class="autotest-title title-display">Pas des quiz BuzzFeed à trois questions.</h2>
-                    <p class="autotest-text">Des grilles d'évaluation de 40 à 50 questions conçues pour identifier votre situation avec rigueur. TDAH, burn-out, trauma bonding, harcèlement moral, CPTSD. Des outils d'orientation — pas des diagnostics, pas des étiquettes, pas de "vous êtes à 73% sous emprise".</p>
-                    <p class="autotest-specs">Si vous vous posez la question, c'est probablement que quelque chose ne va pas. Mais entre "quelque chose ne va pas" et "savoir précisément quoi", il y a un gouffre. Noesis occupe ce gouffre.</p>
-                    <a href="#" class="btn btn-primary">Commencer un test</a>
-                    <p class="autotest-disclaimer">Outil d'auto-évaluation. Ne remplace pas un diagnostic professionnel. Résultats indicatifs.</p>
+            <div class="methode-intro reveal" style="max-width: 800px; margin: 0 auto 4rem;">
+                <p style="font-size: 1.2rem; line-height: 1.9; color: var(--blanc-casse); margin-bottom: 1.5rem;">Vous avez peut-être passé des heures à scroller des symptômes en ligne, à vous reconnaître dans trois TDAH différents, deux troubles de la personnalité et un burn-out. Les mots manquent, la chronologie s'effondre, les preuves sont dispersées.</p>
+                <p class="methode-conclusion" style="font-size: 1.3rem; color: var(--or-clair); font-style: italic;">L'Étape Zéro transforme le chaos vécu en récit structuré.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+                <!-- Colonne principale -->
+                <div>
+                    <div class="reveal" style="margin-bottom: 3rem;">
+                        <p style="font-size: 1.1rem; line-height: 1.85; color: var(--blanc-casse);">Pas de coaching motivant. Pas de développement personnel. Du travail de structuration cognitive, point. Vous arrivez avec la confusion. Vous repartez avec une cartographie claire, un lexique personnalisé, et un récit qui tient debout face à un professionnel.</p>
+                    </div>
+
+                    <!-- Étapes du processus -->
+                    <div class="reveal" style="margin-top: 3rem;">
+                        <h2 class="title-section" style="margin-bottom: 2rem;">Le processus</h2>
+                        
+                        <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gris-anthracite);">
+                            <span style="font-family: var(--font-display); font-size: 3rem; color: var(--or-vieilli); line-height: 1;">01</span>
+                            <div>
+                                <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: var(--or-clair); margin-bottom: 0.5rem;">Questionnaire structuré</h3>
+                                <p style="color: var(--gris-medium); line-height: 1.7;">Avant notre échange, vous recevez un questionnaire détaillé. Pas pour vous diagnostiquer — pour organiser vos pensées. Vous commencez à mettre des mots sur ce qui n'en avait pas.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gris-anthracite);">
+                            <span style="font-family: var(--font-display); font-size: 3rem; color: var(--or-vieilli); line-height: 1;">02</span>
+                            <div>
+                                <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: var(--or-clair); margin-bottom: 0.5rem;">Entretien 90 minutes</h3>
+                                <p style="color: var(--gris-medium); line-height: 1.7;">Un échange en visioconférence où on reprend ensemble votre récit. Je pose des questions. Je reformule. Je nomme les mécanismes quand ils apparaissent. Vous n'avez pas à convaincre — juste à raconter.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1.5rem;">
+                            <span style="font-family: var(--font-display); font-size: 3rem; color: var(--or-vieilli); line-height: 1;">03</span>
+                            <div>
+                                <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: var(--or-clair); margin-bottom: 0.5rem;">Livrable écrit</h3>
+                                <p style="color: var(--gris-medium); line-height: 1.7;">Dans les 7 jours, vous recevez une synthèse structurée : chronologie des faits, mécanismes identifiés, lexique personnalisé, et axes de travail pour la suite. Un document que vous pouvez montrer à votre psy, votre avocat, votre médecin.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="autotest-visual reveal reveal-delay-1">
-                    <div class="test-grid">
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell critical"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell critical"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell critical"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell critical"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell checked"></div>
+
+                <!-- Sidebar - Carte de réservation -->
+                <div class="reveal" style="position: sticky; top: 100px;">
+                    <div style="background: var(--gris-anthracite); padding: 2.5rem; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--gradient-or);"></div>
+                        
+                        <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--or-eclatant); margin-bottom: 1.5rem;">Réserver L'Étape Zéro</h3>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <span style="font-family: var(--font-display); font-size: 3rem; color: var(--or-eclatant); display: block;">250€</span>
+                            <span style="font-size: 0.95rem; color: var(--gris-medium);">Paiement sécurisé · Réponse sous 48h</span>
+                        </div>
+
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gris-medium); margin-bottom: 1rem;">Inclus</h4>
+                            <ul style="list-style: none;">
+                                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gris-moyen-fonce); color: var(--blanc-casse); display: flex; align-items: center; gap: 0.75rem;">
+                                    <span style="width: 6px; height: 6px; background: var(--or-clair); border-radius: 50%; flex-shrink: 0;"></span>
+                                    Questionnaire préparatoire structuré
+                                </li>
+                                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gris-moyen-fonce); color: var(--blanc-casse); display: flex; align-items: center; gap: 0.75rem;">
+                                    <span style="width: 6px; height: 6px; background: var(--or-clair); border-radius: 50%; flex-shrink: 0;"></span>
+                                    Entretien visio de 90 minutes
+                                </li>
+                                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gris-moyen-fonce); color: var(--blanc-casse); display: flex; align-items: center; gap: 0.75rem;">
+                                    <span style="width: 6px; height: 6px; background: var(--or-clair); border-radius: 50%; flex-shrink: 0;"></span>
+                                    Cartographie écrite personnalisée
+                                </li>
+                                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gris-moyen-fonce); color: var(--blanc-casse); display: flex; align-items: center; gap: 0.75rem;">
+                                    <span style="width: 6px; height: 6px; background: var(--or-clair); border-radius: 50%; flex-shrink: 0;"></span>
+                                    Lexique de vos mécanismes identifiés
+                                </li>
+                                <li style="padding: 0.75rem 0; color: var(--blanc-casse); display: flex; align-items: center; gap: 0.75rem;">
+                                    <span style="width: 6px; height: 6px; background: var(--or-clair); border-radius: 50%; flex-shrink: 0;"></span>
+                                    Axes de travail pour les professionnels
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="mailto:contact@noesiskintsugi.com?subject=Demande%20Étape%20Zéro" class="btn btn-primary" style="width: 100%; text-align: center;">Demander un rendez-vous</a>
+                        
+                        <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--gris-medium); font-style: italic; text-align: center;">Places limitées · Délai moyen : 2 semaines</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Articles -->
-    <section class="articles" id="articles">
+    <!-- Section Disclaimer -->
+    <section style="padding: 4rem 0; background: var(--noir-profond); border-top: 1px solid var(--gris-anthracite);">
         <div class="container">
-            <div class="articles-header reveal">
-                <h2 class="title-section">Analyses</h2>
-                <p class="subtitle">Sans jargon opaque. Sans simplification abusive. Sans vous prendre pour un idiot.</p>
-            </div>
-            <div class="articles-grid">
-                <article class="article-card reveal reveal-delay-1">
-                    <div class="article-image"></div>
-                    <div class="article-body">
-                        <p class="article-category">Mécanismes</p>
-                        <h3 class="article-title">Dissonance cognitive coercitive</h3>
-                        <p class="article-excerpt">Pourquoi vous avez fini par croire que noir = blanc alors que vous n'êtes pas idiot. Comment le cerveau perd ses repères quand le réel est systématiquement réécrit.</p>
-                        <a href="#" class="article-link">Lire <span>→</span></a>
-                    </div>
-                </article>
-                <article class="article-card reveal reveal-delay-2">
-                    <div class="article-image"></div>
-                    <div class="article-body">
-                        <p class="article-category">Doctrine</p>
-                        <h3 class="article-title">La fin du pardon obligatoire</h3>
-                        <p class="article-excerpt">Non, vous n'avez pas à pardonner. Oui, vous avez le droit d'être en colère. Oui, cette colère est saine. La paix sans vérité est une anesthésie.</p>
-                        <a href="#" class="article-link">Lire <span>→</span></a>
-                    </div>
-                </article>
-                <article class="article-card reveal reveal-delay-3">
-                    <div class="article-image"></div>
-                    <div class="article-body">
-                        <p class="article-category">Clinique</p>
-                        <h3 class="article-title">Asymétrie épistémique</h3>
-                        <p class="article-excerpt">Quand l'un sait et l'autre ignore. Comment on vous a fait croire que vous ne compreniez rien alors que c'est exactement l'inverse qui se passait.</p>
-                        <a href="#" class="article-link">Lire <span>→</span></a>
-                    </div>
-                </article>
-            </div>
-            <div class="articles-footer reveal">
-                <a href="#" class="link-gold">Tous les articles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Étape Zéro -->
-    <section class="etape-zero" id="etape-zero">
-        <div class="container">
-            <div class="etape-inner">
-                <div class="etape-content reveal">
-                    <p class="surtitre">Accompagnement sur mesure</p>
-                    <h2 class="etape-title title-display">L'Étape Zéro</h2>
-                    <p class="etape-subtitle">Pour ceux qui ne savent plus où ils en sont.</p>
-                    <p class="etape-text">Vous avez peut-être passé des heures à scroller des symptômes en ligne, à vous reconnaître dans trois TDAH différents, deux troubles de la personnalité et un burn-out. Les mots manquent, la chronologie s'effondre, les preuves sont dispersées. L'Étape Zéro transforme le chaos vécu en récit structuré.</p>
-                    <p class="etape-points">Pas de coaching motivant. Pas de développement personnel. Du travail de structuration cognitive, point. Questionnaire structuré, entretien 90 minutes, livrable cartographie + lexique personnalisé.</p>
-                    <a href="#" class="btn btn-secondary">Découvrir L'Étape Zéro</a>
-                    <p class="etape-disclaimer">L'accompagnement Noesis ne remplace pas une thérapie, un diagnostic médical ou un conseil juridique. Il vous aide à comprendre, nommer et organiser votre expérience pour optimiser le temps avec les professionnels.</p>
-                </div>
-                <div class="etape-visual reveal reveal-delay-1">
-                    <div class="document-visual"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Réseaux Sociaux -->
-    <section class="social" id="social">
-        <div class="container">
-            <div class="social-inner reveal">
-                <h2 class="social-title title-section">Suivez Noesis</h2>
-                <p class="social-text">Vidéos et formats courts pour explorer les mécanismes d'emprise, déconstruire les idées reçues et transmettre des outils de compréhension. Décryptages de cas concrets anonymisés, analyses transdisciplinaires, participation aux concours. Parce que la reconstruction passe aussi par le corps. Et parfois par un airfryer gagné à un concours. Nous ne jugeons pas.</p>
-                <div class="social-icons">
-                    <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener" class="social-link youtube">
-                        <div class="social-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
-                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <span class="social-label">Analyses longues</span>
-                    </a>
-                    <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener" class="social-link">
-                        <div class="social-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
-                            </svg>
-                        </div>
-                        <span class="social-label">Décryptages rapides</span>
-                    </a>
-                    <a href="#" class="social-link">
-                        <div class="social-icon">
-                            <svg viewBox="0 0 24 24">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                            </svg>
-                        </div>
-                        <span class="social-label">Formats courts</span>
-                    </a>
-                </div>
-                <p class="social-note">Concours réguliers avec cadeaux justifiés cliniquement : luminothérapie, couvertures lestées, séjours spa. Parce que vous avez donné pendant des années sans recevoir.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Contact -->
-    <section class="contact" id="contact">
-        <div class="contact-bg"></div>
-        <div class="container">
-            <div class="contact-header reveal">
-                <h2 class="title-section contact-title">Entrons en contact</h2>
-                <p class="contact-subtitle">Chaque demande est traitée avec attention et confidentialité</p>
-            </div>
-            <div class="contact-main">
-                <div class="contact-left reveal">
-                    <div class="contact-card-accent">
-                        <div class="contact-card-accent-icon">
-                            <svg viewBox="0 0 64 64">
-                                <circle cx="32" cy="20" r="12" />
-                                <path d="M12 56 C12 40, 52 40, 52 56" />
-                            </svg>
-                        </div>
-                        <h3>Accompagnement</h3>
-                        <p>Demandez un accompagnement individuel personnalisé pour clarifier votre situation et identifier vos options.</p>
-                        <a href="mailto:contact@noesiskintsugi.com?subject=Demande%20d%27accompagnement" class="btn btn-dark">Demander un accompagnement</a>
-                    </div>
-                </div>
-                <div class="contact-right">
-                    <div class="contact-card-simple reveal">
-                        <div class="contact-card-simple-header">
-                            <svg viewBox="0 0 64 64">
-                                <rect x="8" y="16" width="20" height="32" rx="2" />
-                                <rect x="36" y="16" width="20" height="32" rx="2" />
-                                <line x1="28" y1="28" x2="36" y2="28" />
-                                <line x1="28" y1="36" x2="36" y2="36" />
-                            </svg>
-                            <h4>Partenariats</h4>
-                        </div>
-                        <p>Vous souhaitez donner de la visibilité à votre marque ? Intégration vidéo, promotion ciblée, concours, événementiel — des partenariats adaptés et impactants.</p>
-                        <a href="mailto:contact@noesiskintsugi.com?subject=Proposition%20de%20partenariat" class="contact-link">Proposer un partenariat <span>→</span></a>
-                    </div>
-                    <div class="contact-card-simple reveal">
-                        <div class="contact-card-simple-header">
-                            <svg viewBox="0 0 64 64">
-                                <circle cx="20" cy="32" r="10" />
-                                <circle cx="44" cy="32" r="10" />
-                                <line x1="30" y1="32" x2="34" y2="32" />
-                            </svg>
-                            <h4>Collaborations</h4>
-                        </div>
-                        <p>Proposez une collaboration professionnelle fondée sur la complémentarité et l'excellence.</p>
-                        <a href="mailto:contact@noesiskintsugi.com?subject=Proposition%20de%20collaboration" class="contact-link">Proposer une collaboration <span>→</span></a>
-                    </div>
-                    <div class="contact-card-simple reveal">
-                        <div class="contact-card-simple-header">
-                            <svg viewBox="0 0 64 64">
-                                <rect x="8" y="16" width="48" height="32" rx="2" />
-                                <polyline points="8,16 32,36 56,16" />
-                            </svg>
-                            <h4>Contact général</h4>
-                        </div>
-                        <p>Posez une question ou partagez vos réflexions.</p>
-                        <a href="mailto:contact@noesiskintsugi.com" class="contact-link">Me contacter <span>→</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Soutenir (Tipeee) -->
-    <section class="soutenir" id="soutenir">
-        <div class="container">
-            <div class="soutenir-header reveal">
-                <h2 class="soutenir-title">Soutenir Noesis</h2>
-                <p class="soutenir-subtitle">Participer à la construction, avant que la structure tienne seule</p>
-            </div>
-
-            <div class="soutenir-content">
-                <div class="soutenir-block reveal">
-                    <h3 class="soutenir-block-title">Pourquoi suis-je sur Tipeee</h3>
-                    <p>Construire Noesis demande du temps. Beaucoup.</p>
-                    <p>Chaque analyse sérieuse mobilise des heures de recherche, de croisement de sources, d'écriture. Les outils d'évaluation ne se fabriquent pas en une après-midi. La production vidéo, le développement du site, la création des guides — tout cela représente un investissement réel.</p>
-                    <p>Pour l'instant, Noesis ne génère pas assez de revenus pour couvrir ce temps de travail. Les guides se vendent, L'Étape Zéro fonctionne, mais la phase de construction est encore en cours. Il faut faire connaître le projet, développer l'audience, affiner les outils.</p>
-                    <p>Je suis sur Tipeee pour une raison simple : j'ai besoin d'aide pour traverser cette phase. Pas indéfiniment. Le temps que l'écosystème devienne autonome.</p>
-                    <p>Votre soutien finance directement le temps de travail invisible — celui qui ne se monétise pas encore mais qui rend tout le reste possible.</p>
-                </div>
-
-                <div class="soutenir-block reveal">
-                    <h3 class="soutenir-block-title">Quels sont mes objectifs</h3>
-                    <p><strong>Court terme :</strong> pouvoir consacrer mon temps pleinement à Noesis sans arbitrage permanent entre production de contenu et nécessités économiques.</p>
-                    <p>Concrètement, votre soutien permet :</p>
-                    <ul>
-                        <li>D'augmenter la fréquence des publications (analyses, vidéos)</li>
-                        <li>De développer les autotests structurés que je veux proposer gratuitement</li>
-                        <li>D'améliorer la qualité de production (matériel, logiciels)</li>
-                        <li>De financer le temps de recherche transdisciplinaire</li>
-                    </ul>
-                    <p><strong>Objectif Tipeee :</strong> atteindre un socle de soutien mensuel qui sécurise cette phase de construction. Quand Noesis sera viable par ses propres revenus, cette page n'aura plus lieu d'être.</p>
-                </div>
-
-                <div class="soutenir-block soutenir-contrepartie reveal">
-                    <h3 class="soutenir-block-title">Contreparties</h3>
-                    <p>Je ne propose pas de contenus exclusifs. Ce qui est produit pour Noesis reste accessible à tous — c'est le principe.</p>
-                    <p>Une seule contrepartie, symbolique :</p>
-                    <span class="soutenir-contrepartie-badge">Bâtisseur</span>
-                    <p>Votre prénom sur la page dédiée du site Noesis. Ceux qui ont participé à la construction, avant que la structure tienne seule.</p>
-                </div>
-            </div>
-
-            <div class="soutenir-cta reveal">
-                <a href="https://fr.tipeee.com/noesis-analyse/" target="_blank" rel="noopener" class="btn-tipeee">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                    Soutenir sur Tipeee
-                </a>
+            <div class="reveal" style="max-width: 800px; margin: 0 auto; padding: 2rem; border-left: 3px solid var(--or-vieilli); background: rgba(153, 107, 38, 0.05);">
+                <p style="font-size: 1rem; color: var(--gris-medium); line-height: 1.75;"><strong style="color: var(--blanc-casse);">Important :</strong> L'accompagnement Noesis ne remplace pas une thérapie, un diagnostic médical ou un conseil juridique. Il vous aide à comprendre, nommer et organiser votre expérience pour optimiser le temps avec les professionnels qualifiés. En situation de danger ou de détresse aiguë, contactez les services d'urgence.</p>
             </div>
         </div>
     </section>
@@ -2443,29 +2046,29 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                    <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
                     <p class="footer-tagline">Noesis ne soigne pas. Noesis clarifie.</p>
                 </div>
                 <nav class="footer-links">
-                    <a href="Autotests/autotest.html">Autotests</a>
-                    <a href="Analyses/articles.html">Analyses</a>
-                    <a href="etape-zero/accompagnement.html">L'Étape Zéro</a>
+                    <a href="../Autotests/autotest.html">Autotests</a>
+                    <a href="../Analyses/articles.html">Analyses</a>
+                    <a href="accompagnement.html">L'Étape Zéro</a>
                     <a href="mailto:contact@noesiskintsugi.com">Contact</a>
                 </nav>
                 <div class="footer-social">
-                    <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener" class="footer-social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                    <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener" class="social-link-footer">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="1.5"/>
                             <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
                         </svg>
                     </a>
-                    <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener" class="footer-social-icon">
-                        <svg viewBox="0 0 24 24">
+                    <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener" class="social-link-footer">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
                         </svg>
                     </a>
-                    <a href="#" class="footer-social-icon">
-                        <svg viewBox="0 0 24 24">
+                    <a href="#" class="social-link-footer">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
@@ -2473,44 +2076,24 @@
                     </a>
                 </div>
             </div>
-            <div class="footer-divider"></div>
             <div class="footer-bottom">
-                <p class="footer-legal">
-                    © 2026 Noesis Kintsugi
-                    <a href="#">Mentions légales</a>
-                    <a href="#">Politique de confidentialité</a>
-                </p>
-                <p class="footer-disclaimer">Noesis Kintsugi est un espace d'analyse transdisciplinaire. Les contenus ne constituent pas un avis médical, psychologique ou juridique. La paix sans vérité est une anesthésie.</p>
+                <p class="footer-copyright">© 2025 Noesis Kintsugi. Tous droits réservés.</p>
+                <p class="footer-baseline">La paix sans vérité est une anesthésie.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Navigation scroll effect
+        // Navigation
         const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile navigation toggle
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
+
         navToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        // Close mobile nav on link click
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Intersection Observer for reveal animations
+        // Reveal animations
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -2529,33 +2112,15 @@
             observer.observe(el);
         });
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+        // Hero reveal animation
+        setTimeout(() => {
+            document.querySelectorAll('.reveal-hero').forEach((el, i) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, i * 200);
             });
-        });
-
-        // Parallax subtil sur le hero background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroBg = document.querySelector('.hero-bg');
-            if (heroBg && scrolled < window.innerHeight) {
-                heroBg.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
-        });
+        }, 300);
     </script>
-
 </body>
 </html>
