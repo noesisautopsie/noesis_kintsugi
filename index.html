@@ -322,20 +322,20 @@
         .nav .logo {
             font-family: var(--font-display);
             font-size: 1.5rem;
-            color: var(--noir-principal);
+            color: var(--or-clair);
             letter-spacing: 0.05em;
             transition: var(--transition-smooth);
         }
 
         .nav .logo span {
-            color: var(--gris-moyen-fonce);
+            color: var(--gris-medium);
             font-size: 0.9em;
             transition: var(--transition-smooth);
         }
 
         .nav .nav-links a {
             font-size: 0.9rem;
-            color: var(--noir-principal);
+            color: var(--blanc-casse);
             position: relative;
             transition: var(--transition-smooth);
         }
@@ -407,7 +407,7 @@
         .nav-toggle span {
             width: 24px;
             height: 1px;
-            background: var(--noir-principal);
+            background: var(--or-clair);
             transition: var(--transition-smooth);
         }
 
@@ -423,7 +423,7 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: var(--fond-clair);
+            background: var(--noir-principal);
             overflow: hidden;
         }
 
@@ -441,10 +441,10 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, 
-                rgba(248, 247, 245, 0.15) 0%, 
-                rgba(248, 247, 245, 0.02) 50%,
-                rgba(248, 247, 245, 0.2) 100%);
+            background: linear-gradient(135deg,
+                rgba(18, 21, 20, 0.75) 0%,
+                rgba(18, 21, 20, 0.6) 50%,
+                rgba(18, 21, 20, 0.8) 100%);
             pointer-events: none;
         }
 
@@ -468,18 +468,20 @@
         .hero-hook-main {
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 7vw, 5rem);
-            color: var(--noir-principal);
+            color: #ffffff;
             margin-bottom: 0.3em;
             line-height: 1.1;
             letter-spacing: -0.02em;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.8), 0 4px 60px rgba(0, 0, 0, 0.6);
         }
 
         .hero-hook-sub {
             font-family: var(--font-body);
             font-size: clamp(1.2rem, 3vw, 1.6rem);
-            color: var(--gris-moyen-fonce);
+            color: var(--or-eclatant);
             font-style: italic;
             margin-bottom: 0;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
         }
 
         /* Ligne de séparation dorée */
@@ -515,10 +517,11 @@
         .hero-explain {
             font-family: var(--font-body);
             font-size: clamp(1.05rem, 2vw, 1.2rem);
-            color: var(--gris-moyen-fonce);
+            color: #ffffff;
             max-width: 600px;
             margin: 0 auto 2.5rem;
             line-height: 1.8;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
         }
 
         /* CTA */
@@ -531,26 +534,27 @@
         }
 
         .hero .btn-primary {
-            background: var(--noir-principal);
-            color: var(--or-clair);
-            border: 1px solid var(--noir-principal);
+            background: var(--or-clair);
+            color: var(--noir-principal);
+            border: 1px solid var(--or-clair);
             padding: 1.1rem 2.5rem;
             font-size: 1.05rem;
         }
 
         .hero .btn-primary:hover {
-            background: var(--gris-anthracite);
-            box-shadow: 0 12px 40px rgba(18, 21, 20, 0.35);
+            background: var(--or-eclatant);
+            box-shadow: var(--glow-or-intense), 0 12px 40px rgba(201, 170, 110, 0.3);
         }
 
         .hero .link-subtle {
-            color: var(--gris-moyen-fonce);
+            color: #ffffff;
             font-size: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         .hero .link-subtle:hover {
-            color: var(--or-vieilli);
-            border-bottom-color: var(--or-vieilli);
+            color: var(--or-eclatant);
+            border-bottom-color: var(--or-eclatant);
         }
 
         /* Animations séquentielles */
@@ -632,7 +636,7 @@
             left: 0;
             right: 0;
             height: 120px;
-            background: linear-gradient(to bottom, #f8f7f5 0%, var(--noir-principal) 100%);
+            background: linear-gradient(to bottom, var(--noir-principal) 0%, var(--noir-principal) 100%);
             pointer-events: none;
         }
 
@@ -1658,6 +1662,169 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
+           SECTION SOUTENIR (TIPEEE)
+           ═══════════════════════════════════════════════════════════════ */
+        .soutenir {
+            padding: var(--section-padding) 0;
+            background: linear-gradient(180deg, var(--noir-clair) 0%, var(--noir-principal) 100%);
+            position: relative;
+        }
+
+        .soutenir::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
+            opacity: 0.5;
+        }
+
+        .soutenir-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .soutenir-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            color: var(--or-intense);
+            margin-bottom: 0.75rem;
+        }
+
+        .soutenir-subtitle {
+            font-size: 1.2rem;
+            color: var(--gris-pierre);
+            font-style: italic;
+        }
+
+        .soutenir-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .soutenir-block {
+            background: rgba(46, 49, 48, 0.3);
+            border: 1px solid rgba(153, 107, 38, 0.15);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: var(--transition-smooth);
+        }
+
+        .soutenir-block:hover {
+            border-color: rgba(153, 107, 38, 0.35);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .soutenir-block-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: var(--or-clair);
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.05em;
+        }
+
+        .soutenir-block p {
+            color: var(--blanc-casse);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .soutenir-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .soutenir-block ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+
+        .soutenir-block li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--blanc-casse);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .soutenir-block li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--or-vieilli);
+        }
+
+        .soutenir-contrepartie {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(143, 107, 46, 0.08) 0%, rgba(46, 49, 48, 0.3) 100%);
+            border: 1px solid rgba(153, 107, 38, 0.25);
+        }
+
+        .soutenir-contrepartie .soutenir-block-title {
+            color: var(--or-intense);
+        }
+
+        .soutenir-contrepartie-badge {
+            display: inline-block;
+            background: var(--gradient-or);
+            color: var(--noir-principal);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .soutenir-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn-tipeee {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--gradient-or);
+            color: var(--noir-principal);
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-tipeee:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--glow-or-intense), var(--shadow-gold);
+        }
+
+        .btn-tipeee svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .soutenir-content {
+                grid-template-columns: 1fr;
+            }
+
+            .soutenir-contrepartie {
+                grid-column: 1;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
            ANIMATIONS PREMIUM
            ═══════════════════════════════════════════════════════════════ */
         @keyframes fadeIn {
@@ -2216,6 +2383,57 @@
                         <a href="mailto:contact@noesiskintsugi.com" class="contact-link">Me contacter <span>→</span></a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Soutenir (Tipeee) -->
+    <section class="soutenir" id="soutenir">
+        <div class="container">
+            <div class="soutenir-header reveal">
+                <h2 class="soutenir-title">Soutenir Noesis</h2>
+                <p class="soutenir-subtitle">Participer à la construction, avant que la structure tienne seule</p>
+            </div>
+
+            <div class="soutenir-content">
+                <div class="soutenir-block reveal">
+                    <h3 class="soutenir-block-title">Pourquoi suis-je sur Tipeee</h3>
+                    <p>Construire Noesis demande du temps. Beaucoup.</p>
+                    <p>Chaque analyse sérieuse mobilise des heures de recherche, de croisement de sources, d'écriture. Les outils d'évaluation ne se fabriquent pas en une après-midi. La production vidéo, le développement du site, la création des guides — tout cela représente un investissement réel.</p>
+                    <p>Pour l'instant, Noesis ne génère pas assez de revenus pour couvrir ce temps de travail. Les guides se vendent, L'Étape Zéro fonctionne, mais la phase de construction est encore en cours. Il faut faire connaître le projet, développer l'audience, affiner les outils.</p>
+                    <p>Je suis sur Tipeee pour une raison simple : j'ai besoin d'aide pour traverser cette phase. Pas indéfiniment. Le temps que l'écosystème devienne autonome.</p>
+                    <p>Votre soutien finance directement le temps de travail invisible — celui qui ne se monétise pas encore mais qui rend tout le reste possible.</p>
+                </div>
+
+                <div class="soutenir-block reveal">
+                    <h3 class="soutenir-block-title">Quels sont mes objectifs</h3>
+                    <p><strong>Court terme :</strong> pouvoir consacrer mon temps pleinement à Noesis sans arbitrage permanent entre production de contenu et nécessités économiques.</p>
+                    <p>Concrètement, votre soutien permet :</p>
+                    <ul>
+                        <li>D'augmenter la fréquence des publications (analyses, vidéos)</li>
+                        <li>De développer les autotests structurés que je veux proposer gratuitement</li>
+                        <li>D'améliorer la qualité de production (matériel, logiciels)</li>
+                        <li>De financer le temps de recherche transdisciplinaire</li>
+                    </ul>
+                    <p><strong>Objectif Tipeee :</strong> atteindre un socle de soutien mensuel qui sécurise cette phase de construction. Quand Noesis sera viable par ses propres revenus, cette page n'aura plus lieu d'être.</p>
+                </div>
+
+                <div class="soutenir-block soutenir-contrepartie reveal">
+                    <h3 class="soutenir-block-title">Contreparties</h3>
+                    <p>Je ne propose pas de contenus exclusifs. Ce qui est produit pour Noesis reste accessible à tous — c'est le principe.</p>
+                    <p>Une seule contrepartie, symbolique :</p>
+                    <span class="soutenir-contrepartie-badge">Bâtisseur</span>
+                    <p>Votre prénom sur la page dédiée du site Noesis. Ceux qui ont participé à la construction, avant que la structure tienne seule.</p>
+                </div>
+            </div>
+
+            <div class="soutenir-cta reveal">
+                <a href="https://fr.tipeee.com/noesis-analyse/" target="_blank" rel="noopener" class="btn-tipeee">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                    Soutenir sur Tipeee
+                </a>
             </div>
         </div>
     </section>
