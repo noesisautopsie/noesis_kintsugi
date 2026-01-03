@@ -1870,7 +1870,7 @@
     </style>
 </head>
     <style>
-        /* Styles spécifiques page À propos */
+        /* Styles spécifiques page À propos - Version Premium */
         .nav.scrolled .nav-links a.active {
             color: var(--or-clair);
         }
@@ -1883,55 +1883,309 @@
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
         
-        /* Navigation interne */
-        .page-nav {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 3rem 0;
-            padding: 1.5rem;
-            background: var(--gris-anthracite);
-            border-left: 3px solid var(--or-vieilli);
+        /* Manifeste Section */
+        .manifeste {
+            padding: 6rem 0;
+            background: var(--noir-principal);
+            position: relative;
         }
         
-        .page-nav a {
+        .manifeste-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .manifeste-content h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--or-eclatant);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .manifeste-content p {
+            font-size: 1.15rem;
+            line-height: 1.85;
             color: var(--blanc-casse);
-            font-size: 0.9rem;
-            padding: 0.5rem 1rem;
-            transition: var(--transition-smooth);
+            margin-bottom: 1.25rem;
         }
         
-        .page-nav a:hover {
+        .manifeste-content .highlight {
+            color: var(--or-clair);
+            font-style: italic;
+            font-size: 1.25rem;
+        }
+        
+        .manifeste-visual {
+            position: relative;
+        }
+        
+        .quote-block {
+            background: linear-gradient(135deg, var(--gris-anthracite) 0%, rgba(153, 107, 38, 0.1) 100%);
+            padding: 3rem;
+            position: relative;
+        }
+        
+        .quote-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-or);
+        }
+        
+        .quote-block blockquote {
+            font-family: var(--font-body);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--blanc-casse);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .quote-block cite {
+            display: block;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--or-clair);
+            font-style: normal;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Principes Cards */
+        .principes-section {
+            padding: 5rem 0;
+            background: var(--noir-profond);
+        }
+        
+        .principes-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .principes-header h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--or-clair);
+            margin-bottom: 1rem;
+        }
+        
+        .principes-header p {
+            color: var(--gris-medium);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .principes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .principe-card {
+            background: var(--gris-anthracite);
+            padding: 2rem;
+            position: relative;
+            transition: var(--transition-smooth);
+            border-bottom: 3px solid transparent;
+        }
+        
+        .principe-card:hover {
+            transform: translateY(-8px);
+            border-bottom-color: var(--or-clair);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .principe-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1.5rem;
             color: var(--or-clair);
         }
         
-        /* Sections légales */
-        .legal-section {
-            margin-bottom: 4rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid var(--gris-anthracite);
+        .principe-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--or-eclatant);
+            margin-bottom: 0.75rem;
         }
         
-        .legal-section:last-child {
-            border-bottom: none;
+        .principe-card p {
+            font-size: 0.95rem;
+            color: var(--gris-medium);
+            line-height: 1.6;
         }
         
-        .legal-title {
+        /* Fondatrice Section */
+        .fondatrice-section {
+            padding: 5rem 0;
+            background: var(--noir-principal);
+        }
+        
+        .fondatrice-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .fondatrice-visual {
+            position: relative;
+        }
+        
+        .fondatrice-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--gris-anthracite) 0%, var(--noir-profond) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fondatrice-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('assets/bg-kintsugi.png') center/cover;
+            opacity: 0.15;
+        }
+        
+        .fondatrice-initials {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--or-clair);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .fondatrice-content h2 {
             font-family: var(--font-display);
             font-size: 1.8rem;
             color: var(--or-clair);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--or-vieilli);
-            display: inline-block;
+            margin-bottom: 0.5rem;
         }
         
-        .legal-subtitle {
-            font-family: var(--font-display);
-            font-size: 1.2rem;
+        .fondatrice-content .role {
+            color: var(--or-vieilli);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .fondatrice-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--blanc-casse);
+            margin-bottom: 1rem;
+        }
+        
+        .fondatrice-disciplines {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .discipline-tag {
+            background: rgba(153, 107, 38, 0.15);
+            border: 1px solid var(--or-vieilli);
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
             color: var(--or-clair);
-            margin: 2rem 0 1rem;
+        }
+        
+        /* Legal Section - Accordéon */
+        .legal-section-wrapper {
+            padding: 5rem 0;
+            background: var(--noir-profond);
+        }
+        
+        .legal-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .legal-header h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--or-clair);
+            margin-bottom: 0.5rem;
+        }
+        
+        .legal-header p {
+            color: var(--gris-medium);
+        }
+        
+        .accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid var(--gris-anthracite);
+        }
+        
+        .accordion-header {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        
+        .accordion-header:hover {
+            padding-left: 1rem;
+        }
+        
+        .accordion-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--blanc-casse);
+            text-align: left;
+            transition: var(--transition-smooth);
+        }
+        
+        .accordion-header:hover .accordion-title {
+            color: var(--or-clair);
+        }
+        
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--or-clair);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 2000px;
+        }
+        
+        .accordion-body {
+            padding: 0 0 2rem 0;
         }
         
         .legal-text {
@@ -1945,14 +2199,20 @@
             color: var(--or-clair);
         }
         
+        .legal-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--or-clair);
+            margin: 1.5rem 0 0.75rem;
+        }
+        
         .legal-list {
             list-style: none;
-            margin: 1rem 0 1.5rem 0;
+            margin: 1rem 0;
         }
         
         .legal-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+            padding: 0.5rem 0 0.5rem 1.5rem;
             position: relative;
             color: var(--blanc-casse);
             line-height: 1.7;
@@ -1969,102 +2229,129 @@
             border-radius: 50%;
         }
         
-        .legal-highlight {
+        .info-card {
+            background: var(--gris-anthracite);
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .info-card p {
+            margin: 0.4rem 0;
+            color: var(--blanc-casse);
+            font-size: 0.95rem;
+        }
+        
+        .info-card strong {
+            color: var(--or-clair);
+        }
+        
+        .alert-box {
             background: rgba(153, 107, 38, 0.1);
-            border-left: 3px solid var(--or-vieilli);
+            border-left: 3px solid var(--or-clair);
             padding: 1.5rem;
             margin: 1.5rem 0;
         }
         
-        .legal-highlight p {
+        .alert-box p {
             margin: 0;
             color: var(--blanc-casse);
-            line-height: 1.75;
+            line-height: 1.7;
         }
         
-        .placeholder {
-            background: rgba(215, 190, 103, 0.15);
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            color: var(--or-eclatant);
-            font-family: monospace;
-            font-size: 0.9em;
+        .alert-box.urgence {
+            background: rgba(220, 53, 69, 0.1);
+            border-left-color: #dc3545;
         }
         
-        /* Mission block */
-        .mission-block {
+        .alert-box.urgence strong {
+            color: #ff6b6b;
+        }
+        
+        .urgence-numbers {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
         }
         
-        .mission-text {
-            font-size: 1.15rem;
-            line-height: 1.85;
-            color: var(--blanc-casse);
-        }
-        
-        .mission-principles {
+        .urgence-item {
             background: var(--gris-anthracite);
-            padding: 2rem;
-            position: relative;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
         
-        .mission-principles::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient-or);
-        }
-        
-        .mission-principles h3 {
+        .urgence-number {
             font-family: var(--font-display);
-            font-size: 1.3rem;
-            color: var(--or-clair);
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--or-eclatant);
         }
         
-        .principle-item {
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-            border-left: 2px solid var(--or-vieilli);
-        }
-        
-        .principle-item strong {
-            color: var(--or-clair);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        
-        .principle-item span {
+        .urgence-label {
+            font-size: 0.9rem;
             color: var(--gris-medium);
-            font-size: 0.95rem;
         }
         
-        /* Contact légal */
-        .contact-legal {
-            background: var(--gris-anthracite);
-            padding: 2rem;
-            margin: 2rem 0;
+        /* CTA Final */
+        .cta-final {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--noir-principal) 0%, rgba(153, 107, 38, 0.08) 100%);
+            text-align: center;
         }
         
-        .contact-legal p {
-            margin: 0.5rem 0;
-            color: var(--blanc-casse);
+        .cta-final h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--or-eclatant);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-final p {
+            color: var(--gris-medium);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .principes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 900px) {
-            .mission-block {
+            .manifeste-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .fondatrice-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .fondatrice-placeholder {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            .fondatrice-disciplines {
+                justify-content: center;
+            }
+            .urgence-numbers {
                 grid-template-columns: 1fr;
             }
-            .page-nav {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
+        }
+        
+        @media (max-width: 600px) {
+            .principes-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -2093,244 +2380,291 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" style="min-height: 55vh;">
-        <div class="hero-bg" style="opacity: 0.2;"></div>
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-bg" style="opacity: 0.25;"></div>
         <div class="container">
-            <div class="hero-inner" style="padding: 11rem 0 4rem;">
+            <div class="hero-inner" style="padding: 12rem 0 5rem;">
                 <div class="hero-content">
-                    <p class="surtitre reveal-hero" style="color: var(--or-vieilli);">Qui sommes-nous</p>
-                    <h1 class="hero-hook-main reveal-hero">À propos</h1>
-                    <p class="hero-hook-sub reveal-hero">Noesis ne soigne pas. Noesis clarifie.</p>
+                    <p class="surtitre reveal-hero" style="color: var(--or-vieilli);">La clarté comme préalable</p>
+                    <h1 class="hero-hook-main reveal-hero">Noesis Kintsugi</h1>
+                    <p class="hero-hook-sub reveal-hero">Clarifier pour rendre le soin possible.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Navigation interne -->
-    <section style="background: var(--noir-principal); padding: 2rem 0 0;">
+    <!-- Manifeste Section -->
+    <section class="manifeste">
         <div class="container">
-            <nav class="page-nav reveal">
-                <a href="#mission">Mission</a>
-                <a href="#mentions-legales">Mentions légales</a>
-                <a href="#confidentialite">Confidentialité</a>
-                <a href="#cgu">Conditions d'utilisation</a>
-                <a href="#limites">Limites de l'accompagnement</a>
-            </nav>
+            <div class="manifeste-grid reveal">
+                <div class="manifeste-content">
+                    <h2>Pourquoi Noesis existe</h2>
+                    <p>Entre le moment où quelque chose ne va pas et le moment où l'on comprend précisément quoi, il y a un gouffre. Un espace où le doute s'installe, où les mots manquent, où même les professionnels peinent parfois à saisir ce qui s'est passé.</p>
+                    <p>Noesis occupe ce gouffre.</p>
+                    <p class="highlight">Nous ne soignons pas. Nous clarifions — afin que le soin devienne possible, pertinent et efficace.</p>
+                </div>
+                <div class="manifeste-visual">
+                    <div class="quote-block">
+                        <blockquote>« Vous aviez raison depuis le début. On vous a juste convaincu du contraire. »</blockquote>
+                        <cite>— Principe fondateur Noesis</cite>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contenu principal -->
-    <section style="background: var(--noir-principal); padding: 3rem 0 5rem;">
-        <div class="container" style="max-width: 900px;">
+    <!-- Principes Section -->
+    <section class="principes-section">
+        <div class="container">
+            <div class="principes-header reveal">
+                <h2>Nos principes</h2>
+                <p>Quatre axes qui structurent chaque contenu, chaque outil, chaque accompagnement.</p>
+            </div>
+            <div class="principes-grid">
+                <div class="principe-card reveal">
+                    <svg class="principe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                    <h3>Lucidité avant soulagement</h3>
+                    <p>Comprendre le mécanisme avant de chercher à s'en libérer. La clarté précède la guérison.</p>
+                </div>
+                <div class="principe-card reveal">
+                    <svg class="principe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                    <h3>Compréhension avant régulation</h3>
+                    <p>Nommer précisément ce qui s'est passé. Sans mots justes, pas de pensée juste.</p>
+                </div>
+                <div class="principe-card reveal">
+                    <svg class="principe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <h3>Souveraineté avant résilience</h3>
+                    <p>Retrouver sa capacité de jugement autonome. Être debout, pas juste survivant.</p>
+                </div>
+                <div class="principe-card reveal">
+                    <svg class="principe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                    <h3>Rigueur sans concession</h3>
+                    <p>Pas de développement personnel, pas de pathos. L'analyse transdisciplinaire comme méthode.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- MISSION -->
-            <div id="mission" class="legal-section reveal">
-                <h2 class="legal-title">Notre mission</h2>
-                
-                <div class="mission-block">
-                    <div>
-                        <p class="mission-text">Noesis Kintsugi est une plateforme pré-clinique dédiée à l'analyse des mécanismes d'emprise, du trauma complexe relationnel et de la destruction identitaire.</p>
-                        <p class="mission-text">Notre approche est transdisciplinaire : nous mobilisons la psychologie clinique, les neurosciences, la criminologie, l'anthropologie et les sciences sociales selon la nature du phénomène analysé.</p>
-                        <p class="mission-text" style="color: var(--or-clair); font-style: italic; margin-top: 1.5rem;">L'objectif n'est pas de guérir, mais de clarifier — afin de rendre le soin possible, pertinent et efficace.</p>
+    <!-- Fondatrice Section -->
+    <section class="fondatrice-section">
+        <div class="container">
+            <div class="fondatrice-grid reveal">
+                <div class="fondatrice-visual">
+                    <div class="fondatrice-placeholder">
+                        <span class="fondatrice-initials">NK</span>
                     </div>
-                    <div class="mission-principles">
-                        <h3>Principes fondateurs</h3>
-                        <div class="principle-item">
-                            <strong>Lucidité avant soulagement</strong>
-                            <span>Comprendre le mécanisme avant de chercher à s'en libérer.</span>
+                </div>
+                <div class="fondatrice-content">
+                    <h2>Derrière Noesis</h2>
+                    <span class="role">Une approche, pas une personnalité</span>
+                    <p>Noesis Kintsugi naît d'un constat : entre les contenus grand public souvent simplistes et les ressources cliniques inaccessibles, il manque un espace de clarification rigoureux pour ceux qui ont besoin de comprendre ce qu'ils ont traversé.</p>
+                    <p>L'approche est transdisciplinaire par nécessité : les mécanismes d'emprise ne respectent pas les frontières académiques. Psychologie clinique, neurosciences, criminologie, anthropologie — chaque discipline est mobilisée selon ce qu'exige l'analyse.</p>
+                    <p style="color: var(--or-clair); font-style: italic; margin-top: 1rem;">Ce qui compte, c'est ce que vous comprenez. Pas qui vous l'explique.</p>
+                    <div class="fondatrice-disciplines">
+                        <span class="discipline-tag">Psychologie clinique</span>
+                        <span class="discipline-tag">Neurosciences</span>
+                        <span class="discipline-tag">Criminologie</span>
+                        <span class="discipline-tag">Anthropologie</span>
+                        <span class="discipline-tag">Sciences sociales</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Légale - Accordéon -->
+    <section class="legal-section-wrapper">
+        <div class="container">
+            <div class="legal-header reveal">
+                <h2>Informations légales</h2>
+                <p>Transparence et conformité au droit français</p>
+            </div>
+            
+            <div class="accordion">
+                <!-- Mentions légales -->
+                <div class="accordion-item reveal">
+                    <button class="accordion-header">
+                        <span class="accordion-title">Mentions légales</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="legal-text"><em>Conformément aux articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l'Économie Numérique (LCEN).</em></p>
+                            
+                            <h4 class="legal-subtitle">Éditeur du site</h4>
+                            <div class="info-card">
+                                <p><strong>Nom du site :</strong> Noesis Kintsugi</p>
+                                <p><strong>URL :</strong> https://noesiskintsugi.com</p>
+                                <p><strong>Éditeur :</strong> Sandy Dehennot</p>
+                                <p><strong>Statut :</strong> Auto-entrepreneur</p>
+                                <p><strong>SIRET :</strong> En cours d'immatriculation</p>
+                                <p><strong>Adresse :</strong> 3 rue Paul Bert, 50120 Cherbourg-en-Cotentin, France</p>
+                                <p><strong>Email :</strong> contact@noesiskintsugi.com</p>
+                                <p><strong>Directrice de la publication :</strong> Sandy Dehennot</p>
+                            </div>
+                            
+                            <h4 class="legal-subtitle">Hébergement</h4>
+                            <div class="info-card">
+                                <p><strong>Hébergeur :</strong> GitHub, Inc.</p>
+                                <p><strong>Adresse :</strong> 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</p>
+                                <p><strong>Site :</strong> https://github.com</p>
+                            </div>
+                            
+                            <h4 class="legal-subtitle">Propriété intellectuelle</h4>
+                            <p class="legal-text">L'ensemble du contenu de ce site (textes, analyses, autotests, graphismes, logo, structure) est protégé par le droit d'auteur conformément au Code de la propriété intellectuelle. Toute reproduction non autorisée sera considérée comme constitutive d'une contrefaçon (articles L.335-2 et suivants).</p>
                         </div>
-                        <div class="principle-item">
-                            <strong>Compréhension avant régulation</strong>
-                            <span>Nommer précisément ce qui s'est passé.</span>
+                    </div>
+                </div>
+
+                <!-- Confidentialité -->
+                <div class="accordion-item reveal">
+                    <button class="accordion-header">
+                        <span class="accordion-title">Politique de confidentialité (RGPD)</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="legal-text"><em>Conformément au Règlement Général sur la Protection des Données (RGPD - UE 2016/679).</em></p>
+                            
+                            <h4 class="legal-subtitle">Données collectées</h4>
+                            <ul class="legal-list">
+                                <li><strong>Données de contact :</strong> nom, prénom, email (lors d'une demande de contact ou réservation)</li>
+                                <li><strong>Données de navigation :</strong> adresse IP, pages visitées (logs serveur)</li>
+                                <li><strong>Données volontaires :</strong> informations communiquées lors des échanges</li>
+                            </ul>
+                            
+                            <h4 class="legal-subtitle">Finalités et bases légales</h4>
+                            <ul class="legal-list">
+                                <li>Réponse aux demandes → Exécution précontractuelle (art. 6.1.b RGPD)</li>
+                                <li>Service L'Étape Zéro → Exécution du contrat (art. 6.1.b RGPD)</li>
+                                <li>Newsletter → Consentement (art. 6.1.a RGPD)</li>
+                            </ul>
+                            
+                            <h4 class="legal-subtitle">Vos droits</h4>
+                            <p class="legal-text">Accès, rectification, effacement, limitation, portabilité, opposition. Pour exercer ces droits : <strong>contact@noesiskintsugi.com</strong></p>
+                            <p class="legal-text">Réclamation possible auprès de la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color: var(--or-clair);">www.cnil.fr</a></p>
+                            
+                            <h4 class="legal-subtitle">Cookies</h4>
+                            <p class="legal-text">Ce site n'utilise pas de cookies de traçage publicitaire. Seuls des cookies techniques strictement nécessaires peuvent être utilisés.</p>
                         </div>
-                        <div class="principle-item">
-                            <strong>Souveraineté avant résilience</strong>
-                            <span>Retrouver sa capacité de jugement autonome.</span>
+                    </div>
+                </div>
+
+                <!-- CGU -->
+                <div class="accordion-item reveal">
+                    <button class="accordion-header">
+                        <span class="accordion-title">Conditions générales d'utilisation</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <h4 class="legal-subtitle">Nature des contenus</h4>
+                            <div class="alert-box">
+                                <p><strong>Important :</strong> Les contenus proposés (articles, analyses, autotests) ont une vocation exclusivement informative et éducative. Ils ne constituent en aucun cas un diagnostic médical, un traitement, un avis médical personnalisé, un conseil juridique ou une expertise judiciaire.</p>
+                            </div>
+                            
+                            <h4 class="legal-subtitle">Autotests</h4>
+                            <p class="legal-text">Les autotests sont des outils d'auto-évaluation pré-clinique destinés à l'orientation. Ils ne remplacent pas l'évaluation par un professionnel de santé mentale qualifié. Les résultats sont indicatifs — ils n'ont aucune valeur diagnostique.</p>
+                            
+                            <h4 class="legal-subtitle">Service L'Étape Zéro</h4>
+                            <p class="legal-text">Accompagnement pré-clinique de structuration cognitive. Ce service ne constitue pas une prise en charge thérapeutique, ne se substitue pas à un suivi psychologique ou psychiatrique, et ne produit pas de document à valeur médico-légale.</p>
+                            
+                            <h4 class="legal-subtitle">Droit applicable</h4>
+                            <p class="legal-text">Les présentes CGU sont régies par le droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
                         </div>
-                        <div class="principle-item">
-                            <strong>Rigueur sans concession</strong>
-                            <span>Pas de développement personnel, pas de pathos.</span>
+                    </div>
+                </div>
+
+                <!-- Limites -->
+                <div class="accordion-item reveal">
+                    <button class="accordion-header">
+                        <span class="accordion-title">Limites de l'accompagnement</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="alert-box">
+                                <p><strong>Clause essentielle :</strong> Noesis Kintsugi n'est pas un service de santé. L'utilisation de ce site ne crée pas de relation thérapeutique.</p>
+                            </div>
+                            
+                            <h4 class="legal-subtitle">Ce que Noesis propose</h4>
+                            <ul class="legal-list">
+                                <li>Information et éducation sur les mécanismes d'emprise</li>
+                                <li>Outils d'auto-évaluation pour orienter la réflexion</li>
+                                <li>Accompagnement à la structuration du récit</li>
+                                <li>Clarification cognitive pour optimiser le travail avec les professionnels</li>
+                            </ul>
+                            
+                            <h4 class="legal-subtitle">Ce que Noesis ne propose pas</h4>
+                            <ul class="legal-list">
+                                <li>Diagnostic psychologique ou psychiatrique</li>
+                                <li>Psychothérapie ou prise en charge thérapeutique</li>
+                                <li>Conseil juridique personnalisé</li>
+                                <li>Intervention de crise ou gestion de l'urgence</li>
+                            </ul>
+                            
+                            <h4 class="legal-subtitle">En cas de détresse ou de danger</h4>
+                            <div class="alert-box urgence">
+                                <p><strong>Si vous êtes en situation de danger immédiat ou de détresse aiguë :</strong></p>
+                            </div>
+                            <div class="urgence-numbers">
+                                <div class="urgence-item">
+                                    <span class="urgence-number">15</span>
+                                    <span class="urgence-label">SAMU - Urgences médicales</span>
+                                </div>
+                                <div class="urgence-item">
+                                    <span class="urgence-number">3919</span>
+                                    <span class="urgence-label">Violences conjugales</span>
+                                </div>
+                                <div class="urgence-item">
+                                    <span class="urgence-number">3114</span>
+                                    <span class="urgence-label">Prévention suicide</span>
+                                </div>
+                                <div class="urgence-item">
+                                    <span class="urgence-number">112</span>
+                                    <span class="urgence-label">Urgences européennes</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <p class="reveal" style="text-align: center; color: var(--gris-medium); font-size: 0.9rem; margin-top: 3rem;">Dernière mise à jour : Janvier 2025</p>
+        </div>
+    </section>
 
-            <!-- MENTIONS LÉGALES -->
-            <div id="mentions-legales" class="legal-section reveal">
-                <h2 class="legal-title">Mentions légales</h2>
-                <p class="legal-text"><em>Conformément aux dispositions des articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l'Économie Numérique (LCEN).</em></p>
-
-                <h3 class="legal-subtitle">Éditeur du site</h3>
-                <div class="contact-legal">
-                    <p><strong>Nom du site :</strong> Noesis Kintsugi</p>
-                    <p><strong>URL :</strong> https://noesiskintsugi.com</p>
-                    <p><strong>Éditeur :</strong> Sandy Dehennot</p>
-                    <p><strong>Statut :</strong> Auto-entrepreneur</p>
-                    <p><strong>SIRET :</strong> <span class="placeholder">[EN COURS D'IMMATRICULATION]</span></p>
-                    <p><strong>Adresse :</strong> 3 rue Paul Bert, 50120 Cherbourg-en-Cotentin, France</p>
-                    <p><strong>Email :</strong> contact@noesiskintsugi.com</p>
-                    <p><strong>Directrice de la publication :</strong> Sandy Dehennot</p>
-                </div>
-
-                <h3 class="legal-subtitle">Hébergement</h3>
-                <div class="contact-legal">
-                    <p><strong>Hébergeur :</strong> GitHub, Inc.</p>
-                    <p><strong>Adresse :</strong> 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</p>
-                    <p><strong>Site :</strong> https://github.com</p>
-                </div>
-
-                <h3 class="legal-subtitle">Propriété intellectuelle</h3>
-                <p class="legal-text">L'ensemble du contenu de ce site (textes, analyses, autotests, graphismes, logo, structure) est protégé par le droit d'auteur conformément aux dispositions du Code de la propriété intellectuelle.</p>
-                <p class="legal-text">Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de l'éditeur.</p>
-                <p class="legal-text">Toute exploitation non autorisée du site ou de son contenu sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container reveal">
+            <h2>Prêt à comprendre ?</h2>
+            <p>Commencez par évaluer votre situation ou explorez nos analyses.</p>
+            <div class="cta-buttons">
+                <a href="autotest.html" class="btn btn-primary">Accéder aux autotests</a>
+                <a href="articles.html" class="btn btn-secondary">Lire les analyses</a>
             </div>
-
-            <!-- POLITIQUE DE CONFIDENTIALITÉ -->
-            <div id="confidentialite" class="legal-section reveal">
-                <h2 class="legal-title">Politique de confidentialité</h2>
-                <p class="legal-text"><em>Conformément au Règlement Général sur la Protection des Données (RGPD - UE 2016/679) et à la Loi Informatique et Libertés modifiée.</em></p>
-
-                <h3 class="legal-subtitle">Responsable du traitement</h3>
-                <p class="legal-text">Le responsable du traitement des données personnelles est l'éditeur du site mentionné ci-dessus.</p>
-
-                <h3 class="legal-subtitle">Données collectées</h3>
-                <p class="legal-text">Dans le cadre de l'utilisation du site et des services proposés, nous sommes susceptibles de collecter les données suivantes :</p>
-                <ul class="legal-list">
-                    <li><strong>Données de contact :</strong> nom, prénom, adresse email (lors d'une demande de contact ou de réservation de L'Étape Zéro)</li>
-                    <li><strong>Données de navigation :</strong> adresse IP, type de navigateur, pages visitées, durée de visite (via les logs serveur)</li>
-                    <li><strong>Données fournies volontairement :</strong> informations communiquées lors des échanges par email ou lors des entretiens L'Étape Zéro</li>
-                </ul>
-
-                <h3 class="legal-subtitle">Finalités et bases légales</h3>
-                <ul class="legal-list">
-                    <li><strong>Réponse aux demandes de contact :</strong> base légale = exécution de mesures précontractuelles (article 6.1.b RGPD)</li>
-                    <li><strong>Fourniture du service L'Étape Zéro :</strong> base légale = exécution du contrat (article 6.1.b RGPD)</li>
-                    <li><strong>Envoi de la newsletter (si applicable) :</strong> base légale = consentement (article 6.1.a RGPD)</li>
-                    <li><strong>Amélioration du site :</strong> base légale = intérêt légitime (article 6.1.f RGPD)</li>
-                </ul>
-
-                <h3 class="legal-subtitle">Durée de conservation</h3>
-                <ul class="legal-list">
-                    <li>Données de contact : 3 ans à compter du dernier échange</li>
-                    <li>Données liées à L'Étape Zéro : 5 ans à compter de la fin de la prestation (obligations légales)</li>
-                    <li>Données de navigation : 13 mois maximum</li>
-                </ul>
-
-                <h3 class="legal-subtitle">Destinataires des données</h3>
-                <p class="legal-text">Vos données personnelles sont traitées uniquement par l'éditeur du site. Elles ne sont jamais vendues, louées ou cédées à des tiers à des fins commerciales.</p>
-                <p class="legal-text">Des sous-traitants techniques peuvent avoir accès aux données dans le cadre strict de leurs missions (hébergement, paiement). Ces sous-traitants sont soumis à des obligations de confidentialité et de sécurité conformes au RGPD.</p>
-
-                <h3 class="legal-subtitle">Vos droits</h3>
-                <p class="legal-text">Conformément au RGPD, vous disposez des droits suivants :</p>
-                <ul class="legal-list">
-                    <li><strong>Droit d'accès :</strong> obtenir la confirmation que vos données sont traitées et en recevoir une copie</li>
-                    <li><strong>Droit de rectification :</strong> faire corriger des données inexactes ou incomplètes</li>
-                    <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données (sous réserve des obligations légales)</li>
-                    <li><strong>Droit à la limitation :</strong> demander la suspension temporaire du traitement</li>
-                    <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
-                    <li><strong>Droit d'opposition :</strong> vous opposer au traitement pour motifs légitimes</li>
-                    <li><strong>Droit de retirer votre consentement :</strong> à tout moment pour les traitements basés sur le consentement</li>
-                </ul>
-                <p class="legal-text">Pour exercer ces droits : <strong>contact@noesiskintsugi.com</strong></p>
-                <p class="legal-text">En cas de réclamation, vous pouvez saisir la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color: var(--or-clair);">www.cnil.fr</a></p>
-
-                <h3 class="legal-subtitle">Cookies</h3>
-                <p class="legal-text">Ce site n'utilise pas de cookies de traçage publicitaire. Seuls des cookies techniques strictement nécessaires au fonctionnement du site peuvent être utilisés (cookies de session, préférences d'affichage).</p>
-            </div>
-
-            <!-- CONDITIONS GÉNÉRALES D'UTILISATION -->
-            <div id="cgu" class="legal-section reveal">
-                <h2 class="legal-title">Conditions générales d'utilisation</h2>
-
-                <h3 class="legal-subtitle">Objet</h3>
-                <p class="legal-text">Les présentes conditions générales d'utilisation (CGU) régissent l'accès et l'utilisation du site noesiskintsugi.com. En accédant au site, l'utilisateur accepte sans réserve les présentes CGU.</p>
-
-                <h3 class="legal-subtitle">Accès au site</h3>
-                <p class="legal-text">Le site est accessible gratuitement à tout utilisateur disposant d'un accès Internet. L'éditeur se réserve le droit de suspendre, interrompre ou limiter l'accès à tout ou partie du site pour des raisons de maintenance ou pour tout autre motif, sans préavis ni indemnité.</p>
-
-                <h3 class="legal-subtitle">Nature des contenus</h3>
-                <div class="legal-highlight">
-                    <p><strong>Important :</strong> Les contenus proposés sur ce site (articles, analyses, autotests) ont une vocation exclusivement informative et éducative. Ils ne constituent en aucun cas :</p>
-                </div>
-                <ul class="legal-list">
-                    <li>Un diagnostic médical ou psychologique</li>
-                    <li>Un traitement ou une thérapie</li>
-                    <li>Un avis médical personnalisé</li>
-                    <li>Un conseil juridique</li>
-                    <li>Une expertise judiciaire</li>
-                </ul>
-
-                <h3 class="legal-subtitle">Autotests</h3>
-                <p class="legal-text">Les autotests proposés sont des outils d'auto-évaluation pré-clinique destinés à l'orientation et à la réflexion personnelle. Ils ne remplacent pas l'évaluation par un professionnel de santé mentale qualifié. Les résultats sont indicatifs et cartographiques — ils n'ont aucune valeur diagnostique.</p>
-
-                <h3 class="legal-subtitle">Service L'Étape Zéro</h3>
-                <p class="legal-text">Le service L'Étape Zéro est un accompagnement pré-clinique de structuration cognitive. Il vise à aider l'utilisateur à organiser son récit et clarifier sa situation avant consultation avec des professionnels qualifiés. Ce service :</p>
-                <ul class="legal-list">
-                    <li>Ne constitue pas une prise en charge thérapeutique</li>
-                    <li>Ne se substitue pas à un suivi psychologique ou psychiatrique</li>
-                    <li>Ne fournit pas de diagnostic</li>
-                    <li>Ne produit pas de document à valeur médico-légale</li>
-                </ul>
-
-                <h3 class="legal-subtitle">Responsabilité</h3>
-                <p class="legal-text">L'éditeur s'efforce de fournir des informations exactes et à jour, mais ne peut garantir l'exhaustivité, la précision ou l'actualité des contenus. L'utilisateur est seul responsable de l'usage qu'il fait des informations et outils mis à sa disposition.</p>
-                <p class="legal-text">L'éditeur ne pourra être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site ou de l'impossibilité d'y accéder.</p>
-
-                <h3 class="legal-subtitle">Liens hypertextes</h3>
-                <p class="legal-text">Le site peut contenir des liens vers des sites tiers. L'éditeur n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu.</p>
-
-                <h3 class="legal-subtitle">Modification des CGU</h3>
-                <p class="legal-text">L'éditeur se réserve le droit de modifier les présentes CGU à tout moment. Les modifications entrent en vigueur dès leur publication sur le site. L'utilisateur est invité à consulter régulièrement cette page.</p>
-
-                <h3 class="legal-subtitle">Droit applicable et juridiction</h3>
-                <p class="legal-text">Les présentes CGU sont régies par le droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
-            </div>
-
-            <!-- LIMITES DE L'ACCOMPAGNEMENT -->
-            <div id="limites" class="legal-section reveal">
-                <h2 class="legal-title">Limites de l'accompagnement Noesis</h2>
-                
-                <div class="legal-highlight">
-                    <p style="font-size: 1.1rem;"><strong>Clause essentielle :</strong> Noesis Kintsugi n'est pas un service de santé. L'utilisation de ce site et de ses services ne crée pas de relation thérapeutique.</p>
-                </div>
-
-                <h3 class="legal-subtitle">Ce que Noesis propose</h3>
-                <ul class="legal-list">
-                    <li>Information et éducation sur les mécanismes d'emprise et de manipulation</li>
-                    <li>Outils d'auto-évaluation pour orienter la réflexion</li>
-                    <li>Accompagnement à la structuration du récit (L'Étape Zéro)</li>
-                    <li>Clarification cognitive pour optimiser le travail avec les professionnels</li>
-                </ul>
-
-                <h3 class="legal-subtitle">Ce que Noesis ne propose pas</h3>
-                <ul class="legal-list">
-                    <li>Diagnostic psychologique ou psychiatrique</li>
-                    <li>Psychothérapie ou prise en charge thérapeutique</li>
-                    <li>Prescription ou recommandation de traitement</li>
-                    <li>Conseil juridique personnalisé</li>
-                    <li>Expertise judiciaire ou attestation à valeur légale</li>
-                    <li>Intervention de crise ou gestion de l'urgence</li>
-                </ul>
-
-                <h3 class="legal-subtitle">En cas de détresse ou de danger</h3>
-                <div class="legal-highlight">
-                    <p><strong>Si vous êtes en situation de danger immédiat ou de détresse aiguë :</strong></p>
-                    <p style="margin-top: 1rem;">• <strong>Urgences :</strong> 15 (SAMU) ou 112</p>
-                    <p>• <strong>Violences conjugales :</strong> 3919 (gratuit et anonyme)</p>
-                    <p>• <strong>Souffrance psychique :</strong> 3114 (numéro national de prévention du suicide)</p>
-                    <p>• <strong>Victimes de violences :</strong> 116 006</p>
-                </div>
-
-                <h3 class="legal-subtitle">Recommandation</h3>
-                <p class="legal-text">Nous encourageons vivement tout utilisateur identifiant des difficultés significatives à consulter un professionnel de santé mentale qualifié (psychologue, psychiatre) et/ou un avocat spécialisé selon la nature de sa situation.</p>
-                <p class="legal-text">Les contenus Noesis sont conçus pour préparer et optimiser ces consultations — jamais pour s'y substituer.</p>
-            </div>
-
-            <!-- Date de mise à jour -->
-            <div class="reveal" style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--gris-anthracite);">
-                <p style="color: var(--gris-medium); font-size: 0.9rem;">Dernière mise à jour : Janvier 2025</p>
-            </div>
-
         </div>
     </section>
 
@@ -2380,9 +2714,26 @@
         // Navigation
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
-
         navToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        // Accordion
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Open clicked if wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
         });
 
         // Reveal animations
@@ -2407,17 +2758,6 @@
                 }, i * 200);
             });
         }, 300);
-
-        // Smooth scroll for internal navigation
-        document.querySelectorAll('.page-nav a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
     </script>
 </body>
 </html>
