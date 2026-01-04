@@ -2012,7 +2012,53 @@
         .test-item:hover .test-name {
             color: var(--or-clair);
         }
-        
+
+        /* Badges disponibilité */
+        .test-badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            margin-left: 0.75rem;
+            vertical-align: middle;
+        }
+
+        .test-badge.disponible {
+            background: rgba(201, 170, 110, 0.15);
+            color: var(--or-clair);
+            border: 1px solid var(--or-vieilli);
+        }
+
+        .test-badge.a-venir {
+            background: rgba(153, 153, 153, 0.1);
+            color: var(--gris-medium);
+            border: 1px solid var(--gris-moyen-fonce);
+        }
+
+        /* Style tests à venir */
+        .test-item.coming-soon {
+            opacity: 0.6;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .test-item.coming-soon:hover {
+            transform: none;
+            border-color: var(--gris-moyen-fonce);
+            box-shadow: none;
+        }
+
+        .test-item.coming-soon::before {
+            display: none;
+        }
+
+        .test-item.coming-soon .test-name {
+            color: var(--gris-medium);
+        }
+
         /* Fondateurs - style spécial */
         .test-category.fondateurs {
             background: linear-gradient(135deg, var(--gris-anthracite) 0%, rgba(153, 107, 38, 0.08) 100%);
@@ -2111,12 +2157,12 @@
 
             <div class="intro-stats reveal">
                 <div class="stat-item">
-                    <span class="stat-number">16</span>
-                    <span class="stat-label">autotests structurés</span>
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">autotests disponibles</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">axes d'évaluation</span>
+                    <span class="stat-number">16</span>
+                    <span class="stat-label">prévus au total</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">0</span>
@@ -2144,23 +2190,23 @@
                 <p style="color: var(--blanc-casse); line-height: 1.75; max-width: 700px;">Ces quatre tests structurent toute la lecture ultérieure. Ils identifient si votre confusion actuelle provient d'une dynamique relationnelle imposée plutôt que d'une fragilité personnelle.</p>
                 
                 <div class="tests-list">
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 01</span>
+                    <a href="autotest-dissonance-cognitive.html" class="test-item">
+                        <span class="test-number">TEST 01 <span class="test-badge disponible">Disponible</span></span>
                         <h3 class="test-name">Dissonance cognitive coercitive</h3>
                         <p class="test-desc">Identifier si le doute actuel provient d'une contradiction relationnelle imposée plutôt que d'une fragilité personnelle.</p>
                     </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 02</span>
+                    <a href="autotest-asymetrie-epistemique.html" class="test-item">
+                        <span class="test-number">TEST 02 <span class="test-badge disponible">Disponible</span></span>
                         <h3 class="test-name">Asymétrie épistémique relationnelle</h3>
                         <p class="test-desc">Évaluer si, dans une relation ou un contexte, l'un sait, interprète, valide — et l'autre non.</p>
                     </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 03</span>
+                    <a href="autotest-agentivite-decisionnelle.html" class="test-item">
+                        <span class="test-number">TEST 03 <span class="test-badge disponible">Disponible</span></span>
                         <h3 class="test-name">Effondrement de l'agentivité décisionnelle</h3>
                         <p class="test-desc">Mesurer la perte progressive de capacité à décider, initier, trancher, sans cause neurodéveloppementale primaire.</p>
                     </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 04</span>
+                    <a href="autotest-capture-interpretative.html" class="test-item">
+                        <span class="test-number">TEST 04 <span class="test-badge disponible">Disponible</span></span>
                         <h3 class="test-name">Capture interprétative du réel</h3>
                         <p class="test-desc">Déterminer si votre lecture des faits a été progressivement remplacée par celle d'un tiers ou d'un système.</p>
                     </a>
@@ -2180,28 +2226,28 @@
                 </div>
                 
                 <div class="tests-list">
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 05</span>
+                    <a href="autotest-trauma-bonding.html" class="test-item">
+                        <span class="test-number">TEST 05 <span class="test-badge disponible">Disponible</span></span>
                         <h3 class="test-name">Trauma bonding (au sens strict)</h3>
                         <p class="test-desc">Différencier attachement intermittent sous contrainte de dépendance affective ou d'amour conflictuel.</p>
                     </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 06</span>
+                    <a href="autotest-attachement-contraint.html" class="test-item">
+                        <span class="test-number">TEST 06 <span class="test-badge disponible">Disponible</span></span>
                         <h3 class="test-name">Attachement contraint par intermittence</h3>
                         <p class="test-desc">Identifier un lien maintenu non par désir, mais par alternance de gratification et de menace implicite.</p>
                     </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 07</span>
+                    <a href="autotest-dette-emotionnelle.html" class="test-item">
+                        <span class="test-number">TEST 07 <span class="test-badge disponible">Disponible</span></span>
                         <h3 class="test-name">Dette émotionnelle invisible</h3>
                         <p class="test-desc">Évaluer si vous vous sentez redevable sans contrat explicite, au point d'inhiber vos besoins et limites.</p>
                     </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 08</span>
+                    <a href="autotest-lovebombing.html" class="test-item">
+                        <span class="test-number">TEST 08 <span class="test-badge disponible">Disponible</span></span>
                         <h3 class="test-name">Love bombing initial et maintien par rareté</h3>
                         <p class="test-desc">Déterminer si une intensité initiale a servi de levier de capture plutôt que de base relationnelle réelle.</p>
                     </a>
                 </div>
-                
+
                 <p class="category-warning">Ces tests ne concluent jamais : « relation toxique ». Ils décrivent le mécanisme opérant, rien de plus.</p>
             </div>
 
@@ -2214,25 +2260,25 @@
                         <p class="category-subtitle">Fondamentaux pour le travail, la famille, les institutions</p>
                     </div>
                 </div>
-                
+
                 <div class="tests-list">
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 09</span>
+                    <div class="test-item coming-soon">
+                        <span class="test-number">TEST 09 <span class="test-badge a-venir">À venir</span></span>
                         <h3 class="test-name">Harcèlement moral non reconnu</h3>
                         <p class="test-desc">Identifier une violence répétée sans scène spectaculaire, sans cris, sans insultes directes.</p>
-                    </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 10</span>
+                    </div>
+                    <div class="test-item coming-soon">
+                        <span class="test-number">TEST 10 <span class="test-badge a-venir">À venir</span></span>
                         <h3 class="test-name">Contrôle coercitif diffus</h3>
                         <p class="test-desc">Évaluer une restriction progressive des marges de manœuvre, même sans interdictions explicites.</p>
-                    </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 11</span>
+                    </div>
+                    <div class="test-item coming-soon">
+                        <span class="test-number">TEST 11 <span class="test-badge a-venir">À venir</span></span>
                         <h3 class="test-name">Violence psychologique normalisée</h3>
                         <p class="test-desc">Mesurer l'écart entre ce qui est socialement minimisé et ce qui est cliniquement délétère.</p>
-                    </a>
+                    </div>
                 </div>
-                
+
                 <p class="category-warning">Ces tests sont conçus pour résister au déni collectif.</p>
             </div>
 
@@ -2245,25 +2291,25 @@
                         <p class="category-subtitle">Anti-faux diagnostics — Noesis fait l'inverse du marché</p>
                     </div>
                 </div>
-                
+
                 <div class="tests-list">
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 12</span>
+                    <div class="test-item coming-soon">
+                        <span class="test-number">TEST 12 <span class="test-badge a-venir">À venir</span></span>
                         <h3 class="test-name">Burnout secondaire à contrainte relationnelle</h3>
                         <p class="test-desc">Distinguer l'épuisement par surcharge objective d'un effondrement induit par impossibilité d'agir.</p>
-                    </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 13</span>
+                    </div>
+                    <div class="test-item coming-soon">
+                        <span class="test-number">TEST 13 <span class="test-badge a-venir">À venir</span></span>
                         <h3 class="test-name">Brown-out (perte de sens sous contrainte)</h3>
                         <p class="test-desc">Identifier une désintégration motivationnelle liée à l'incohérence imposée, pas à un manque d'engagement.</p>
-                    </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 14</span>
+                    </div>
+                    <div class="test-item coming-soon">
+                        <span class="test-number">TEST 14 <span class="test-badge a-venir">À venir</span></span>
                         <h3 class="test-name">Alexithymie acquise sous stress chronique</h3>
                         <p class="test-desc">Différencier une anesthésie émotionnelle défensive d'une alexithymie développementale primaire.</p>
-                    </a>
+                    </div>
                 </div>
-                
+
                 <p class="category-warning">Chaque test écarte explicitement : TDAH primaire, trouble anxieux généralisé, traits de personnalité stables.</p>
             </div>
 
@@ -2276,18 +2322,18 @@
                         <p class="category-subtitle">Ces tests servent de boussole, pas de verdict</p>
                     </div>
                 </div>
-                
+
                 <div class="tests-list">
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 15</span>
+                    <div class="test-item coming-soon">
+                        <span class="test-number">TEST 15 <span class="test-badge a-venir">À venir</span></span>
                         <h3 class="test-name">Indicateur de contexte délétère dominant</h3>
                         <p class="test-desc">Identifier si le problème principal est relationnel, institutionnel, systémique ou mixte.</p>
-                    </a>
-                    <a href="#" class="test-item">
-                        <span class="test-number">TEST 16</span>
+                    </div>
+                    <div class="test-item coming-soon">
+                        <span class="test-number">TEST 16 <span class="test-badge a-venir">À venir</span></span>
                         <h3 class="test-name">Indice de réversibilité cognitive</h3>
                         <p class="test-desc">Évaluer si une restauration partielle de la clarté est possible hors contexte — ou si un travail clinique plus lourd est nécessaire.</p>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
