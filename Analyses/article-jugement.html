@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le moment précis où j'ai arrêté de faire confiance à mon propre jugement | Noesis Kintsugi</title>
-    <meta name="description" content="Pourquoi tu doutes de toi, pourquoi tu t'excuses tout le temps, pourquoi tu ne sais plus ce que tu penses. Ce n'est pas un manque de confiance. C'est un système. Analyse Noesis.">
+    <title>Le moment précis où j'ai arrêté de faire confiance à mon propre jugement — Noesis Kintsugi</title>
+    <meta name="description" content="On vous a juste convaincu du contraire. Analyse transdisciplinaire des mécanismes qui détruisent la confiance en son propre jugement.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,62 +12,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
     
     <style>
-        /* ═══════════════════════════════════════════════════════════════
-           CSS VARIABLES — PALETTE NOESIS KINTSUGI
-           ═══════════════════════════════════════════════════════════════ */
         :root {
-            /* Noirs profonds */
             --noir-principal: #121514;
             --noir-profond: #111313;
             --noir-clair: #161817;
-            
-            /* Gris anthracite */
             --gris-anthracite: #2E3130;
             --gris-ceramique: #2D2F2F;
             --gris-moyen-fonce: #424446;
-            
-            /* Gris moyens */
             --gris-pierre: #97948C;
-            --gris-neutre: #989694;
             --gris-medium: #999999;
-            
-            /* Ors sombres */
             --or-antique: #8F6B2E;
-            --or-bronze: #967523;
             --or-vieilli: #996B26;
-            --or-cuivre: #AE752B;
-            
-            /* Ors moyens */
-            --or-moyen: #9D7034;
-            --or-mat: #98764D;
-            --or-terreux: #99845E;
-            
-            /* Ors brillants */
             --or-clair: #C9AA6E;
             --or-lumineux: #CCA464;
             --or-eclatant: #D7BE67;
             --or-intense: #DDB569;
-            
-            /* Blancs/Ivoire */
             --blanc-casse: #C9CBCB;
             --ivoire: #CBCBC9;
-            
-            /* Effets */
-            --glow-or: 0 0 20px rgba(201, 170, 110, 0.3);
-            --shadow-gold: 0 4px 20px rgba(143, 107, 46, 0.25);
             --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
-            
-            /* Typography */
             --font-display: 'Megrim', cursive;
             --font-body: 'Crimson Pro', serif;
-            
-            /* Transitions */
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           RESET & BASE
-           ═══════════════════════════════════════════════════════════════ */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -83,12 +50,11 @@
             font-family: var(--font-body);
             background-color: var(--noir-principal);
             color: var(--blanc-casse);
-            line-height: 1.65;
+            line-height: 1.8;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Texture grain subtile */
         body::before {
             content: '';
             position: fixed;
@@ -97,7 +63,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            opacity: 0.025;
+            opacity: 0.02;
             z-index: 9999;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
@@ -107,28 +73,28 @@
             color: var(--noir-principal);
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--noir-profond);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--or-vieilli);
-            border-radius: 4px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--noir-profond); }
+        ::-webkit-scrollbar-thumb { background: var(--or-vieilli); border-radius: 4px; }
 
         a {
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
+            transition: var(--transition-smooth);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 clamp(20px, 5vw, 60px);
+        /* ═══════════════════════════════════════════════════════════════
+           PROGRESS BAR
+           ═══════════════════════════════════════════════════════════════ */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--gradient-or);
+            z-index: 1001;
+            transition: width 0.1s ease-out;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -141,16 +107,21 @@
             right: 0;
             z-index: 1000;
             padding: 1.5rem 0;
+            background: transparent;
             transition: var(--transition-smooth);
         }
 
         .nav.scrolled {
+            padding: 1rem 0;
             background: rgba(17, 19, 19, 0.95);
             backdrop-filter: blur(20px);
-            padding: 1rem 0;
+            border-bottom: 1px solid rgba(153, 107, 38, 0.1);
         }
 
         .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -158,47 +129,45 @@
 
         .logo {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            letter-spacing: 0.12em;
             color: var(--blanc-casse);
-            letter-spacing: 0.05em;
         }
 
         .logo span {
-            color: var(--or-clair);
+            color: var(--or-eclatant);
         }
 
         .nav-links {
             display: flex;
+            gap: 3rem;
             list-style: none;
-            gap: 2.5rem;
         }
 
         .nav-links a {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--gris-medium);
-            transition: var(--transition-smooth);
+            letter-spacing: 0.03em;
             position: relative;
+            padding-bottom: 4px;
         }
 
-        .nav-links a:hover,
         .nav-links a.active {
-            color: var(--or-clair);
+            color: var(--blanc-casse);
         }
 
-        .nav-links a::after {
+        .nav-links a.active::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: 0;
             left: 0;
-            width: 0;
+            width: 100%;
             height: 1px;
-            background: var(--or-clair);
-            transition: var(--transition-smooth);
+            background: var(--blanc-casse);
         }
 
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--blanc-casse);
         }
 
         .nav-toggle {
@@ -211,422 +180,696 @@
         .nav-toggle span {
             width: 24px;
             height: 2px;
-            background: var(--or-clair);
-            transition: var(--transition-smooth);
+            background: var(--blanc-casse);
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           PROGRESS BAR
+           HERO
            ═══════════════════════════════════════════════════════════════ */
-        .reading-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: var(--gradient-or);
-            z-index: 10001;
-            transition: width 0.1s ease;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           ARTICLE HERO
-           ═══════════════════════════════════════════════════════════════ */
-        .article-hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .hero {
             position: relative;
-            padding-top: 80px;
-            background: var(--noir-principal);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
             overflow: hidden;
         }
 
-        .article-hero-bg {
+        .hero::before {
+            content: '';
             position: absolute;
-            inset: 0;
-            background-image: url('assets/bg-kintsugi.png');
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('bg-kintsugi.png');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
             z-index: 0;
         }
 
-        .article-hero-bg::after {
+        .hero::after {
             content: '';
             position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg,
-                rgba(18, 21, 20, 0.75) 0%,
-                rgba(18, 21, 20, 0.6) 50%,
-                rgba(18, 21, 20, 0.8) 100%);
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(17, 19, 19, 0.2) 0%,
+                rgba(17, 19, 19, 0.4) 50%,
+                rgba(18, 21, 20, 1) 100%
+            );
+            z-index: 1;
         }
 
-        .article-hero-content {
+        .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 0 2rem;
+            max-width: 1000px;
+            animation: fadeInUp 1s ease-out;
         }
 
-        .article-category {
-            display: inline-block;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-series {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            letter-spacing: 0.35em;
             text-transform: uppercase;
             color: var(--gris-medium);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--blanc-casse);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
             margin-bottom: 2rem;
         }
 
-        .article-hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            color: var(--blanc-casse);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        .article-hero-subtitle {
+        .hero-hook {
             font-family: var(--font-body);
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-style: italic;
-            color: var(--or-clair);
+            color: var(--or-eclatant);
             margin-bottom: 3rem;
         }
 
-        /* Séparateur doré style site */
-        .gold-separator {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .gold-separator::before,
-        .gold-separator::after {
-            content: '·';
-            color: var(--or-vieilli);
-            font-size: 0.8rem;
-        }
-
-        .gold-separator span {
+        .hero-line {
             width: 60px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
+            background: var(--or-vieilli);
+            margin: 0 auto 3rem;
         }
 
-        .article-meta-info {
+        .hero-meta {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             gap: 2rem;
-            color: var(--gris-medium);
             font-size: 0.9rem;
+            color: var(--gris-medium);
         }
 
-        .article-meta-info span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .hero-meta svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none;
+            margin-right: 0.5rem;
+            vertical-align: middle;
         }
 
         .scroll-indicator {
             position: absolute;
-            bottom: 2rem;
+            bottom: 3rem;
             left: 50%;
             transform: translateX(-50%);
-            color: var(--or-vieilli);
-            animation: float 3s ease-in-out infinite;
             z-index: 2;
+            color: var(--or-vieilli);
+            animation: bounce 2s infinite;
         }
 
-        @keyframes float {
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        @keyframes bounce {
             0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(10px); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           TABLE OF CONTENTS (Sticky)
+           ═══════════════════════════════════════════════════════════════ */
+        .toc-wrapper {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .toc-wrapper.visible {
+            opacity: 1;
+        }
+
+        .toc {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .toc-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gris-anthracite);
+            border: 1px solid var(--gris-moyen-fonce);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .toc-dot:hover,
+        .toc-dot.active {
+            background: var(--or-vieilli);
+            border-color: var(--or-clair);
+            transform: scale(1.3);
+        }
+
+        .toc-dot::after {
+            content: attr(data-title);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            white-space: nowrap;
+            font-size: 0.75rem;
+            color: var(--gris-medium);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .toc-dot:hover::after {
+            opacity: 1;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ARTICLE LEAD
+           ═══════════════════════════════════════════════════════════════ */
+        .article-lead {
+            padding: 5rem 2rem;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .article-lead::before,
+        .article-lead::after {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--or-vieilli);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .article-lead::before {
+            top: 2rem;
+            left: 1rem;
+        }
+
+        .article-lead::after {
+            content: '"';
+            bottom: 2rem;
+            right: 1rem;
+        }
+
+        .article-lead p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--gris-pierre);
+            line-height: 1.9;
         }
 
         /* ═══════════════════════════════════════════════════════════════
            ARTICLE CONTENT
            ═══════════════════════════════════════════════════════════════ */
-        .article-body {
-            background: var(--noir-profond);
-            padding: 5rem 2rem;
-        }
-
         .article-content {
-            max-width: 750px;
+            max-width: 720px;
             margin: 0 auto;
+            padding: 0 2rem 4rem;
         }
 
         .article-content p {
-            font-size: 1.15rem;
-            line-height: 1.85;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
             color: var(--blanc-casse);
-            margin-bottom: 1.75rem;
+            line-height: 1.85;
         }
 
-        .article-intro {
-            font-size: 1.25rem !important;
-            line-height: 1.8 !important;
-            color: var(--gris-pierre) !important;
-            text-align: center;
-            margin-bottom: 3rem !important;
-            font-style: italic;
-        }
-
-        .article-content h2 {
+        /* Lettrine */
+        .article-content .drop-cap::first-letter {
+            float: left;
             font-family: var(--font-display);
-            font-size: clamp(1.6rem, 3vw, 2rem);
+            font-size: 4rem;
+            line-height: 0.8;
+            padding-right: 0.75rem;
+            padding-top: 0.25rem;
+            color: var(--or-eclatant);
+        }
+
+        /* Titres avec icône */
+        .article-content h2 {
+            font-family: var(--font-body);
+            font-size: 1.4rem;
+            font-weight: 500;
             color: var(--or-eclatant);
             margin: 4rem 0 1.5rem;
-            padding-bottom: 0.75rem;
-            position: relative;
-        }
-
-        .article-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: var(--or-vieilli);
-        }
-
-        .article-content h2:first-of-type {
-            margin-top: 0;
-        }
-
-        /* Strong / Emphasis */
-        .article-content strong {
-            color: var(--or-clair);
-            font-weight: 500;
-        }
-
-        /* Pull Quote - Style citation Noesis */
-        .pull-quote {
-            margin: 3.5rem 0;
-            padding: 2rem 0;
-            text-align: center;
-            position: relative;
-        }
-
-        .pull-quote::before,
-        .pull-quote::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
-        }
-
-        .pull-quote::before {
-            top: 0;
-        }
-
-        .pull-quote::after {
-            bottom: 0;
-        }
-
-        .pull-quote p {
-            font-family: var(--font-body);
-            font-size: 1.35rem !important;
-            font-style: italic;
-            color: var(--or-clair) !important;
-            line-height: 1.6 !important;
-            margin: 0 !important;
-        }
-
-        /* Callout Box - Style pilier Noesis */
-        .callout {
-            background: var(--gris-anthracite);
-            padding: 2rem 2.5rem;
-            margin: 2.5rem 0;
-            border-left: 3px solid var(--or-vieilli);
-            position: relative;
-        }
-
-        .callout p {
-            margin: 0 !important;
-            font-size: 1.05rem !important;
-            color: var(--gris-pierre) !important;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           ARTICLE CTA
-           ═══════════════════════════════════════════════════════════════ */
-        .article-cta {
-            margin-top: 4rem;
-            padding: 3rem;
-            background: var(--gris-anthracite);
-            text-align: center;
-            position: relative;
-        }
-
-        .article-cta h3 {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            color: var(--or-eclatant);
-            margin-bottom: 1rem;
-        }
-
-        .article-cta p {
-            color: var(--gris-pierre) !important;
-            font-size: 1.05rem !important;
-            margin-bottom: 2rem !important;
-            font-style: italic;
-        }
-
-        /* Bouton style "Évaluer ma situation" */
-        .btn-primary {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--or-moyen) 0%, var(--or-clair) 100%);
-            color: var(--noir-principal);
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            transition: var(--transition-smooth);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-gold);
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           ARTICLE NAV
-           ═══════════════════════════════════════════════════════════════ */
-        .article-nav {
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 3rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            border-top: 1px solid var(--gris-anthracite);
-        }
-
-        .article-nav a {
-            color: var(--or-clair);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition-smooth);
-        }
-
-        .article-nav a:hover {
-            color: var(--or-eclatant);
-        }
-
-        .share-buttons {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
 
-        .share-buttons span {
-            color: var(--gris-medium);
-            font-size: 0.85rem;
+        .article-content h2::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            flex-shrink: 0;
+            opacity: 0.7;
         }
 
-        .share-btn {
-            width: 40px;
-            height: 40px;
+        .article-content h2[data-icon="destruction"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="system"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="person"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="brain"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 011.32-4.24 2.5 2.5 0 011.98-3A2.5 2.5 0 019.5 2z'/%3E%3Cpath d='M14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-1.32-4.24 2.5 2.5 0 00-1.98-3A2.5 2.5 0 0014.5 2z'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="target"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="heal"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="forgive"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="forward"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E");
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: var(--gris-pierre);
+        }
+
+        .article-content strong {
+            font-weight: 600;
+            color: var(--or-clair);
+        }
+
+        /* Parenthèse / aside */
+        .parenthese {
+            display: block;
+            margin: 2rem 0;
+            padding: 1.25rem 1.5rem 1.25rem 3.5rem;
+            background: rgba(46, 49, 48, 0.3);
+            border-left: 2px solid var(--gris-moyen-fonce);
+            font-style: italic;
+            color: var(--gris-pierre);
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .parenthese::before {
+            content: '※';
+            position: absolute;
+            left: 1.25rem;
+            top: 1.25rem;
+            color: var(--gris-moyen-fonce);
+            font-size: 1.2rem;
+        }
+
+        /* Pull quote */
+        .pull-quote {
+            margin: 3rem -2rem;
+            padding: 2.5rem 3rem;
+            background: linear-gradient(135deg, rgba(153, 107, 38, 0.08) 0%, rgba(153, 107, 38, 0.02) 100%);
+            border-top: 1px solid rgba(153, 107, 38, 0.2);
+            border-bottom: 1px solid rgba(153, 107, 38, 0.2);
+            text-align: center;
+            position: relative;
+        }
+
+        .pull-quote p {
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--or-clair);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .pull-quote::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-or);
+        }
+
+        /* Emphase box */
+        .emphase {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: rgba(153, 107, 38, 0.05);
+            border: 1px solid rgba(153, 107, 38, 0.12);
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .emphase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-or);
+            border-radius: 3px 0 0 3px;
+        }
+
+        .emphase p {
+            margin-bottom: 1.25rem;
+        }
+
+        .emphase p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Liste mécanismes avec numéros */
+        .liste-mecanismes {
+            margin: 2rem 0;
+            padding-left: 0;
+            list-style: none;
+            counter-reset: mechanism;
+        }
+
+        .liste-mecanismes li {
+            position: relative;
+            padding: 1.5rem 0 1.5rem 4rem;
+            border-bottom: 1px solid rgba(46, 49, 48, 0.5);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            counter-increment: mechanism;
+        }
+
+        .liste-mecanismes li:last-child {
+            border-bottom: none;
+        }
+
+        .liste-mecanismes li::before {
+            content: counter(mechanism);
+            position: absolute;
+            left: 0;
+            top: 1.5rem;
+            width: 28px;
+            height: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--gris-anthracite);
-            color: var(--blanc-casse);
-            transition: var(--transition-smooth);
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            color: var(--or-eclatant);
+            border: 1px solid var(--or-vieilli);
+            border-radius: 50%;
         }
 
-        .share-btn:hover {
+        .liste-mecanismes li strong {
+            color: var(--or-clair);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Séparateur décoratif */
+        .separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 3.5rem 0;
+            gap: 1.5rem;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gris-anthracite) 50%, transparent);
+        }
+
+        .separator .sep-icon {
+            width: 12px;
+            height: 12px;
+            border: 1px solid var(--or-vieilli);
+            transform: rotate(45deg);
+            position: relative;
+        }
+
+        .separator .sep-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4px;
+            height: 4px;
             background: var(--or-vieilli);
-            color: var(--noir-principal);
+        }
+
+        /* Highlight text */
+        .highlight {
+            background: linear-gradient(transparent 60%, rgba(201, 170, 110, 0.2) 60%);
+            padding: 0 2px;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           RELATED ARTICLES
+           CTA AUTOTEST
            ═══════════════════════════════════════════════════════════════ */
-        .related-section {
-            padding: 5rem 2rem;
-            background: var(--noir-principal);
-        }
-
-        .related-header {
+        .cta-autotest {
+            margin: 4rem 0;
+            padding: 2.5rem;
+            background: var(--noir-profond);
+            border: 1px solid var(--gris-anthracite);
+            border-radius: 3px;
             text-align: center;
-            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
         }
 
-        .related-header h3 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            color: var(--or-eclatant);
-            margin-bottom: 0.5rem;
-        }
-
-        .related-header::after {
+        .cta-autotest::before {
             content: '';
-            display: block;
-            width: 60px;
-            height: 2px;
-            background: var(--or-vieilli);
-            margin: 1rem auto 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-or);
+        }
+
+        .cta-autotest:hover {
+            border-color: var(--or-vieilli);
+            transform: translateY(-2px);
+        }
+
+        .cta-autotest h3 {
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--or-clair);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .cta-autotest h3 svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .cta-autotest p {
+            color: var(--gris-medium);
+            font-size: 1rem;
+            margin-bottom: 1.5rem !important;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-primary {
+            background: var(--gradient-or);
+            color: var(--noir-principal);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(143, 107, 46, 0.3);
+        }
+
+        .btn-primary svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ARTICLE FOOTER
+           ═══════════════════════════════════════════════════════════════ */
+        .article-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--gris-anthracite);
+            border-bottom: 1px solid var(--gris-anthracite);
+            margin: 3rem 0;
+        }
+
+        .article-actions a {
+            color: var(--gris-medium);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-actions a:hover {
+            color: var(--or-clair);
+        }
+
+        .article-actions a svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        /* Articles liés */
+        .related-articles {
+            padding: 5rem 2rem;
+            background: var(--noir-profond);
+        }
+
+        .related-articles h2 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            letter-spacing: 0.1em;
+            color: var(--blanc-casse);
+            margin-bottom: 2rem;
+            text-align: center;
         }
 
         .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
             max-width: 1000px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
-        .related-card {
-            background: var(--gris-anthracite);
+        .related-item {
             padding: 1.5rem;
+            background: var(--noir-principal);
+            border: 1px solid var(--gris-anthracite);
+            border-radius: 3px;
             transition: var(--transition-smooth);
-            border-bottom: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
 
-        .related-card:hover {
-            transform: translateY(-4px);
-            border-bottom-color: var(--or-clair);
+        .related-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-or);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
         }
 
-        .related-card-category {
+        .related-item:hover {
+            border-color: var(--or-vieilli);
+            transform: translateY(-3px);
+        }
+
+        .related-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-item .series-tag {
             font-size: 0.7rem;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--or-vieilli);
             margin-bottom: 0.75rem;
+            display: block;
         }
 
-        .related-card-title {
+        .related-item h3 {
             font-family: var(--font-body);
-            font-size: 1.05rem;
+            font-size: 1rem;
+            font-weight: 500;
             color: var(--blanc-casse);
             line-height: 1.5;
-            transition: var(--transition-smooth);
-        }
-
-        .related-card:hover .related-card-title {
-            color: var(--or-clair);
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -634,17 +877,18 @@
            ═══════════════════════════════════════════════════════════════ */
         .footer {
             background: var(--noir-profond);
-            padding: 4rem 2rem 2rem;
             border-top: 1px solid var(--gris-anthracite);
+            padding: 3rem 2rem 1.5rem;
         }
 
         .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
             gap: 2rem;
-            margin-bottom: 3rem;
         }
 
         .footer-brand .logo {
@@ -654,19 +898,19 @@
 
         .footer-tagline {
             font-size: 0.9rem;
-            color: var(--gris-medium);
             font-style: italic;
+            color: var(--gris-medium);
         }
 
         .footer-links {
             display: flex;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
             color: var(--gris-medium);
-            font-size: 0.9rem;
-            transition: var(--transition-smooth);
+            font-size: 0.95rem;
         }
 
         .footer-links a:hover {
@@ -675,50 +919,100 @@
 
         .footer-social {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
-        .social-link-footer {
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--gris-anthracite);
+            border-radius: 50%;
             color: var(--gris-medium);
             transition: var(--transition-smooth);
         }
 
-        .social-link-footer:hover {
+        .footer-social a:hover {
+            border-color: var(--or-vieilli);
             color: var(--or-clair);
         }
 
+        .footer-social svg {
+            width: 16px;
+            height: 16px;
+        }
+
         .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
             border-top: 1px solid var(--gris-anthracite);
+            text-align: center;
         }
 
         .footer-copyright {
             font-size: 0.8rem;
-            color: var(--gris-medium);
-            margin-bottom: 0.5rem;
+            color: var(--gris-moyen-fonce);
+            margin-bottom: 0.25rem;
         }
 
         .footer-baseline {
-            font-size: 0.85rem;
-            color: var(--gris-pierre);
+            font-size: 0.9rem;
             font-style: italic;
+            color: var(--gris-pierre);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ANIMATIONS
+           ═══════════════════════════════════════════════════════════════ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         /* ═══════════════════════════════════════════════════════════════
            RESPONSIVE
            ═══════════════════════════════════════════════════════════════ */
+        @media (max-width: 1200px) {
+            .toc-wrapper {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
+            .nav-inner {
+                padding: 0 1.5rem;
+            }
+
             .nav-links {
                 display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(17, 19, 19, 0.98);
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
+                background: rgba(17, 19, 19, 0.98);
+                padding: 1.5rem;
+                gap: 1rem;
             }
 
             .nav-links.active {
@@ -729,42 +1023,45 @@
                 display: flex;
             }
 
-            .article-hero {
-                min-height: 70vh;
+            .hero-title {
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
             }
 
-            .article-body {
-                padding: 3rem 1.25rem;
+            .hero-meta {
+                flex-direction: column;
+                gap: 0.5rem;
             }
 
-            .article-content p {
-                font-size: 1.05rem;
+            .article-content h2 {
+                font-size: 1.2rem;
             }
 
-            .pull-quote p {
-                font-size: 1.15rem !important;
-            }
-
-            .article-cta {
+            .pull-quote {
+                margin: 2rem -1rem;
                 padding: 2rem 1.5rem;
             }
 
-            .article-nav {
+            .pull-quote p {
+                font-size: 1.15rem;
+            }
+
+            .liste-mecanismes li {
+                padding-left: 3rem;
+            }
+
+            .article-actions {
                 flex-direction: column;
-                text-align: center;
+                align-items: flex-start;
+                gap: 1rem;
             }
 
             .footer-inner {
                 flex-direction: column;
                 text-align: center;
+                align-items: center;
             }
 
             .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .footer-social {
                 justify-content: center;
             }
         }
@@ -772,353 +1069,372 @@
 </head>
 <body>
 
-    <!-- Progress bar -->
-    <div class="reading-progress" id="readingProgress"></div>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
-        <div class="container">
-            <div class="nav-inner">
-                <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html#piliers">Méthode</a></li>
-                    <li><a href="autotest.html">Autotests</a></li>
-                    <li><a href="articles.html" class="active">Analyses</a></li>
-                    <li><a href="accompagnement.html">L'Étape Zéro</a></li>
-                    <li><a href="mailto:contact@noesiskintsugi.com">Contact</a></li>
-                </ul>
-                <div class="nav-toggle" id="navToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Méthode</a></li>
+                <li><a href="../Autotests/autotest.html">Autotests</a></li>
+                <li><a href="articles.html" class="active">Analyses</a></li>
+                <li><a href="../etape-zero/accompagnement.html">L'Étape Zéro</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Article -->
-    <section class="article-hero">
-        <div class="article-hero-bg"></div>
-        <div class="article-hero-content">
-            <span class="article-category">Série I — Doute de soi</span>
-            <h1 class="article-hero-title">Le moment précis où j'ai arrêté de faire confiance à mon propre jugement</h1>
-            <p class="article-hero-subtitle">On vous a juste convaincu du contraire.</p>
-            
-            <div class="gold-separator">
-                <span></span>
-            </div>
-            
-            <div class="article-meta-info">
+    <!-- Table of Contents -->
+    <div class="toc-wrapper" id="tocWrapper">
+        <div class="toc">
+            <div class="toc-dot" data-target="section1" data-title="Ce qu'on t'a fait"></div>
+            <div class="toc-dot" data-target="section2" data-title="Le système"></div>
+            <div class="toc-dot" data-target="section3" data-title="Cette personne"></div>
+            <div class="toc-dot" data-target="section4" data-title="Ton cerveau"></div>
+            <div class="toc-dot" data-target="section5" data-title="Pas faible"></div>
+            <div class="toc-dot" data-target="section6" data-title="Guérir"></div>
+            <div class="toc-dot" data-target="section7" data-title="Pardon"></div>
+            <div class="toc-dot" data-target="section8" data-title="Maintenant"></div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <p class="hero-series">Série I — Doute de soi</p>
+            <h1 class="hero-title">Le moment précis où j'ai arrêté de faire confiance à mon propre jugement</h1>
+            <p class="hero-hook">On vous a juste convaincu du contraire.</p>
+            <div class="hero-line"></div>
+            <div class="hero-meta">
                 <span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 6v6l4 2"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     9 min de lecture
                 </span>
                 <span>Analyse transdisciplinaire</span>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 5v14M5 12l7 7 7-7"/>
-            </svg>
+        <a href="#content" class="scroll-indicator">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+    </header>
+
+    <!-- Lead -->
+    <div class="article-lead" id="content">
+        <p>Tu sais de quoi je parle. Tu ne sais peut-être plus la date. Tu ne sais peut-être plus la phrase exacte. Mais tu sais qu'il y a eu un avant. Un temps où tu savais ce que tu pensais. Où tu n'avais pas besoin de trois avis extérieurs pour savoir si ce que tu ressentais était « légitime ».</p>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        
+        <p class="reveal drop-cap">Et puis il y a eu l'après. Ce brouillard. Cette habitude de commencer tes phrases par « je me trompe peut-être mais… ». Cette sensation d'être devenue locataire dans ta propre tête — avec quelqu'un d'autre qui commente chaque décision.</p>
+
+        <p class="reveal">On t'a volé ça. Pas avec un couteau. Avec des phrases. C'est plus propre. Ça ne laisse pas de traces. C'est très pratique pour la personne en face.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="destruction" id="section1">Ce qu'on t'a fait, c'est dégueulasse</h2>
+
+        <p class="reveal">Je ne vais pas « nuancer ». Je ne vais pas te sortir que « c'était compliqué des deux côtés ». Je ne vais pas t'expliquer qu'il faut « comprendre l'autre pour avancer » — comme si l'autre s'était donné cette peine.</p>
+
+        <p class="reveal">Ce qui t'est arrivé a un nom. Ça s'appelle de la <strong>destruction</strong>.</p>
+
+        <p class="reveal">Et le plus beau ? On t'a probablement fait croire que c'était de ta faute. Que tu étais « trop sensible ». Que tu « dramatisais ».</p>
+
+        <div class="pull-quote reveal">
+            <p>Le type met le feu à ta maison et te reproche de tousser à cause de la fumée.</p>
         </div>
-    </section>
 
-    <!-- Article Body -->
-    <article class="article-body">
-        <div class="article-content">
-            
-            <p class="article-intro">Tu sais de quoi je parle. Tu ne sais peut-être plus la date. Tu ne sais peut-être plus la phrase exacte. Mais tu sais qu'il y a eu un avant. Un temps où tu savais ce que tu pensais. Où tu n'avais pas besoin de trois avis extérieurs pour savoir si ce que tu ressentais était "légitime".</p>
+        <div class="separator reveal"><div class="sep-icon"></div></div>
 
-            <p>Et puis il y a eu l'après.</p>
+        <h2 class="reveal" data-icon="system" id="section2">Le système qui t'a préparée</h2>
 
-            <p>Ce brouillard. Cette habitude de commencer tes phrases par "je me trompe peut-être mais...". Cette sensation d'être devenue locataire dans ta propre tête — avec quelqu'un d'autre qui commente chaque décision.</p>
+        <p class="reveal">Tu penses peut-être à <em>une</em> personne. Un ex. Un parent. Un chef. Et oui, cette personne a probablement été le coup de grâce.</p>
 
-            <p>On t'a volé ça. Pas avec un couteau. Avec des phrases. C'est plus propre. Ça ne laisse pas de traces. C'est très pratique pour la personne en face.</p>
+        <p class="reveal">Mais elle n'a pas travaillé seule.</p>
 
-            <h2>Ce qu'on t'a fait, c'est dégueulasse</h2>
+        <p class="reveal">Elle a juste appuyé là où c'était déjà fragilisé. Là où des années de micro-fissures avaient préparé le terrain. Parce que la vérité — et elle est moche — c'est que <span class="highlight">le monde entier participe à te faire douter de toi depuis ta naissance</span>.</p>
 
-            <p>Je ne vais pas "nuancer". Je ne vais pas te sortir que "c'était compliqué des deux côtés". Je ne vais pas t'expliquer qu'il faut "comprendre l'autre pour avancer" — comme si l'autre s'était donné cette peine.</p>
+        <ul class="liste-mecanismes reveal">
+            <li>
+                <strong>Ta famille</strong>
+                T'a appris que tes émotions devaient être filtrées. « Arrête de pleurer pour rien. » « Qu'est-ce que les gens vont penser ? » Pas de méchanceté. Juste des ajustements. Pour que tu rentres dans le moule. Première couche de doute installée — par amour. C'est ça le génie.
+            </li>
+            <li>
+                <strong>L'école</strong>
+                T'a appris que ta valeur se mesurait aux autres. Les notes. Les classements. Les « peut mieux faire ». Les moqueries dans la cour. Tu as appris que ton propre miroir n'était pas fiable — celui des autres, si.
+            </li>
+            <li>
+                <strong>L'adolescence</strong>
+                T'a offert les réseaux sociaux. Des milliers de vies « parfaites » auxquelles te comparer. Des corps parfaits. Des couples parfaits. Tu ne savais pas encore que tout était filtré, posé, faux. Alors tu te comparais à des fictions. Et tu perdais. À chaque fois.
+            </li>
+            <li>
+                <strong>Le travail</strong>
+                T'a appris que ta personnalité était un « axe d'amélioration ». « Tu es trop directe. Ou pas assez. » « Tu prends les choses trop à cœur. » L'entretien annuel : ce moment magique où quelqu'un te dit qui tu es vraiment et ce que tu dois corriger pour mériter ta place.
+            </li>
+            <li>
+                <strong>La société</strong>
+                Partout, tout le temps : tu n'es pas assez. Pas assez belle. Pas assez productive. Pas assez zen. Les pubs, les magazines, les « nouvelles études », les influenceuses avec leur morning routine à 5 h du matin. Le message permanent : si tu n'es pas assez, c'est de ta faute.
+            </li>
+        </ul>
 
-            <p>Ce qui t'est arrivé a un nom. Ça s'appelle de la destruction.</p>
+        <p class="parenthese reveal">Non. Ils n'y arrivent pas. Ils font semblant.</p>
 
-            <p>Et le plus beau ? On t'a probablement fait croire que c'était de ta faute. Que tu étais "trop sensible". Que tu "dramatisais".</p>
+        <div class="separator reveal"><div class="sep-icon"></div></div>
 
-            <div class="pull-quote">
-                <p>Magnifique. Le type met le feu à ta maison et te reproche de tousser à cause de la fumée.</p>
-            </div>
+        <h2 class="reveal" data-icon="person" id="section3">Et puis il y a eu cette personne</h2>
 
-            <h2>Le système qui t'a préparée</h2>
+        <p class="reveal">Dans ce contexte — des années de doute accumulé, un cerveau entraîné à chercher la validation externe — quelqu'un est arrivé. Quelqu'un qui a vu tout ce terrain préparé et qui s'est dit : <em>parfait</em>.</p>
 
-            <p>Tu penses peut-être à UNE personne. Un ex. Un parent. Un chef. Et oui, cette personne a probablement été le coup de grâce.</p>
+        <p class="reveal"><strong>D'abord, le lovebombing.</strong> L'attention totale. « Enfin quelqu'un qui me comprend. » Après des années à te sentir insuffisante, soudain tu étais exceptionnelle. Ton cerveau, affamé de validation, s'est accroché. Ce n'est pas de la faiblesse. C'est de la neurochimie. Le lovebombing active les mêmes circuits que les drogues. C'est fait pour.</p>
 
-            <p>Mais elle n'a pas travaillé seule.</p>
+        <p class="reveal"><strong>Ensuite, l'isolation.</strong> Subtile. « Tes amies ne te comprennent pas comme moi. » Petit à petit, ton réseau s'est rétréci. Et avec lui, tes points de référence. Ta capacité à vérifier tes perceptions avec quelqu'un d'autre.</p>
 
-            <p>Elle a juste appuyé là où c'était déjà fragilisé. Là où des années de micro-fissures avaient préparé le terrain. Parce que la vérité — et elle est moche — c'est que <strong>le monde entier participe à te faire douter de toi depuis ta naissance</strong>.</p>
+        <p class="reveal"><strong>Et puis le gaslighting.</strong> « Je n'ai jamais dit ça. » « Tu inventes. » « Tu te fais des films. »</p>
 
-            <p><strong>Ta famille</strong> t'a appris que tes émotions devaient être filtrées. "Arrête de pleurer pour rien." "Qu'est-ce que les gens vont penser ?" Pas de méchanceté. Juste des ajustements. Pour que tu rentres dans le moule. Première couche de doute installée — par amour. C'est ça le génie.</p>
+        <p class="reveal">Ton cerveau ne peut pas tenir deux vérités contradictoires. « Je l'ai entendu dire X » <em>et</em> « Il dit qu'il n'a jamais dit X ». Il doit en éliminer une. Et comme l'autre est certain, calme — et que toi tu as été entraînée depuis toujours à douter — <span class="highlight">c'est la tienne qui saute</span>. À chaque fois. Jusqu'à ce que tu ne saches plus ce que tu as vu, entendu, vécu.</p>
 
-            <p><strong>L'école</strong> t'a appris que ta valeur se mesurait aux autres. Les notes. Les classements. Les "peut mieux faire". Les moqueries dans la cour. Tu as appris que ton propre miroir n'était pas fiable — celui des autres, si.</p>
+        <div class="separator reveal"><div class="sep-icon"></div></div>
 
-            <p><strong>L'adolescence</strong> t'a offert les réseaux sociaux. Des milliers de vies "parfaites" auxquelles te comparer. Des corps parfaits. Des couples parfaits. Tu ne savais pas encore que tout était filtré, posé, faux. Alors tu te comparais à des fictions. Et tu perdais. À chaque fois.</p>
+        <h2 class="reveal" data-icon="brain" id="section4">Ton cerveau n'a pas dysfonctionné — il t'a protégée</h2>
 
-            <p><strong>Le travail</strong> t'a appris que ta personnalité était un "axe d'amélioration". "Tu es trop directe. Ou pas assez." "Tu prends les choses trop à cœur." L'entretien annuel : ce moment magique où quelqu'un te dit qui tu es vraiment et ce que tu dois corriger pour mériter ta place.</p>
+        <p class="reveal">« Pourquoi t'es restée ? » « Pourquoi t'as rien vu ? »</p>
 
-            <p>Et <strong>la société</strong>, partout, tout le temps : tu n'es pas assez. Pas assez belle. Pas assez productive. Pas assez zen. Les pubs, les magazines, les "nouvelles études", les influenceuses avec leur morning routine à 5h du matin. Le message permanent : si tu n'es pas assez, c'est de ta faute. Parce que regarde, les autres y arrivent.</p>
+        <p class="reveal">Parce que ton cerveau faisait exactement son travail.</p>
 
-            <p>(Non. Ils n'y arrivent pas. Ils font semblant.)</p>
-
-            <h2>Et puis il y a eu cette personne</h2>
-
-            <p>Dans ce contexte — des années de doute accumulé, un cerveau entraîné à chercher la validation externe — quelqu'un est arrivé. Quelqu'un qui a vu tout ce terrain préparé et qui s'est dit : parfait.</p>
-
-            <p>D'abord, le <strong>lovebombing</strong>. L'attention totale. "Enfin quelqu'un qui me comprend." Après des années à te sentir insuffisante, soudain tu étais exceptionnelle. Ton cerveau, affamé de validation, s'est accroché. Ce n'est pas de la faiblesse. C'est de la neurochimie. Le lovebombing active les mêmes circuits que les drogues. C'est fait pour.</p>
-
-            <p>Ensuite, l'<strong>isolation</strong>. Subtile. "Tes amies ne te comprennent pas comme moi." Petit à petit, ton réseau s'est rétréci. Et avec lui, tes points de référence. Ta capacité à vérifier tes perceptions avec quelqu'un d'autre.</p>
-
-            <p>Et puis le <strong>gaslighting</strong>. "Je n'ai jamais dit ça." "Tu inventes." "Tu te fais des films."</p>
-
-            <div class="callout">
-                <p>Ton cerveau ne peut pas tenir deux vérités contradictoires. "Je l'ai entendu dire X" ET "Il dit qu'il n'a jamais dit X". Il doit en éliminer une. Et comme l'autre est CERTAIN, CALME — et que toi tu as été entraînée depuis toujours à douter — c'est la tienne qui saute. À chaque fois. Jusqu'à ce que tu ne saches plus ce que tu as vu, entendu, vécu.</p>
-            </div>
-
-            <h2>Ton cerveau n'a pas dysfonctionné — il t'a protégée</h2>
-
-            <p>"Pourquoi t'es restée ?" "Pourquoi t'as rien vu ?"</p>
-
-            <p>Parce que ton cerveau faisait exactement son travail.</p>
-
-            <p>Le stress chronique a fait monter ton cortisol. Ton amygdale — le détecteur de menaces — est restée en alerte permanente. Et pour survivre, ton système nerveux a commencé à baisser le volume. Ce brouillard dont tu parles ? C'est de la dissociation. Pas un bug. Une protection.</p>
-
-            <p>Le <strong>trauma bonding</strong> s'est installé. Ce lien paradoxal où la même personne qui te fait du mal est celle vers qui tu te tournes pour être réconfortée. Entre deux épisodes, il y a des miettes de la personne du début. Ton cerveau, accro à ces moments, reste. Espère.</p>
-
-            <p>C'est biologique. C'est documenté. Et surtout : c'est la réponse normale d'un cerveau normal à une situation anormale.</p>
-
-            <div class="pull-quote">
-                <p>Tu n'as pas manqué de caractère. Tu as fait face à quelqu'un qui utilisait des techniques pendant que tout un système culturel te disait que c'était normal.</p>
-            </div>
-
-            <h2>Tu n'as pas été choisie parce que tu étais faible</h2>
-
-            <p>Je sais ce que tu te dis la nuit. "J'aurais dû voir." "Les autres auraient compris plus vite." "Je suis trop naïve."</p>
-
-            <p>Stop.</p>
-
-            <p>Les manipulateurs ne cherchent pas des gens faibles. Ils cherchent des gens empathiques. Des gens capables de se remettre en question. Des gens qui donnent le bénéfice du doute.</p>
-
-            <p><strong>Des qualités. Tes qualités. Retournées contre toi comme un gant.</strong></p>
-
-            <p>Tu étais exactement le genre de personne qu'on a envie d'avoir dans sa vie. Et quelqu'un s'en est servi.</p>
-
-            <h2>Je ne vais pas te promettre que tu vas "guérir"</h2>
-
-            <p>Beaucoup vont te dire ça. Que le temps guérit tout. Que tu vas "tourner la page".</p>
-
-            <p>(Le temps guérit tout. C'est pour ça que les gens qui ont perdu quelqu'un il y a 20 ans n'y pensent plus jamais. Ah, attends.)</p>
-
-            <p>Je ne vais pas te mentir. Ce qui est cassé est cassé. Tu ne seras pas "comme avant".</p>
-
-            <p>Mais — et c'est là que le kintsugi entre en jeu — <strong>cassé ne veut pas dire fini</strong>.</p>
-
-            <p>Le kintsugi, c'est réparer avec de l'or. Pas cacher la fissure. La souligner. L'objet réparé n'est pas "comme neuf". Il est mieux. Il a une histoire. Il a survécu.</p>
-
-            <p>Tu vas garder tes fissures. Et tu vas les remplir d'or. D'une compréhension que les autres n'ont pas. D'une lucidité que le système ne peut plus t'enlever — parce que maintenant, tu le vois.</p>
-
-            <h2>Une seule personne mérite ton pardon</h2>
-
-            <p>On va te dire de pardonner à l'autre. Que c'est "pour toi". Que la rancœur empoisonne.</p>
-
-            <p>(Marrant comme ces conseils viennent toujours de gens à qui on n'a jamais rien fait de grave.)</p>
-
-            <p>Tu n'as aucune obligation de pardonner qui que ce soit. Le pardon, c'est un choix. Pas un préalable.</p>
-
-            <p>Par contre, il y a quelqu'un que tu as maltraité dans ta tête. Quelqu'un que tu accuses de naïveté, de faiblesse, de stupidité depuis trop longtemps.</p>
-
-            <p><strong>Toi.</strong></p>
-
-            <p>Pardonne-toi de ne pas avoir vu. Les meilleurs illusionnistes font carrière là-dessus — et là, c'était pas un illusionniste solo, c'était tout un système.</p>
-
-            <p>Pardonne-toi d'être restée. Tu travaillais avec de fausses informations et un cerveau qui faisait son maximum pour te garder en vie.</p>
-
-            <p>Tu faisais du mieux que tu pouvais. Et ce qu'on te donnait était truqué.</p>
-
-            <h2>Et maintenant ?</h2>
-
-            <p>Maintenant tu sais.</p>
-
-            <p>Ce n'est pas "juste" un manque de confiance en toi. C'est un système entier — neurologique, psychologique, culturel, social — qui t'a conditionnée à douter. Et quelqu'un qui a su en profiter.</p>
-
-            <p>Mais toi, tu n'es plus obligée de nourrir la machine.</p>
-
-            <p>Tu peux voir les rouages. Tu peux entendre le bruit pour ce qu'il est : du bruit. Tu peux reconnaître les techniques pour ce qu'elles sont : des techniques. Et tu peux choisir de croire tes propres données.</p>
-
-            <p>C'est pas facile. C'est pas instantané. Mais c'est possible.</p>
-
-            <!-- CTA Final -->
-            <div class="article-cta">
-                <h3>Cartographie où ça a cassé</h3>
-                <p>L'autotest "Capture interprétative du réel" te permet d'identifier où ta lecture des faits a été remplacée par celle d'un autre. Pas de score, pas de jugement — juste une lampe torche dans le brouillard.</p>
-                <a href="autotest.html" class="btn-primary">Faire l'autotest</a>
-            </div>
-
-            <!-- Navigation article -->
-            <div class="article-nav">
-                <a href="articles.html">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                    </svg>
-                    Retour aux analyses
-                </a>
-                <div class="share-buttons">
-                    <span>Partager</span>
-                    <a href="#" class="share-btn" title="Partager sur Twitter">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="share-btn" title="Partager sur Facebook">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="share-btn" title="Copier le lien">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
+        <div class="emphase reveal">
+            <p><strong>Le stress chronique</strong> a fait monter ton cortisol. Ton amygdale — le détecteur de menaces — est restée en alerte permanente. Et pour survivre, ton système nerveux a commencé à baisser le volume. Ce brouillard dont tu parles ? C'est de la dissociation. Pas un bug. Une protection.</p>
+            <p><strong>Le trauma bonding</strong> s'est installé. Ce lien paradoxal où la même personne qui te fait du mal est celle vers qui tu te tournes pour être réconfortée. Entre deux épisodes, il y a des miettes de la personne du début. Ton cerveau, accro à ces moments, reste. Espère.</p>
         </div>
+
+        <p class="reveal">C'est biologique. C'est documenté. Et surtout : c'est la réponse normale d'un cerveau normal à une situation anormale.</p>
+
+        <p class="reveal">Tu n'as pas manqué de caractère. Tu as fait face à quelqu'un qui utilisait des techniques pendant que tout un système culturel te disait que c'était normal.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="target" id="section5">Tu n'as pas été choisie parce que tu étais faible</h2>
+
+        <p class="reveal">Je sais ce que tu te dis la nuit. « J'aurais dû voir. » « Les autres auraient compris plus vite. » « Je suis trop naïve. »</p>
+
+        <p class="reveal">Stop.</p>
+
+        <p class="reveal">Les manipulateurs ne cherchent pas des gens faibles. Ils cherchent des gens empathiques. Des gens capables de se remettre en question. Des gens qui donnent le bénéfice du doute.</p>
+
+        <div class="pull-quote reveal">
+            <p>Des qualités. Tes qualités. Retournées contre toi comme un gant.</p>
+        </div>
+
+        <p class="reveal">Tu étais exactement le genre de personne qu'on a envie d'avoir dans sa vie. Et quelqu'un s'en est servi.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="heal" id="section6">Je ne vais pas te promettre que tu vas « guérir »</h2>
+
+        <p class="reveal">Beaucoup vont te dire ça. Que le temps guérit tout. Que tu vas « tourner la page ».</p>
+
+        <p class="parenthese reveal">Le temps guérit tout. C'est pour ça que les gens qui ont perdu quelqu'un il y a 20 ans n'y pensent plus jamais. Ah, attends.</p>
+
+        <p class="reveal">Je ne vais pas te mentir. Ce qui est cassé est cassé. Tu ne seras pas « comme avant ».</p>
+
+        <p class="reveal">Mais — et c'est là que le kintsugi entre en jeu — <strong>cassé ne veut pas dire fini</strong>.</p>
+
+        <p class="reveal">Le kintsugi, c'est réparer avec de l'or. Pas cacher la fissure. La souligner. L'objet réparé n'est pas « comme neuf ». Il est <em>mieux</em>. Il a une histoire. Il a survécu.</p>
+
+        <p class="reveal">Tu vas garder tes fissures. Et tu vas les remplir d'or. D'une compréhension que les autres n'ont pas. D'une lucidité que le système ne peut plus t'enlever — parce que maintenant, tu le vois.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="forgive" id="section7">Une seule personne mérite ton pardon</h2>
+
+        <p class="reveal">On va te dire de pardonner à l'autre. Que c'est « pour toi ». Que la rancœur empoisonne.</p>
+
+        <p class="parenthese reveal">Marrant comme ces conseils viennent toujours de gens à qui on n'a jamais rien fait de grave.</p>
+
+        <p class="reveal">Tu n'as aucune obligation de pardonner qui que ce soit. Le pardon, c'est un choix. Pas un préalable.</p>
+
+        <p class="reveal">Par contre, il y a quelqu'un que tu as maltraité dans ta tête. Quelqu'un que tu accuses de naïveté, de faiblesse, de stupidité depuis trop longtemps.</p>
+
+        <p class="reveal"><strong>Toi.</strong></p>
+
+        <p class="reveal">Pardonne-toi de ne pas avoir vu. Les meilleurs illusionnistes font carrière là-dessus — et là, c'était pas un illusionniste solo, c'était tout un système.</p>
+
+        <p class="reveal">Pardonne-toi d'être restée. Tu travaillais avec de fausses informations et un cerveau qui faisait son maximum pour te garder en vie.</p>
+
+        <p class="reveal">Tu faisais du mieux que tu pouvais. Et ce qu'on te donnait était truqué.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="forward" id="section8">Et maintenant ?</h2>
+
+        <p class="reveal drop-cap">Maintenant tu sais. Ce n'est pas « juste » un manque de confiance en toi. C'est un système entier — neurologique, psychologique, culturel, social — qui t'a conditionnée à douter. Et quelqu'un qui a su en profiter.</p>
+
+        <p class="reveal">Mais toi, tu n'es plus obligée de nourrir la machine.</p>
+
+        <p class="reveal">Tu peux voir les rouages. Tu peux entendre le bruit pour ce qu'il est : du bruit. Tu peux reconnaître les techniques pour ce qu'elles sont : des techniques. Et tu peux <span class="highlight">choisir de croire tes propres données</span>.</p>
+
+        <p class="reveal">C'est pas facile. C'est pas instantané. Mais c'est possible.</p>
+
+        <!-- CTA Autotest -->
+        <div class="cta-autotest reveal">
+            <h3>
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                Cartographie où ça a cassé
+            </h3>
+            <p>L'autotest « Capture interprétative du réel » identifie où ta lecture des faits a été remplacée par celle d'un autre. Pas de score, pas de jugement — juste une lampe torche dans le brouillard.</p>
+            <a href="../Autotests/autotest.html" class="btn btn-primary">
+                Faire l'autotest
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+
+        <!-- Actions -->
+        <div class="article-actions reveal">
+            <a href="articles.html">
+                <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Retour aux analyses
+            </a>
+            <a href="#" onclick="navigator.share ? navigator.share({title: document.title, url: window.location.href}) : null; return false;">
+                <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                Partager
+            </a>
+        </div>
+
     </article>
 
-    <!-- Related Articles -->
-    <section class="related-section">
-        <div class="container">
-            <div class="related-header">
-                <h3>Continuer la lecture</h3>
-            </div>
-            <div class="related-grid">
-                <a href="#" class="related-card">
-                    <span class="related-card-category">Série I</span>
-                    <h4 class="related-card-title">« Ce n'est pas que je ne sais pas décider. C'est que décider me coûte trop cher. »</h4>
-                </a>
-                <a href="#" class="related-card">
-                    <span class="related-card-category">Série II</span>
-                    <h4 class="related-card-title">« Il n'y a jamais eu de cris. Juste moi qui disparaissais. »</h4>
-                </a>
-                <a href="#" class="related-card">
-                    <span class="related-card-category">Série IV</span>
-                    <h4 class="related-card-title">« On m'a dit burn-out. Personne n'a regardé ce qui m'empêchait d'agir. »</h4>
-                </a>
-            </div>
+    <!-- Articles liés -->
+    <section class="related-articles">
+        <h2>Continuer la lecture</h2>
+        <div class="related-grid">
+            <a href="#" class="related-item">
+                <span class="series-tag">Série I</span>
+                <h3>« Ce n'est pas que je ne sais pas décider. C'est que décider me coûte trop cher. »</h3>
+            </a>
+            <a href="#" class="related-item">
+                <span class="series-tag">Série II</span>
+                <h3>« Il n'y a jamais eu de cris. Juste moi qui disparaissais. »</h3>
+            </a>
+            <a href="#" class="related-item">
+                <span class="series-tag">Série IV</span>
+                <h3>« On m'a dit burn-out. Personne n'a regardé ce qui m'empêchait d'agir. »</h3>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
-                    <p class="footer-tagline">Noesis ne soigne pas. Noesis clarifie.</p>
-                </div>
-                <nav class="footer-links">
-                    <a href="autotest.html">Autotests</a>
-                    <a href="articles.html">Analyses</a>
-                    <a href="accompagnement.html">L'Étape Zéro</a>
-                    <a href="mailto:contact@noesiskintsugi.com">Contact</a>
-                </nav>
-                <div class="footer-social">
-                    <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener" class="social-link-footer">
-                        <svg viewBox="0 0 24 24" width="20" height="20">
-                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener" class="social-link-footer">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-link-footer">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                        </svg>
-                    </a>
-                </div>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                <p class="footer-tagline">Noesis ne soigne pas. Noesis clarifie.</p>
             </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 Noesis Kintsugi. Tous droits réservés.</p>
-                <p class="footer-baseline">La paix sans vérité est une anesthésie.</p>
+            <nav class="footer-links">
+                <a href="../Autotests/autotest.html">Autotests</a>
+                <a href="articles.html">Analyses</a>
+                <a href="../etape-zero/accompagnement.html">L'Étape Zéro</a>
+                <a href="mailto:contact@noesisanalyse.com">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                </a>
             </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2025 Noesis Kintsugi. Tous droits réservés.</p>
+            <p class="footer-baseline">La paix sans vérité est une anesthésie.</p>
         </div>
     </footer>
 
     <script>
-        // Navigation mobile
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Nav scroll effect
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Reading progress bar
-        const progressBar = document.getElementById('readingProgress');
-        const article = document.querySelector('.article-body');
+        // Progress bar
+        const progressBar = document.getElementById('progressBar');
+        const tocWrapper = document.getElementById('tocWrapper');
         
         window.addEventListener('scroll', () => {
-            const articleTop = article.offsetTop;
-            const articleHeight = article.offsetHeight;
-            const windowHeight = window.innerHeight;
-            const scrolled = window.scrollY;
-            
-            const progress = Math.min(100, Math.max(0, 
-                ((scrolled - articleTop + windowHeight) / articleHeight) * 100
-            ));
-            
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
             progressBar.style.width = progress + '%';
+            
+            // Show/hide TOC
+            if (scrollTop > window.innerHeight) {
+                tocWrapper.classList.add('visible');
+            } else {
+                tocWrapper.classList.remove('visible');
+            }
+            
+            // Nav scroll effect
+            document.getElementById('nav').classList.toggle('scrolled', scrollTop > 100);
+            
+            // Update active TOC dot
+            updateActiveTocDot();
         });
 
-        // Copy link functionality
-        document.querySelector('.share-btn[title="Copier le lien"]').addEventListener('click', function(e) {
-            e.preventDefault();
-            navigator.clipboard.writeText(window.location.href).then(() => {
-                this.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>';
-                setTimeout(() => {
-                    this.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
-                }, 2000);
+        // TOC navigation
+        document.querySelectorAll('.toc-dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                const target = document.getElementById(dot.dataset.target);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
 
-        // Share buttons
-        document.querySelector('.share-btn[title="Partager sur Twitter"]').addEventListener('click', function(e) {
-            e.preventDefault();
-            const text = encodeURIComponent(document.title);
-            const url = encodeURIComponent(window.location.href);
-            window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank', 'width=550,height=420');
+        function updateActiveTocDot() {
+            const sections = document.querySelectorAll('h2[id]');
+            const dots = document.querySelectorAll('.toc-dot');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 200) {
+                    currentSection = section.id;
+                }
+            });
+            
+            dots.forEach(dot => {
+                dot.classList.toggle('active', dot.dataset.target === currentSection);
+            });
+        }
+
+        // Mobile nav
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
         });
 
-        document.querySelector('.share-btn[title="Partager sur Facebook"]').addEventListener('click', function(e) {
-            e.preventDefault();
-            const url = encodeURIComponent(window.location.href);
-            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank', 'width=550,height=420');
-        });
+        // Reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal, .reveal-left').forEach(el => observer.observe(el));
     </script>
+
 </body>
 </html>
