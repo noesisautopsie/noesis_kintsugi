@@ -27,6 +27,7 @@
             --or-lumineux: #CCA464;
             --or-eclatant: #D7BE67;
             --or-intense: #DDB569;
+            --gris-clair-bg: #E8E8E8;
             --blanc-casse: #C9CBCB;
             --ivoire: #CBCBC9;
             --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
@@ -376,6 +377,125 @@
 
         .toc-dot:hover::after {
             opacity: 1;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ARTICLE WRAPPER (fond gris clair)
+           ═══════════════════════════════════════════════════════════════ */
+        .article-wrapper {
+            background-color: var(--gris-clair-bg);
+            padding: 1px 0;
+        }
+
+        .article-wrapper .article-lead p {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .article-content p {
+            color: var(--noir-principal);
+        }
+
+        .article-wrapper .article-content em {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .article-content strong {
+            color: var(--or-antique);
+        }
+
+        .article-wrapper .article-content h2 {
+            color: var(--or-vieilli);
+        }
+
+        .article-wrapper .parenthese {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(245, 245, 245, 0.8) 100%);
+            border-color: rgba(153, 107, 38, 0.25);
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .parenthese .aside-icon {
+            background: var(--gris-clair-bg);
+        }
+
+        .article-wrapper .pull-quote {
+            background: linear-gradient(180deg, rgba(153, 107, 38, 0.12) 0%, rgba(153, 107, 38, 0.04) 50%, rgba(153, 107, 38, 0.1) 100%);
+        }
+
+        .article-wrapper .pull-quote .quote-mark {
+            background: var(--gris-clair-bg);
+        }
+
+        .article-wrapper .pull-quote p {
+            color: var(--or-antique);
+        }
+
+        .article-wrapper .emphase {
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.95) 100%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(153, 107, 38, 0.03) 10px,
+                    rgba(153, 107, 38, 0.03) 20px
+                );
+            border-color: rgba(153, 107, 38, 0.3);
+        }
+
+        .article-wrapper .emphase .emphase-icon {
+            background: var(--gris-clair-bg);
+        }
+
+        .article-wrapper .liste-mecanismes li {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(250, 250, 250, 0.4) 100%);
+            border-color: rgba(153, 107, 38, 0.15);
+            color: var(--noir-principal);
+        }
+
+        .article-wrapper .liste-mecanismes li:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(250, 250, 250, 0.6) 100%);
+        }
+
+        .article-wrapper .liste-mecanismes li::before {
+            background: linear-gradient(135deg, rgba(153, 107, 38, 0.2) 0%, rgba(153, 107, 38, 0.1) 100%);
+        }
+
+        .article-wrapper .liste-mecanismes li strong {
+            color: var(--or-antique);
+        }
+
+        .article-wrapper .separator::before,
+        .article-wrapper .separator::after {
+            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.3) 50%, transparent);
+        }
+
+        .article-wrapper .cta-autotest {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 250, 250, 0.98) 100%);
+            border-color: rgba(153, 107, 38, 0.35);
+        }
+
+        .article-wrapper .cta-autotest::before {
+            border-color: rgba(153, 107, 38, 0.2);
+        }
+
+        .article-wrapper .cta-autotest .cta-icon {
+            background: linear-gradient(135deg, rgba(153, 107, 38, 0.15) 0%, rgba(255, 255, 255, 0.5) 100%);
+        }
+
+        .article-wrapper .cta-autotest p {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .article-actions {
+            border-color: rgba(153, 107, 38, 0.2);
+        }
+
+        .article-wrapper .article-actions a {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .highlight {
+            background: linear-gradient(transparent 60%, rgba(201, 170, 110, 0.35) 60%);
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1355,6 +1475,9 @@
         </a>
     </header>
 
+    <!-- Article Wrapper (fond gris clair) -->
+    <div class="article-wrapper">
+
     <!-- Lead -->
     <div class="article-lead" id="content">
         <p>En mai 2024, une etude publiee dans Nature : Molecular Psychiatry a fait l'effet d'une bombe discrete. Des chercheurs de Clemson University et Loyola University ont demontre que certaines variations genetiques heritees de Neandertal sont plus frequentes chez les personnes autistes que dans la population generale. Pas un peu plus frequentes. Significativement plus frequentes.</p>
@@ -1512,6 +1635,8 @@
         </div>
 
     </article>
+
+    </div><!-- Fin article-wrapper -->
 
     <!-- Articles lies -->
     <section class="related-articles">
