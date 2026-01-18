@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vingt ans, huit experts, zéro diagnostic — Noesis Kintsugi</title>
+    <meta name="description" content="Anatomie neurologique d'un effondrement fabriqué. Quand le système médico-éducatif rate l'autisme pendant vingt ans, l'anxiodépression n'est pas une faiblesse — c'est leur facture.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --noir-principal: #121514;
+            --noir-profond: #111313;
+            --noir-clair: #161817;
+            --gris-anthracite: #2E3130;
+            --gris-ceramique: #2D2F2F;
+            --gris-moyen-fonce: #424446;
+            --gris-pierre: #97948C;
+            --gris-medium: #999999;
+            --or-antique: #8F6B2E;
+            --or-vieilli: #996B26;
+            --or-clair: #C9AA6E;
+            --or-lumineux: #CCA464;
+            --or-eclatant: #D7BE67;
+            --or-intense: #DDB569;
+            --gris-clair-bg: #E8E8E8;
+            --blanc-casse: #C9CBCB;
+            --ivoire: #CBCBC9;
+            --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
+            --gradient-or-vertical: linear-gradient(180deg, var(--or-eclatant) 0%, var(--or-clair) 50%, var(--or-vieilli) 100%);
+            --font-display: 'Megrim', cursive;
+            --font-body: 'Crimson Pro', serif;
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--noir-principal);
+            color: var(--blanc-casse);
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.02;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        ::selection {
+            background: var(--or-vieilli);
+            color: var(--noir-principal);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--noir-profond); }
+        ::-webkit-scrollbar-thumb { background: var(--or-vieilli); border-radius: 4px; }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           PROGRESS BAR
+           ═══════════════════════════════════════════════════════════════ */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--gradient-or);
+            z-index: 1001;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(201, 170, 110, 0.5);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           NAVIGATION
+           ═══════════════════════════════════════════════════════════════ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: transparent;
+            transition: var(--transition-smooth);
+        }
+
+        .nav.scrolled {
+            padding: 1rem 0;
+            background: rgba(17, 19, 19, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(153, 107, 38, 0.1);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            letter-spacing: 0.12em;
+            color: var(--blanc-casse);
+        }
+
+        .logo span {
+            color: var(--or-eclatant);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--gris-medium);
+            letter-spacing: 0.03em;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a.active {
+            color: var(--blanc-casse);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--blanc-casse);
+        }
+
+        .nav-links a:hover {
+            color: var(--blanc-casse);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--blanc-casse);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           HERO
+           ═══════════════════════════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(17, 19, 19, 0.2) 0%,
+                rgba(17, 19, 19, 0.4) 50%,
+                rgba(18, 21, 20, 1) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-series {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gris-medium);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4.5vw, 3rem);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--blanc-casse);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero-hook {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--or-eclatant);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-line {
+            width: 60px;
+            height: 1px;
+            background: var(--or-vieilli);
+            margin: 0 auto 3rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            font-size: 0.9rem;
+            color: var(--gris-medium);
+        }
+
+        .hero-meta svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: var(--or-vieilli);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           TOC STICKY
+           ═══════════════════════════════════════════════════════════════ */
+        .toc-wrapper {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .toc-wrapper.visible {
+            opacity: 1;
+        }
+
+        .toc {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .toc-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gris-anthracite);
+            border: 1px solid var(--gris-moyen-fonce);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .toc-dot:hover,
+        .toc-dot.active {
+            background: var(--or-vieilli);
+            border-color: var(--or-clair);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px rgba(201, 170, 110, 0.4);
+        }
+
+        .toc-dot::after {
+            content: attr(data-title);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            white-space: nowrap;
+            font-size: 0.75rem;
+            color: var(--gris-medium);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .toc-dot:hover::after {
+            opacity: 1;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ARTICLE WRAPPER (fond gris clair)
+           ═══════════════════════════════════════════════════════════════ */
+        .article-wrapper {
+            background-color: var(--gris-clair-bg);
+            padding: 1px 0;
+        }
+
+        .article-wrapper .article-lead p {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .article-content p {
+            color: var(--noir-principal);
+        }
+
+        .article-wrapper .article-content em {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .article-content strong {
+            color: var(--or-antique);
+        }
+
+        .article-wrapper .article-content h2 {
+            color: var(--or-vieilli);
+        }
+
+        .article-wrapper .parenthese {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(245, 245, 245, 0.8) 100%);
+            border-color: rgba(153, 107, 38, 0.25);
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .parenthese .aside-icon {
+            background: var(--gris-clair-bg);
+        }
+
+        .article-wrapper .pull-quote {
+            background: linear-gradient(180deg, rgba(153, 107, 38, 0.12) 0%, rgba(153, 107, 38, 0.04) 50%, rgba(153, 107, 38, 0.1) 100%);
+        }
+
+        .article-wrapper .pull-quote .quote-mark {
+            background: var(--gris-clair-bg);
+        }
+
+        .article-wrapper .pull-quote p {
+            color: var(--or-antique);
+        }
+
+        .article-wrapper .emphase {
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.95) 100%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(153, 107, 38, 0.03) 10px,
+                    rgba(153, 107, 38, 0.03) 20px
+                );
+            border-color: rgba(153, 107, 38, 0.3);
+        }
+
+        .article-wrapper .emphase .emphase-icon {
+            background: var(--gris-clair-bg);
+        }
+
+        .article-wrapper .liste-mecanismes li {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(250, 250, 250, 0.4) 100%);
+            border-color: rgba(153, 107, 38, 0.15);
+            color: var(--noir-principal);
+        }
+
+        .article-wrapper .liste-mecanismes li:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(250, 250, 250, 0.6) 100%);
+        }
+
+        .article-wrapper .liste-mecanismes li::before {
+            background: linear-gradient(135deg, rgba(153, 107, 38, 0.2) 0%, rgba(153, 107, 38, 0.1) 100%);
+        }
+
+        .article-wrapper .liste-mecanismes li strong {
+            color: var(--or-antique);
+        }
+
+        .article-wrapper .separator::before,
+        .article-wrapper .separator::after {
+            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.3) 50%, transparent);
+        }
+
+        .article-wrapper .cta-autotest {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 250, 250, 0.98) 100%);
+            border-color: rgba(153, 107, 38, 0.35);
+        }
+
+        .article-wrapper .cta-autotest::before {
+            border-color: rgba(153, 107, 38, 0.2);
+        }
+
+        .article-wrapper .cta-autotest .cta-icon {
+            background: linear-gradient(135deg, rgba(153, 107, 38, 0.15) 0%, rgba(255, 255, 255, 0.5) 100%);
+        }
+
+        .article-wrapper .cta-autotest p {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .article-actions {
+            border-color: rgba(153, 107, 38, 0.2);
+        }
+
+        .article-wrapper .article-actions a {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .highlight {
+            background: linear-gradient(transparent 60%, rgba(201, 170, 110, 0.35) 60%);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ARTICLE LEAD
+           ═══════════════════════════════════════════════════════════════ */
+        .article-lead {
+            padding: 5rem 2rem;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .article-lead::before,
+        .article-lead::after {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--or-vieilli);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .article-lead::before {
+            top: 2rem;
+            left: 1rem;
+        }
+
+        .article-lead::after {
+            content: '"';
+            bottom: 2rem;
+            right: 1rem;
+        }
+
+        .article-lead p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--gris-pierre);
+            line-height: 1.9;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ARTICLE CONTENT
+           ═══════════════════════════════════════════════════════════════ */
+        .article-content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .article-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--blanc-casse);
+            line-height: 1.85;
+        }
+
+        .article-content .drop-cap::first-letter {
+            float: left;
+            font-family: var(--font-display);
+            font-size: 4rem;
+            line-height: 0.8;
+            padding-right: 0.75rem;
+            padding-top: 0.25rem;
+            color: var(--or-eclatant);
+        }
+
+        .article-content h2 {
+            font-family: var(--font-body);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--or-eclatant);
+            margin: 4rem 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        .article-content h2[data-icon="brain"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 011.32-4.24 2.5 2.5 0 011.98-3A2.5 2.5 0 019.5 2z'/%3E%3Cpath d='M14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-1.32-4.24 2.5 2.5 0 00-1.98-3A2.5 2.5 0 0014.5 2z'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="alert"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="eye"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="shield"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="users"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 00-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 010 7.75'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="clock"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="zap"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="question"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="heart"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z'/%3E%3C/svg%3E");
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: var(--gris-pierre);
+        }
+
+        .article-content strong {
+            font-weight: 600;
+            color: var(--or-clair);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           LUXE ENCADRE : PARENTHESE / ASIDE
+           ═══════════════════════════════════════════════════════════════ */
+        .parenthese {
+            position: relative;
+            margin: 2.5rem 0;
+            padding: 1.75rem 2rem 1.75rem 2.5rem;
+            background: linear-gradient(135deg, rgba(46, 49, 48, 0.5) 0%, rgba(30, 32, 31, 0.6) 100%);
+            border: 1px solid rgba(153, 107, 38, 0.15);
+            font-style: italic;
+            color: var(--gris-pierre);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .parenthese::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 30px;
+            height: 30px;
+            border-top: 2px solid var(--or-vieilli);
+            border-left: 2px solid var(--or-vieilli);
+        }
+
+        .parenthese::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 30px;
+            height: 30px;
+            border-bottom: 2px solid var(--or-vieilli);
+            border-right: 2px solid var(--or-vieilli);
+        }
+
+        .parenthese .aside-icon {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--noir-principal);
+            padding: 0 0.5rem;
+            color: var(--or-clair);
+            font-size: 1.2rem;
+            font-style: normal;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           LUXE ENCADRE : PULL QUOTE
+           ═══════════════════════════════════════════════════════════════ */
+        .pull-quote {
+            position: relative;
+            margin: 3.5rem -2rem;
+            padding: 3rem 3.5rem;
+            background: linear-gradient(180deg, rgba(153, 107, 38, 0.08) 0%, rgba(153, 107, 38, 0.02) 50%, rgba(153, 107, 38, 0.06) 100%);
+            text-align: center;
+        }
+
+        .pull-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(180deg, var(--or-clair) 0%, transparent 50%, var(--or-vieilli) 100%);
+            opacity: 0.6;
+        }
+
+        .pull-quote::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(180deg, var(--or-vieilli) 0%, transparent 50%, var(--or-clair) 100%);
+            opacity: 0.6;
+        }
+
+        .pull-quote .quote-mark {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--noir-principal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pull-quote .quote-mark svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--or-clair);
+            opacity: 0.8;
+        }
+
+        .pull-quote p {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--or-clair);
+            line-height: 1.6;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pull-quote .quote-line {
+            width: 80px;
+            height: 1px;
+            background: var(--gradient-or);
+            margin: 1.5rem auto 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           LUXE ENCADRE : EMPHASE BOX
+           ═══════════════════════════════════════════════════════════════ */
+        .emphase {
+            position: relative;
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background:
+                linear-gradient(135deg, rgba(17, 19, 19, 0.95) 0%, rgba(22, 24, 23, 0.95) 100%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(153, 107, 38, 0.02) 10px,
+                    rgba(153, 107, 38, 0.02) 20px
+                );
+            border: 1px solid rgba(153, 107, 38, 0.2);
+            box-shadow:
+                0 0 0 1px rgba(153, 107, 38, 0.05),
+                0 10px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(201, 170, 110, 0.05);
+        }
+
+        .emphase::before,
+        .emphase::after,
+        .emphase .corner-bl,
+        .emphase .corner-br {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+
+        .emphase::before {
+            top: 8px;
+            left: 8px;
+            border-top: 1px solid var(--or-clair);
+            border-left: 1px solid var(--or-clair);
+        }
+
+        .emphase::after {
+            top: 8px;
+            right: 8px;
+            border-top: 1px solid var(--or-clair);
+            border-right: 1px solid var(--or-clair);
+        }
+
+        .emphase .corner-bl {
+            bottom: 8px;
+            left: 8px;
+            border-bottom: 1px solid var(--or-clair);
+            border-left: 1px solid var(--or-clair);
+        }
+
+        .emphase .corner-br {
+            bottom: 8px;
+            right: 8px;
+            border-bottom: 1px solid var(--or-clair);
+            border-right: 1px solid var(--or-clair);
+        }
+
+        .emphase .emphase-bar {
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 0;
+            width: 3px;
+            background: var(--gradient-or-vertical);
+            box-shadow: 0 0 15px rgba(201, 170, 110, 0.3);
+        }
+
+        .emphase .emphase-icon {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            background: var(--noir-principal);
+            border: 1px solid var(--or-vieilli);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .emphase .emphase-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--or-clair);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .emphase p {
+            margin-bottom: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emphase p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           LISTE MECANISMES
+           ═══════════════════════════════════════════════════════════════ */
+        .liste-mecanismes {
+            margin: 2.5rem 0;
+            padding: 0;
+            list-style: none;
+            counter-reset: mechanism;
+        }
+
+        .liste-mecanismes li {
+            position: relative;
+            padding: 1.75rem 1.5rem 1.75rem 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, rgba(46, 49, 48, 0.3) 0%, rgba(30, 32, 31, 0.2) 100%);
+            border: 1px solid rgba(153, 107, 38, 0.1);
+            border-left: none;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            counter-increment: mechanism;
+            transition: var(--transition-smooth);
+        }
+
+        .liste-mecanismes li:hover {
+            background: linear-gradient(135deg, rgba(46, 49, 48, 0.5) 0%, rgba(30, 32, 31, 0.4) 100%);
+            border-color: rgba(153, 107, 38, 0.2);
+        }
+
+        .liste-mecanismes li::before {
+            content: counter(mechanism);
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--or-eclatant);
+            background: linear-gradient(135deg, rgba(153, 107, 38, 0.15) 0%, rgba(153, 107, 38, 0.05) 100%);
+            border-right: 2px solid var(--or-vieilli);
+        }
+
+        .liste-mecanismes li strong {
+            color: var(--or-clair);
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Liste simple sans numéros */
+        .liste-simple {
+            margin: 2rem 0;
+            padding: 0 0 0 1.5rem;
+            list-style: none;
+        }
+
+        .liste-simple li {
+            position: relative;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .liste-simple li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--or-clair);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SEPARATEUR DECORATIF
+           ═══════════════════════════════════════════════════════════════ */
+        .separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 3.5rem 0;
+            gap: 1.5rem;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gris-anthracite) 50%, transparent);
+        }
+
+        .separator .sep-icon {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .separator .sep-icon::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border: 1px solid var(--or-vieilli);
+            transform: rotate(45deg);
+        }
+
+        .separator .sep-icon::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--or-clair);
+            transform: rotate(45deg);
+        }
+
+        .highlight {
+            background: linear-gradient(transparent 60%, rgba(201, 170, 110, 0.2) 60%);
+            padding: 0 2px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           LUXE CTA AUTOTEST
+           ═══════════════════════════════════════════════════════════════ */
+        .cta-autotest {
+            position: relative;
+            margin: 4rem 0;
+            padding: 3rem;
+            background:
+                linear-gradient(135deg, rgba(17, 19, 19, 0.98) 0%, rgba(22, 24, 23, 0.95) 100%);
+            border: 1px solid rgba(153, 107, 38, 0.25);
+            text-align: center;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .cta-autotest::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border: 1px solid rgba(153, 107, 38, 0.15);
+            pointer-events: none;
+        }
+
+        .cta-autotest::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-or);
+            box-shadow: 0 0 20px rgba(201, 170, 110, 0.4);
+        }
+
+        .cta-autotest:hover {
+            border-color: rgba(153, 107, 38, 0.4);
+            box-shadow:
+                0 0 0 1px rgba(153, 107, 38, 0.1),
+                0 20px 50px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .cta-autotest .cta-corner {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+        }
+
+        .cta-autotest .cta-corner--tl {
+            top: 12px;
+            left: 12px;
+            border-top: 2px solid var(--or-clair);
+            border-left: 2px solid var(--or-clair);
+        }
+
+        .cta-autotest .cta-corner--tr {
+            top: 12px;
+            right: 12px;
+            border-top: 2px solid var(--or-clair);
+            border-right: 2px solid var(--or-clair);
+        }
+
+        .cta-autotest .cta-corner--bl {
+            bottom: 12px;
+            left: 12px;
+            border-bottom: 2px solid var(--or-clair);
+            border-left: 2px solid var(--or-clair);
+        }
+
+        .cta-autotest .cta-corner--br {
+            bottom: 12px;
+            right: 12px;
+            border-bottom: 2px solid var(--or-clair);
+            border-right: 2px solid var(--or-clair);
+        }
+
+        .cta-autotest .cta-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            border: 1px solid var(--or-vieilli);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(153, 107, 38, 0.1) 0%, transparent 100%);
+            position: relative;
+        }
+
+        .cta-autotest .cta-icon::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px solid rgba(153, 107, 38, 0.2);
+            border-radius: 50%;
+        }
+
+        .cta-autotest .cta-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--or-clair);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .cta-autotest h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            color: var(--or-eclatant);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .cta-autotest p {
+            color: var(--gris-pierre);
+            font-size: 1.05rem;
+            margin-bottom: 2rem !important;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--gradient-or);
+            color: var(--noir-principal);
+            border: none;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 4px 15px rgba(143, 107, 46, 0.3),
+                0 0 30px rgba(201, 170, 110, 0.2);
+        }
+
+        .btn-primary svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ARTICLE FOOTER ACTIONS
+           ═══════════════════════════════════════════════════════════════ */
+        .article-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--gris-anthracite);
+            border-bottom: 1px solid var(--gris-anthracite);
+            margin: 3rem 0;
+        }
+
+        .article-actions a {
+            color: var(--gris-medium);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-actions a:hover {
+            color: var(--or-clair);
+        }
+
+        .article-actions a svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ARTICLES LIES
+           ═══════════════════════════════════════════════════════════════ */
+        .related-articles {
+            padding: 5rem 2rem;
+            background: var(--noir-profond);
+        }
+
+        .related-articles h2 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            letter-spacing: 0.1em;
+            color: var(--blanc-casse);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .related-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-item {
+            position: relative;
+            padding: 1.75rem;
+            background: linear-gradient(135deg, rgba(18, 21, 20, 0.95) 0%, rgba(22, 24, 23, 0.9) 100%);
+            border: 1px solid var(--gris-anthracite);
+            transition: var(--transition-smooth);
+            overflow: hidden;
+        }
+
+        .related-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-or);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .related-item:hover {
+            border-color: var(--or-vieilli);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .related-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-item .series-tag {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--or-vieilli);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .related-item h3 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--blanc-casse);
+            line-height: 1.5;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════════ */
+        .footer {
+            background: var(--noir-profond);
+            border-top: 1px solid var(--gris-anthracite);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-tagline {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--gris-medium);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gris-medium);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--or-clair);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--gris-anthracite);
+            border-radius: 50%;
+            color: var(--gris-medium);
+            transition: var(--transition-smooth);
+        }
+
+        .footer-social a:hover {
+            border-color: var(--or-vieilli);
+            color: var(--or-clair);
+        }
+
+        .footer-social svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gris-anthracite);
+            text-align: center;
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: var(--gris-moyen-fonce);
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-baseline {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--gris-pierre);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ANIMATIONS
+           ═══════════════════════════════════════════════════════════════ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════════ */
+        @media (max-width: 1200px) {
+            .toc-wrapper { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-inner { padding: 0 1.5rem; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: rgba(17, 19, 19, 0.98);
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active { display: flex; }
+            .nav-toggle { display: flex; }
+
+            .hero-title { font-size: clamp(1.4rem, 5vw, 2rem); }
+            .hero-meta { flex-direction: column; gap: 0.5rem; }
+
+            .article-content h2 { font-size: 1.2rem; }
+
+            .pull-quote {
+                margin: 2rem -1rem;
+                padding: 2.5rem 1.5rem;
+            }
+
+            .pull-quote p { font-size: 1.2rem; }
+
+            .liste-mecanismes li {
+                padding-left: 4rem;
+            }
+
+            .liste-mecanismes li::before {
+                width: 40px;
+            }
+
+            .cta-autotest {
+                padding: 2rem 1.5rem;
+            }
+
+            .article-actions {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .footer-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html#piliers">Méthode</a></li>
+                <li><a href="../Autotests/autotest.html">Autotests</a></li>
+                <li><a href="articles.html" class="active">Analyses</a></li>
+                <li><a href="../etape-zero/accompagnement.html">L'Étape Zéro</a></li>
+                <li><a href="mailto:contact@noesiskintsugi.com">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Table of Contents -->
+    <div class="toc-wrapper" id="tocWrapper">
+        <div class="toc">
+            <div class="toc-dot" data-target="section1" data-title="Le cortisol"></div>
+            <div class="toc-dot" data-target="section2" data-title="Système polyvagal"></div>
+            <div class="toc-dot" data-target="section3" data-title="Le piège du QI"></div>
+            <div class="toc-dot" data-target="section4" data-title="Chaîne des aveugles"></div>
+            <div class="toc-dot" data-target="section5" data-title="Gaslighting"></div>
+            <div class="toc-dot" data-target="section6" data-title="Protecteurs complices"></div>
+            <div class="toc-dot" data-target="section7" data-title="Mémoire traumatique"></div>
+            <div class="toc-dot" data-target="section8" data-title="Mythe de la volonté"></div>
+            <div class="toc-dot" data-target="section9" data-title="Qui a fabriqué ?"></div>
+            <div class="toc-dot" data-target="section10" data-title="Ce qu'on cherche"></div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <p class="hero-series">Série IV — Diagnostic tardif</p>
+            <h1 class="hero-title">Vingt ans, huit experts, zéro diagnostic : anatomie neurologique d'un effondrement fabriqué</h1>
+            <p class="hero-hook">Mon fils a vu des pédopsychiatres, psychologues scolaires, infirmières psy, éducateurs. Pendant vingt ans, des professionnels payés pour observer les enfants l'ont ignoré.</p>
+            <div class="hero-line"></div>
+            <div class="hero-meta">
+                <span>
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    18 min de lecture
+                </span>
+                <span>Analyse transdisciplinaire</span>
+            </div>
+        </div>
+        <a href="#content" class="scroll-indicator">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+    </header>
+
+    <!-- Article Wrapper (fond gris clair) -->
+    <div class="article-wrapper">
+
+    <!-- Lead -->
+    <div class="article-lead" id="content">
+        <p>Cet été, à vingt ans, il a enfin reçu son diagnostic : autiste. Pas un autisme « invisible ». Un autisme que tout le monde voyait sans le nommer. Ses enseignants disaient qu'il était « à part ». Ses camarades le harcelaient. Les adultes censés le protéger lui expliquaient que c'était de sa faute. Aujourd'hui, il est anxiodépressif. Et je refuse de croire que c'est une coïncidence.</p>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article-content">
+
+        <p class="reveal">Parce que quand on comprend comment fonctionne un cerveau soumis à vingt ans de stress chronique, on comprend que cette dépression n'est pas un mystère. C'est le résultat d'un système incompétent et aveugle.</p>
+
+        <h2 class="reveal" data-icon="brain" id="section1">Ce que le cortisol fait à un enfant qui doit simuler</h2>
+
+        <p class="reveal drop-cap">Le masking, ce n'est pas de la timidité. Ce n'est pas de l'introversion. C'est une stratégie de survie neurologique.</p>
+
+        <p class="reveal">Un enfant autiste non diagnostiqué perçoit le monde social comme une menace permanente. Chaque interaction est un décodage. Chaque récréation est un terrain miné. Son amygdale, la sentinelle du cerveau, reste en alerte constante. Et quand l'amygdale sonne l'alarme, le cortisol inonde le système.</p>
+
+        <p class="reveal"><strong>Le cortisol, c'est l'hormone du « danger imminent ».</strong> Utile pour fuir un prédateur. Destructrice quand elle coule en continu pendant des années.</p>
+
+        <p class="reveal">À court terme, le cortisol aiguise l'attention. À long terme, il érode la mémoire, dérègle le sommeil, épuise les capacités de régulation émotionnelle. Le cerveau d'Alex n'a pas dysfonctionné. Il a fonctionné exactement comme un cerveau humain fonctionne quand on le maintient en état d'alerte pendant deux décennies.</p>
+
+        <div class="pull-quote reveal">
+            <span class="quote-mark">
+                <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
+            </span>
+            <p>Son anxiodépression n'est pas une faiblesse de caractère. C'est de la biochimie. C'est le résultat prévisible d'un organisme qui a épuisé ses réserves de stress.</p>
+            <div class="quote-line"></div>
+        </div>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="alert" id="section2">Le système polyvagal : pourquoi « faire des efforts » ne sert à rien</h2>
+
+        <p class="reveal">Stephen Porges a décrit trois états du système nerveux autonome. Le premier : connexion sociale, sécurité, détente. Le deuxième : mobilisation, combat ou fuite. Le troisième : effondrement, dissociation, retrait.</p>
+
+        <p class="reveal">Un enfant neurotypique navigue entre ces états selon les situations. Un enfant autiste non diagnostiqué, plongé dans un environnement qu'il ne décode pas, oscille entre le deuxième et le troisième. <strong>Mobilisation permanente. Puis effondrement.</strong></p>
+
+        <p class="reveal">Quand un adulte disait à Alex « fais des efforts pour t'intégrer », il demandait à un système nerveux en mode survie de passer en mode connexion sociale. <span class="highlight">C'est comme demander à quelqu'un qui se noie de nager plus élégamment.</span></p>
+
+        <div class="parenthese reveal">
+            <span class="aside-icon">&#10022;</span>
+            Le système polyvagal ne répond pas à la volonté. Il répond à la perception de sécurité. Alex n'a jamais perçu l'école comme un lieu sûr. Son corps le savait. Les adultes, eux, voyaient un enfant « qui ne faisait pas d'efforts ».
+        </div>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="eye" id="section3">Le piège du garçon intelligent : quand le QI devient un écran de fumée</h2>
+
+        <p class="reveal">Alex a passé des tests de QI. Résultats au-dessus de la moyenne. Dossier classé.</p>
+
+        <p class="reveal">Voilà comment fonctionne le filtre institutionnel : un enfant intelligent ne peut pas être autiste. Comme si l'intelligence compensait magiquement un câblage neurologique différent. <strong>Comme si savoir résoudre une équation signifiait savoir décoder un regard.</strong></p>
+
+        <p class="reveal">L'intelligence d'Alex n'a jamais compensé quoi que ce soit. Elle lui a permis de construire un masque plus sophistiqué. D'analyser les patterns sociaux. De créer des scripts mentaux pour chaque situation. D'anticiper les réponses attendues.</p>
+
+        <p class="reveal">Cette hyper-adaptation cognitive a un coût : <strong>la charge mentale.</strong></p>
+
+        <div class="emphase reveal">
+            <div class="emphase-bar"></div>
+            <div class="corner-bl"></div>
+            <div class="corner-br"></div>
+            <div class="emphase-icon">
+                <svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 011.32-4.24 2.5 2.5 0 011.98-3A2.5 2.5 0 019.5 2z"/><path d="M14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-1.32-4.24 2.5 2.5 0 00-1.98-3A2.5 2.5 0 0014.5 2z"/></svg>
+            </div>
+            <p>Un neurotypique traverse une journée sociale en mode automatique. Alex traversait chaque journée en mode traduction simultanée. Chaque micro-interaction exigeait un effort conscient.</p>
+            <p><strong>Imaginez parler une langue étrangère huit heures par jour, tous les jours, pendant vingt ans, sans jamais pouvoir dire « je suis fatigué de traduire ».</strong></p>
+        </div>
+
+        <p class="reveal">Les experts ont vu un garçon « vif ». Ils n'ont pas vu l'épuisement cognitif derrière la performance.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="users" id="section4">La chaîne des aveugles : quand chaque spécialiste voit son propre reflet</h2>
+
+        <p class="reveal">Récapitulons. Un pédopsychiatre regarde Alex : il voit de l'anxiété. Un psychologue scolaire regarde Alex : il voit des difficultés d'adaptation. Une infirmière regarde Alex : elle voit de la nervosité. Un éducateur regarde Alex : il voit un enfant « difficile ».</p>
+
+        <p class="reveal"><strong>Chacun a regardé par sa lorgnette. Chacun a traité le symptôme comme s'il était la cause.</strong></p>
+
+        <div class="parenthese reveal">
+            <span class="aside-icon">&#10022;</span>
+            C'est un biais cognitif classique : on voit ce qu'on est formé à voir. Le marteau voit des clous partout. Le psychiatre formé sur les troubles de l'humeur voit des troubles de l'humeur. Le psychologue scolaire formé sur les difficultés d'apprentissage voit des difficultés d'apprentissage.
+        </div>
+
+        <p class="reveal">La psychiatrie française préfère diagnostiquer une dépression qu'un autisme. Une dépression, ça se traite. Ça se médicamente. Ça rentre dans les cases administratives et les protocoles existants. Un autisme sans déficience intellectuelle, ça oblige à remettre en question l'environnement. Ça demande des aménagements. Ça coûte cher. Ça complique.</p>
+
+        <p class="reveal"><span class="highlight">Alors on a soigné la fumée. L'incendie, lui, a continué de brûler.</span></p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="shield" id="section5">Le gaslighting institutionnel : quand la réalité de l'enfant est niée</h2>
+
+        <p class="reveal">Alex savait qu'il était différent. Il le sentait. Il voyait bien que les autres enfants ne faisaient pas les mêmes efforts que lui pour comprendre les codes. Il voyait bien que quelque chose clochait.</p>
+
+        <p class="reveal">Mais chaque adulte lui renvoyait le même message : « Tu es trop sensible. » « Tu te fais des idées. » « Les autres enfants sont comme toi, ils font juste moins de cinéma. »</p>
+
+        <div class="pull-quote reveal">
+            <span class="quote-mark">
+                <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
+            </span>
+            <p>C'est la définition du gaslighting : faire douter quelqu'un de sa propre perception alors que cette perception est exacte.</p>
+            <div class="quote-line"></div>
+        </div>
+
+        <p class="reveal">Alex percevait correctement sa différence. Le système lui a appris à se méfier de ses propres sensations. À considérer son ressenti comme exagéré, pathologique, honteux. À vingt ans, il ne sait plus faire confiance à ce qu'il éprouve.</p>
+
+        <p class="reveal">La dissonance cognitive qui en résulte est épuisante. D'un côté, son expérience vécue : « quelque chose ne va pas, je ne fonctionne pas comme les autres ». De l'autre, le message institutionnel : « tu es normal, tu dois juste faire plus d'efforts ». <strong>Le cerveau humain ne supporte pas longtemps cette contradiction. Il finit par douter de lui-même.</strong></p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="users" id="section6">Quand les protecteurs deviennent complices</h2>
+
+        <p class="reveal">Alex était harcelé. Ça arrive à beaucoup d'enfants. Ce qui arrive moins souvent : les adultes qui prennent le parti des harceleurs.</p>
+
+        <p class="reveal">« Tu dois apprendre à t'intégrer. » « Tu provoques sans t'en rendre compte. » « Fais des efforts. »</p>
+
+        <p class="reveal">Les agresseurs, eux, « faisaient des bêtises ». Des « chamailleries entre gamins ». Rien de grave.</p>
+
+        <div class="parenthese reveal">
+            <span class="aside-icon">&#10022;</span>
+            Les adultes ont vu dans les harceleurs le reflet d'une norme qu'ils approuvaient : l'aisance sociale, la capacité à dominer un groupe. En Alex, ils voyaient l'anomalie. Le grain de sable. Celui qui complique la gestion de classe parce qu'il ne réagit pas comme prévu.
+        </div>
+
+        <p class="reveal">C'est un mécanisme anthropologique vieux comme le monde : le groupe désigne un bouc émissaire pour renforcer sa cohésion. Les harceleurs remplissaient une fonction sociale. Alex, lui, la mettait en danger par sa simple existence différente.</p>
+
+        <p class="reveal"><strong>Le harcèlement est devenu un outil de « nettoyage » social. Les adultes l'ont laissé faire. Certains l'ont encouragé.</strong> Un enfant qui ne rentre pas dans le moule, on le plie ou on le casse. La culture scolaire française n'a jamais vraiment abandonné cette logique.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="clock" id="section7">La mémoire traumatique : pourquoi le passé ne passe pas</h2>
+
+        <p class="reveal">Le cerveau humain stocke les souvenirs de deux manières. Les souvenirs ordinaires sont contextualisés : on sait quand et où ils se sont produits, ils appartiennent au passé. Les souvenirs traumatiques, eux, restent fragmentés, intrusifs, décontextualisés. Ils resurgissent comme si l'événement se produisait maintenant.</p>
+
+        <p class="reveal"><strong>Alex n'a pas « un mauvais souvenir » de l'école. Il a une mémoire traumatique de l'école.</strong></p>
+
+        <p class="reveal">Son amygdale a encodé des centaines de micro-agressions comme des menaces vitales. Chaque situation sociale qui ressemble, même de loin, à une situation passée réactive l'alerte. Le corps se tend. Le cœur s'accélère. Le cortisol monte. Pas parce qu'Alex « se complait dans le passé ». Parce que son cerveau n'a jamais pu classer ces souvenirs comme terminés.</p>
+
+        <p class="reveal">La dissociation, cette sensation de « ne plus être vraiment là », est un mécanisme de protection. Quand le stress dépasse les capacités de traitement, le cerveau débranche. Alex a appris à se dissocier pour survivre aux cours, aux récréations, aux réunions de famille. <span class="highlight">Cette compétence de survie est devenue un handicap : il ne sait plus comment rester présent.</span></p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="zap" id="section8">Le mythe de la volonté : pourquoi « il suffit de vouloir » est une escroquerie intellectuelle</h2>
+
+        <p class="reveal">Notre culture adore l'idée que tout est question de volonté. Tu veux t'intégrer ? Fais des efforts. Tu veux guérir ? Sois positif. Tu veux réussir ? Travaille plus.</p>
+
+        <p class="reveal"><strong>Cette croyance ignore tout ce que les neurosciences ont établi sur le fonctionnement du cerveau humain.</strong></p>
+
+        <ul class="liste-simple reveal">
+            <li>Un système nerveux en mode survie ne « choisit » pas de rester en alerte.</li>
+            <li>Une amygdale hyperactivée ne « décide » pas de se calmer.</li>
+            <li>Un taux de cortisol chroniquement élevé ne « fait pas exprès » d'épuiser les ressources cognitives.</li>
+        </ul>
+
+        <p class="reveal">Dire à Alex « fais des efforts » revenait à lui demander de modifier sa biochimie par la pensée. <span class="highlight">C'est aussi efficace que demander à un diabétique de produire de l'insuline par la force de la volonté.</span></p>
+
+        <p class="reveal">Le problème n'a jamais été le manque d'efforts d'Alex. Le problème était un environnement inadapté à son fonctionnement neurologique, et un système médico-éducatif incapable de le reconnaître.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="question" id="section9">La question qui dérange : qui a fabriqué cette dépression ?</h2>
+
+        <p class="reveal drop-cap">L'anxiodépression d'Alex n'est pas tombée du ciel. Elle n'est pas génétique. Elle n'est pas le fruit d'une « fragilité » mystérieuse.</p>
+
+        <p class="reveal"><strong>Elle est le résultat mesurable, prévisible, documenté, de ce qui arrive à un cerveau humain quand :</strong></p>
+
+        <ul class="liste-mecanismes reveal">
+            <li>
+                <strong>Stress chronique</strong>
+                On le soumet à un stress social chronique pendant vingt ans.
+            </li>
+            <li>
+                <strong>Invalidation systémique</strong>
+                On nie sa perception de la réalité à chaque fois qu'il l'exprime.
+            </li>
+            <li>
+                <strong>Masking forcé</strong>
+                On le force à simuler un fonctionnement qui n'est pas le sien.
+            </li>
+            <li>
+                <strong>Punition de l'échec</strong>
+                On le punit quand il échoue à cette simulation.
+            </li>
+            <li>
+                <strong>Déni de la différence</strong>
+                On refuse de nommer ce qui le différencie des autres.
+            </li>
+        </ul>
+
+        <div class="pull-quote reveal">
+            <span class="quote-mark">
+                <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
+            </span>
+            <p>Le diagnostic tardif n'est pas une solution. C'est le constat d'un échec collectif.</p>
+            <div class="quote-line"></div>
+        </div>
+
+        <p class="reveal">Huit professionnels. Vingt ans. Des tests. Des consultations. Des réunions. Et à la fin, un jeune homme brisé qui doit maintenant reconstruire son identité sur les ruines d'une enfance où on lui a appris à se méfier de lui-même.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="heart" id="section10">Ce que cherchent les familles comme la nôtre</h2>
+
+        <p class="reveal">Nous ne cherchons pas une étiquette. Nous ne cherchons pas non plus la « guérison » d'Alex.</p>
+
+        <p class="reveal"><strong>Nous cherchons la validation.</strong> Pendant vingt ans, le monde a dit à Alex que son problème était sa « sensibilité », son « manque d'effort », sa « fragilité ». Le diagnostic transforme enfin la plainte en fait neurologique. Le statut de coupable en statut de victime d'un environnement inadapté.</p>
+
+        <p class="reveal"><strong>Nous cherchons le droit au repos.</strong> Alex s'est épuisé à ressembler aux autres. Il a besoin d'un cadre qui dise : tu n'as plus à simuler. Ton système nerveux a le droit de se réguler. Ta perception du monde est valide.</p>
+
+        <p class="reveal"><strong>Nous cherchons des réponses.</strong> Pourquoi huit professionnels formés ont-ils raté l'évidence ? Pourquoi les critères diagnostiques excluent-ils encore les profils sans déficience intellectuelle ? Pourquoi forme-t-on des psys sur des modèles cliniques vieux de quarante ans ?</p>
+
+        <p class="reveal"><strong>Et nous cherchons que ça change.</strong> Pas pour Alex, c'est trop tard. Pour les enfants qui, en ce moment même, traversent le système en épuisant leurs réserves de cortisol à force de simuler la normalité.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="question">La dernière question</h2>
+
+        <p class="reveal">On parle beaucoup de « neurodiversité ». De « bienveillance ». D'« inclusion ». Les institutions multiplient les chartes et les formations.</p>
+
+        <p class="reveal">Pendant ce temps, des enfants comme Alex traversent le système entier sans être vus. Ils s'épuisent à simuler la normalité. Leur amygdale reste en alerte. Leur cortisol s'accumule. Leur mémoire encode des traumatismes. Et quand ils s'effondrent à l'âge adulte, on diagnostique leur effondrement comme une maladie psychiatrique, au lieu de le reconnaître comme une conséquence biologique prévisible.</p>
+
+        <div class="emphase reveal">
+            <div class="emphase-bar"></div>
+            <div class="corner-bl"></div>
+            <div class="corner-br"></div>
+            <div class="emphase-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <p><strong>Combien de diagnostics de dépression ne sont en réalité que des cerveaux autistes épuisés d'avoir tenté de fonctionner dans un monde qui ne leur a jamais fait de place ?</strong></p>
+            <p>Mon fils n'a pas échoué à se faire comprendre. Ce sont les experts qui ont échoué à faire leur travail. Et son anxiodépression n'est pas sa fragilité. <strong>C'est leur facture.</strong></p>
+        </div>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <p class="reveal" style="text-align: center; font-style: italic; color: var(--gris-moyen-fonce); margin-top: 3rem;">Vous connaissez un Alex. Peut-être êtes-vous un Alex. Votre épuisement n'est pas une faiblesse. C'est la réponse normale d'un cerveau normal à une situation anormale.</p>
+
+        <!-- CTA Autotest -->
+        <div class="cta-autotest reveal">
+            <div class="cta-corner cta-corner--tl"></div>
+            <div class="cta-corner cta-corner--tr"></div>
+            <div class="cta-corner cta-corner--bl"></div>
+            <div class="cta-corner cta-corner--br"></div>
+            <div class="cta-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3>Qu'est-ce qui vous a manqué pour être vu à temps ?</h3>
+            <p>Les autotests Noesis Kintsugi permettent de cartographier les mécanismes que vous avez développés pour survivre. Pas de diagnostic — juste une clarification.</p>
+            <a href="../Autotests/autotest.html" class="btn btn-primary">
+                Découvrir les autotests
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+
+        <!-- Actions -->
+        <div class="article-actions reveal">
+            <a href="articles.html">
+                <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Retour aux analyses
+            </a>
+            <a href="#" onclick="navigator.share ? navigator.share({title: document.title, url: window.location.href}) : null; return false;">
+                <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                Partager
+            </a>
+        </div>
+
+    </article>
+
+    </div><!-- Fin article-wrapper -->
+
+    <!-- Articles liés -->
+    <section class="related-articles">
+        <h2>Continuer la lecture</h2>
+        <div class="related-grid">
+            <a href="article-autisme.html" class="related-item">
+                <span class="series-tag">Série IV — Neurodiversité</span>
+                <h3>Et si l'autisme était plus vieux que Sapiens ?</h3>
+            </a>
+            <a href="article-jugement.html" class="related-item">
+                <span class="series-tag">Série I — Doute de soi</span>
+                <h3>Le moment précis où j'ai arrêté de faire confiance à mon propre jugement</h3>
+            </a>
+            <a href="#" class="related-item">
+                <span class="series-tag">Série IV — Faux diagnostic</span>
+                <h3>« On m'a dit burn-out. Personne n'a regardé ce qui m'empêchait d'agir. »</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                <p class="footer-tagline">Noesis ne soigne pas. Noesis clarifie.</p>
+            </div>
+            <nav class="footer-links">
+                <a href="../Autotests/autotest.html">Autotests</a>
+                <a href="articles.html">Analyses</a>
+                <a href="../etape-zero/accompagnement.html">L'Étape Zéro</a>
+                <a href="mailto:contact@noesiskintsugi.com">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2025 Noesis Kintsugi. Tous droits réservés.</p>
+            <p class="footer-baseline">La paix sans vérité est une anesthésie.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Progress bar & TOC
+        const progressBar = document.getElementById('progressBar');
+        const tocWrapper = document.getElementById('tocWrapper');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + '%';
+
+            tocWrapper.classList.toggle('visible', scrollTop > window.innerHeight);
+            document.getElementById('nav').classList.toggle('scrolled', scrollTop > 100);
+            updateActiveTocDot();
+        });
+
+        document.querySelectorAll('.toc-dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                const target = document.getElementById(dot.dataset.target);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        function updateActiveTocDot() {
+            const sections = document.querySelectorAll('h2[id]');
+            const dots = document.querySelectorAll('.toc-dot');
+            let currentSection = '';
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top <= 200) currentSection = section.id;
+            });
+            dots.forEach(dot => dot.classList.toggle('active', dot.dataset.target === currentSection));
+        }
+
+        // Mobile nav
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
