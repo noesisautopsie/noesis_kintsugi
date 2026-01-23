@@ -3,370 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noesis Kintsugi — Plateforme pré-clinique d'analyse de l'emprise</title>
-    <meta name="description" content="Analyse transdisciplinaire des mécanismes d'emprise, du trauma complexe relationnel et de la destruction identitaire. Clarifier pour rendre le soin possible.">
+    <title>Noesis Kintsugi — Clarification cognitive et aide aux démarches</title>
+    <meta name="description" content="Noesis Kintsugi t'aide à mettre des mots sur ton vécu, le structurer, et le faire entendre. Services d'accompagnement pour MDPH, justice, démarches administratives.">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
     
     <style>
         /* ═══════════════════════════════════════════════════════════════
-           CSS VARIABLES — PALETTE NOESIS KINTSUGI OPTIMISÉE
+           CSS VARIABLES — PALETTE NOESIS KINTSUGI
            ═══════════════════════════════════════════════════════════════ */
         :root {
-            /* ─────────── NOIRS PROFONDS ─────────── */
-            --noir-principal: #121514;
-            --noir-profond: #111313;
-            --noir-clair: #161817;
+            /* GRIS PREMIUM */
+            --noir-principal: #1c1f21;
+            --noir-profond: #16191a;
+            --gris-anthracite: #2d3133;
+            --gris-ceramique: #353a3c;
+            --gris-moyen: #4a5154;
+            --gris-pierre: #8a9094;
             
-            /* ─────────── GRIS ANTHRACITE ─────────── */
-            --gris-anthracite: #2E3130;
-            --gris-ceramique: #2D2F2F;
-            --gris-moyen-fonce: #424446;
+            /* ORS */
+            --or-vieilli: #a07830;
+            --or-mat: #aa8555;
+            --or-clair: #d4b896;
+            --or-eclatant: #e8d4a8;
+            --or-intense: #f0ddb0;
             
-            /* ─────────── GRIS MOYENS ─────────── */
-            --gris-pierre: #97948C;
-            --gris-neutre: #989694;
-            --gris-medium: #999999;
+            /* TEXTE */
+            --texte-principal: #f5f3ef;
+            --texte-secondaire: #c5c2bc;
+            --blanc-casse: #e8e5e0;
             
-            /* ─────────── ORS SOMBRES ─────────── */
-            --or-antique: #8F6B2E;
-            --or-bronze: #967523;
-            --or-vieilli: #996B26;
-            --or-cuivre: #AE752B;
+            /* FOND CLAIR (pour section Contact) */
+            --fond-clair: #f8f6f2;
+            --fond-clair-alt: #e8e5df;
             
-            /* ─────────── ORS MOYENS ─────────── */
-            --or-moyen: #9D7034;
-            --or-mat: #98764D;
-            --or-terreux: #99845E;
-            
-            /* ─────────── ORS BRILLANTS ─────────── */
-            --or-clair: #C9AA6E;
-            --or-lumineux: #CCA464;
-            --or-eclatant: #D7BE67;
-            --or-intense: #DDB569;
-            
-            /* ─────────── BLANCS/IVOIRE ─────────── */
-            --blanc-casse: #C9CBCB;
-            --ivoire: #CBCBC9;
-            
-            /* ─────────── FOND CLAIR ─────────── */
-            --fond-clair: #f8f7f5;
-            --fond-clair-alt: #f4f3f0;
-            
-            /* ─────────── EFFETS KINTSUGI ─────────── */
-            --glow-or: 0 0 20px rgba(201, 170, 110, 0.3);
-            --glow-or-intense: 0 0 30px rgba(215, 190, 103, 0.4);
-            --shadow-gold: 0 4px 20px rgba(143, 107, 46, 0.25);
-            --shadow-deep: 0 12px 40px rgba(0, 0, 0, 0.4);
+            /* EFFETS */
+            --glow-or: 0 0 25px rgba(212, 184, 150, 0.25);
+            --shadow-gold: 0 4px 24px rgba(160, 120, 48, 0.2);
+            --shadow-deep: 0 12px 48px rgba(0, 0, 0, 0.35);
             --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
-            --gradient-fissure: linear-gradient(90deg, var(--or-vieilli), var(--or-clair), var(--or-intense), var(--or-clair), var(--or-vieilli));
             
-            /* Typography */
+            /* TYPO */
             --font-display: 'Megrim', cursive;
-            --font-body: 'Crimson Pro', serif;
+            --font-body: 'Crimson Pro', Georgia, serif;
             
-            /* Spacing */
+            /* SPACING */
             --section-padding: clamp(80px, 12vh, 140px);
             --container-max: 1200px;
             --container-padding: clamp(20px, 5vw, 60px);
             
-            /* Transitions */
+            /* TRANSITIONS */
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           RESET & BASE
-           ═══════════════════════════════════════════════════════════════ */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html { scroll-behavior: smooth; }
+        
         body {
             font-family: var(--font-body);
             background-color: var(--noir-principal);
-            color: var(--blanc-casse);
-            line-height: 1.65;
-            overflow-x: hidden;
+            color: var(--texte-principal);
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Texture grain subtile premium */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0.025;
-            z-index: 9999;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-        }
-
-        /* Sélection dorée */
-        ::selection {
-            background: var(--or-vieilli);
-            color: var(--noir-principal);
-        }
-
-        ::-moz-selection {
-            background: var(--or-vieilli);
-            color: var(--noir-principal);
-        }
-
-        /* Scrollbar personnalisée */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--noir-profond);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--or-vieilli);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--or-clair);
         }
 
         .container {
             max-width: var(--container-max);
             margin: 0 auto;
             padding: 0 var(--container-padding);
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           TYPOGRAPHY
-           ═══════════════════════════════════════════════════════════════ */
-        .title-display {
-            font-family: var(--font-display);
-            font-weight: 400;
-            letter-spacing: 0.02em;
-            line-height: 1.1;
-        }
-
-        .title-section {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            color: var(--or-clair);
-            margin-bottom: 0.5em;
             position: relative;
-            display: inline-block;
-        }
-
-        .title-section::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: var(--gradient-or);
-        }
-
-        .subtitle {
-            font-family: var(--font-body);
-            font-style: italic;
-            color: var(--gris-medium);
-            font-size: 1.1rem;
-        }
-
-        .surtitre {
-            font-family: var(--font-body);
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--gris-medium);
-            margin-bottom: 1rem;
+            z-index: 1;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           BUTTONS — EFFETS PREMIUM
-           ═══════════════════════════════════════════════════════════════ */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2.5rem;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary {
-            background: var(--or-clair);
-            color: var(--noir-principal);
-        }
-
-        .btn-primary:hover {
-            background: var(--or-eclatant);
-            box-shadow: var(--glow-or), 0 8px 32px rgba(201, 170, 110, 0.25);
-            transform: translateY(-3px);
-        }
-
-        .btn-primary:active {
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--or-clair);
-            color: var(--or-clair);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(201, 170, 110, 0.1);
-            border-color: var(--or-eclatant);
-            color: var(--or-eclatant);
-            box-shadow: var(--glow-or);
-        }
-
-        .link-subtle {
-            color: var(--gris-medium);
-            font-size: 0.95rem;
-            border-bottom: 1px solid transparent;
-            transition: var(--transition-smooth);
-        }
-
-        .link-subtle:hover {
-            color: var(--or-clair);
-            border-bottom-color: var(--or-clair);
-        }
-
-        .link-gold {
-            color: var(--or-clair);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
-            transition: var(--transition-smooth);
-        }
-
-        .link-gold:hover {
-            color: var(--or-eclatant);
-            gap: 0.75rem;
-            text-shadow: 0 0 20px rgba(215, 190, 103, 0.3);
-        }
-
-        .link-gold svg {
-            width: 16px;
-            height: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .link-gold:hover svg {
-            transform: translateX(4px);
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           NAVIGATION — EFFETS PREMIUM
+           NAVIGATION
            ═══════════════════════════════════════════════════════════════ */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             z-index: 1000;
-            padding: 1.5rem 0;
-            transition: var(--transition-smooth);
-        }
-
-        .nav .logo {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--or-clair);
-            letter-spacing: 0.05em;
-            transition: var(--transition-smooth);
-        }
-
-        .nav .logo span {
-            color: var(--gris-medium);
-            font-size: 0.9em;
-            transition: var(--transition-smooth);
-        }
-
-        .nav .nav-links a {
-            font-size: 0.9rem;
-            color: var(--blanc-casse);
-            position: relative;
+            padding: 1.25rem 0;
+            background: rgba(28, 31, 33, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 184, 150, 0.1);
             transition: var(--transition-smooth);
         }
 
         .nav.scrolled {
-            background: rgba(17, 19, 19, 0.97);
-            backdrop-filter: blur(12px);
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(153, 107, 38, 0.2);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav.scrolled .logo {
-            color: var(--or-clair);
-        }
-
-        .nav.scrolled .logo:hover {
-            color: var(--or-eclatant);
-            text-shadow: var(--glow-or);
-        }
-
-        .nav.scrolled .logo span {
-            color: var(--gris-medium);
-        }
-
-        .nav.scrolled .nav-links a {
-            color: var(--blanc-casse);
-        }
-
-        .nav.scrolled .nav-links a:hover {
-            color: var(--or-clair);
+            padding: 0.75rem 0;
+            background: rgba(22, 25, 26, 0.98);
         }
 
         .nav-inner {
@@ -375,10 +105,29 @@
             align-items: center;
         }
 
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--texte-principal);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .logo span { color: var(--or-clair); }
+
         .nav-links {
             display: flex;
-            gap: 2.5rem;
             list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--texte-secondaire);
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+            position: relative;
         }
 
         .nav-links a::after {
@@ -388,43 +137,24 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--gradient-or);
+            background: var(--or-clair);
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .nav-toggle span {
-            width: 24px;
-            height: 1px;
-            background: var(--or-clair);
-            transition: var(--transition-smooth);
-        }
-
-        .nav.scrolled .nav-toggle span {
-            background: var(--or-clair);
-        }
+        .nav-links a:hover { color: var(--or-clair); }
+        .nav-links a:hover::after { width: 100%; }
 
         /* ═══════════════════════════════════════════════════════════════
-           HERO SECTION — HOOK DE HAUTE QUALITÉ
+           HERO SECTION
            ═══════════════════════════════════════════════════════════════ */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
-            background: var(--noir-principal);
-            overflow: hidden;
+            text-align: center;
+            padding: 8rem 0 4rem;
         }
 
         .hero-bg {
@@ -433,195 +163,490 @@
             background-image: url('assets/bg-kintsugi.png');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            z-index: 0;
+            opacity: 0.25;
         }
 
         .hero-bg::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg,
-                rgba(18, 21, 20, 0.75) 0%,
-                rgba(18, 21, 20, 0.6) 50%,
-                rgba(18, 21, 20, 0.8) 100%);
-            pointer-events: none;
-        }
-
-        .hero-inner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10rem 0 8rem;
-            text-align: center;
-            position: relative;
-            z-index: 1;
+            background: linear-gradient(180deg, rgba(28,31,33,0.3) 0%, rgba(28,31,33,0.95) 100%);
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 1;
             max-width: 800px;
         }
 
-        /* Hook principal */
+        .hero-surtitre {
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-bottom: 2rem;
+        }
+
         .hero-hook-main {
             font-family: var(--font-display);
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            color: #ffffff;
-            margin-bottom: 0.3em;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--or-eclatant);
+            margin-bottom: 0.5rem;
             line-height: 1.1;
-            letter-spacing: -0.02em;
-            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.8), 0 4px 60px rgba(0, 0, 0, 0.6);
         }
 
         .hero-hook-sub {
             font-family: var(--font-body);
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
-            color: var(--or-eclatant);
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            color: var(--texte-principal);
             font-style: italic;
-            margin-bottom: 0;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+            margin-bottom: 2rem;
         }
 
-        /* Ligne de séparation dorée */
         .hero-divider {
             width: 80px;
             height: 2px;
             background: var(--gradient-or);
-            margin: 2.5rem auto;
-            position: relative;
+            margin: 2rem auto;
         }
 
-        .hero-divider::before,
-        .hero-divider::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 6px;
-            height: 6px;
-            background: var(--or-clair);
-            border-radius: 50%;
-            transform: translateY(-50%);
-        }
-
-        .hero-divider::before {
-            left: -12px;
-        }
-
-        .hero-divider::after {
-            right: -12px;
-        }
-
-        /* Explication */
         .hero-explain {
-            font-family: var(--font-body);
-            font-size: clamp(1.05rem, 2vw, 1.2rem);
-            color: #ffffff;
-            max-width: 600px;
+            font-size: 1.15rem;
+            color: var(--texte-principal);
+            max-width: 650px;
             margin: 0 auto 2.5rem;
-            line-height: 1.8;
-            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
+            line-height: 1.85;
         }
 
-        /* CTA */
         .hero-cta {
             display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            align-items: center;
+            gap: 1.5rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .hero .btn-primary {
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-primary {
+            background: var(--gradient-or);
+            color: var(--noir-principal);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--glow-or);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--or-clair);
+            border: 1px solid var(--or-clair);
+        }
+
+        .btn-secondary:hover {
             background: var(--or-clair);
             color: var(--noir-principal);
-            border: 1px solid var(--or-clair);
-            padding: 1.1rem 2.5rem;
-            font-size: 1.05rem;
         }
 
-        .hero .btn-primary:hover {
-            background: var(--or-eclatant);
-            box-shadow: var(--glow-or-intense), 0 12px 40px rgba(201, 170, 110, 0.3);
-        }
-
-        .hero .link-subtle {
-            color: #ffffff;
+        .link-subtle {
+            color: var(--or-clair);
+            text-decoration: none;
             font-size: 1rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .hero .link-subtle:hover {
-            color: var(--or-eclatant);
-            border-bottom-color: var(--or-eclatant);
-        }
-
-        /* Animations séquentielles */
-        .reveal-hero {
-            opacity: 0;
-            transform: translateY(25px);
-        }
-
-        .reveal-hero-1 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s; }
-        .reveal-hero-2 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s; }
-        .reveal-hero-3 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.9s; }
-        .reveal-hero-4 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.2s; }
-        .reveal-hero-5 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.5s; }
-
-        @keyframes heroReveal {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Scroll indicator amélioré */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
             display: flex;
-            flex-direction: column;
             align-items: center;
             gap: 0.5rem;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            animation-delay: 1.2s;
         }
 
-        .scroll-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, var(--or-clair), transparent);
+        .link-subtle:hover { text-decoration: underline; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION 3 POINTS CLÉS
+           ═══════════════════════════════════════════════════════════════ */
+        .trois-points {
+            padding: 5rem 0;
+            background: var(--gris-anthracite);
             position: relative;
-            overflow: hidden;
         }
 
-        .scroll-line::after {
+        .trois-points::before,
+        .trois-points::after {
             content: '';
             position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background: linear-gradient(to bottom, transparent, var(--or-eclatant), transparent);
-            animation: scrollFlow 2s ease-in-out infinite;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
+        }
+        .trois-points::before { top: 0; }
+        .trois-points::after { bottom: 0; }
+
+        .trois-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
         }
 
-        @keyframes scrollFlow {
-            0% { top: -50%; opacity: 0; }
-            50% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
+        .trois-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: rgba(28, 31, 33, 0.6);
+            border: 1px solid rgba(212, 184, 150, 0.1);
+            transition: var(--transition-smooth);
+        }
+
+        .trois-card:hover {
+            border-color: rgba(212, 184, 150, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .trois-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .trois-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--or-clair);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .trois-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--or-eclatant);
+            margin-bottom: 1rem;
+        }
+
+        .trois-card p {
+            font-size: 1.05rem;
+            color: var(--texte-principal);
+            line-height: 1.75;
+        }
+
+        .trois-card strong { color: var(--or-clair); }
+
+        /* ═══════════════════════════════════════════════════════════════
+           TITRES DE SECTIONS (style commun)
+           ═══════════════════════════════════════════════════════════════ */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .surtitre {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-bottom: 0.75rem;
+        }
+
+        .titre-section {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--or-eclatant);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .titre-section::after {
+            content: '';
+            position: absolute;
+            bottom: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-or);
+        }
+
+        .sous-titre {
+            font-size: 1.15rem;
+            color: var(--texte-secondaire);
+            font-style: italic;
+            margin-top: 1.5rem;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SECTION MÉTHODE - 5 AXES
+           SECTION SERVICES — Version valeur
+           ═══════════════════════════════════════════════════════════════ */
+        .services {
+            padding: var(--section-padding) 0;
+            background: var(--noir-principal);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 400px;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            opacity: 0.1;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
+        }
+
+        .services-probleme {
+            margin-bottom: 3rem;
+        }
+
+        .probleme-intro {
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .probleme-intro p {
+            font-size: 1.15rem;
+            color: var(--texte-principal);
+            line-height: 1.85;
+        }
+
+        .probleme-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .probleme-card {
+            background: var(--gris-anthracite);
+            padding: 2rem;
+            border-top: 3px solid var(--or-vieilli);
+            text-align: center;
+        }
+
+        .probleme-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .probleme-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--or-clair);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .probleme-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: var(--or-eclatant);
+            margin-bottom: 0.75rem;
+        }
+
+        .probleme-card p {
+            font-size: 0.95rem;
+            color: var(--texte-secondaire);
+            line-height: 1.7;
+        }
+
+        .services-solution {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .solution-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-or);
+            margin: 0 auto 2rem;
+        }
+
+        .solution-quote {
+            font-size: 1.2rem;
+            color: var(--or-clair);
+            font-style: italic;
+            line-height: 1.8;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .services-liste {
+            margin-bottom: 2rem;
+        }
+
+        .services-liste h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: var(--or-eclatant);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--gris-anthracite);
+            padding: 1.75rem;
+            border-left: 3px solid var(--or-vieilli);
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-left-color: var(--or-clair);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .service-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--or-eclatant);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--texte-principal);
+            line-height: 1.7;
+        }
+
+        .services-note {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.25rem 2rem;
+            background: rgba(160, 120, 48, 0.08);
+            border: 1px solid rgba(212, 184, 150, 0.15);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-note p {
+            font-size: 1rem;
+            color: var(--texte-principal);
+            margin: 0;
+        }
+
+        .services-note strong {
+            color: var(--or-clair);
+        }
+
+        .services-cta {
+            text-align: center;
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION CE QU'ON FAIT / NE FAIT PAS
+           ═══════════════════════════════════════════════════════════════ */
+        .positionnement {
+            padding: var(--section-padding) 0;
+            background: var(--gris-ceramique);
+            position: relative;
+        }
+
+        .positionnement::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 350px;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            opacity: 0.08;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
+        }
+
+        .fait-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .fait-column {
+            background: var(--gris-anthracite);
+            padding: 2.5rem;
+            border-top: 3px solid var(--or-clair);
+        }
+
+        .fait-column.non { border-top-color: var(--gris-pierre); }
+
+        .fait-column h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .fait-column.oui h3 { color: var(--or-clair); }
+        .fait-column.non h3 { color: var(--gris-pierre); }
+
+        .fait-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212, 184, 150, 0.1);
+        }
+
+        .fait-item:last-child { border-bottom: none; }
+
+        .fait-item strong {
+            display: block;
+            color: var(--texte-principal);
+            margin-bottom: 0.25rem;
+        }
+
+        .fait-item span {
+            font-size: 0.9rem;
+            color: var(--texte-secondaire);
+        }
+
+        .fait-warning {
+            margin-top: 3rem;
+            padding: 1.5rem 2rem;
+            background: rgba(160, 120, 48, 0.1);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .fait-warning p {
+            font-size: 1.15rem;
+            color: var(--or-clair);
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION MÉTHODE — 10 AXES
            ═══════════════════════════════════════════════════════════════ */
         .methode {
             padding: var(--section-padding) 0;
@@ -635,205 +660,153 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 120px;
-            background: linear-gradient(to bottom, var(--noir-principal) 0%, var(--noir-principal) 100%);
-            pointer-events: none;
-        }
-
-        .methode::after {
-            content: '';
-            position: absolute;
-            top: 60px;
-            left: 10%;
-            right: 10%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.5), transparent);
-        }
-
-        .methode-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-top: 40px;
-        }
-
-        .methode-header .title-section::after {
-            left: 50%;
-            transform: translateX(-50%);
+            height: 400px;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            opacity: 0.08;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
         }
 
         .methode-intro {
             max-width: 800px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 3rem;
             text-align: center;
         }
 
         .methode-intro p {
             font-size: 1.1rem;
-            color: var(--blanc-casse);
+            color: var(--texte-principal);
+            line-height: 1.8;
             margin-bottom: 1rem;
-            line-height: 1.75;
         }
 
-        .methode-intro .methode-conclusion {
-            color: var(--or-clair);
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
-        }
+        .methode-intro strong { color: var(--or-clair); }
 
-        .axes-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .axes-bottom {
+        .axes-wrapper {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 820px;
-            margin: 2rem auto 0;
+            gap: 3rem;
         }
 
-        .axe {
-            background: var(--noir-clair);
-            padding: 2rem;
-            position: relative;
-            transition: var(--transition-smooth);
-            border-left: 2px solid var(--or-vieilli);
+        .axes-group h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--or-clair);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(212, 184, 150, 0.2);
         }
 
-        .axe::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -2px;
-            width: 2px;
-            height: 0;
-            background: var(--gradient-or);
-            transition: height 0.4s ease;
-        }
-
-        .axe:hover {
-            transform: translateY(-6px);
-            border-left-color: transparent;
-            box-shadow: var(--shadow-deep), var(--glow-or);
-        }
-
-        .axe:hover::before {
-            height: 100%;
-        }
-
-        .axe-header {
+        .axe-item {
             display: flex;
-            align-items: center;
             gap: 1rem;
-            margin-bottom: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212, 184, 150, 0.08);
         }
 
-        .axe-icon {
-            width: 48px;
-            height: 48px;
+        .axe-item:last-child { border-bottom: none; }
+
+        .axe-numero {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--or-vieilli);
+            width: 32px;
             flex-shrink: 0;
         }
 
-        .axe-icon svg {
-            width: 100%;
-            height: 100%;
-            stroke: var(--or-clair);
-            stroke-width: 1.5;
-            fill: none;
-            transition: all 0.4s ease;
-        }
-
-        .axe:hover .axe-icon svg {
-            stroke: var(--or-eclatant);
-            filter: drop-shadow(0 0 6px rgba(215, 190, 103, 0.3));
-        }
-
-        .axe-title {
-            font-family: var(--font-display);
-            font-size: 1.4rem;
+        .axe-content strong {
+            display: block;
             color: var(--or-eclatant);
-            margin: 0;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
         }
 
-        .axe-keywords {
-            font-size: 0.85rem;
-            color: var(--or-mat);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        .axe-text {
-            font-size: 1rem;
-            color: var(--blanc-casse);
-            line-height: 1.7;
-            margin: 0;
+        .axe-content span {
+            font-size: 0.9rem;
+            color: var(--texte-secondaire);
+            line-height: 1.5;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SECTION AUTOTEST
+           SECTION AUTOTESTS — Style Étape Zéro
            ═══════════════════════════════════════════════════════════════ */
-        .autotest {
+        .autotests {
             padding: var(--section-padding) 0;
-            background: var(--gris-anthracite);
+            background: var(--gris-ceramique);
             position: relative;
         }
 
-        .autotest::before,
-        .autotest::after {
+        .autotests::before {
             content: '';
             position: absolute;
-            left: 5%;
-            right: 5%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.6), transparent);
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 350px;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            opacity: 0.08;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
         }
 
-        .autotest::before { top: 0; }
-        .autotest::after { bottom: 0; }
-
-        .autotest-inner {
+        .autotests-inner {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
-        .autotest-content {
-            position: relative;
+        .autotests-content .surtitre {
+            text-align: left;
         }
 
-        .autotest-title {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            color: var(--or-intense);
-            margin-bottom: 1.5rem;
+        .autotests-content .titre-section {
+            display: block;
         }
 
-        .autotest-text {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--blanc-casse);
+        .autotests-content .titre-section::after {
+            left: 0;
+            transform: none;
         }
 
-        .autotest-specs {
+        .autotests-tagline {
+            font-size: 1.15rem;
+            color: var(--texte-secondaire);
             font-style: italic;
-            color: var(--gris-medium);
-            margin-bottom: 2rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .autotests-text {
+            font-size: 1.05rem;
+            color: var(--texte-principal);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .autotests-list {
             font-size: 1rem;
+            color: var(--or-clair);
+            margin-bottom: 1rem;
+            line-height: 1.8;
         }
 
-        .autotest-disclaimer {
+        .autotests-note {
+            font-size: 0.95rem;
+            color: var(--texte-secondaire);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .autotests-disclaimer {
             font-size: 0.85rem;
-            color: var(--gris-medium);
-            font-style: italic;
+            color: var(--gris-pierre);
             margin-top: 1.5rem;
+            font-style: italic;
         }
 
-        .autotest-visual {
-            position: relative;
+        .autotests-visual {
             display: flex;
             justify-content: center;
         }
@@ -843,14 +816,14 @@
             grid-template-columns: repeat(5, 1fr);
             gap: 8px;
             padding: 2rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(212, 184, 150, 0.1);
         }
 
         .test-cell {
-            width: 36px;
-            height: 36px;
-            border: 1px solid var(--gris-moyen-fonce);
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gris-moyen);
             position: relative;
             transition: var(--transition-smooth);
         }
@@ -861,9 +834,8 @@
         }
 
         .test-cell.checked {
-            background: rgba(201, 170, 110, 0.1);
+            background: rgba(212, 184, 150, 0.15);
             border-color: var(--or-clair);
-            animation: pulse-glow 3s ease-in-out infinite;
         }
 
         .test-cell.checked::after {
@@ -873,108 +845,176 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: var(--or-clair);
-            font-size: 14px;
+            font-size: 16px;
         }
 
         .test-cell.critical {
-            background: linear-gradient(135deg, transparent 40%, rgba(215, 190, 103, 0.3) 100%);
+            background: linear-gradient(135deg, transparent 40%, rgba(232, 212, 168, 0.25) 100%);
             border-color: var(--or-eclatant);
-            box-shadow: 0 0 12px rgba(215, 190, 103, 0.3);
-            animation: pulse-glow 2s ease-in-out infinite;
+            box-shadow: 0 0 12px rgba(232, 212, 168, 0.2);
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SECTION ARTICLES
+           SECTION ANALYSES — Version valeur
            ═══════════════════════════════════════════════════════════════ */
         .articles {
             padding: var(--section-padding) 0;
             background: var(--noir-principal);
+            position: relative;
         }
 
-        .articles-header {
+        .articles::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 350px;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            opacity: 0.08;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
+        }
+
+        .articles-intro {
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .articles-intro p {
+            font-size: 1.15rem;
+            color: var(--texte-principal);
+            line-height: 1.85;
+        }
+
+        .articles-intro strong {
+            color: var(--or-clair);
+        }
+
+        .articles-types {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
             margin-bottom: 3rem;
         }
 
-        .articles-header .title-section::after {
-            left: 0;
+        .articles-type {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--gris-anthracite);
+            border-left: 3px solid var(--or-vieilli);
+            transition: var(--transition-smooth);
+        }
+
+        .articles-type:hover {
+            border-left-color: var(--or-clair);
+            transform: translateX(4px);
+        }
+
+        .type-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .type-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--or-clair);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .type-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--or-eclatant);
+            margin-bottom: 0.75rem;
+        }
+
+        .type-content p {
+            font-size: 0.95rem;
+            color: var(--texte-principal);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .type-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .type-tags li {
+            font-size: 0.75rem;
+            color: var(--or-mat);
+            padding: 0.25rem 0.75rem;
+            background: rgba(160, 120, 48, 0.1);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+        }
+
+        .articles-promesse {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .articles-promesse blockquote {
+            font-size: 1.2rem;
+            color: var(--or-clair);
+            font-style: italic;
+            line-height: 1.8;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .articles-apercu {
+            margin-bottom: 2rem;
+        }
+
+        .articles-apercu h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--or-eclatant);
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem;
         }
 
         .article-card {
-            background: var(--noir-clair);
-            transition: var(--transition-smooth);
+            background: var(--gris-anthracite);
             overflow: hidden;
-            position: relative;
-        }
-
-        .article-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-or);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
+            transition: var(--transition-smooth);
         }
 
         .article-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-deep);
-        }
-
-        .article-card:hover::after {
-            transform: scaleX(1);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-gold);
         }
 
         .article-image {
-            aspect-ratio: 16/9;
-            background: var(--gris-anthracite);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, transparent 50%, rgba(153, 107, 38, 0.15));
-            z-index: 1;
-            transition: var(--transition-smooth);
-        }
-
-        .article-card:hover .article-image::before {
-            background: linear-gradient(135deg, transparent 30%, rgba(153, 107, 38, 0.25));
-        }
-
-        /* Lignes décoratives abstraites dans l'image */
-        .article-image::after {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 10%;
-            width: 80%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
+            height: 140px;
+            background: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-mat) 50%, var(--or-clair) 100%);
             opacity: 0.5;
-            transition: var(--transition-smooth);
+            transition: opacity 0.3s ease;
         }
 
-        .article-card:hover .article-image::after {
-            opacity: 0.8;
-            box-shadow: var(--glow-or);
+        .article-card:hover .article-image {
+            opacity: 0.7;
         }
 
-        .article-body {
-            padding: 1.5rem;
+        .article-content {
+            padding: 1.25rem;
         }
 
         .article-category {
@@ -982,14 +1022,14 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--or-clair);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .article-title {
             font-family: var(--font-body);
             font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--blanc-casse);
+            font-size: 1rem;
+            color: var(--texte-principal);
             margin-bottom: 0.75rem;
             line-height: 1.4;
             transition: color 0.3s ease;
@@ -999,170 +1039,43 @@
             color: var(--or-clair);
         }
 
-        .article-excerpt {
-            font-size: 0.9rem;
-            color: var(--gris-medium);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
         .article-link {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--or-clair);
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.25rem;
+            transition: gap 0.3s ease;
         }
 
-        .article-link span {
-            transition: transform 0.3s ease;
+        .article-card:hover .article-link {
+            gap: 0.5rem;
         }
 
-        .article-card:hover .article-link span {
-            transform: translateX(4px);
-        }
-
-        .articles-footer {
+        .articles-cta {
             text-align: center;
+            margin-top: 2rem;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SECTION ÉTAPE ZÉRO
-           ═══════════════════════════════════════════════════════════════ */
-        .etape-zero {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, var(--noir-principal) 0%, var(--noir-clair) 100%);
-        }
-
-        .etape-inner {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .etape-content {
-            position: relative;
-        }
-
-        .etape-title {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            color: var(--or-intense);
-            margin-bottom: 0.5rem;
-        }
-
-        .etape-subtitle {
-            font-style: italic;
-            color: var(--blanc-casse);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .etape-text {
-            font-size: 1.1rem;
-            color: var(--blanc-casse);
-            margin-bottom: 1.5rem;
-            line-height: 1.75;
-        }
-
-        .etape-points {
-            font-size: 1rem;
-            color: var(--gris-medium);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .etape-disclaimer {
-            font-size: 0.85rem;
-            color: var(--gris-medium);
-            font-style: italic;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(153, 107, 38, 0.2);
-        }
-
-        .etape-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .document-visual {
-            width: 200px;
-            height: 280px;
-            background: var(--noir-profond);
-            border: 1px solid var(--gris-moyen-fonce);
-            position: relative;
-            box-shadow: 
-                10px 10px 30px rgba(0, 0, 0, 0.3),
-                -5px -5px 20px rgba(46, 49, 48, 0.2);
-        }
-
-        .document-visual::before {
-            content: '';
-            position: absolute;
-            top: 15%;
-            left: 10%;
-            right: 10%;
-            height: 1px;
-            background: var(--or-vieilli);
-            box-shadow: 
-                0 20px 0 var(--gris-moyen-fonce),
-                0 40px 0 var(--gris-moyen-fonce),
-                0 60px 0 var(--gris-moyen-fonce),
-                0 80px 0 var(--or-vieilli),
-                0 100px 0 var(--gris-moyen-fonce),
-                0 120px 0 var(--gris-moyen-fonce),
-                0 140px 0 var(--gris-moyen-fonce),
-                0 160px 0 var(--or-clair);
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           SECTION RÉSEAUX SOCIAUX
+           SECTION SUIVEZ NOESIS — Réseaux sociaux
            ═══════════════════════════════════════════════════════════════ */
         .social {
             padding: var(--section-padding) 0;
-            background: var(--gris-anthracite);
-            position: relative;
-        }
-
-        .social::before,
-        .social::after {
-            content: '';
-            position: absolute;
-            left: 5%;
-            right: 5%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.5), transparent);
-        }
-
-        .social::before { top: 0; }
-        .social::after { bottom: 0; }
-
-        .social-inner {
+            background: var(--gris-ceramique);
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
         }
 
-        .social-title {
-            margin-bottom: 1.5rem;
+        .social-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
         }
 
-        .social-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .social-text {
+        .social-intro p {
             font-size: 1.1rem;
-            color: var(--blanc-casse);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
+            color: var(--texte-principal);
+            line-height: 1.8;
         }
 
         .social-icons {
@@ -1172,501 +1085,181 @@
             margin-bottom: 2rem;
         }
 
-        .social-link {
+        .social-icon {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.75rem;
-            transition: var(--transition-bounce);
+            text-decoration: none;
+            transition: var(--transition-smooth);
         }
 
-        .social-link:hover {
-            transform: translateY(-6px);
+        .social-icon:hover {
+            transform: translateY(-4px);
         }
 
-        .social-icon {
-            width: 48px;
-            height: 48px;
+        .social-icon-circle {
+            width: 64px;
+            height: 64px;
+            border: 1px solid var(--or-clair);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid var(--or-clair);
-            border-radius: 50%;
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-
-        .social-icon::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 1px solid transparent;
             transition: var(--transition-smooth);
         }
 
-        .social-link:hover .social-icon {
-            background: var(--or-clair);
-            border-color: var(--or-eclatant);
-            box-shadow: var(--glow-or-intense);
+        .social-icon:hover .social-icon-circle {
+            background: rgba(212, 184, 150, 0.1);
+            box-shadow: var(--glow-or);
         }
 
-        .social-link:hover .social-icon::before {
-            border-color: var(--or-vieilli);
-        }
-
-        .social-icon svg {
-            width: 22px;
-            height: 22px;
+        .social-icon-circle svg {
+            width: 24px;
+            height: 24px;
             stroke: var(--or-clair);
             stroke-width: 1.5;
             fill: none;
-            transition: var(--transition-smooth);
         }
 
-        .social-link:hover .social-icon svg {
-            stroke: var(--noir-principal);
-        }
-
-        .social-link.youtube .social-icon {
-            width: 56px;
-            height: 56px;
-        }
-
-        .social-label {
-            font-size: 0.8rem;
-            color: var(--gris-medium);
-            font-style: italic;
+        .social-icon span {
+            font-size: 0.85rem;
+            color: var(--texte-secondaire);
         }
 
         .social-note {
-            font-size: 0.9rem;
-            color: var(--gris-medium);
+            font-size: 0.95rem;
+            color: var(--gris-pierre);
             font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SECTION CONTACT - FOND CLAIR
+           SECTION CONTACT — Style avec fond image
            ═══════════════════════════════════════════════════════════════ */
         .contact {
-            padding: calc(var(--section-padding) + 40px) 0 calc(var(--section-padding) + 40px);
-            background: #f8f7f5;
+            padding: var(--section-padding) 0;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
             position: relative;
-            overflow: hidden;
         }
 
         .contact::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: linear-gradient(to bottom, var(--gris-anthracite) 0%, #f8f7f5 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .contact::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: linear-gradient(to bottom, #f8f7f5 0%, var(--noir-profond) 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .contact-bg {
-            position: absolute;
             inset: 0;
-            background-image: url('assets/bg-kintsugi.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.4;
-            z-index: 0;
+            background: rgba(28, 31, 33, 0.85);
         }
 
         .contact .container {
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
 
-        .contact-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-            padding-top: 20px;
-        }
-
-        .contact-title {
-            color: var(--noir-principal);
-        }
-
-        .contact-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .contact-subtitle {
-            font-family: var(--font-body);
-            font-style: italic;
-            color: var(--gris-moyen-fonce);
-            font-size: 1.1rem;
-        }
-
-        .contact-main {
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 3rem;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
             align-items: start;
         }
 
-        /* Carte principale Accompagnement */
-        .contact-card-accent {
+        .contact-main {
             background: var(--noir-principal);
             padding: 3rem;
-            position: relative;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+            border: 1px solid rgba(212, 184, 150, 0.2);
         }
 
-        .contact-card-accent::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient-or);
-        }
-
-        .contact-card-accent::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(143, 107, 46, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .contact-card-accent-icon {
-            width: 56px;
-            height: 56px;
+        .contact-main-icon {
+            width: 48px;
+            height: 48px;
             margin-bottom: 1.5rem;
         }
 
-        .contact-card-accent-icon svg {
+        .contact-main-icon svg {
             width: 100%;
             height: 100%;
             stroke: var(--or-clair);
-            stroke-width: 1.5;
+            stroke-width: 1;
             fill: none;
         }
 
-        .contact-card-accent h3 {
+        .contact-main h3 {
             font-family: var(--font-display);
             font-size: 1.8rem;
             color: var(--or-eclatant);
             margin-bottom: 1rem;
         }
 
-        .contact-card-accent p {
-            font-size: 1.1rem;
-            color: var(--blanc-casse);
-            line-height: 1.75;
+        .contact-main p {
+            font-size: 1.05rem;
+            color: var(--texte-principal);
+            line-height: 1.8;
             margin-bottom: 2rem;
-            flex-grow: 1;
         }
 
-        .btn-dark {
-            background: var(--or-clair);
-            color: var(--noir-principal);
-            padding: 1rem 2rem;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            text-align: center;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-dark::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-dark:hover {
-            background: var(--or-eclatant);
-            transform: translateY(-3px);
-            box-shadow: var(--glow-or-intense);
-        }
-
-        .btn-dark:hover::before {
-            left: 100%;
-        }
-
-        /* Cartes secondaires */
-        .contact-right {
+        .contact-secondary {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
 
-        .contact-card-simple {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            padding: 1.75rem 2rem;
-            border: 1px solid rgba(153, 107, 38, 0.15);
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
+        .contact-card {
+            background: var(--fond-clair);
+            padding: 1.5rem 2rem;
+            border-left: 3px solid var(--or-clair);
         }
 
-        .contact-card-simple::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 3px;
-            height: 0;
-            background: var(--gradient-or);
-            transition: height 0.4s ease;
-        }
-
-        .contact-card-simple:hover {
-            background: rgba(255, 255, 255, 0.98);
-            border-color: var(--or-clair);
-            transform: translateX(8px);
-            box-shadow: -4px 0 20px rgba(143, 107, 46, 0.15), 0 8px 32px rgba(0, 0, 0, 0.08);
-        }
-
-        .contact-card-simple:hover::before {
-            height: 100%;
-        }
-
-        .contact-card-simple-header {
+        .contact-card-header {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
             margin-bottom: 0.75rem;
         }
 
-        .contact-card-simple-header svg {
-            width: 32px;
-            height: 32px;
+        .contact-card-header svg {
+            width: 20px;
+            height: 20px;
             stroke: var(--or-vieilli);
             stroke-width: 1.5;
             fill: none;
-            flex-shrink: 0;
-            transition: stroke 0.3s ease;
         }
 
-        .contact-card-simple:hover .contact-card-simple-header svg {
-            stroke: var(--or-clair);
-        }
-
-        .contact-card-simple-header h4 {
+        .contact-card h4 {
             font-family: var(--font-display);
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             color: var(--noir-principal);
-            margin: 0;
+            letter-spacing: 0.05em;
         }
 
-        .contact-card-simple p {
+        .contact-card p {
             font-size: 0.95rem;
-            color: var(--gris-moyen-fonce);
-            line-height: 1.65;
+            color: var(--gris-moyen);
+            line-height: 1.6;
             margin-bottom: 0.75rem;
         }
 
-        .contact-link {
+        .contact-card a {
+            font-size: 0.9rem;
+            color: var(--or-vieilli);
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
+            gap: 0.25rem;
+        }
+
+        .contact-card a:hover {
+            color: var(--or-clair);
             gap: 0.5rem;
-            color: var(--or-vieilli);
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            color: var(--or-clair);
-            gap: 0.75rem;
-        }
-
-        .contact-link span {
-            transition: transform 0.3s ease;
-        }
-
-        .contact-card-simple:hover .contact-link span {
-            transform: translateX(4px);
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           FOOTER — EFFETS PREMIUM
-           ═══════════════════════════════════════════════════════════════ */
-        .footer {
-            padding: 4rem 0 2rem;
-            background: var(--noir-profond);
-            position: relative;
-        }
-
-        .footer-inner {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: 3rem;
-            align-items: start;
-            margin-bottom: 3rem;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 0.75rem;
-            color: var(--or-clair);
-            transition: var(--transition-smooth);
-        }
-
-        .footer-brand .logo:hover {
-            color: var(--or-eclatant);
-            text-shadow: var(--glow-or);
-        }
-
-        .footer-brand .logo span {
-            color: var(--gris-medium);
-        }
-
-        .footer-tagline {
-            font-style: italic;
-            color: var(--gris-medium);
-            font-size: 0.95rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--blanc-casse);
-            font-size: 0.95rem;
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-
-        .footer-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--or-clair);
-            transition: width 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--or-clair);
-        }
-
-        .footer-links a:hover::after {
-            width: 100%;
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: flex-end;
-            gap: 1rem;
-        }
-
-        .footer-social-icon {
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-bounce);
-        }
-
-        .footer-social-icon:hover {
-            transform: translateY(-3px);
-        }
-
-        .footer-social-icon svg {
-            width: 18px;
-            height: 18px;
-            stroke: var(--gris-medium);
-            stroke-width: 1.5;
-            fill: none;
-            transition: var(--transition-smooth);
-        }
-
-        .footer-social-icon:hover svg {
-            stroke: var(--or-clair);
-            filter: drop-shadow(0 0 8px rgba(201, 170, 110, 0.4));
-        }
-
-        .footer-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
-            margin-bottom: 2rem;
-            opacity: 0.4;
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-legal {
-            font-size: 0.8rem;
-            color: var(--gris-medium);
-        }
-
-        .footer-legal a {
-            color: var(--gris-medium);
-            margin-left: 1.5rem;
-            transition: var(--transition-smooth);
-        }
-
-        .footer-legal a:hover {
-            color: var(--or-clair);
-        }
-
-        .footer-disclaimer {
-            font-size: 0.8rem;
-            color: var(--gris-medium);
-            font-style: italic;
-            max-width: 600px;
-            text-align: right;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           SECTION SOUTENIR (TIPEEE)
+           SECTION SOUTENIR — Style 2 colonnes
            ═══════════════════════════════════════════════════════════════ */
         .soutenir {
             padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, var(--noir-clair) 0%, var(--noir-principal) 100%);
+            background: var(--noir-principal);
             position: relative;
         }
 
@@ -1676,328 +1269,189 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
-            opacity: 0.5;
+            height: 300px;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            opacity: 0.08;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 100%);
         }
 
-        .soutenir-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .soutenir-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
-            color: var(--or-intense);
-            margin-bottom: 0.75rem;
-        }
-
-        .soutenir-subtitle {
-            font-size: 1.2rem;
-            color: var(--gris-pierre);
-            font-style: italic;
-        }
-
-        .soutenir-content {
+        .soutenir-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 3rem;
-            margin-bottom: 3rem;
+            margin-top: 3rem;
         }
 
-        .soutenir-block {
-            background: rgba(46, 49, 48, 0.3);
-            border: 1px solid rgba(153, 107, 38, 0.15);
-            border-radius: 8px;
+        .soutenir-column {
+            background: transparent;
             padding: 2rem;
-            transition: var(--transition-smooth);
+            border: 1px solid rgba(212, 184, 150, 0.15);
         }
 
-        .soutenir-block:hover {
-            border-color: rgba(153, 107, 38, 0.35);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        .soutenir-block-title {
+        .soutenir-column h3 {
             font-family: var(--font-display);
             font-size: 1.4rem;
             color: var(--or-clair);
-            margin-bottom: 1.25rem;
-            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
         }
 
-        .soutenir-block p {
-            color: var(--blanc-casse);
+        .soutenir-column p {
             font-size: 1rem;
-            line-height: 1.75;
+            color: var(--texte-principal);
+            line-height: 1.8;
             margin-bottom: 1rem;
         }
 
-        .soutenir-block p:last-child {
-            margin-bottom: 0;
-        }
-
-        .soutenir-block ul {
+        .soutenir-list {
             list-style: none;
-            padding: 0;
-            margin: 1rem 0 0 0;
+            margin: 1.5rem 0;
         }
 
-        .soutenir-block li {
-            position: relative;
+        .soutenir-list li {
+            padding: 0.5rem 0;
             padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--blanc-casse);
-            font-size: 1rem;
-            line-height: 1.6;
+            position: relative;
+            color: var(--texte-principal);
+            font-size: 0.95rem;
         }
 
-        .soutenir-block li::before {
+        .soutenir-list li::before {
             content: '—';
             position: absolute;
             left: 0;
-            color: var(--or-vieilli);
+            color: var(--or-clair);
         }
 
-        .soutenir-contrepartie {
-            grid-column: 1 / -1;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(143, 107, 46, 0.08) 0%, rgba(46, 49, 48, 0.3) 100%);
-            border: 1px solid rgba(153, 107, 38, 0.25);
+        .soutenir-objectif {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
         }
 
-        .soutenir-contrepartie .soutenir-block-title {
-            color: var(--or-intense);
-        }
-
-        .soutenir-contrepartie-badge {
-            display: inline-block;
-            background: var(--gradient-or);
-            color: var(--noir-principal);
-            font-family: var(--font-display);
-            font-size: 1rem;
-            padding: 0.5rem 1.5rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            letter-spacing: 0.1em;
+        .soutenir-objectif strong {
+            color: var(--or-clair);
         }
 
         .soutenir-cta {
             text-align: center;
-            margin-top: 2rem;
-        }
-
-        .btn-tipeee {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--gradient-or);
-            color: var(--noir-principal);
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 1rem 2.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .btn-tipeee:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--glow-or-intense), var(--shadow-gold);
-        }
-
-        .btn-tipeee svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        @media (max-width: 768px) {
-            .soutenir-content {
-                grid-template-columns: 1fr;
-            }
-
-            .soutenir-contrepartie {
-                grid-column: 1;
-            }
+            margin-top: 3rem;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           ANIMATIONS PREMIUM
+           FOOTER
            ═══════════════════════════════════════════════════════════════ */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .footer {
+            padding: 4rem 0 2rem;
+            background: var(--gris-anthracite);
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
         }
 
-        @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
+        .footer-tagline {
+            font-size: 1rem;
+            color: var(--texte-secondaire);
+            font-style: italic;
+            margin-top: 0.5rem;
         }
 
-        @keyframes pulse-glow {
-            0%, 100% { 
-                box-shadow: 0 0 5px rgba(201, 170, 110, 0.2);
-            }
-            50% { 
-                box-shadow: 0 0 20px rgba(201, 170, 110, 0.4), 0 0 40px rgba(201, 170, 110, 0.2);
-            }
+        .footer-links {
+            display: flex;
+            gap: 2rem;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .footer-links a {
+            color: var(--texte-secondaire);
+            text-decoration: none;
+            font-size: 0.95rem;
         }
 
-        /* Intersection Observer animations améliorées */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        .footer-links a:hover { color: var(--or-clair); }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
+            text-align: center;
         }
 
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-        .reveal-delay-4 { transition-delay: 0.4s; }
-        .reveal-delay-5 { transition-delay: 0.5s; }
-
-        /* Effet de ligne dorée animée */
-        .gold-line {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-clair), transparent);
-            background-size: 200% 100%;
-            animation: shimmer 3s ease-in-out infinite;
+        .footer-disclaimer {
+            font-size: 0.85rem;
+            color: var(--gris-pierre);
+            line-height: 1.6;
         }
 
         /* ═══════════════════════════════════════════════════════════════
            RESPONSIVE
            ═══════════════════════════════════════════════════════════════ */
         @media (max-width: 1024px) {
-            .hero-inner {
-                padding: 8rem 0 6rem;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                gap: 1.25rem;
-            }
-
-            .axes-grid {
+            .services-grid,
+            .articles-grid,
+            .probleme-grid,
+            .articles-types {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .axes-grid .axe:last-child {
-                grid-column: 1 / -1;
-                max-width: 500px;
-                justify-self: center;
-            }
-
-            .axes-bottom {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-            }
-
-            .autotest-inner,
-            .etape-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .autotest-visual,
-            .etape-visual {
-                order: -1;
-            }
-
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-inner {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .footer-disclaimer {
-                text-align: center;
             }
         }
 
         @media (max-width: 768px) {
-            .hero-hook-main {
-                font-size: clamp(2rem, 8vw, 3rem);
-            }
-
-            .hero-hook-sub {
-                font-size: 1.1rem;
-            }
-
-            .hero-explain {
-                font-size: 1rem;
-            }
-
-            .axes-grid {
+            .trois-grid,
+            .services-grid,
+            .fait-grid,
+            .axes-wrapper,
+            .articles-grid,
+            .contact-grid,
+            .soutenir-grid,
+            .probleme-grid,
+            .articles-types {
                 grid-template-columns: 1fr;
             }
 
-            .axes-grid .axe:last-child {
-                max-width: none;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--noir-profond);
+            .articles-type {
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                border-bottom: 1px solid rgba(153, 107, 38, 0.2);
+                text-align: center;
             }
 
-            .nav-links.active {
-                display: flex;
+            .type-icon {
+                margin: 0 auto;
             }
 
-            .nav-links a {
-                color: var(--blanc-casse) !important;
+            .type-tags {
+                justify-content: center;
             }
 
-            .nav-toggle {
-                display: flex;
+            .autotests-inner {
+                grid-template-columns: 1fr;
             }
 
-            .social-icons {
+            .autotests-visual {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .autotests-content {
+                text-align: center;
+            }
+
+            .autotests-content .surtitre {
+                text-align: center;
+            }
+
+            .autotests-content .titre-section::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .nav-links { display: none; }
+            
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
                 gap: 2rem;
             }
 
@@ -2006,189 +1460,257 @@
                 gap: 1rem;
             }
 
-            .contact-main {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-card-accent {
-                padding: 2rem;
-            }
-
-            .contact-card-simple:hover {
-                transform: translateY(-4px);
+            .social-icons {
+                gap: 2rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .btn {
-                padding: 0.875rem 2rem;
-                font-size: 0.95rem;
-            }
+        /* ═══════════════════════════════════════════════════════════════
+           ANIMATIONS
+           ═══════════════════════════════════════════════════════════════ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
 
-            .test-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .test-cell {
-                width: 28px;
-                height: 28px;
-            }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
+    <!-- NAVIGATION -->
+    <nav class="nav">
         <div class="container">
             <div class="nav-inner">
                 <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#piliers">Méthode</a></li>
-                    <li><a href="Autotests/autotest.html">Autotests</a></li>
-                    <li><a href="Analyses/articles.html">Analyses</a></li>
-                    <li><a href="etape-zero/accompagnement.html">L'Étape Zéro</a></li>
-                    <li><a href="mailto:contact@noesiskintsugi.com">Contact</a></li>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#autotests">Autotests</a></li>
+                    <li><a href="#articles">Analyses</a></li>
+                    <li><a href="#methode">Méthode</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="nav-toggle" id="navToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="container">
-            <div class="hero-inner">
-                <div class="hero-content">
-                    <h1 class="hero-hook-main reveal-hero reveal-hero-1">Vous aviez raison depuis le début.</h1>
-                    <p class="hero-hook-sub reveal-hero reveal-hero-2">On vous a juste convaincu du contraire.</p>
-                    
-                    <div class="hero-divider reveal-hero reveal-hero-3"></div>
-                    
-                    <p class="hero-explain reveal-hero reveal-hero-4">Gaslighting. Triangulation. Dette invisible. Ces mécanismes ont un nom — et une fois qu'on les voit, on ne peut plus les ignorer.</p>
-                    
-                    <div class="hero-cta reveal-hero reveal-hero-5">
-                        <a href="Autotests/autotest.html" class="btn btn-primary">Évaluer ma situation</a>
-                        <a href="#piliers" class="link-subtle">Comprendre les mécanismes</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- Section Méthode - 5 Axes -->
-    <section class="methode" id="piliers">
-        <div class="container">
-            <div class="methode-header reveal">
-                <h2 class="title-section">La Méthode Noesis</h2>
-                <p class="subtitle">Cinq axes transdisciplinaires pour comprendre l'emprise et le trauma</p>
-            </div>
-            <div class="methode-intro reveal">
-                <p>L'emprise et le trauma ne s'expliquent jamais par un seul facteur. Dire "c'était un pervers narcissique" ne suffit pas. Dire "j'étais fragile" non plus. Dire "la société est patriarcale" est vrai mais incomplet.</p>
-                <p>Votre cerveau réagit biologiquement. Vos pensées sont altérées psychologiquement. Un agresseur déploie des stratégies criminologiques. La culture normalise ou justifie. Le système social multiplie les obstacles. Noesis articule ces cinq dimensions parce que c'est la seule manière de comprendre vraiment ce qui s'est passé.</p>
-                <p class="methode-conclusion">Et comprendre, c'est le premier levier pour que ça ne se reproduise plus.</p>
-            </div>
-            <div class="axes-grid">
-                <div class="axe reveal">
-                    <div class="axe-header">
-                        <div class="axe-icon">
-                            <svg viewBox="0 0 64 64">
-                                <circle cx="32" cy="24" r="12" />
-                                <path d="M16 52 Q32 36, 48 52" />
-                                <circle cx="32" cy="24" r="4" />
-                            </svg>
-                        </div>
-                        <h3 class="axe-title">Neuropsychologie</h3>
-                    </div>
-                    <p class="axe-keywords">Cortisol · Amygdale · Mémoire traumatique · Trauma bonding · Dissociation · Système polyvagal</p>
-                    <p class="axe-text">Vos réactions sont normales, prévisibles et réversibles. Non, vous n'êtes pas "trop sensible". Votre cerveau fonctionne exactement comme il est censé fonctionner quand on le soumet à un stress chronique.</p>
-                </div>
-                <div class="axe reveal">
-                    <div class="axe-header">
-                        <div class="axe-icon">
-                            <svg viewBox="0 0 64 64">
-                                <circle cx="32" cy="32" r="18" />
-                                <path d="M20 32 L28 32 L32 24 L36 40 L40 32 L44 32" />
-                            </svg>
-                        </div>
-                        <h3 class="axe-title">Psychologie Cognitive</h3>
-                    </div>
-                    <p class="axe-keywords">Gaslighting · Dissonance cognitive · Biais exploités · Charge cognitive</p>
-                    <p class="axe-text">Pourquoi vous avez douté de vous-même alors que votre perception était exacte. Pourquoi vous vous êtes excusé pour des choses que vous n'aviez pas faites.</p>
-                </div>
-                <div class="axe reveal">
-                    <div class="axe-header">
-                        <div class="axe-icon">
-                            <svg viewBox="0 0 64 64">
-                                <polygon points="32,8 56,52 8,52" fill="none" />
-                                <line x1="32" y1="24" x2="32" y2="38" />
-                                <circle cx="32" cy="44" r="2" />
-                            </svg>
-                        </div>
-                        <h3 class="axe-title">Criminologie</h3>
-                    </div>
-                    <p class="axe-keywords">Narcissisme · Psychopathie · Lovebombing · Isolation · Triangulation</p>
-                    <p class="axe-text">Vous n'avez pas provoqué ni mérité cette violence. Peu importe ce qu'on vous a dit. Vous êtes tombé sur quelqu'un qui savait exactement ce qu'il faisait.</p>
-                </div>
-            </div>
-            <div class="axes-bottom">
-                <div class="axe reveal">
-                    <div class="axe-header">
-                        <div class="axe-icon">
-                            <svg viewBox="0 0 64 64">
-                                <circle cx="32" cy="32" r="20" />
-                                <ellipse cx="32" cy="32" rx="20" ry="8" />
-                                <line x1="32" y1="12" x2="32" y2="52" />
-                            </svg>
-                        </div>
-                        <h3 class="axe-title">Anthropologie</h3>
-                    </div>
-                    <p class="axe-keywords">Mythes romantiques toxiques · Victim-blaming · Normes genrées · Sacralisation familiale</p>
-                    <p class="axe-text">Identifier les croyances collectives invisibles qui ont rendu l'emprise "acceptable". "C'est quand même ta mère." La culture vous a menti. Vous n'avez pas à jouer le jeu.</p>
-                </div>
-                <div class="axe reveal">
-                    <div class="axe-header">
-                        <div class="axe-icon">
-                            <svg viewBox="0 0 64 64">
-                                <rect x="12" y="20" width="40" height="28" rx="2" />
-                                <line x1="12" y1="32" x2="52" y2="32" />
-                                <line x1="32" y1="20" x2="32" y2="48" />
-                                <circle cx="22" cy="26" r="3" />
-                                <circle cx="42" cy="26" r="3" />
-                                <circle cx="22" cy="40" r="3" />
-                                <circle cx="42" cy="40" r="3" />
-                            </svg>
-                        </div>
-                        <h3 class="axe-title">Sciences Sociales</h3>
-                    </div>
-                    <p class="axe-keywords">Dépendance économique · Isolement · Inadaptation institutionnelle · Délais judiciaires</p>
-                    <p class="axe-text">Partir n'est pas une question de "volonté" mais de navigation dans un système de contraintes. Facile de dire "pourquoi tu pars pas ?" quand on n'a jamais eu à choisir entre un toit et sa sécurité.</p>
+            <div class="hero-content">
+                <p class="hero-surtitre">Clarification cognitive · Aide aux démarches · Accompagnement</p>
+                <h1 class="hero-hook-main">Tu sais ce que tu as vécu.</h1>
+                <p class="hero-hook-sub">Tu as juste besoin des mots pour le faire entendre.</p>
+                <div class="hero-divider"></div>
+                <p class="hero-explain">Noesis Kintsugi t'aide à transformer un vécu confus en un récit structuré — pour la MDPH, la justice, ton avocat, ton employeur, ou simplement pour toi-même.</p>
+                <div class="hero-cta">
+                    <a href="#services" class="btn btn-primary">Découvrir les services</a>
+                    <a href="#positionnement" class="link-subtle">Comprendre notre approche →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Autotest -->
-    <section class="autotest" id="autotest">
+    <!-- 3 POINTS CLÉS -->
+    <section class="trois-points">
         <div class="container">
-            <div class="autotest-inner">
-                <div class="autotest-content reveal">
-                    <p class="surtitre">Outils d'orientation</p>
-                    <h2 class="autotest-title title-display">Pas des quiz BuzzFeed à trois questions.</h2>
-                    <p class="autotest-text">Des grilles d'évaluation de 40 à 50 questions conçues pour identifier votre situation avec rigueur. TDAH, burn-out, trauma bonding, harcèlement moral, CPTSD. Des outils d'orientation — pas des diagnostics, pas des étiquettes, pas de "vous êtes à 73% sous emprise".</p>
-                    <p class="autotest-specs">Si vous vous posez la question, c'est probablement que quelque chose ne va pas. Mais entre "quelque chose ne va pas" et "savoir précisément quoi", il y a un gouffre. Noesis occupe ce gouffre.</p>
+            <div class="trois-grid">
+                <div class="trois-card reveal">
+                    <div class="trois-icon">
+                        <svg viewBox="0 0 64 64"><circle cx="32" cy="18" r="10"/><path d="M16 52c0-10 7-16 16-16s16 6 16 16"/><path d="M32 32v6M29 35h6"/></svg>
+                    </div>
+                    <h3>Ce qu'on fait</h3>
+                    <p>On t'aide à <strong>mettre des mots</strong> sur ton vécu, à le <strong>structurer</strong>, et à le <strong>traduire</strong> pour qu'il soit compris par ceux qui peuvent agir.</p>
+                </div>
+                <div class="trois-card reveal">
+                    <div class="trois-icon">
+                        <svg viewBox="0 0 64 64"><rect x="14" y="8" width="36" height="48" rx="2"/><line x1="22" y1="20" x2="42" y2="20"/><line x1="22" y1="28" x2="42" y2="28"/><line x1="22" y1="36" x2="34" y2="36"/><circle cx="38" cy="44" r="7"/><path d="M36 44l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Ce qu'on propose</h3>
+                    <p><strong>Entretiens</strong>, <strong>récits structurés</strong>, <strong>dossiers MDPH</strong>, <strong>éléments pour avocat</strong> — des livrables concrets, de 25 € à 150 €.</p>
+                </div>
+                <div class="trois-card reveal">
+                    <div class="trois-icon">
+                        <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="22"/><path d="M32 16v16l10 6"/></svg>
+                    </div>
+                    <h3>Comment on s'y prend</h3>
+                    <p><strong>10 axes transdisciplinaires</strong> : neuropsychologie, droit français et européen, démarches administratives — pour comprendre ET agir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="surtitre">Nos prestations</p>
+                <h2 class="titre-section">Un investissement, pas une dépense</h2>
+                <p class="sous-titre">Pourquoi arriver préparé change tout</p>
+            </div>
+
+            <div class="services-probleme reveal">
+                <div class="probleme-intro">
+                    <p>Tu as un problème réel. Sérieux. Urgent peut-être. Mais quand tu essaies de l'expliquer, les mots se mélangent. La chronologie s'effondre. Tu oublies des éléments essentiels. Tu ne sais pas par où commencer.</p>
+                </div>
+                
+                <div class="probleme-grid">
+                    <div class="probleme-card">
+                        <div class="probleme-icon">
+                            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24"/><line x1="32" y1="20" x2="32" y2="36"/><circle cx="32" cy="44" r="3"/></svg>
+                        </div>
+                        <h4>Ton interlocuteur ne comprend pas</h4>
+                        <p>Il n'arrive pas à évaluer ton besoin, son urgence, ce que tu attends de lui. Tu repars frustré·e, incompris·e.</p>
+                    </div>
+                    <div class="probleme-card">
+                        <div class="probleme-icon">
+                            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24"/><path d="M32 18v14l10 6"/></svg>
+                        </div>
+                        <h4>Du temps (et de l'argent) perdu</h4>
+                        <p>Le psy ou l'avocat doit d'abord cerner qui tu es et pourquoi tu viens. Cette primo-analyse, c'est toi qui la paies — en heures facturées.</p>
+                    </div>
+                    <div class="probleme-card">
+                        <div class="probleme-icon">
+                            <svg viewBox="0 0 64 64"><path d="M20 44l12-24 12 24"/><line x1="24" y1="36" x2="40" y2="36"/></svg>
+                        </div>
+                        <h4>Tu passes à côté de tes droits</h4>
+                        <p>Sans les bons mots, sans la bonne structure, ton dossier MDPH est rejeté, ta plainte classée, ton recours ignoré.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-solution reveal">
+                <div class="solution-divider"></div>
+                <blockquote class="solution-quote">
+                    « Avec un récit structuré, le professionnel sait qui tu es, pourquoi tu viens, et ce que tu attends. Il peut se concentrer sur TON objectif — pas sur le décryptage de ta situation. »
+                </blockquote>
+            </div>
+
+            <div class="services-liste reveal">
+                <h3>Ce qu'on propose</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h4>Appel d'orientation</h4>
+                        <p>Tu ne sais pas par où commencer ? En 30 minutes, on fait le point sur ta situation et on identifie les premières pistes.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Entretien de clarification</h4>
+                        <p>Mettre des mots sur ce que tu as vécu, comprendre les mécanismes, identifier les prochaines étapes.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Récit structuré</h4>
+                        <p>Transformer ton vécu confus en un document clair, chronologique, utilisable pour tes démarches.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Dossier MDPH complet</h4>
+                        <p>Structuration et rédaction de ton dossier : projet de vie, argumentaire, organisation des pièces.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Éléments pour avocat</h4>
+                        <p>Chronologie des faits, récit structuré, éléments clés — pour que ton avocat travaille sur le fond, pas sur le tri.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Accompagnement suivi</h4>
+                        <p>Un accompagnement sur plusieurs semaines pour avancer étape par étape sur ta situation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-note reveal">
+                <p>Tous les tarifs sont accessibles et payables en plusieurs fois. <strong>Aucun service ne dépasse 150 €.</strong></p>
+            </div>
+
+            <div class="services-cta reveal">
+                <a href="services.html" class="btn btn-primary">Voir les prestations détaillées</a>
+                <a href="#contact" class="link-subtle">Ou poser une question →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CE QU'ON FAIT / NE FAIT PAS -->
+    <section class="positionnement" id="positionnement">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="surtitre">Notre approche</p>
+                <h2 class="titre-section">Un traducteur, pas un thérapeute</h2>
+                <p class="sous-titre">Ce que Noesis Kintsugi fait — et ce qu'elle ne fait jamais</p>
+            </div>
+
+            <div class="fait-grid">
+                <div class="fait-column oui reveal">
+                    <h3>✓ Ce que NK fait</h3>
+                    <div class="fait-item">
+                        <strong>Informer</strong>
+                        <span>Expliquer ce que dit la loi, comment fonctionne une procédure</span>
+                    </div>
+                    <div class="fait-item">
+                        <strong>Orienter</strong>
+                        <span>Indiquer le bon interlocuteur, la bonne démarche</span>
+                    </div>
+                    <div class="fait-item">
+                        <strong>Structurer</strong>
+                        <span>Organiser le récit, les preuves, les arguments</span>
+                    </div>
+                    <div class="fait-item">
+                        <strong>Rédiger</strong>
+                        <span>Produire des documents clairs et adaptés au destinataire</span>
+                    </div>
+                    <div class="fait-item">
+                        <strong>Accompagner</strong>
+                        <span>Soutenir dans la durée, répondre aux questions</span>
+                    </div>
+                </div>
+                <div class="fait-column non reveal">
+                    <h3>✗ Ce que NK ne fait jamais</h3>
+                    <div class="fait-item">
+                        <strong>Donner un avis juridique</strong>
+                        <span>C'est réservé aux avocats</span>
+                    </div>
+                    <div class="fait-item">
+                        <strong>Poser un diagnostic</strong>
+                        <span>C'est réservé aux médecins et psychologues</span>
+                    </div>
+                    <div class="fait-item">
+                        <strong>Décider à ta place</strong>
+                        <span>Ta vie, tes choix — on présente les options</span>
+                    </div>
+                    <div class="fait-item">
+                        <strong>Te représenter</strong>
+                        <span>On t'aide à préparer, c'est toi qui portes ta parole</span>
+                    </div>
+                    <div class="fait-item">
+                        <strong>Garantir un résultat</strong>
+                        <span>La décision finale appartient à l'institution</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fait-warning reveal">
+                <p>« On t'aide à préparer le meilleur dossier possible. Tu restes aux commandes. »</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTOTESTS -->
+    <section class="autotests" id="autotests">
+        <div class="container">
+            <div class="autotests-inner">
+                <div class="autotests-content reveal">
+                    <p class="surtitre">Outils gratuits</p>
+                    <h2 class="titre-section">Autotests d'orientation</h2>
+                    <p class="autotests-tagline">Pour ceux qui ne savent plus où ils en sont.</p>
+                    <p class="autotests-text">Pas des quiz BuzzFeed à trois questions. Des grilles d'évaluation de 40 à 50 questions conçues pour identifier ta situation avec rigueur.</p>
+                    <p class="autotests-list"><strong>TDAH</strong> · <strong>Burn-out</strong> · <strong>Trauma bonding</strong> · <strong>Harcèlement moral</strong> · <strong>CPTSD</strong> · <strong>Emprise</strong></p>
+                    <p class="autotests-note">Des outils d'orientation — pas des diagnostics, pas des étiquettes. Si tu te poses la question, c'est probablement que quelque chose ne va pas.</p>
                     <a href="Autotests/autotest.html" class="btn btn-primary">Commencer un test</a>
-                    <p class="autotest-disclaimer">Outil d'auto-évaluation. Ne remplace pas un diagnostic professionnel. Résultats indicatifs.</p>
+                    <p class="autotests-disclaimer">Outil d'auto-évaluation gratuit. Ne remplace pas un diagnostic professionnel.</p>
                 </div>
-                <div class="autotest-visual reveal reveal-delay-1">
+                <div class="autotests-visual reveal">
                     <div class="test-grid">
                         <div class="test-cell checked"></div>
                         <div class="test-cell"></div>
@@ -2198,364 +1720,404 @@
                         <div class="test-cell"></div>
                         <div class="test-cell checked"></div>
                         <div class="test-cell"></div>
+                        <div class="test-cell"></div>
                         <div class="test-cell checked"></div>
                         <div class="test-cell critical"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell"></div>
                         <div class="test-cell checked"></div>
                         <div class="test-cell"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell"></div>
+                        <div class="test-cell checked"></div>
                         <div class="test-cell"></div>
                         <div class="test-cell critical"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell critical"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell checked"></div>
-                        <div class="test-cell"></div>
-                        <div class="test-cell checked"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Articles -->
+    <!-- ANALYSES / ARTICLES -->
     <section class="articles" id="articles">
         <div class="container">
-            <div class="articles-header reveal">
-                <h2 class="title-section">Analyses</h2>
-                <p class="subtitle">Sans jargon opaque. Sans simplification abusive. Sans vous prendre pour un idiot.</p>
+            <div class="section-header reveal">
+                <p class="surtitre">Ressources gratuites</p>
+                <h2 class="titre-section">Analyses</h2>
+                <p class="sous-titre">Sans jargon opaque. Sans simplification abusive. Sans te prendre pour un idiot.</p>
             </div>
-            <div class="articles-grid">
-                <article class="article-card reveal reveal-delay-1">
-                    <div class="article-image"></div>
-                    <div class="article-body">
-                        <p class="article-category">Mécanismes</p>
-                        <h3 class="article-title">Dissonance cognitive coercitive</h3>
-                        <p class="article-excerpt">Pourquoi vous avez fini par croire que noir = blanc alors que vous n'êtes pas idiot. Comment le cerveau perd ses repères quand le réel est systématiquement réécrit.</p>
-                        <a href="Analyses/articles.html" class="article-link">Lire <span>→</span></a>
-                    </div>
-                </article>
-                <article class="article-card reveal reveal-delay-2">
-                    <div class="article-image"></div>
-                    <div class="article-body">
-                        <p class="article-category">Doctrine</p>
-                        <h3 class="article-title">La fin du pardon obligatoire</h3>
-                        <p class="article-excerpt">Non, vous n'avez pas à pardonner. Oui, vous avez le droit d'être en colère. Oui, cette colère est saine. La paix sans vérité est une anesthésie.</p>
-                        <a href="Analyses/articles.html" class="article-link">Lire <span>→</span></a>
-                    </div>
-                </article>
-                <article class="article-card reveal reveal-delay-3">
-                    <div class="article-image"></div>
-                    <div class="article-body">
-                        <p class="article-category">Clinique</p>
-                        <h3 class="article-title">Asymétrie épistémique</h3>
-                        <p class="article-excerpt">Quand l'un sait et l'autre ignore. Comment on vous a fait croire que vous ne compreniez rien alors que c'est exactement l'inverse qui se passait.</p>
-                        <a href="Analyses/articles.html" class="article-link">Lire <span>→</span></a>
-                    </div>
-                </article>
+
+            <div class="articles-intro reveal">
+                <p>Tu cherches à comprendre ce qui t'est arrivé. Pas des conseils vagues. Pas des injonctions au bonheur. Des <strong>explications qui tiennent la route</strong>, sourcées, vérifiables, qui respectent ton intelligence.</p>
             </div>
-            <div class="articles-footer reveal">
-                <a href="Analyses/articles.html" class="link-gold">Tous les articles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+
+            <div class="articles-types">
+                <div class="articles-type reveal">
+                    <div class="type-icon">
+                        <svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="12"/><path d="M16 52c0-12 8-18 16-18s16 6 16 18"/></svg>
+                    </div>
+                    <div class="type-content">
+                        <h4>Témoignages analysés</h4>
+                        <p>Des récits anonymisés de situations réelles, décryptés à travers nos 10 axes. Pas pour voyeuriser — pour reconnaître les mécanismes dans ta propre histoire.</p>
+                        <ul class="type-tags">
+                            <li>Emprise conjugale</li>
+                            <li>Harcèlement au travail</li>
+                            <li>Violence institutionnelle</li>
+                            <li>Diagnostic tardif</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="articles-type reveal">
+                    <div class="type-icon">
+                        <svg viewBox="0 0 64 64"><rect x="12" y="8" width="40" height="48" rx="2"/><line x1="20" y1="20" x2="44" y2="20"/><line x1="20" y1="28" x2="44" y2="28"/><line x1="20" y1="36" x2="44" y2="36"/><line x1="20" y1="44" x2="36" y2="44"/></svg>
+                    </div>
+                    <div class="type-content">
+                        <h4>Articles de fond</h4>
+                        <p>Des analyses transdisciplinaires sur les mécanismes de l'emprise, du trauma, de la manipulation. Chaque affirmation est sourcée. Chaque concept est expliqué.</p>
+                        <ul class="type-tags">
+                            <li>Neuropsychologie</li>
+                            <li>Psychologie cognitive</li>
+                            <li>Criminologie</li>
+                            <li>Droit</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="articles-type reveal">
+                    <div class="type-icon">
+                        <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20"/><path d="M32 20v12l8 8"/><circle cx="32" cy="32" r="3"/></svg>
+                    </div>
+                    <div class="type-content">
+                        <h4>Décryptages d'actualité</h4>
+                        <p>Quand un fait divers ou une affaire médiatique illustre un mécanisme, on le décortique. Pas pour juger — pour comprendre ce que ça révèle du système.</p>
+                        <ul class="type-tags">
+                            <li>Affaires judiciaires</li>
+                            <li>Dysfonctionnements institutionnels</li>
+                            <li>Évolutions législatives</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="articles-type reveal">
+                    <div class="type-icon">
+                        <svg viewBox="0 0 64 64"><path d="M12 52V20l20-12 20 12v32"/><rect x="24" y="32" width="16" height="20"/><line x1="32" y1="20" x2="32" y2="28"/></svg>
+                    </div>
+                    <div class="type-content">
+                        <h4>Guides pratiques</h4>
+                        <p>Comment constituer un dossier MDPH. Comment préparer un rendez-vous avec un avocat. Comment documenter du harcèlement. Des protocoles concrets, pas des conseils en l'air.</p>
+                        <ul class="type-tags">
+                            <li>Démarches MDPH</li>
+                            <li>Parcours judiciaire</li>
+                            <li>Documentation des preuves</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="articles-promesse reveal">
+                <blockquote>
+                    « Ici, on ne te dit pas quoi penser. On te donne les éléments pour penser par toi-même. »
+                </blockquote>
+            </div>
+
+            <div class="articles-apercu reveal">
+                <h3>Dernières publications</h3>
+                <div class="articles-grid">
+                    <article class="article-card">
+                        <div class="article-image"></div>
+                        <div class="article-content">
+                            <div class="article-category">Neurodiversité</div>
+                            <h4 class="article-title">Et si l'autisme était plus vieux que Sapiens ?</h4>
+                            <a href="Analyses/articles.html" class="article-link">Lire →</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-image"></div>
+                        <div class="article-content">
+                            <div class="article-category">Capture cognitive</div>
+                            <h4 class="article-title">Le moment précis où j'ai arrêté de faire confiance à mon jugement</h4>
+                            <a href="Analyses/articles.html" class="article-link">Lire →</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-image"></div>
+                        <div class="article-content">
+                            <div class="article-category">Diagnostic tardif</div>
+                            <h4 class="article-title">Vingt ans, huit experts, zéro diagnostic</h4>
+                            <a href="Analyses/articles.html" class="article-link">Lire →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="articles-cta reveal">
+                <a href="Analyses/articles.html" class="btn btn-primary">Explorer toutes les analyses</a>
             </div>
         </div>
     </section>
 
-    <!-- Section Étape Zéro -->
-    <section class="etape-zero" id="etape-zero">
+    <!-- MÉTHODE -->
+    <section class="methode" id="methode">
         <div class="container">
-            <div class="etape-inner">
-                <div class="etape-content reveal">
-                    <p class="surtitre">Accompagnement sur mesure</p>
-                    <h2 class="etape-title title-display">L'Étape Zéro</h2>
-                    <p class="etape-subtitle">Pour ceux qui ne savent plus où ils en sont.</p>
-                    <p class="etape-text">Vous avez peut-être passé des heures à scroller des symptômes en ligne, à vous reconnaître dans trois TDAH différents, deux troubles de la personnalité et un burn-out. Les mots manquent, la chronologie s'effondre, les preuves sont dispersées. L'Étape Zéro transforme le chaos vécu en récit structuré.</p>
-                    <p class="etape-points">Pas de coaching motivant. Pas de développement personnel. Du travail de structuration cognitive, point. Questionnaire structuré, entretien 90 minutes, livrable cartographie + lexique personnalisé.</p>
-                    <a href="etape-zero/accompagnement.html" class="btn btn-secondary">Découvrir L'Étape Zéro</a>
-                    <p class="etape-disclaimer">L'accompagnement Noesis ne remplace pas une thérapie, un diagnostic médical ou un conseil juridique. Il vous aide à comprendre, nommer et organiser votre expérience pour optimiser le temps avec les professionnels.</p>
+            <div class="section-header reveal">
+                <p class="surtitre">Notre méthode</p>
+                <h2 class="titre-section">10 axes transdisciplinaires</h2>
+                <p class="sous-titre">5 pour comprendre — 5 pour agir</p>
+            </div>
+
+            <div class="methode-intro reveal">
+                <p>L'emprise et le trauma ne s'expliquent jamais par un seul facteur. Noesis articule <strong>cinq axes de compréhension</strong> et <strong>cinq axes d'action</strong> pour t'aider à comprendre ce qui s'est passé ET à savoir comment avancer.</p>
+            </div>
+
+            <div class="axes-wrapper">
+                <div class="axes-group reveal">
+                    <h3>Axes de compréhension</h3>
+                    <div class="axe-item">
+                        <span class="axe-numero">01</span>
+                        <div class="axe-content">
+                            <strong>Neuropsychologie</strong>
+                            <span>Cortisol, amygdale, mémoire traumatique, dissociation</span>
+                        </div>
+                    </div>
+                    <div class="axe-item">
+                        <span class="axe-numero">02</span>
+                        <div class="axe-content">
+                            <strong>Psychologie cognitive</strong>
+                            <span>Gaslighting, dissonance, biais exploités</span>
+                        </div>
+                    </div>
+                    <div class="axe-item">
+                        <span class="axe-numero">03</span>
+                        <div class="axe-content">
+                            <strong>Criminologie</strong>
+                            <span>Stratégies de prédation, cycles de l'emprise</span>
+                        </div>
+                    </div>
+                    <div class="axe-item">
+                        <span class="axe-numero">04</span>
+                        <div class="axe-content">
+                            <strong>Anthropologie</strong>
+                            <span>Mythes toxiques, victim-blaming, normes genrées</span>
+                        </div>
+                    </div>
+                    <div class="axe-item">
+                        <span class="axe-numero">05</span>
+                        <div class="axe-content">
+                            <strong>Sociologie</strong>
+                            <span>Dépendance économique, isolement, système</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="etape-visual reveal reveal-delay-1">
-                    <div class="document-visual"></div>
+                <div class="axes-group reveal">
+                    <h3>Axes d'action</h3>
+                    <div class="axe-item">
+                        <span class="axe-numero">06</span>
+                        <div class="axe-content">
+                            <strong>Droit français</strong>
+                            <span>Code pénal, droit du travail, famille, handicap</span>
+                        </div>
+                    </div>
+                    <div class="axe-item">
+                        <span class="axe-numero">07</span>
+                        <div class="axe-content">
+                            <strong>Droit européen</strong>
+                            <span>CEDH, Convention d'Istanbul, directives</span>
+                        </div>
+                    </div>
+                    <div class="axe-item">
+                        <span class="axe-numero">08</span>
+                        <div class="axe-content">
+                            <strong>Démarches administratives</strong>
+                            <span>MDPH, CAF, CPAM, Pôle Emploi, Préfecture</span>
+                        </div>
+                    </div>
+                    <div class="axe-item">
+                        <span class="axe-numero">09</span>
+                        <div class="axe-content">
+                            <strong>Parcours judiciaire</strong>
+                            <span>Plainte, instruction, audience, recours</span>
+                        </div>
+                    </div>
+                    <div class="axe-item">
+                        <span class="axe-numero">10</span>
+                        <div class="axe-content">
+                            <strong>Système de santé</strong>
+                            <span>ALD, diagnostic, UMJ, certificat médical</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Réseaux Sociaux -->
+    <!-- SUIVEZ NOESIS -->
     <section class="social" id="social">
         <div class="container">
-            <div class="social-inner reveal">
-                <h2 class="social-title title-section">Suivez Noesis</h2>
-                <p class="social-text">Vidéos et formats courts pour explorer les mécanismes d'emprise, déconstruire les idées reçues et transmettre des outils de compréhension. Décryptages de cas concrets anonymisés, analyses transdisciplinaires, participation aux concours. Parce que la reconstruction passe aussi par le corps. Et parfois par un airfryer gagné à un concours. Nous ne jugeons pas.</p>
-                <div class="social-icons">
-                    <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener" class="social-link youtube">
-                        <div class="social-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
-                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <span class="social-label">Analyses longues</span>
-                    </a>
-                    <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener" class="social-link">
-                        <div class="social-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
-                            </svg>
-                        </div>
-                        <span class="social-label">Décryptages rapides</span>
-                    </a>
-                    <a href="#" class="social-link">
-                        <div class="social-icon">
-                            <svg viewBox="0 0 24 24">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                            </svg>
-                        </div>
-                        <span class="social-label">Formats courts</span>
-                    </a>
-                </div>
-                <p class="social-note">Concours réguliers avec cadeaux justifiés cliniquement : luminothérapie, couvertures lestées, séjours spa. Parce que vous avez donné pendant des années sans recevoir.</p>
+            <div class="section-header reveal">
+                <h2 class="titre-section">Suivez Noesis</h2>
             </div>
+
+            <div class="social-intro reveal">
+                <p>Vidéos et formats courts pour explorer les mécanismes d'emprise, déconstruire les idées reçues et transmettre des outils de compréhension. Décryptages de cas concrets anonymisés, analyses transdisciplinaires, participation aux concours. Parce que la reconstruction passe aussi par le corps. Et parfois par un airfryer gagné à un concours. Nous ne jugeons pas.</p>
+            </div>
+
+            <div class="social-icons reveal">
+                <a href="#" class="social-icon">
+                    <div class="social-icon-circle">
+                        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg>
+                    </div>
+                    <span>Analyses longues</span>
+                </a>
+                <a href="#" class="social-icon">
+                    <div class="social-icon-circle">
+                        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                    </div>
+                    <span>Décryptages rapides</span>
+                </a>
+                <a href="#" class="social-icon">
+                    <div class="social-icon-circle">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </div>
+                    <span>Formats courts</span>
+                </a>
+            </div>
+
+            <p class="social-note reveal">Concours réguliers avec cadeaux justifiés cliniquement : luminothérapie, couvertures lestées, séjours spa. Parce que vous avez donné pendant des années sans recevoir.</p>
         </div>
     </section>
 
-    <!-- Section Contact -->
+    <!-- CONTACT -->
     <section class="contact" id="contact">
-        <div class="contact-bg"></div>
         <div class="container">
-            <div class="contact-header reveal">
-                <h2 class="title-section contact-title">Entrons en contact</h2>
-                <p class="contact-subtitle">Chaque demande est traitée avec attention et confidentialité</p>
+            <div class="section-header reveal">
+                <h2 class="titre-section">Entrons en contact</h2>
+                <p class="sous-titre">Chaque demande est traitée avec attention et confidentialité</p>
             </div>
-            <div class="contact-main">
-                <div class="contact-left reveal">
-                    <div class="contact-card-accent">
-                        <div class="contact-card-accent-icon">
-                            <svg viewBox="0 0 64 64">
-                                <circle cx="32" cy="20" r="12" />
-                                <path d="M12 56 C12 40, 52 40, 52 56" />
-                            </svg>
-                        </div>
-                        <h3>Accompagnement</h3>
-                        <p>Demandez un accompagnement individuel personnalisé pour clarifier votre situation et identifier vos options.</p>
-                        <a href="mailto:contact@noesiskintsugi.com?subject=Demande%20d%27accompagnement" class="btn btn-dark">Demander un accompagnement</a>
+
+            <div class="contact-grid">
+                <div class="contact-main reveal">
+                    <div class="contact-main-icon">
+                        <svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="12"/><path d="M16 52c0-12 8-18 16-18s16 6 16 18"/></svg>
                     </div>
+                    <h3>Accompagnement</h3>
+                    <p>Demandez un accompagnement individuel personnalisé pour clarifier votre situation et identifier vos options.</p>
+                    <a href="mailto:contact@noesiskintsugi.com?subject=Demande%20d'accompagnement" class="btn btn-primary">Demander un accompagnement</a>
                 </div>
-                <div class="contact-right">
-                    <div class="contact-card-simple reveal">
-                        <div class="contact-card-simple-header">
-                            <svg viewBox="0 0 64 64">
-                                <rect x="8" y="16" width="20" height="32" rx="2" />
-                                <rect x="36" y="16" width="20" height="32" rx="2" />
-                                <line x1="28" y1="28" x2="36" y2="28" />
-                                <line x1="28" y1="36" x2="36" y2="36" />
-                            </svg>
+                <div class="contact-secondary">
+                    <div class="contact-card reveal">
+                        <div class="contact-card-header">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
                             <h4>Partenariats</h4>
                         </div>
-                        <p>Vous souhaitez donner de la visibilité à votre marque ? Intégration vidéo, promotion ciblée, concours, événementiel — des partenariats adaptés et impactants.</p>
-                        <a href="mailto:contact@noesiskintsugi.com?subject=Proposition%20de%20partenariat" class="contact-link">Proposer un partenariat <span>→</span></a>
+                        <p>Vous souhaitez donner de la visibilité à votre marque ? Intégration vidéo, promotion ciblée, concours, événementiel.</p>
+                        <a href="mailto:contact@noesiskintsugi.com?subject=Partenariat">Proposer un partenariat →</a>
                     </div>
-                    <div class="contact-card-simple reveal">
-                        <div class="contact-card-simple-header">
-                            <svg viewBox="0 0 64 64">
-                                <circle cx="20" cy="32" r="10" />
-                                <circle cx="44" cy="32" r="10" />
-                                <line x1="30" y1="32" x2="34" y2="32" />
-                            </svg>
+                    <div class="contact-card reveal">
+                        <div class="contact-card-header">
+                            <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="4"/><circle cx="15" cy="12" r="4"/></svg>
                             <h4>Collaborations</h4>
                         </div>
                         <p>Proposez une collaboration professionnelle fondée sur la complémentarité et l'excellence.</p>
-                        <a href="mailto:contact@noesiskintsugi.com?subject=Proposition%20de%20collaboration" class="contact-link">Proposer une collaboration <span>→</span></a>
+                        <a href="mailto:contact@noesiskintsugi.com?subject=Collaboration">Proposer une collaboration →</a>
                     </div>
-                    <div class="contact-card-simple reveal">
-                        <div class="contact-card-simple-header">
-                            <svg viewBox="0 0 64 64">
-                                <rect x="8" y="16" width="48" height="32" rx="2" />
-                                <polyline points="8,16 32,36 56,16" />
-                            </svg>
+                    <div class="contact-card reveal">
+                        <div class="contact-card-header">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             <h4>Contact général</h4>
                         </div>
                         <p>Posez une question ou partagez vos réflexions.</p>
-                        <a href="mailto:contact@noesiskintsugi.com" class="contact-link">Me contacter <span>→</span></a>
+                        <a href="mailto:contact@noesiskintsugi.com">Me contacter →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Soutenir (Tipeee) -->
+    <!-- SOUTENIR -->
     <section class="soutenir" id="soutenir">
         <div class="container">
-            <div class="soutenir-header reveal">
-                <h2 class="soutenir-title">Soutenir Noesis</h2>
-                <p class="soutenir-subtitle">Participer à la construction, avant que la structure tienne seule</p>
+            <div class="section-header reveal">
+                <h2 class="titre-section">Soutenir Noesis</h2>
+                <p class="sous-titre">Participer à la construction, avant que la structure tienne seule</p>
             </div>
 
-            <div class="soutenir-content">
-                <div class="soutenir-block reveal">
-                    <h3 class="soutenir-block-title">Pourquoi suis-je sur Tipeee</h3>
+            <div class="soutenir-grid">
+                <div class="soutenir-column reveal">
+                    <h3>Pourquoi suis-je sur Tipeee</h3>
                     <p>Construire Noesis demande du temps. Beaucoup.</p>
                     <p>Chaque analyse sérieuse mobilise des heures de recherche, de croisement de sources, d'écriture. Les outils d'évaluation ne se fabriquent pas en une après-midi. La production vidéo, le développement du site, la création des guides — tout cela représente un investissement réel.</p>
-                    <p>Pour l'instant, Noesis ne génère pas assez de revenus pour couvrir ce temps de travail. Les guides se vendent, L'Étape Zéro fonctionne, mais la phase de construction est encore en cours. Il faut faire connaître le projet, développer l'audience, affiner les outils.</p>
+                    <p>Pour l'instant, Noesis ne génère pas assez de revenus pour couvrir ce temps de travail. Les guides se vendent, L'Étape Zéro fonctionne, mais la phase de construction est encore en cours.</p>
                     <p>Je suis sur Tipeee pour une raison simple : j'ai besoin d'aide pour traverser cette phase. Pas indéfiniment. Le temps que l'écosystème devienne autonome.</p>
-                    <p>Votre soutien finance directement le temps de travail invisible — celui qui ne se monétise pas encore mais qui rend tout le reste possible.</p>
                 </div>
-
-                <div class="soutenir-block reveal">
-                    <h3 class="soutenir-block-title">Quels sont mes objectifs</h3>
+                <div class="soutenir-column reveal">
+                    <h3>Quels sont mes objectifs</h3>
                     <p><strong>Court terme :</strong> pouvoir consacrer mon temps pleinement à Noesis sans arbitrage permanent entre production de contenu et nécessités économiques.</p>
                     <p>Concrètement, votre soutien permet :</p>
-                    <ul>
+                    <ul class="soutenir-list">
                         <li>D'augmenter la fréquence des publications (analyses, vidéos)</li>
                         <li>De développer les autotests structurés que je veux proposer gratuitement</li>
                         <li>D'améliorer la qualité de production (matériel, logiciels)</li>
                         <li>De financer le temps de recherche transdisciplinaire</li>
                     </ul>
-                    <p><strong>Objectif Tipeee :</strong> atteindre un socle de soutien mensuel qui sécurise cette phase de construction. Quand Noesis sera viable par ses propres revenus, cette page n'aura plus lieu d'être.</p>
-                </div>
-
-                <div class="soutenir-block soutenir-contrepartie reveal">
-                    <h3 class="soutenir-block-title">Contreparties</h3>
-                    <p>Je ne propose pas de contenus exclusifs. Ce qui est produit pour Noesis reste accessible à tous — c'est le principe.</p>
-                    <p>Une seule contrepartie, symbolique :</p>
-                    <span class="soutenir-contrepartie-badge">Bâtisseur</span>
-                    <p>Votre prénom sur la page dédiée du site Noesis. Ceux qui ont participé à la construction, avant que la structure tienne seule.</p>
+                    <div class="soutenir-objectif">
+                        <p><strong>Objectif Tipeee :</strong> atteindre un socle de soutien mensuel qui sécurise cette phase de construction. Quand Noesis sera viable par ses propres revenus, cette page n'aura plus lieu d'être.</p>
+                    </div>
                 </div>
             </div>
 
             <div class="soutenir-cta reveal">
-                <a href="https://fr.tipeee.com/noesis-analyse/" target="_blank" rel="noopener" class="btn-tipeee">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                    Soutenir sur Tipeee
-                </a>
+                <a href="https://tipeee.com/noesiskintsugi" target="_blank" class="btn btn-primary">Soutenir sur Tipeee</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
-                    <p class="footer-tagline">Noesis ne soigne pas. Noesis clarifie.</p>
+                    <p class="footer-tagline">Un traducteur entre ton vécu et le monde.</p>
                 </div>
                 <nav class="footer-links">
-                    <a href="Autotests/autotest.html">Autotests</a>
-                    <a href="Analyses/articles.html">Analyses</a>
-                    <a href="etape-zero/accompagnement.html">L'Étape Zéro</a>
-                    <a href="mailto:contact@noesiskintsugi.com">Contact</a>
+                    <a href="#services">Services</a>
+                    <a href="#autotests">Autotests</a>
+                    <a href="#articles">Analyses</a>
+                    <a href="#methode">Méthode</a>
+                    <a href="#contact">Contact</a>
                 </nav>
-                <div class="footer-social">
-                    <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener" class="footer-social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
-                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener" class="footer-social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="footer-social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                        </svg>
-                    </a>
-                </div>
             </div>
-            <div class="footer-divider"></div>
             <div class="footer-bottom">
-                <p class="footer-legal">
-                    © 2026 Noesis Kintsugi
-                    <a href="a-propos.html#mentions-legales">Mentions légales</a>
-                    <a href="a-propos.html#confidentialite">Politique de confidentialité</a>
-                </p>
-                <p class="footer-disclaimer">Noesis Kintsugi est un espace d'analyse transdisciplinaire. Les contenus ne constituent pas un avis médical, psychologique ou juridique. La paix sans vérité est une anesthésie.</p>
+                <p class="footer-disclaimer">Noesis Kintsugi informe, oriente, structure et accompagne. Elle ne se substitue pas à un avocat, un médecin ou un thérapeute.<br>© 2026 Noesis Kintsugi</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
         // Navigation scroll effect
-        const nav = document.getElementById('nav');
+        const nav = document.querySelector('.nav');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
             }
         });
 
-        // Mobile navigation toggle
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile nav on link click
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                }
             });
-        });
-
-        // Intersection Observer for reveal animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
         };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Parallax subtil sur le hero background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroBg = document.querySelector('.hero-bg');
-            if (heroBg && scrolled < window.innerHeight) {
-                heroBg.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
-        });
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
     </script>
-
 </body>
 </html>

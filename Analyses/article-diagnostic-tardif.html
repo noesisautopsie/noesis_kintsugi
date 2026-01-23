@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le moment précis où j'ai arrêté de faire confiance à mon propre jugement — Noesis Kintsugi</title>
-    <meta name="description" content="On vous a juste convaincu du contraire. Analyse transdisciplinaire des mécanismes qui détruisent la confiance en son propre jugement.">
-    
+    <title>Vingt ans, huit experts, zéro diagnostic — Noesis Kintsugi</title>
+    <meta name="description" content="Anatomie neurologique d'un effondrement fabriqué. Quand le système médico-éducatif rate l'autisme pendant vingt ans, l'anxiodépression n'est pas une faiblesse — c'est leur facture.">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --noir-principal: #121514;
@@ -27,6 +27,7 @@
             --or-lumineux: #CCA464;
             --or-eclatant: #D7BE67;
             --or-intense: #DDB569;
+            --gris-clair-bg: #E8E8E8;
             --blanc-casse: #C9CBCB;
             --ivoire: #CBCBC9;
             --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
@@ -252,11 +253,11 @@
 
         .hero-title {
             font-family: var(--font-display);
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(1.8rem, 4.5vw, 3rem);
             font-weight: 400;
             line-height: 1.2;
             color: var(--blanc-casse);
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             margin-bottom: 2rem;
         }
@@ -267,6 +268,9 @@
             font-style: italic;
             color: var(--or-eclatant);
             margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-line {
@@ -379,6 +383,125 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
+           ARTICLE WRAPPER (fond gris clair)
+           ═══════════════════════════════════════════════════════════════ */
+        .article-wrapper {
+            background-color: var(--gris-clair-bg);
+            padding: 1px 0;
+        }
+
+        .article-wrapper .article-lead p {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .article-content p {
+            color: var(--noir-principal);
+        }
+
+        .article-wrapper .article-content em {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .article-content strong {
+            color: var(--or-antique);
+        }
+
+        .article-wrapper .article-content h2 {
+            color: var(--or-vieilli);
+        }
+
+        .article-wrapper .parenthese {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(245, 245, 245, 0.8) 100%);
+            border-color: rgba(153, 107, 38, 0.25);
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .parenthese .aside-icon {
+            background: var(--gris-clair-bg);
+        }
+
+        .article-wrapper .pull-quote {
+            background: linear-gradient(180deg, rgba(153, 107, 38, 0.12) 0%, rgba(153, 107, 38, 0.04) 50%, rgba(153, 107, 38, 0.1) 100%);
+        }
+
+        .article-wrapper .pull-quote .quote-mark {
+            background: var(--gris-clair-bg);
+        }
+
+        .article-wrapper .pull-quote p {
+            color: var(--or-antique);
+        }
+
+        .article-wrapper .emphase {
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.95) 100%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(153, 107, 38, 0.03) 10px,
+                    rgba(153, 107, 38, 0.03) 20px
+                );
+            border-color: rgba(153, 107, 38, 0.3);
+        }
+
+        .article-wrapper .emphase .emphase-icon {
+            background: var(--gris-clair-bg);
+        }
+
+        .article-wrapper .liste-mecanismes li {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(250, 250, 250, 0.4) 100%);
+            border-color: rgba(153, 107, 38, 0.15);
+            color: var(--noir-principal);
+        }
+
+        .article-wrapper .liste-mecanismes li:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(250, 250, 250, 0.6) 100%);
+        }
+
+        .article-wrapper .liste-mecanismes li::before {
+            background: linear-gradient(135deg, rgba(153, 107, 38, 0.2) 0%, rgba(153, 107, 38, 0.1) 100%);
+        }
+
+        .article-wrapper .liste-mecanismes li strong {
+            color: var(--or-antique);
+        }
+
+        .article-wrapper .separator::before,
+        .article-wrapper .separator::after {
+            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.3) 50%, transparent);
+        }
+
+        .article-wrapper .cta-autotest {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 250, 250, 0.98) 100%);
+            border-color: rgba(153, 107, 38, 0.35);
+        }
+
+        .article-wrapper .cta-autotest::before {
+            border-color: rgba(153, 107, 38, 0.2);
+        }
+
+        .article-wrapper .cta-autotest .cta-icon {
+            background: linear-gradient(135deg, rgba(153, 107, 38, 0.15) 0%, rgba(255, 255, 255, 0.5) 100%);
+        }
+
+        .article-wrapper .cta-autotest p {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .article-actions {
+            border-color: rgba(153, 107, 38, 0.2);
+        }
+
+        .article-wrapper .article-actions a {
+            color: var(--gris-moyen-fonce);
+        }
+
+        .article-wrapper .highlight {
+            background: linear-gradient(transparent 60%, rgba(201, 170, 110, 0.35) 60%);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
            ARTICLE LEAD
            ═══════════════════════════════════════════════════════════════ */
         .article-lead {
@@ -464,36 +587,40 @@
             opacity: 0.7;
         }
 
-        .article-content h2[data-icon="destruction"]::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636'/%3E%3C/svg%3E");
-        }
-
-        .article-content h2[data-icon="system"]::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z'/%3E%3C/svg%3E");
-        }
-
-        .article-content h2[data-icon="person"]::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
-        }
-
         .article-content h2[data-icon="brain"]::before {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 011.32-4.24 2.5 2.5 0 011.98-3A2.5 2.5 0 019.5 2z'/%3E%3Cpath d='M14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-1.32-4.24 2.5 2.5 0 00-1.98-3A2.5 2.5 0 0014.5 2z'/%3E%3C/svg%3E");
         }
 
-        .article-content h2[data-icon="target"]::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E");
+        .article-content h2[data-icon="alert"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
         }
 
-        .article-content h2[data-icon="heal"]::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z'/%3E%3C/svg%3E");
+        .article-content h2[data-icon="eye"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
         }
 
-        .article-content h2[data-icon="forgive"]::before {
+        .article-content h2[data-icon="shield"]::before {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E");
         }
 
-        .article-content h2[data-icon="forward"]::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E");
+        .article-content h2[data-icon="users"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 00-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 010 7.75'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="clock"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="zap"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="question"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
+        }
+
+        .article-content h2[data-icon="heart"]::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z'/%3E%3C/svg%3E");
         }
 
         .article-content em {
@@ -507,7 +634,7 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           LUXE ENCADRÉ : PARENTHÈSE / ASIDE
+           LUXE ENCADRE : PARENTHESE / ASIDE
            ═══════════════════════════════════════════════════════════════ */
         .parenthese {
             position: relative;
@@ -521,7 +648,6 @@
             line-height: 1.8;
         }
 
-        /* Coin supérieur gauche */
         .parenthese::before {
             content: '';
             position: absolute;
@@ -533,7 +659,6 @@
             border-left: 2px solid var(--or-vieilli);
         }
 
-        /* Coin inférieur droit */
         .parenthese::after {
             content: '';
             position: absolute;
@@ -545,7 +670,6 @@
             border-right: 2px solid var(--or-vieilli);
         }
 
-        /* Icône astérisque dorée */
         .parenthese .aside-icon {
             position: absolute;
             top: -12px;
@@ -558,7 +682,7 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           LUXE ENCADRÉ : PULL QUOTE
+           LUXE ENCADRE : PULL QUOTE
            ═══════════════════════════════════════════════════════════════ */
         .pull-quote {
             position: relative;
@@ -568,7 +692,6 @@
             text-align: center;
         }
 
-        /* Bordures double ligne */
         .pull-quote::before {
             content: '';
             position: absolute;
@@ -591,7 +714,6 @@
             opacity: 0.6;
         }
 
-        /* Guillemet décoratif */
         .pull-quote .quote-mark {
             position: absolute;
             top: -25px;
@@ -622,7 +744,6 @@
             z-index: 1;
         }
 
-        /* Ligne dorée centrale sous le texte */
         .pull-quote .quote-line {
             width: 80px;
             height: 1px;
@@ -631,13 +752,13 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           LUXE ENCADRÉ : EMPHASE BOX
+           LUXE ENCADRE : EMPHASE BOX
            ═══════════════════════════════════════════════════════════════ */
         .emphase {
             position: relative;
             margin: 3rem 0;
             padding: 2.5rem;
-            background: 
+            background:
                 linear-gradient(135deg, rgba(17, 19, 19, 0.95) 0%, rgba(22, 24, 23, 0.95) 100%),
                 repeating-linear-gradient(
                     45deg,
@@ -647,13 +768,12 @@
                     rgba(153, 107, 38, 0.02) 20px
                 );
             border: 1px solid rgba(153, 107, 38, 0.2);
-            box-shadow: 
+            box-shadow:
                 0 0 0 1px rgba(153, 107, 38, 0.05),
                 0 10px 40px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(201, 170, 110, 0.05);
         }
 
-        /* Coins dorés ornementaux */
         .emphase::before,
         .emphase::after,
         .emphase .corner-bl,
@@ -692,7 +812,6 @@
             border-right: 1px solid var(--or-clair);
         }
 
-        /* Barre latérale gradient */
         .emphase .emphase-bar {
             position: absolute;
             top: 20px;
@@ -703,7 +822,6 @@
             box-shadow: 0 0 15px rgba(201, 170, 110, 0.3);
         }
 
-        /* Icône cerveau/concept */
         .emphase .emphase-icon {
             position: absolute;
             top: -15px;
@@ -737,7 +855,7 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           LISTE MÉCANISMES
+           LISTE MECANISMES
            ═══════════════════════════════════════════════════════════════ */
         .liste-mecanismes {
             margin: 2.5rem 0;
@@ -764,7 +882,6 @@
             border-color: rgba(153, 107, 38, 0.2);
         }
 
-        /* Numéro stylisé */
         .liste-mecanismes li::before {
             content: counter(mechanism);
             position: absolute;
@@ -789,8 +906,29 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Liste simple sans numéros */
+        .liste-simple {
+            margin: 2rem 0;
+            padding: 0 0 0 1.5rem;
+            list-style: none;
+        }
+
+        .liste-simple li {
+            position: relative;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .liste-simple li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--or-clair);
+        }
+
         /* ═══════════════════════════════════════════════════════════════
-           SÉPARATEUR DÉCORATIF
+           SEPARATEUR DECORATIF
            ═══════════════════════════════════════════════════════════════ */
         .separator {
             display: flex;
@@ -817,7 +955,6 @@
             justify-content: center;
         }
 
-        /* Losange externe */
         .separator .sep-icon::before {
             content: '';
             position: absolute;
@@ -827,7 +964,6 @@
             transform: rotate(45deg);
         }
 
-        /* Point central */
         .separator .sep-icon::after {
             content: '';
             position: absolute;
@@ -837,7 +973,6 @@
             transform: rotate(45deg);
         }
 
-        /* Highlight text */
         .highlight {
             background: linear-gradient(transparent 60%, rgba(201, 170, 110, 0.2) 60%);
             padding: 0 2px;
@@ -850,7 +985,7 @@
             position: relative;
             margin: 4rem 0;
             padding: 3rem;
-            background: 
+            background:
                 linear-gradient(135deg, rgba(17, 19, 19, 0.98) 0%, rgba(22, 24, 23, 0.95) 100%);
             border: 1px solid rgba(153, 107, 38, 0.25);
             text-align: center;
@@ -858,7 +993,6 @@
             transition: var(--transition-smooth);
         }
 
-        /* Double bordure effet */
         .cta-autotest::before {
             content: '';
             position: absolute;
@@ -870,7 +1004,6 @@
             pointer-events: none;
         }
 
-        /* Ligne dorée animée en haut */
         .cta-autotest::after {
             content: '';
             position: absolute;
@@ -884,13 +1017,12 @@
 
         .cta-autotest:hover {
             border-color: rgba(153, 107, 38, 0.4);
-            box-shadow: 
+            box-shadow:
                 0 0 0 1px rgba(153, 107, 38, 0.1),
                 0 20px 50px rgba(0, 0, 0, 0.3);
             transform: translateY(-3px);
         }
 
-        /* Coins décoratifs */
         .cta-autotest .cta-corner {
             position: absolute;
             width: 25px;
@@ -925,7 +1057,6 @@
             border-right: 2px solid var(--or-clair);
         }
 
-        /* Icône centrale décorative */
         .cta-autotest .cta-icon {
             width: 60px;
             height: 60px;
@@ -1016,7 +1147,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 
+            box-shadow:
                 0 4px 15px rgba(143, 107, 46, 0.3),
                 0 0 30px rgba(201, 170, 110, 0.2);
         }
@@ -1063,7 +1194,7 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           ARTICLES LIÉS
+           ARTICLES LIES
            ═══════════════════════════════════════════════════════════════ */
         .related-articles {
             padding: 5rem 2rem;
@@ -1267,7 +1398,7 @@
             .nav-links.active { display: flex; }
             .nav-toggle { display: flex; }
 
-            .hero-title { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+            .hero-title { font-size: clamp(1.4rem, 5vw, 2rem); }
             .hero-meta { flex-direction: column; gap: 0.5rem; }
 
             .article-content h2 { font-size: 1.2rem; }
@@ -1317,11 +1448,11 @@
         <div class="nav-inner">
             <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#">Méthode</a></li>
+                <li><a href="../index.html#piliers">Méthode</a></li>
                 <li><a href="../Autotests/autotest.html">Autotests</a></li>
                 <li><a href="articles.html" class="active">Analyses</a></li>
                 <li><a href="../etape-zero/accompagnement.html">L'Étape Zéro</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="mailto:contact@noesiskintsugi.com">Contact</a></li>
             </ul>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
@@ -1334,28 +1465,30 @@
     <!-- Table of Contents -->
     <div class="toc-wrapper" id="tocWrapper">
         <div class="toc">
-            <div class="toc-dot" data-target="section1" data-title="Ce qu'on t'a fait"></div>
-            <div class="toc-dot" data-target="section2" data-title="Le système"></div>
-            <div class="toc-dot" data-target="section3" data-title="Cette personne"></div>
-            <div class="toc-dot" data-target="section4" data-title="Ton cerveau"></div>
-            <div class="toc-dot" data-target="section5" data-title="Pas faible"></div>
-            <div class="toc-dot" data-target="section6" data-title="Guérir"></div>
-            <div class="toc-dot" data-target="section7" data-title="Pardon"></div>
-            <div class="toc-dot" data-target="section8" data-title="Maintenant"></div>
+            <div class="toc-dot" data-target="section1" data-title="Le cortisol"></div>
+            <div class="toc-dot" data-target="section2" data-title="Système polyvagal"></div>
+            <div class="toc-dot" data-target="section3" data-title="Le piège du QI"></div>
+            <div class="toc-dot" data-target="section4" data-title="Chaîne des aveugles"></div>
+            <div class="toc-dot" data-target="section5" data-title="Gaslighting"></div>
+            <div class="toc-dot" data-target="section6" data-title="Protecteurs complices"></div>
+            <div class="toc-dot" data-target="section7" data-title="Mémoire traumatique"></div>
+            <div class="toc-dot" data-target="section8" data-title="Mythe de la volonté"></div>
+            <div class="toc-dot" data-target="section9" data-title="Qui a fabriqué ?"></div>
+            <div class="toc-dot" data-target="section10" data-title="Ce qu'on cherche"></div>
         </div>
     </div>
 
     <!-- Hero -->
     <header class="hero">
         <div class="hero-content">
-            <p class="hero-series">Série I — Doute de soi</p>
-            <h1 class="hero-title">Le moment précis où j'ai arrêté de faire confiance à mon propre jugement</h1>
-            <p class="hero-hook">On vous a juste convaincu du contraire.</p>
+            <p class="hero-series">Série IV — Diagnostic tardif</p>
+            <h1 class="hero-title">Vingt ans, huit experts, zéro diagnostic : anatomie neurologique d'un effondrement fabriqué</h1>
+            <p class="hero-hook">Mon fils a vu des pédopsychiatres, psychologues scolaires, infirmières psy, éducateurs. Pendant vingt ans, des professionnels payés pour observer les enfants l'ont ignoré.</p>
             <div class="hero-line"></div>
             <div class="hero-meta">
                 <span>
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    9 min de lecture
+                    18 min de lecture
                 </span>
                 <span>Analyse transdisciplinaire</span>
             </div>
@@ -1365,95 +1498,63 @@
         </a>
     </header>
 
+    <!-- Article Wrapper (fond gris clair) -->
+    <div class="article-wrapper">
+
     <!-- Lead -->
     <div class="article-lead" id="content">
-        <p>Tu sais de quoi je parle. Tu ne sais peut-être plus la date. Tu ne sais peut-être plus la phrase exacte. Mais tu sais qu'il y a eu un avant. Un temps où tu savais ce que tu pensais. Où tu n'avais pas besoin de trois avis extérieurs pour savoir si ce que tu ressentais était « légitime ».</p>
+        <p>Cet été, à vingt ans, il a enfin reçu son diagnostic : autiste. Pas un autisme « invisible ». Un autisme que tout le monde voyait sans le nommer. Ses enseignants disaient qu'il était « à part ». Ses camarades le harcelaient. Les adultes censés le protéger lui expliquaient que c'était de sa faute. Aujourd'hui, il est anxiodépressif. Et je refuse de croire que c'est une coïncidence.</p>
     </div>
 
     <!-- Article Content -->
     <article class="article-content">
-        
-        <p class="reveal drop-cap">Et puis il y a eu l'après. Ce brouillard. Cette habitude de commencer tes phrases par « je me trompe peut-être mais… ». Cette sensation d'être devenue locataire dans ta propre tête — avec quelqu'un d'autre qui commente chaque décision.</p>
 
-        <p class="reveal">On t'a volé ça. Pas avec un couteau. Avec des phrases. C'est plus propre. Ça ne laisse pas de traces. C'est très pratique pour la personne en face.</p>
+        <p class="reveal">Parce que quand on comprend comment fonctionne un cerveau soumis à vingt ans de stress chronique, on comprend que cette dépression n'est pas un mystère. C'est le résultat d'un système incompétent et aveugle.</p>
 
-        <div class="separator reveal"><div class="sep-icon"></div></div>
+        <h2 class="reveal" data-icon="brain" id="section1">Ce que le cortisol fait à un enfant qui doit simuler</h2>
 
-        <h2 class="reveal" data-icon="destruction" id="section1">Ce qu'on t'a fait, c'est dégueulasse</h2>
+        <p class="reveal drop-cap">Le masking, ce n'est pas de la timidité. Ce n'est pas de l'introversion. C'est une stratégie de survie neurologique.</p>
 
-        <p class="reveal">Je ne vais pas « nuancer ». Je ne vais pas te sortir que « c'était compliqué des deux côtés ». Je ne vais pas t'expliquer qu'il faut « comprendre l'autre pour avancer » — comme si l'autre s'était donné cette peine.</p>
+        <p class="reveal">Un enfant autiste non diagnostiqué perçoit le monde social comme une menace permanente. Chaque interaction est un décodage. Chaque récréation est un terrain miné. Son amygdale, la sentinelle du cerveau, reste en alerte constante. Et quand l'amygdale sonne l'alarme, le cortisol inonde le système.</p>
 
-        <p class="reveal">Ce qui t'est arrivé a un nom. Ça s'appelle de la <strong>destruction</strong>.</p>
+        <p class="reveal"><strong>Le cortisol, c'est l'hormone du « danger imminent ».</strong> Utile pour fuir un prédateur. Destructrice quand elle coule en continu pendant des années.</p>
 
-        <p class="reveal">Et le plus beau ? On t'a probablement fait croire que c'était de ta faute. Que tu étais « trop sensible ». Que tu « dramatisais ».</p>
+        <p class="reveal">À court terme, le cortisol aiguise l'attention. À long terme, il érode la mémoire, dérègle le sommeil, épuise les capacités de régulation émotionnelle. Le cerveau d'Alex n'a pas dysfonctionné. Il a fonctionné exactement comme un cerveau humain fonctionne quand on le maintient en état d'alerte pendant deux décennies.</p>
 
         <div class="pull-quote reveal">
             <span class="quote-mark">
                 <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
             </span>
-            <p>Le type met le feu à ta maison et te reproche de tousser à cause de la fumée.</p>
+            <p>Son anxiodépression n'est pas une faiblesse de caractère. C'est de la biochimie. C'est le résultat prévisible d'un organisme qui a épuisé ses réserves de stress.</p>
             <div class="quote-line"></div>
         </div>
 
         <div class="separator reveal"><div class="sep-icon"></div></div>
 
-        <h2 class="reveal" data-icon="system" id="section2">Le système qui t'a préparée</h2>
+        <h2 class="reveal" data-icon="alert" id="section2">Le système polyvagal : pourquoi « faire des efforts » ne sert à rien</h2>
 
-        <p class="reveal">Tu penses peut-être à <em>une</em> personne. Un ex. Un parent. Un chef. Et oui, cette personne a probablement été le coup de grâce.</p>
+        <p class="reveal">Stephen Porges a décrit trois états du système nerveux autonome. Le premier : connexion sociale, sécurité, détente. Le deuxième : mobilisation, combat ou fuite. Le troisième : effondrement, dissociation, retrait.</p>
 
-        <p class="reveal">Mais elle n'a pas travaillé seule.</p>
+        <p class="reveal">Un enfant neurotypique navigue entre ces états selon les situations. Un enfant autiste non diagnostiqué, plongé dans un environnement qu'il ne décode pas, oscille entre le deuxième et le troisième. <strong>Mobilisation permanente. Puis effondrement.</strong></p>
 
-        <p class="reveal">Elle a juste appuyé là où c'était déjà fragilisé. Là où des années de micro-fissures avaient préparé le terrain. Parce que la vérité — et elle est moche — c'est que <span class="highlight">le monde entier participe à te faire douter de toi depuis ta naissance</span>.</p>
-
-        <ul class="liste-mecanismes reveal">
-            <li>
-                <strong>Ta famille</strong>
-                T'a appris que tes émotions devaient être filtrées. « Arrête de pleurer pour rien. » « Qu'est-ce que les gens vont penser ? » Pas de méchanceté. Juste des ajustements. Pour que tu rentres dans le moule. Première couche de doute installée — par amour. C'est ça le génie.
-            </li>
-            <li>
-                <strong>L'école</strong>
-                T'a appris que ta valeur se mesurait aux autres. Les notes. Les classements. Les « peut mieux faire ». Les moqueries dans la cour. Tu as appris que ton propre miroir n'était pas fiable — celui des autres, si.
-            </li>
-            <li>
-                <strong>L'adolescence</strong>
-                T'a offert les réseaux sociaux. Des milliers de vies « parfaites » auxquelles te comparer. Des corps parfaits. Des couples parfaits. Tu ne savais pas encore que tout était filtré, posé, faux. Alors tu te comparais à des fictions. Et tu perdais. À chaque fois.
-            </li>
-            <li>
-                <strong>Le travail</strong>
-                T'a appris que ta personnalité était un « axe d'amélioration ». « Tu es trop directe. Ou pas assez. » « Tu prends les choses trop à cœur. » L'entretien annuel : ce moment magique où quelqu'un te dit qui tu es vraiment et ce que tu dois corriger pour mériter ta place.
-            </li>
-            <li>
-                <strong>La société</strong>
-                Partout, tout le temps : tu n'es pas assez. Pas assez belle. Pas assez productive. Pas assez zen. Les pubs, les magazines, les « nouvelles études », les influenceuses avec leur morning routine à 5 h du matin. Le message permanent : si tu n'es pas assez, c'est de ta faute.
-            </li>
-        </ul>
+        <p class="reveal">Quand un adulte disait à Alex « fais des efforts pour t'intégrer », il demandait à un système nerveux en mode survie de passer en mode connexion sociale. <span class="highlight">C'est comme demander à quelqu'un qui se noie de nager plus élégamment.</span></p>
 
         <div class="parenthese reveal">
-            <span class="aside-icon">✦</span>
-            Non. Ils n'y arrivent pas. Ils font semblant.
+            <span class="aside-icon">&#10022;</span>
+            Le système polyvagal ne répond pas à la volonté. Il répond à la perception de sécurité. Alex n'a jamais perçu l'école comme un lieu sûr. Son corps le savait. Les adultes, eux, voyaient un enfant « qui ne faisait pas d'efforts ».
         </div>
 
         <div class="separator reveal"><div class="sep-icon"></div></div>
 
-        <h2 class="reveal" data-icon="person" id="section3">Et puis il y a eu cette personne</h2>
+        <h2 class="reveal" data-icon="eye" id="section3">Le piège du garçon intelligent : quand le QI devient un écran de fumée</h2>
 
-        <p class="reveal">Dans ce contexte — des années de doute accumulé, un cerveau entraîné à chercher la validation externe — quelqu'un est arrivé. Quelqu'un qui a vu tout ce terrain préparé et qui s'est dit : <em>parfait</em>.</p>
+        <p class="reveal">Alex a passé des tests de QI. Résultats au-dessus de la moyenne. Dossier classé.</p>
 
-        <p class="reveal"><strong>D'abord, le lovebombing.</strong> L'attention totale. « Enfin quelqu'un qui me comprend. » Après des années à te sentir insuffisante, soudain tu étais exceptionnelle. Ton cerveau, affamé de validation, s'est accroché. Ce n'est pas de la faiblesse. C'est de la neurochimie. Le lovebombing active les mêmes circuits que les drogues. C'est fait pour.</p>
+        <p class="reveal">Voilà comment fonctionne le filtre institutionnel : un enfant intelligent ne peut pas être autiste. Comme si l'intelligence compensait magiquement un câblage neurologique différent. <strong>Comme si savoir résoudre une équation signifiait savoir décoder un regard.</strong></p>
 
-        <p class="reveal"><strong>Ensuite, l'isolation.</strong> Subtile. « Tes amies ne te comprennent pas comme moi. » Petit à petit, ton réseau s'est rétréci. Et avec lui, tes points de référence. Ta capacité à vérifier tes perceptions avec quelqu'un d'autre.</p>
+        <p class="reveal">L'intelligence d'Alex n'a jamais compensé quoi que ce soit. Elle lui a permis de construire un masque plus sophistiqué. D'analyser les patterns sociaux. De créer des scripts mentaux pour chaque situation. D'anticiper les réponses attendues.</p>
 
-        <p class="reveal"><strong>Et puis le gaslighting.</strong> « Je n'ai jamais dit ça. » « Tu inventes. » « Tu te fais des films. »</p>
-
-        <p class="reveal">Ton cerveau ne peut pas tenir deux vérités contradictoires. « Je l'ai entendu dire X » <em>et</em> « Il dit qu'il n'a jamais dit X ». Il doit en éliminer une. Et comme l'autre est certain, calme — et que toi tu as été entraînée depuis toujours à douter — <span class="highlight">c'est la tienne qui saute</span>. À chaque fois. Jusqu'à ce que tu ne saches plus ce que tu as vu, entendu, vécu.</p>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="brain" id="section4">Ton cerveau n'a pas dysfonctionné — il t'a protégée</h2>
-
-        <p class="reveal">« Pourquoi t'es restée ? » « Pourquoi t'as rien vu ? »</p>
-
-        <p class="reveal">Parce que ton cerveau faisait exactement son travail.</p>
+        <p class="reveal">Cette hyper-adaptation cognitive a un coût : <strong>la charge mentale.</strong></p>
 
         <div class="emphase reveal">
             <div class="emphase-bar"></div>
@@ -1462,87 +1563,175 @@
             <div class="emphase-icon">
                 <svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 011.32-4.24 2.5 2.5 0 011.98-3A2.5 2.5 0 019.5 2z"/><path d="M14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-1.32-4.24 2.5 2.5 0 00-1.98-3A2.5 2.5 0 0014.5 2z"/></svg>
             </div>
-            <p><strong>Le stress chronique</strong> a fait monter ton cortisol. Ton amygdale — le détecteur de menaces — est restée en alerte permanente. Et pour survivre, ton système nerveux a commencé à baisser le volume. Ce brouillard dont tu parles ? C'est de la dissociation. Pas un bug. Une protection.</p>
-            <p><strong>Le trauma bonding</strong> s'est installé. Ce lien paradoxal où la même personne qui te fait du mal est celle vers qui tu te tournes pour être réconfortée. Entre deux épisodes, il y a des miettes de la personne du début. Ton cerveau, accro à ces moments, reste. Espère.</p>
+            <p>Un neurotypique traverse une journée sociale en mode automatique. Alex traversait chaque journée en mode traduction simultanée. Chaque micro-interaction exigeait un effort conscient.</p>
+            <p><strong>Imaginez parler une langue étrangère huit heures par jour, tous les jours, pendant vingt ans, sans jamais pouvoir dire « je suis fatigué de traduire ».</strong></p>
         </div>
 
-        <p class="reveal">C'est biologique. C'est documenté. Et surtout : c'est la réponse normale d'un cerveau normal à une situation anormale.</p>
-
-        <p class="reveal">Tu n'as pas manqué de caractère. Tu as fait face à quelqu'un qui utilisait des techniques pendant que tout un système culturel te disait que c'était normal.</p>
+        <p class="reveal">Les experts ont vu un garçon « vif ». Ils n'ont pas vu l'épuisement cognitif derrière la performance.</p>
 
         <div class="separator reveal"><div class="sep-icon"></div></div>
 
-        <h2 class="reveal" data-icon="target" id="section5">Tu n'as pas été choisie parce que tu étais faible</h2>
+        <h2 class="reveal" data-icon="users" id="section4">La chaîne des aveugles : quand chaque spécialiste voit son propre reflet</h2>
 
-        <p class="reveal">Je sais ce que tu te dis la nuit. « J'aurais dû voir. » « Les autres auraient compris plus vite. » « Je suis trop naïve. »</p>
+        <p class="reveal">Récapitulons. Un pédopsychiatre regarde Alex : il voit de l'anxiété. Un psychologue scolaire regarde Alex : il voit des difficultés d'adaptation. Une infirmière regarde Alex : elle voit de la nervosité. Un éducateur regarde Alex : il voit un enfant « difficile ».</p>
 
-        <p class="reveal">Stop.</p>
+        <p class="reveal"><strong>Chacun a regardé par sa lorgnette. Chacun a traité le symptôme comme s'il était la cause.</strong></p>
 
-        <p class="reveal">Les manipulateurs ne cherchent pas des gens faibles. Ils cherchent des gens empathiques. Des gens capables de se remettre en question. Des gens qui donnent le bénéfice du doute.</p>
+        <div class="parenthese reveal">
+            <span class="aside-icon">&#10022;</span>
+            C'est un biais cognitif classique : on voit ce qu'on est formé à voir. Le marteau voit des clous partout. Le psychiatre formé sur les troubles de l'humeur voit des troubles de l'humeur. Le psychologue scolaire formé sur les difficultés d'apprentissage voit des difficultés d'apprentissage.
+        </div>
+
+        <p class="reveal">La psychiatrie française préfère diagnostiquer une dépression qu'un autisme. Une dépression, ça se traite. Ça se médicamente. Ça rentre dans les cases administratives et les protocoles existants. Un autisme sans déficience intellectuelle, ça oblige à remettre en question l'environnement. Ça demande des aménagements. Ça coûte cher. Ça complique.</p>
+
+        <p class="reveal"><span class="highlight">Alors on a soigné la fumée. L'incendie, lui, a continué de brûler.</span></p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="shield" id="section5">Le gaslighting institutionnel : quand la réalité de l'enfant est niée</h2>
+
+        <p class="reveal">Alex savait qu'il était différent. Il le sentait. Il voyait bien que les autres enfants ne faisaient pas les mêmes efforts que lui pour comprendre les codes. Il voyait bien que quelque chose clochait.</p>
+
+        <p class="reveal">Mais chaque adulte lui renvoyait le même message : « Tu es trop sensible. » « Tu te fais des idées. » « Les autres enfants sont comme toi, ils font juste moins de cinéma. »</p>
 
         <div class="pull-quote reveal">
             <span class="quote-mark">
                 <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
             </span>
-            <p>Des qualités. Tes qualités. Retournées contre toi comme un gant.</p>
+            <p>C'est la définition du gaslighting : faire douter quelqu'un de sa propre perception alors que cette perception est exacte.</p>
             <div class="quote-line"></div>
         </div>
 
-        <p class="reveal">Tu étais exactement le genre de personne qu'on a envie d'avoir dans sa vie. Et quelqu'un s'en est servi.</p>
+        <p class="reveal">Alex percevait correctement sa différence. Le système lui a appris à se méfier de ses propres sensations. À considérer son ressenti comme exagéré, pathologique, honteux. À vingt ans, il ne sait plus faire confiance à ce qu'il éprouve.</p>
+
+        <p class="reveal">La dissonance cognitive qui en résulte est épuisante. D'un côté, son expérience vécue : « quelque chose ne va pas, je ne fonctionne pas comme les autres ». De l'autre, le message institutionnel : « tu es normal, tu dois juste faire plus d'efforts ». <strong>Le cerveau humain ne supporte pas longtemps cette contradiction. Il finit par douter de lui-même.</strong></p>
 
         <div class="separator reveal"><div class="sep-icon"></div></div>
 
-        <h2 class="reveal" data-icon="heal" id="section6">Je ne vais pas te promettre que tu vas « guérir »</h2>
+        <h2 class="reveal" data-icon="users" id="section6">Quand les protecteurs deviennent complices</h2>
 
-        <p class="reveal">Beaucoup vont te dire ça. Que le temps guérit tout. Que tu vas « tourner la page ».</p>
+        <p class="reveal">Alex était harcelé. Ça arrive à beaucoup d'enfants. Ce qui arrive moins souvent : les adultes qui prennent le parti des harceleurs.</p>
+
+        <p class="reveal">« Tu dois apprendre à t'intégrer. » « Tu provoques sans t'en rendre compte. » « Fais des efforts. »</p>
+
+        <p class="reveal">Les agresseurs, eux, « faisaient des bêtises ». Des « chamailleries entre gamins ». Rien de grave.</p>
 
         <div class="parenthese reveal">
-            <span class="aside-icon">✦</span>
-            Le temps guérit tout. C'est pour ça que les gens qui ont perdu quelqu'un il y a 20 ans n'y pensent plus jamais. Ah, attends.
+            <span class="aside-icon">&#10022;</span>
+            Les adultes ont vu dans les harceleurs le reflet d'une norme qu'ils approuvaient : l'aisance sociale, la capacité à dominer un groupe. En Alex, ils voyaient l'anomalie. Le grain de sable. Celui qui complique la gestion de classe parce qu'il ne réagit pas comme prévu.
         </div>
 
-        <p class="reveal">Je ne vais pas te mentir. Ce qui est cassé est cassé. Tu ne seras pas « comme avant ».</p>
+        <p class="reveal">C'est un mécanisme anthropologique vieux comme le monde : le groupe désigne un bouc émissaire pour renforcer sa cohésion. Les harceleurs remplissaient une fonction sociale. Alex, lui, la mettait en danger par sa simple existence différente.</p>
 
-        <p class="reveal">Mais — et c'est là que le kintsugi entre en jeu — <strong>cassé ne veut pas dire fini</strong>.</p>
-
-        <p class="reveal">Le kintsugi, c'est réparer avec de l'or. Pas cacher la fissure. La souligner. L'objet réparé n'est pas « comme neuf ». Il est <em>mieux</em>. Il a une histoire. Il a survécu.</p>
-
-        <p class="reveal">Tu vas garder tes fissures. Et tu vas les remplir d'or. D'une compréhension que les autres n'ont pas. D'une lucidité que le système ne peut plus t'enlever — parce que maintenant, tu le vois.</p>
+        <p class="reveal"><strong>Le harcèlement est devenu un outil de « nettoyage » social. Les adultes l'ont laissé faire. Certains l'ont encouragé.</strong> Un enfant qui ne rentre pas dans le moule, on le plie ou on le casse. La culture scolaire française n'a jamais vraiment abandonné cette logique.</p>
 
         <div class="separator reveal"><div class="sep-icon"></div></div>
 
-        <h2 class="reveal" data-icon="forgive" id="section7">Une seule personne mérite ton pardon</h2>
+        <h2 class="reveal" data-icon="clock" id="section7">La mémoire traumatique : pourquoi le passé ne passe pas</h2>
 
-        <p class="reveal">On va te dire de pardonner à l'autre. Que c'est « pour toi ». Que la rancœur empoisonne.</p>
+        <p class="reveal">Le cerveau humain stocke les souvenirs de deux manières. Les souvenirs ordinaires sont contextualisés : on sait quand et où ils se sont produits, ils appartiennent au passé. Les souvenirs traumatiques, eux, restent fragmentés, intrusifs, décontextualisés. Ils resurgissent comme si l'événement se produisait maintenant.</p>
 
-        <div class="parenthese reveal">
-            <span class="aside-icon">✦</span>
-            Marrant comme ces conseils viennent toujours de gens à qui on n'a jamais rien fait de grave.
-        </div>
+        <p class="reveal"><strong>Alex n'a pas « un mauvais souvenir » de l'école. Il a une mémoire traumatique de l'école.</strong></p>
 
-        <p class="reveal">Tu n'as aucune obligation de pardonner qui que ce soit. Le pardon, c'est un choix. Pas un préalable.</p>
+        <p class="reveal">Son amygdale a encodé des centaines de micro-agressions comme des menaces vitales. Chaque situation sociale qui ressemble, même de loin, à une situation passée réactive l'alerte. Le corps se tend. Le cœur s'accélère. Le cortisol monte. Pas parce qu'Alex « se complait dans le passé ». Parce que son cerveau n'a jamais pu classer ces souvenirs comme terminés.</p>
 
-        <p class="reveal">Par contre, il y a quelqu'un que tu as maltraité dans ta tête. Quelqu'un que tu accuses de naïveté, de faiblesse, de stupidité depuis trop longtemps.</p>
-
-        <p class="reveal"><strong>Toi.</strong></p>
-
-        <p class="reveal">Pardonne-toi de ne pas avoir vu. Les meilleurs illusionnistes font carrière là-dessus — et là, c'était pas un illusionniste solo, c'était tout un système.</p>
-
-        <p class="reveal">Pardonne-toi d'être restée. Tu travaillais avec de fausses informations et un cerveau qui faisait son maximum pour te garder en vie.</p>
-
-        <p class="reveal">Tu faisais du mieux que tu pouvais. Et ce qu'on te donnait était truqué.</p>
+        <p class="reveal">La dissociation, cette sensation de « ne plus être vraiment là », est un mécanisme de protection. Quand le stress dépasse les capacités de traitement, le cerveau débranche. Alex a appris à se dissocier pour survivre aux cours, aux récréations, aux réunions de famille. <span class="highlight">Cette compétence de survie est devenue un handicap : il ne sait plus comment rester présent.</span></p>
 
         <div class="separator reveal"><div class="sep-icon"></div></div>
 
-        <h2 class="reveal" data-icon="forward" id="section8">Et maintenant ?</h2>
+        <h2 class="reveal" data-icon="zap" id="section8">Le mythe de la volonté : pourquoi « il suffit de vouloir » est une escroquerie intellectuelle</h2>
 
-        <p class="reveal drop-cap">Maintenant tu sais. Ce n'est pas « juste » un manque de confiance en toi. C'est un système entier — neurologique, psychologique, culturel, social — qui t'a conditionnée à douter. Et quelqu'un qui a su en profiter.</p>
+        <p class="reveal">Notre culture adore l'idée que tout est question de volonté. Tu veux t'intégrer ? Fais des efforts. Tu veux guérir ? Sois positif. Tu veux réussir ? Travaille plus.</p>
 
-        <p class="reveal">Mais toi, tu n'es plus obligée de nourrir la machine.</p>
+        <p class="reveal"><strong>Cette croyance ignore tout ce que les neurosciences ont établi sur le fonctionnement du cerveau humain.</strong></p>
 
-        <p class="reveal">Tu peux voir les rouages. Tu peux entendre le bruit pour ce qu'il est : du bruit. Tu peux reconnaître les techniques pour ce qu'elles sont : des techniques. Et tu peux <span class="highlight">choisir de croire tes propres données</span>.</p>
+        <ul class="liste-simple reveal">
+            <li>Un système nerveux en mode survie ne « choisit » pas de rester en alerte.</li>
+            <li>Une amygdale hyperactivée ne « décide » pas de se calmer.</li>
+            <li>Un taux de cortisol chroniquement élevé ne « fait pas exprès » d'épuiser les ressources cognitives.</li>
+        </ul>
 
-        <p class="reveal">C'est pas facile. C'est pas instantané. Mais c'est possible.</p>
+        <p class="reveal">Dire à Alex « fais des efforts » revenait à lui demander de modifier sa biochimie par la pensée. <span class="highlight">C'est aussi efficace que demander à un diabétique de produire de l'insuline par la force de la volonté.</span></p>
+
+        <p class="reveal">Le problème n'a jamais été le manque d'efforts d'Alex. Le problème était un environnement inadapté à son fonctionnement neurologique, et un système médico-éducatif incapable de le reconnaître.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="question" id="section9">La question qui dérange : qui a fabriqué cette dépression ?</h2>
+
+        <p class="reveal drop-cap">L'anxiodépression d'Alex n'est pas tombée du ciel. Elle n'est pas génétique. Elle n'est pas le fruit d'une « fragilité » mystérieuse.</p>
+
+        <p class="reveal"><strong>Elle est le résultat mesurable, prévisible, documenté, de ce qui arrive à un cerveau humain quand :</strong></p>
+
+        <ul class="liste-mecanismes reveal">
+            <li>
+                <strong>Stress chronique</strong>
+                On le soumet à un stress social chronique pendant vingt ans.
+            </li>
+            <li>
+                <strong>Invalidation systémique</strong>
+                On nie sa perception de la réalité à chaque fois qu'il l'exprime.
+            </li>
+            <li>
+                <strong>Masking forcé</strong>
+                On le force à simuler un fonctionnement qui n'est pas le sien.
+            </li>
+            <li>
+                <strong>Punition de l'échec</strong>
+                On le punit quand il échoue à cette simulation.
+            </li>
+            <li>
+                <strong>Déni de la différence</strong>
+                On refuse de nommer ce qui le différencie des autres.
+            </li>
+        </ul>
+
+        <div class="pull-quote reveal">
+            <span class="quote-mark">
+                <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
+            </span>
+            <p>Le diagnostic tardif n'est pas une solution. C'est le constat d'un échec collectif.</p>
+            <div class="quote-line"></div>
+        </div>
+
+        <p class="reveal">Huit professionnels. Vingt ans. Des tests. Des consultations. Des réunions. Et à la fin, un jeune homme brisé qui doit maintenant reconstruire son identité sur les ruines d'une enfance où on lui a appris à se méfier de lui-même.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="heart" id="section10">Ce que cherchent les familles comme la nôtre</h2>
+
+        <p class="reveal">Nous ne cherchons pas une étiquette. Nous ne cherchons pas non plus la « guérison » d'Alex.</p>
+
+        <p class="reveal"><strong>Nous cherchons la validation.</strong> Pendant vingt ans, le monde a dit à Alex que son problème était sa « sensibilité », son « manque d'effort », sa « fragilité ». Le diagnostic transforme enfin la plainte en fait neurologique. Le statut de coupable en statut de victime d'un environnement inadapté.</p>
+
+        <p class="reveal"><strong>Nous cherchons le droit au repos.</strong> Alex s'est épuisé à ressembler aux autres. Il a besoin d'un cadre qui dise : tu n'as plus à simuler. Ton système nerveux a le droit de se réguler. Ta perception du monde est valide.</p>
+
+        <p class="reveal"><strong>Nous cherchons des réponses.</strong> Pourquoi huit professionnels formés ont-ils raté l'évidence ? Pourquoi les critères diagnostiques excluent-ils encore les profils sans déficience intellectuelle ? Pourquoi forme-t-on des psys sur des modèles cliniques vieux de quarante ans ?</p>
+
+        <p class="reveal"><strong>Et nous cherchons que ça change.</strong> Pas pour Alex, c'est trop tard. Pour les enfants qui, en ce moment même, traversent le système en épuisant leurs réserves de cortisol à force de simuler la normalité.</p>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <h2 class="reveal" data-icon="question">La dernière question</h2>
+
+        <p class="reveal">On parle beaucoup de « neurodiversité ». De « bienveillance ». D'« inclusion ». Les institutions multiplient les chartes et les formations.</p>
+
+        <p class="reveal">Pendant ce temps, des enfants comme Alex traversent le système entier sans être vus. Ils s'épuisent à simuler la normalité. Leur amygdale reste en alerte. Leur cortisol s'accumule. Leur mémoire encode des traumatismes. Et quand ils s'effondrent à l'âge adulte, on diagnostique leur effondrement comme une maladie psychiatrique, au lieu de le reconnaître comme une conséquence biologique prévisible.</p>
+
+        <div class="emphase reveal">
+            <div class="emphase-bar"></div>
+            <div class="corner-bl"></div>
+            <div class="corner-br"></div>
+            <div class="emphase-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <p><strong>Combien de diagnostics de dépression ne sont en réalité que des cerveaux autistes épuisés d'avoir tenté de fonctionner dans un monde qui ne leur a jamais fait de place ?</strong></p>
+            <p>Mon fils n'a pas échoué à se faire comprendre. Ce sont les experts qui ont échoué à faire leur travail. Et son anxiodépression n'est pas sa fragilité. <strong>C'est leur facture.</strong></p>
+        </div>
+
+        <div class="separator reveal"><div class="sep-icon"></div></div>
+
+        <p class="reveal" style="text-align: center; font-style: italic; color: var(--gris-moyen-fonce); margin-top: 3rem;">Vous connaissez un Alex. Peut-être êtes-vous un Alex. Votre épuisement n'est pas une faiblesse. C'est la réponse normale d'un cerveau normal à une situation anormale.</p>
 
         <!-- CTA Autotest -->
         <div class="cta-autotest reveal">
@@ -1553,10 +1742,10 @@
             <div class="cta-icon">
                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <h3>Cartographie où ça a cassé</h3>
-            <p>L'autotest « Capture interprétative du réel » identifie où ta lecture des faits a été remplacée par celle d'un autre. Pas de score, pas de jugement — juste une lampe torche dans le brouillard.</p>
+            <h3>Qu'est-ce qui vous a manqué pour être vu à temps ?</h3>
+            <p>Les autotests Noesis Kintsugi permettent de cartographier les mécanismes que vous avez développés pour survivre. Pas de diagnostic — juste une clarification.</p>
             <a href="../Autotests/autotest.html" class="btn btn-primary">
-                Faire l'autotest
+                Découvrir les autotests
                 <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
         </div>
@@ -1575,20 +1764,22 @@
 
     </article>
 
+    </div><!-- Fin article-wrapper -->
+
     <!-- Articles liés -->
     <section class="related-articles">
         <h2>Continuer la lecture</h2>
         <div class="related-grid">
-            <a href="#" class="related-item">
-                <span class="series-tag">Série I</span>
-                <h3>« Ce n'est pas que je ne sais pas décider. C'est que décider me coûte trop cher. »</h3>
+            <a href="article-autisme.html" class="related-item">
+                <span class="series-tag">Série IV — Neurodiversité</span>
+                <h3>Et si l'autisme était plus vieux que Sapiens ?</h3>
+            </a>
+            <a href="article-jugement.html" class="related-item">
+                <span class="series-tag">Série I — Doute de soi</span>
+                <h3>Le moment précis où j'ai arrêté de faire confiance à mon propre jugement</h3>
             </a>
             <a href="#" class="related-item">
-                <span class="series-tag">Série II</span>
-                <h3>« Il n'y a jamais eu de cris. Juste moi qui disparaissais. »</h3>
-            </a>
-            <a href="#" class="related-item">
-                <span class="series-tag">Série IV</span>
+                <span class="series-tag">Série IV — Faux diagnostic</span>
                 <h3>« On m'a dit burn-out. Personne n'a regardé ce qui m'empêchait d'agir. »</h3>
             </a>
         </div>
@@ -1605,7 +1796,7 @@
                 <a href="../Autotests/autotest.html">Autotests</a>
                 <a href="articles.html">Analyses</a>
                 <a href="../etape-zero/accompagnement.html">L'Étape Zéro</a>
-                <a href="mailto:contact@noesisanalyse.com">Contact</a>
+                <a href="mailto:contact@noesiskintsugi.com">Contact</a>
             </nav>
             <div class="footer-social">
                 <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener">
@@ -1638,13 +1829,13 @@
         // Progress bar & TOC
         const progressBar = document.getElementById('progressBar');
         const tocWrapper = document.getElementById('tocWrapper');
-        
+
         window.addEventListener('scroll', () => {
             const scrollTop = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const progress = (scrollTop / docHeight) * 100;
             progressBar.style.width = progress + '%';
-            
+
             tocWrapper.classList.toggle('visible', scrollTop > window.innerHeight);
             document.getElementById('nav').classList.toggle('scrolled', scrollTop > 100);
             updateActiveTocDot();
