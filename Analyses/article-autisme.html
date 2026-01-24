@@ -5,112 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Et si l'autisme était plus vieux que Sapiens ? — Noesis Kintsugi</title>
     <meta name="description" content="Pendant que la médecine cherche à « normaliser » les cerveaux autistes, la génétique découvre qu'ils nous accompagnent depuis 40 000 ans.">
-
-    <!-- Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            /* Noirs et gris */
-            --noir-principal: #121514;
-            --noir-profond: #111313;
-            --noir-clair: #161817;
-            --gris-anthracite: #2E3130;
-            --gris-ceramique: #2D2F2F;
-            --gris-moyen-fonce: #424446;
-            --gris-pierre: #A8A5A0;
-            --gris-medium: #999999;
-            --gris-clair-bg: #E8E8E8;
-            
-            /* Blancs et ivoires */
-            --blanc-lecture: #E8E6E1;
-            --blanc-casse: #D4D2CD;
-            --ivoire: #CBCBC9;
-            
-            /* Palette dorée raffinée */
-            --or-profond: #8A6914;
-            --or-antique: #9D7B2A;
-            --or-vieilli: #B08D3A;
-            --or-clair: #C9A855;
-            --or-lumineux: #D4B86A;
-            --or-eclatant: #E0C878;
-            --or-pale: #EBD9A0;
-            
-            /* Accents */
-            --rouge-doux: #B06060;
-            --vert-doux: #6B8B6B;
-            
-            /* Gradients */
-            --gradient-or: linear-gradient(135deg, var(--or-antique) 0%, var(--or-clair) 50%, var(--or-lumineux) 100%);
-            --gradient-or-vertical: linear-gradient(180deg, var(--or-lumineux) 0%, var(--or-clair) 50%, var(--or-antique) 100%);
-            --gradient-or-subtil: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 100%);
-            
-            /* Typographie */
+            --noir-principal: #1c1f21;
+            --noir-profond: #16191a;
+            --gris-anthracite: #2d3133;
+            --gris-ceramique: #353a3c;
+            --gris-moyen: #4a5154;
+            --gris-pierre: #8a9094;
+            --or-vieilli: #a07830;
+            --or-mat: #aa8555;
+            --or-clair: #d4b896;
+            --or-eclatant: #e8d4a8;
+            --or-intense: #f0ddb0;
+            --texte-principal: #f5f3ef;
+            --texte-secondaire: #c5c2bc;
+            --blanc-casse: #e8e5e0;
+            --glow-or: 0 0 25px rgba(212, 184, 150, 0.25);
+            --shadow-gold: 0 4px 24px rgba(160, 120, 48, 0.2);
+            --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
             --font-display: 'Megrim', cursive;
-            --font-body: 'Crimson Pro', serif;
-            
-            /* Effets */
+            --font-body: 'Crimson Pro', Georgia, serif;
+            --container-max: 800px;
+            --container-padding: clamp(20px, 5vw, 60px);
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --shadow-luxe: 0 10px 40px rgba(0, 0, 0, 0.25), 0 2px 10px rgba(0, 0, 0, 0.15);
-            --shadow-or: 0 0 30px rgba(201, 168, 85, 0.2);
-            --shadow-text: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
         body {
             font-family: var(--font-body);
-            background-color: var(--gris-moyen-fonce);
-            color: var(--blanc-lecture);
-            line-height: 1.85;
-            overflow-x: hidden;
+            background-color: var(--noir-principal);
+            color: var(--texte-principal);
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-feature-settings: 'kern' 1, 'liga' 1;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0.02;
-            z-index: 9999;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-        }
+        ::selection { background: var(--or-vieilli); color: var(--noir-principal); }
 
-        ::selection {
-            background: var(--or-vieilli);
-            color: var(--noir-principal);
-        }
+        *:focus { outline: none; }
+        *:focus-visible { outline: 2px solid var(--or-clair); outline-offset: 2px; }
 
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--noir-profond); }
         ::-webkit-scrollbar-thumb { background: var(--or-vieilli); border-radius: 4px; }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: var(--transition-smooth);
+        a { text-decoration: none; color: inherit; }
+        a:hover, a:visited, a:active, a:focus { text-decoration: none; }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           PROGRESS BAR
-           ═══════════════════════════════════════════════════════════════ */
+        /* PROGRESS BAR */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -119,35 +74,28 @@
             height: 3px;
             background: var(--gradient-or);
             z-index: 1001;
-            transition: width 0.1s ease-out;
-            box-shadow: 0 0 20px rgba(201, 170, 110, 0.6);
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           NAVIGATION
-           ═══════════════════════════════════════════════════════════════ */
+        /* NAVIGATION */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1.5rem 0;
-            background: transparent;
+            padding: 1.25rem 0;
+            background: rgba(28, 31, 33, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 184, 150, 0.1);
             transition: var(--transition-smooth);
         }
 
-        .nav.scrolled {
-            padding: 1rem 0;
-            background: rgba(17, 19, 19, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(153, 107, 38, 0.1);
-        }
+        .nav.scrolled { padding: 0.75rem 0; background: rgba(22, 25, 26, 0.98); }
 
         .nav-inner {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 3rem;
+            padding: 0 var(--container-padding);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -155,1696 +103,721 @@
 
         .logo {
             font-family: var(--font-display);
-            font-size: 1.4rem;
-            letter-spacing: 0.12em;
-            color: var(--blanc-casse);
+            font-size: 1.5rem;
+            color: var(--texte-principal);
+            letter-spacing: 0.05em;
         }
 
-        .logo span {
-            color: var(--or-eclatant);
-        }
+        .logo span { color: var(--or-clair); }
 
         .nav-links {
             display: flex;
-            gap: 3rem;
             list-style: none;
+            gap: 2.5rem;
         }
 
         .nav-links a {
+            color: var(--texte-secondaire);
             font-size: 0.95rem;
-            color: var(--gris-medium);
-            letter-spacing: 0.03em;
-            position: relative;
-            padding-bottom: 4px;
+            transition: color 0.3s ease;
         }
 
-        .nav-links a.active {
-            color: var(--blanc-casse);
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--blanc-casse);
-        }
-
-        .nav-links a:hover {
-            color: var(--blanc-casse);
-        }
+        .nav-links a:hover, .nav-links a.active { color: var(--or-clair); }
 
         .nav-toggle {
             display: none;
             flex-direction: column;
             gap: 5px;
+            background: none;
+            border: none;
             cursor: pointer;
+            padding: 5px;
         }
 
         .nav-toggle span {
             width: 24px;
             height: 2px;
-            background: var(--blanc-casse);
+            background: var(--or-clair);
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           HERO
-           ═══════════════════════════════════════════════════════════════ */
+        /* HERO */
         .hero {
-            position: relative;
-            min-height: 100vh;
+            min-height: 70vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 0 2rem;
+            padding: 10rem 0 5rem;
+            background: var(--noir-principal);
+            position: relative;
             overflow: hidden;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background-image: url('assets/bg-kintsugi.png');
             background-size: cover;
             background-position: center;
-            z-index: 0;
+            opacity: 0.35;
         }
 
         .hero::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(17, 19, 19, 0.2) 0%,
-                rgba(17, 19, 19, 0.4) 50%,
-                rgba(18, 21, 20, 1) 100%
-            );
-            z-index: 1;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(28,31,33,0.4) 0%, rgba(28,31,33,0.95) 100%);
         }
 
-        .hero-content {
+        .hero .container {
             position: relative;
-            z-index: 2;
-            max-width: 1000px;
-            animation: fadeInUp 1s ease-out;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-series {
-            font-family: var(--font-body);
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: rgba(160, 120, 48, 0.15);
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            color: var(--or-clair);
             font-size: 0.8rem;
-            letter-spacing: 0.35em;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--gris-medium);
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 4.5vw, 3rem);
-            font-weight: 400;
-            line-height: 1.2;
-            color: var(--blanc-casse);
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-
-        .hero-hook {
             font-family: var(--font-body);
-            font-size: 1.25rem;
-            font-style: italic;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
             color: var(--or-eclatant);
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
         }
 
-        .hero-line {
-            width: 60px;
-            height: 1px;
-            background: var(--or-vieilli);
-            margin: 0 auto 3rem;
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--texte-secondaire);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+            font-style: italic;
         }
 
         .hero-meta {
             display: flex;
             justify-content: center;
-            align-items: center;
             gap: 2rem;
             font-size: 0.9rem;
-            color: var(--gris-medium);
+            color: var(--gris-pierre);
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .hero-meta svg {
             width: 16px;
             height: 16px;
             stroke: currentColor;
-            stroke-width: 1.5;
-            fill: none;
-            margin-right: 0.5rem;
-            vertical-align: middle;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            color: var(--or-vieilli);
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator svg {
-            width: 24px;
-            height: 24px;
-            stroke: currentColor;
-            stroke-width: 1.5;
             fill: none;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(8px); }
+        /* ARTICLE CONTENT */
+        .article-section {
+            padding: 4rem 0;
+            background: #3a3f42;
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           TOC STICKY
-           ═══════════════════════════════════════════════════════════════ */
-        .toc-wrapper {
-            position: fixed;
-            left: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .toc-wrapper.visible {
-            opacity: 1;
-        }
-
-        .toc {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .toc-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--gris-anthracite);
-            border: 1px solid var(--gris-moyen-fonce);
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-
-        .toc-dot:hover,
-        .toc-dot.active {
-            background: var(--or-vieilli);
-            border-color: var(--or-clair);
-            transform: scale(1.3);
-            box-shadow: 0 0 10px rgba(201, 170, 110, 0.4);
-        }
-
-        .toc-dot::after {
-            content: attr(data-title);
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            white-space: nowrap;
-            font-size: 0.75rem;
-            color: var(--gris-medium);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
-
-        .toc-dot:hover::after {
-            opacity: 1;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           ARTICLE WRAPPER (fond gris moyen-foncé)
-           ═══════════════════════════════════════════════════════════════ */
-        .article-wrapper {
-            background-color: var(--gris-moyen-fonce);
-            padding: 1px 0;
-            position: relative;
-        }
-
-        .article-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 3px;
-            background: var(--gradient-or);
-            box-shadow: var(--shadow-or);
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           ARTICLE LEAD
-           ═══════════════════════════════════════════════════════════════ */
-        .article-lead {
-            padding: 6rem 2rem;
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .article-lead::before {
-            content: '';
-            position: absolute;
-            top: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 80px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z' fill='none' stroke='%23B08D3A' stroke-width='1' opacity='0.3'/%3E%3C/svg%3E");
-            background-size: contain;
-            opacity: 0.4;
-        }
-
-        .article-lead p {
-            font-size: 1.35rem;
-            font-style: italic;
-            color: var(--blanc-casse);
-            line-height: 2.1;
-            position: relative;
-            z-index: 1;
-            letter-spacing: 0.01em;
-        }
-
-        .article-lead p::before,
-        .article-lead p::after {
-            content: '"';
-            font-family: var(--font-display);
-            font-size: 5rem;
-            color: var(--or-vieilli);
-            opacity: 0.3;
-            position: absolute;
-            line-height: 1;
-        }
-
-        .article-lead p::before {
-            top: -2rem;
-            left: -1rem;
-        }
-
-        .article-lead p::after {
-            content: '"';
-            bottom: -3rem;
-            right: -1rem;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           ARTICLE CONTENT
-           ═══════════════════════════════════════════════════════════════ */
         .article-content {
-            max-width: 720px;
+            max-width: var(--container-max);
             margin: 0 auto;
-            padding: 0 2rem 5rem;
+            padding: 0 var(--container-padding);
         }
 
         .article-content p {
-            font-size: 1.18rem;
-            margin-bottom: 1.85rem;
-            color: var(--blanc-lecture);
-            line-height: 2;
-            text-align: justify;
-            text-justify: inter-word;
-            hyphens: auto;
-            letter-spacing: 0.008em;
-            text-shadow: var(--shadow-text);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            color: var(--texte-principal);
         }
 
-        /* Lettrine luxueuse */
-        .article-content .drop-cap::first-letter {
-            float: left;
-            font-family: var(--font-display);
-            font-size: 5.5rem;
-            line-height: 0.75;
-            padding-right: 1rem;
-            padding-top: 0.5rem;
-            color: var(--or-lumineux);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(180deg, var(--or-eclatant) 0%, var(--or-clair) 50%, var(--or-vieilli) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           TITRES H2 - Élégants et lisibles
-           ═══════════════════════════════════════════════════════════════ */
         .article-content h2 {
             font-family: var(--font-body);
-            font-size: 1.55rem;
-            font-weight: 500;
-            color: var(--or-pale);
-            margin: 5rem 0 2.5rem;
-            padding: 1.75rem 0;
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            position: relative;
-            letter-spacing: 0.03em;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Ligne supérieure fine */
-        .article-content h2::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(176, 141, 58, 0.4) 20%, 
-                rgba(201, 168, 85, 0.5) 50%, 
-                rgba(176, 141, 58, 0.4) 80%, 
-                transparent 100%
-            );
-        }
-
-        /* Ligne inférieure avec ornement */
-        .article-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(176, 141, 58, 0.3) 20%, 
-                rgba(201, 168, 85, 0.4) 50%, 
-                rgba(176, 141, 58, 0.3) 80%, 
-                transparent 100%
-            );
-        }
-
-        /* Icône du titre */
-        .article-content h2 .h2-icon {
-            width: 32px;
-            height: 32px;
-            flex-shrink: 0;
-            opacity: 0.85;
-            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
-        }
-
-        .article-content h2 .h2-icon svg {
-            width: 100%;
-            height: 100%;
-            stroke: var(--or-clair);
-            stroke-width: 1.5;
-            fill: none;
-        }
-
-        .article-content em {
-            font-style: italic;
-            color: var(--blanc-casse);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--or-eclatant);
+            margin: 3.5rem 0 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(212, 184, 150, 0.25);
         }
 
         .article-content strong {
+            color: var(--or-clair);
             font-weight: 600;
-            color: var(--or-lumineux);
-            letter-spacing: 0.01em;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
 
-        /* Highlight */
-        .highlight {
-            background: linear-gradient(transparent 60%, rgba(176, 141, 58, 0.35) 60%);
-            padding: 0 4px;
-            transition: var(--transition-smooth);
-        }
-
-        .highlight:hover {
-            background: linear-gradient(transparent 60%, rgba(201, 168, 85, 0.5) 60%);
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           PARENTHESE / ASIDE
-           ═══════════════════════════════════════════════════════════════ */
-        .parenthese {
-            position: relative;
-            margin: 3.5rem 0;
-            padding: 2.25rem 2.5rem 2.25rem 3rem;
-            background: 
-                linear-gradient(135deg, 
-                    rgba(58, 60, 62, 0.88) 0%, 
-                    rgba(52, 54, 56, 0.90) 100%
-                ),
-                url('assets/bg-kintsugi.png') center/cover no-repeat;
-            border: 1px solid rgba(176, 141, 58, 0.25);
+        /* BLOCKQUOTE */
+        .article-content blockquote {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: rgba(160, 120, 48, 0.12);
+            border-left: 4px solid var(--or-vieilli);
+            font-size: 1.15rem;
             font-style: italic;
-            color: var(--blanc-casse);
-            font-size: 1.12rem;
-            line-height: 1.95;
-            box-shadow: 
-                var(--shadow-luxe),
-                inset 0 0 40px rgba(0, 0, 0, 0.1);
+            color: var(--or-clair);
+            line-height: 1.7;
         }
 
-        .parenthese::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            width: 35px;
-            height: 35px;
-            border-top: 2px solid var(--or-clair);
-            border-left: 2px solid var(--or-clair);
-        }
-
-        .parenthese::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            right: -1px;
-            width: 35px;
-            height: 35px;
-            border-bottom: 2px solid var(--or-clair);
-            border-right: 2px solid var(--or-clair);
-        }
-
-        .parenthese .aside-icon {
-            position: absolute;
-            top: -14px;
-            left: 22px;
-            background: rgba(55, 57, 59, 1);
-            padding: 0.2rem 0.7rem;
-            color: var(--or-lumineux);
-            font-size: 1.3rem;
-            font-style: normal;
-            border: 1px solid rgba(176, 141, 58, 0.35);
-            text-shadow: 0 0 10px rgba(212, 184, 106, 0.4);
-        }
-
-        .parenthese strong {
-            color: var(--or-lumineux);
-            font-style: normal;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           PULL QUOTE
-           ═══════════════════════════════════════════════════════════════ */
-        .pull-quote {
-            position: relative;
-            margin: 4.5rem -3rem;
-            padding: 4.5rem 4rem;
-            background: 
-                linear-gradient(180deg, 
-                    rgba(58, 60, 62, 0.85) 0%, 
-                    rgba(52, 54, 56, 0.80) 50%,
-                    rgba(58, 60, 62, 0.85) 100%
-                ),
-                url('assets/bg-kintsugi.png') center/cover no-repeat;
-            text-align: center;
-            border-top: 1px solid rgba(176, 141, 58, 0.3);
-            border-bottom: 1px solid rgba(176, 141, 58, 0.3);
-        }
-
-        .pull-quote::before,
-        .pull-quote::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 3px;
-        }
-
-        .pull-quote::before {
-            top: 0;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                var(--or-vieilli) 20%, 
-                var(--or-clair) 50%, 
-                var(--or-vieilli) 80%, 
-                transparent 100%
-            );
-            opacity: 0.6;
-        }
-
-        .pull-quote::after {
-            bottom: 0;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                var(--or-antique) 20%, 
-                var(--or-vieilli) 50%, 
-                var(--or-antique) 80%, 
-                transparent 100%
-            );
-            opacity: 0.6;
-        }
-
-        .pull-quote .quote-mark {
-            position: absolute;
-            top: -28px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 56px;
-            height: 56px;
-            background: rgba(55, 57, 59, 1);
-            border: 2px solid var(--or-vieilli);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-or), 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .pull-quote .quote-mark svg {
-            width: 26px;
-            height: 26px;
-            fill: var(--or-clair);
-        }
-
-        .pull-quote p {
-            font-size: 1.45rem;
-            font-style: italic;
-            color: var(--or-pale);
-            line-height: 1.75;
+        .article-content blockquote p {
             margin: 0;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            letter-spacing: 0.01em;
+            font-size: inherit;
+            color: inherit;
         }
 
-        .pull-quote .quote-line {
-            width: 80px;
-            height: 2px;
-            background: var(--gradient-or-subtil);
-            margin: 2rem auto 0;
-            box-shadow: var(--shadow-or);
+        .article-content blockquote p + p {
+            margin-top: 1rem;
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           EMPHASE BOX
-           ═══════════════════════════════════════════════════════════════ */
-        .emphase {
-            position: relative;
-            margin: 4.5rem 0;
-            padding: 3rem 3rem 3rem 3.5rem;
-            background: 
-                linear-gradient(135deg, 
-                    rgba(58, 60, 62, 0.92) 0%, 
-                    rgba(52, 54, 56, 0.94) 100%
-                ),
-                url('assets/bg-kintsugi.png') center/cover no-repeat;
-            border: 1px solid rgba(176, 141, 58, 0.3);
-            box-shadow: 
-                var(--shadow-luxe),
-                inset 0 0 60px rgba(176, 141, 58, 0.03);
+        /* HIGHLIGHT */
+        .highlight {
+            background: linear-gradient(transparent 60%, rgba(160, 120, 48, 0.35) 60%);
+            padding: 0 0.15em;
         }
 
-        .emphase::before,
-        .emphase::after,
-        .emphase .corner-bl,
-        .emphase .corner-br {
-            content: '';
-            position: absolute;
-            width: 22px;
-            height: 22px;
-        }
-
-        .emphase::before {
-            top: 12px;
-            left: 12px;
-            border-top: 2px solid var(--or-clair);
-            border-left: 2px solid var(--or-clair);
-        }
-
-        .emphase::after {
-            top: 12px;
-            right: 12px;
-            border-top: 2px solid var(--or-clair);
-            border-right: 2px solid var(--or-clair);
-        }
-
-        .emphase .corner-bl {
-            bottom: 12px;
-            left: 12px;
-            border-bottom: 2px solid var(--or-clair);
-            border-left: 2px solid var(--or-clair);
-        }
-
-        .emphase .corner-br {
-            bottom: 12px;
-            right: 12px;
-            border-bottom: 2px solid var(--or-clair);
-            border-right: 2px solid var(--or-clair);
-        }
-
-        .emphase .emphase-bar {
-            position: absolute;
-            top: 28px;
-            bottom: 28px;
-            left: 0;
-            width: 3px;
-            background: var(--gradient-or-vertical);
-            box-shadow: 0 0 15px rgba(201, 168, 85, 0.35);
-        }
-
-        .emphase .emphase-icon {
-            position: absolute;
-            top: -16px;
-            right: 32px;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, rgba(58, 60, 62, 1) 0%, rgba(52, 54, 56, 1) 100%);
-            border: 2px solid var(--or-vieilli);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-or), 0 3px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .emphase .emphase-icon svg {
-            width: 16px;
-            height: 16px;
-            stroke: var(--or-clair);
-            stroke-width: 1.5;
-            fill: none;
-        }
-
-        .emphase p {
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-            color: var(--blanc-lecture);
-            font-size: 1.15rem;
-            line-height: 1.95;
-        }
-
-        .emphase p:last-of-type {
-            margin-bottom: 0;
-        }
-
-        .emphase p strong {
-            color: var(--or-lumineux);
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           LISTE MECANISMES
-           ═══════════════════════════════════════════════════════════════ */
-        .liste-mecanismes {
-            margin: 3.5rem 0;
-            padding: 0;
+        /* LISTS */
+        .article-content ul {
+            margin: 2rem 0;
+            padding-left: 0;
             list-style: none;
-            counter-reset: mechanism;
         }
 
-        .liste-mecanismes li {
+        .article-content ul li {
             position: relative;
-            padding: 2rem 2rem 2rem 5.5rem;
-            margin-bottom: 1.25rem;
-            background: 
-                linear-gradient(135deg, 
-                    rgba(58, 60, 62, 0.88) 0%, 
-                    rgba(52, 54, 56, 0.85) 100%
-                ),
-                url('assets/bg-kintsugi.png') center/cover no-repeat;
-            border: 1px solid rgba(176, 141, 58, 0.2);
-            border-left: none;
-            font-size: 1.12rem;
-            line-height: 1.9;
-            counter-increment: mechanism;
-            transition: var(--transition-smooth);
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-            color: var(--blanc-lecture);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 0.75rem;
+            background: rgba(28, 31, 33, 0.4);
+            border-left: 3px solid var(--or-vieilli);
+            font-size: 1.05rem;
         }
 
-        .liste-mecanismes li:hover {
-            background: 
-                linear-gradient(135deg, 
-                    rgba(65, 67, 69, 0.9) 0%, 
-                    rgba(58, 60, 62, 0.88) 100%
-                ),
-                url('assets/bg-kintsugi.png') center/cover no-repeat;
-            border-color: rgba(176, 141, 58, 0.35);
-            transform: translateX(5px);
-            box-shadow: var(--shadow-luxe);
-        }
-
-        .liste-mecanismes li::before {
-            content: counter(mechanism);
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 55px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 1.75rem;
-            color: var(--or-lumineux);
-            background: linear-gradient(180deg, 
-                rgba(176, 141, 58, 0.18) 0%, 
-                rgba(157, 123, 42, 0.1) 100%
-            );
-            border-right: 3px solid var(--or-vieilli);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .liste-mecanismes li strong {
-            color: var(--or-pale);
+        .article-content ul li strong {
             display: block;
-            font-size: 1.15rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.015em;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+            margin-bottom: 0.35rem;
+            color: var(--or-eclatant);
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           SEPARATEUR - Élégant Art Déco
-           ═══════════════════════════════════════════════════════════════ */
+        /* ASIDE BOX */
+        .aside-box {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(28, 31, 33, 0.5);
+            border: 1px solid rgba(212, 184, 150, 0.15);
+            font-size: 0.95rem;
+            color: var(--texte-secondaire);
+            line-height: 1.7;
+        }
+
+        .aside-box::before {
+            content: '✦';
+            display: block;
+            color: var(--or-clair);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        /* SEPARATOR */
         .separator {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 4.5rem 0;
-            height: 50px;
-            position: relative;
+            margin: 3.5rem 0;
+            gap: 1.5rem;
         }
 
-        .separator::before {
+        .separator::before,
+        .separator::after {
             content: '';
-            position: absolute;
-            width: 100%;
+            flex: 1;
             height: 1px;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(176, 141, 58, 0.12) 15%,
-                rgba(176, 141, 58, 0.25) 35%,
-                transparent 47%,
-                transparent 53%,
-                rgba(176, 141, 58, 0.25) 65%,
-                rgba(176, 141, 58, 0.12) 85%,
-                transparent 100%
-            );
+            background: linear-gradient(90deg, transparent, rgba(212, 184, 150, 0.35), transparent);
         }
 
-        .separator .sep-ornament {
-            position: relative;
-            width: 100px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .separator span {
+            color: var(--or-vieilli);
+            font-size: 1.2rem;
         }
 
-        .separator .sep-ornament::before {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: var(--or-clair);
-            transform: rotate(45deg);
-            box-shadow: 0 0 12px rgba(201, 168, 85, 0.5);
-        }
-
-        .separator .sep-ornament::after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            border: 1px solid rgba(176, 141, 58, 0.35);
-            border-radius: 50%;
-        }
-
-        .separator .sep-line-left,
-        .separator .sep-line-right {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .separator .sep-line-left {
-            right: calc(50% + 25px);
-        }
-
-        .separator .sep-line-right {
-            left: calc(50% + 25px);
-        }
-
-        .separator .sep-line-left::before,
-        .separator .sep-line-right::before {
-            content: '';
-            width: 60px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-vieilli));
-        }
-
-        .separator .sep-line-right::before {
-            background: linear-gradient(90deg, var(--or-vieilli), transparent);
-        }
-
-        .separator .sep-line-left::after,
-        .separator .sep-line-right::after {
-            content: '';
-            width: 3px;
-            height: 3px;
-            background: var(--or-vieilli);
-            border-radius: 50%;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           CTA AUTOTEST
-           ═══════════════════════════════════════════════════════════════ */
-        .cta-autotest {
-            position: relative;
-            margin: 5rem 0 4rem;
-            padding: 3.5rem 3rem;
-            background: 
-                linear-gradient(135deg, 
-                    rgba(58, 60, 62, 0.94) 0%, 
-                    rgba(52, 54, 56, 0.96) 100%
-                ),
-                url('assets/bg-kintsugi.png') center/cover no-repeat;
-            border: 1px solid rgba(176, 141, 58, 0.35);
+        /* CTA BOX */
+        .cta-box {
+            margin: 4rem 0 3rem;
+            padding: 2.5rem;
+            background: var(--noir-principal);
+            border: 1px solid rgba(212, 184, 150, 0.2);
             text-align: center;
-            overflow: hidden;
-            transition: var(--transition-smooth);
-            box-shadow: var(--shadow-luxe);
         }
 
-        .cta-autotest::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border: 1px dashed rgba(176, 141, 58, 0.2);
-            pointer-events: none;
-        }
-
-        .cta-autotest::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient-or-subtil);
-            box-shadow: var(--shadow-or);
-        }
-
-        .cta-autotest:hover {
-            border-color: var(--or-clair);
-            box-shadow: 
-                var(--shadow-luxe),
-                var(--shadow-or);
-            transform: translateY(-4px);
-        }
-
-        .cta-corner {
-            position: absolute;
-            width: 28px;
-            height: 28px;
-        }
-
-        .cta-corner--tl { top: 18px; left: 18px; border-top: 2px solid var(--or-clair); border-left: 2px solid var(--or-clair); }
-        .cta-corner--tr { top: 18px; right: 18px; border-top: 2px solid var(--or-clair); border-right: 2px solid var(--or-clair); }
-        .cta-corner--bl { bottom: 18px; left: 18px; border-bottom: 2px solid var(--or-clair); border-left: 2px solid var(--or-clair); }
-        .cta-corner--br { bottom: 18px; right: 18px; border-bottom: 2px solid var(--or-clair); border-right: 2px solid var(--or-clair); }
-
-        .cta-autotest .cta-icon {
-            width: 65px;
-            height: 65px;
-            margin: 0 auto 2rem;
-            background: linear-gradient(135deg, rgba(176, 141, 58, 0.12) 0%, rgba(55, 57, 59, 0.7) 100%);
-            border: 2px solid var(--or-vieilli);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: var(--shadow-or), 0 4px 15px rgba(0, 0, 0, 0.25);
-        }
-
-        .cta-autotest .cta-icon::before {
-            content: '';
-            position: absolute;
-            top: -7px;
-            left: -7px;
-            right: -7px;
-            bottom: -7px;
-            border: 1px solid rgba(176, 141, 58, 0.2);
-            border-radius: 50%;
-        }
-
-        .cta-autotest .cta-icon svg {
-            width: 30px;
-            height: 30px;
-            stroke: var(--or-clair);
-            stroke-width: 1.5;
-            fill: none;
-        }
-
-        .cta-autotest h3 {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            color: var(--or-lumineux);
-            margin-bottom: 1.25rem;
-            text-transform: uppercase;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .cta-autotest > p {
-            color: var(--blanc-casse);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 520px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.85;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1.1rem 2.75rem;
+        .cta-box h3 {
             font-family: var(--font-body);
-            font-size: 1.05rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--or-eclatant);
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            color: var(--texte-secondaire) !important;
+            margin-bottom: 1.5rem !important;
+            font-size: 1rem !important;
         }
 
         .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
             background: var(--gradient-or);
             color: var(--noir-principal);
+            font-size: 1rem;
+            font-weight: 600;
             border: none;
-            box-shadow: 0 4px 15px rgba(143, 107, 46, 0.2);
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: 0.6s;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
+            cursor: pointer;
+            transition: var(--transition-smooth);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 
-                0 8px 25px rgba(143, 107, 46, 0.3),
-                var(--shadow-or);
+            transform: translateY(-2px);
+            box-shadow: var(--glow-or);
         }
 
         .btn-primary svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             stroke: currentColor;
-            stroke-width: 2;
             fill: none;
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           ARTICLE ACTIONS
-           ═══════════════════════════════════════════════════════════════ */
+        /* ARTICLE ACTIONS */
         .article-actions {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.75rem 0;
-            border-top: 1px solid rgba(176, 141, 58, 0.2);
-            border-bottom: 1px solid rgba(176, 141, 58, 0.2);
-            margin: 3.5rem 0;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(212, 184, 150, 0.2);
         }
 
         .article-actions a {
-            color: var(--blanc-casse);
-            font-size: 1rem;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.6rem 1.2rem;
-            border-radius: 3px;
-            transition: var(--transition-smooth);
+            gap: 0.5rem;
+            color: var(--texte-secondaire);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
 
         .article-actions a:hover {
-            color: var(--or-lumineux);
-            background: rgba(176, 141, 58, 0.1);
+            color: var(--or-clair);
         }
 
-        .article-actions a svg {
+        .article-actions svg {
             width: 18px;
             height: 18px;
             stroke: currentColor;
-            stroke-width: 1.5;
             fill: none;
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           RELATED ARTICLES
-           ═══════════════════════════════════════════════════════════════ */
-        .related-articles {
-            padding: 5rem 2rem;
-            background: var(--noir-profond);
+        /* RELATED */
+        .related-section {
+            padding: 4rem 0;
+            background: var(--gris-anthracite);
         }
 
-        .related-articles h2 {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            letter-spacing: 0.1em;
-            color: var(--blanc-casse);
-            margin-bottom: 2rem;
+        .related-section .container {
+            max-width: 1000px;
+        }
+
+        .related-title {
+            font-family: var(--font-body);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--or-eclatant);
             text-align: center;
+            margin-bottom: 2rem;
         }
 
         .related-grid {
-            max-width: 1000px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
 
-        .related-item {
-            position: relative;
-            padding: 1.75rem;
-            background: linear-gradient(135deg, rgba(18, 21, 20, 0.95) 0%, rgba(22, 24, 23, 0.9) 100%);
-            border: 1px solid var(--gris-anthracite);
+        .related-card {
+            padding: 1.5rem;
+            background: var(--noir-principal);
+            border: 1px solid rgba(212, 184, 150, 0.1);
             transition: var(--transition-smooth);
-            overflow: hidden;
         }
 
-        .related-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-or);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .related-item:hover {
-            border-color: var(--or-vieilli);
+        .related-card:hover {
+            border-color: rgba(212, 184, 150, 0.3);
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .related-item:hover::before {
-            transform: scaleX(1);
-        }
-
-        .related-item .series-tag {
-            font-size: 0.7rem;
-            letter-spacing: 0.12em;
+        .related-card-series {
+            font-size: 0.75rem;
+            color: var(--or-clair);
             text-transform: uppercase;
-            color: var(--or-vieilli);
+            letter-spacing: 0.05em;
             margin-bottom: 0.75rem;
-            display: block;
         }
 
-        .related-item h3 {
+        .related-card h4 {
             font-family: var(--font-body);
             font-size: 1rem;
-            font-weight: 500;
-            color: var(--blanc-casse);
-            line-height: 1.5;
+            font-weight: 600;
+            color: var(--texte-principal);
+            line-height: 1.4;
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           FOOTER
-           ═══════════════════════════════════════════════════════════════ */
+        /* FOOTER */
         .footer {
+            padding: 3rem 0 2rem;
             background: var(--noir-profond);
-            border-top: 1px solid var(--gris-anthracite);
-            padding: 3rem 2rem 1.5rem;
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
         }
 
         .footer-inner {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 var(--container-padding);
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             flex-wrap: wrap;
             gap: 2rem;
         }
 
-        .footer-brand .logo {
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
         .footer-tagline {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            color: var(--texte-secondaire);
             font-style: italic;
-            color: var(--gris-medium);
+            margin-top: 0.5rem;
         }
 
         .footer-links {
             display: flex;
             gap: 2rem;
-            flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: var(--gris-medium);
-            font-size: 0.95rem;
+            color: var(--texte-secondaire);
+            font-size: 0.9rem;
         }
 
-        .footer-links a:hover {
-            color: var(--or-clair);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .footer-social a {
-            width: 38px;
-            height: 38px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--gris-anthracite);
-            border-radius: 50%;
-            color: var(--gris-medium);
-            transition: var(--transition-smooth);
-        }
-
-        .footer-social a:hover {
-            border-color: var(--or-vieilli);
-            color: var(--or-clair);
-        }
-
-        .footer-social svg {
-            width: 16px;
-            height: 16px;
-        }
+        .footer-links a:hover { color: var(--or-clair); }
 
         .footer-bottom {
             max-width: 1200px;
             margin: 2rem auto 0;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--gris-anthracite);
+            padding: 1.5rem var(--container-padding) 0;
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
             text-align: center;
         }
 
-        .footer-copyright {
-            font-size: 0.8rem;
-            color: var(--gris-moyen-fonce);
-            margin-bottom: 0.25rem;
+        .footer-copyright { font-size: 0.85rem; color: var(--gris-pierre); }
+        .footer-baseline { font-size: 0.9rem; color: var(--or-mat); font-style: italic; margin-top: 0.5rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .related-grid { grid-template-columns: 1fr; }
         }
 
-        .footer-baseline {
-            font-size: 0.9rem;
-            font-style: italic;
-            color: var(--gris-pierre);
+        @media (max-width: 768px) {
+            .nav-links { 
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--noir-profond);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(212, 184, 150, 0.1);
+            }
+
+            .nav-links.active { display: flex; }
+            .nav-toggle { display: flex; }
+
+            .hero-meta { flex-direction: column; gap: 0.5rem; }
+
+            .article-actions {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           ANIMATIONS
-           ═══════════════════════════════════════════════════════════════ */
+        /* REVEAL */
         .reveal {
             opacity: 0;
-            transform: translateY(25px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        .reveal:nth-child(2n) { transition-delay: 0.1s; }
-        .reveal:nth-child(3n) { transition-delay: 0.15s; }
-
-        /* ═══════════════════════════════════════════════════════════════
-           RESPONSIVE
-           ═══════════════════════════════════════════════════════════════ */
-        @media (max-width: 1200px) {
-            .toc-wrapper { display: none; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-inner { padding: 0 1.5rem; }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                background: rgba(17, 19, 19, 0.98);
-                padding: 1.5rem;
-                gap: 1rem;
-            }
-
-            .nav-links.active { display: flex; }
-            .nav-toggle { display: flex; }
-
-            .hero-title { font-size: clamp(1.4rem, 5vw, 2rem); }
-            .hero-meta { flex-direction: column; gap: 0.5rem; }
-
-            .article-content { padding: 0 1.5rem 4rem; }
-            .article-content p { text-align: left; }
-            .article-content h2 { font-size: 1.25rem; }
-
-            .pull-quote {
-                margin: 3rem -1rem;
-                padding: 3rem 2rem;
-            }
-
-            .pull-quote p { font-size: 1.25rem; }
-
-            .emphase {
-                padding: 2rem 2rem 2rem 2.5rem;
-            }
-
-            .liste-mecanismes li {
-                padding-left: 4.5rem;
-            }
-
-            .liste-mecanismes li::before {
-                width: 45px;
-            }
-
-            .cta-autotest {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .article-actions {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                text-align: center;
-                align-items: center;
-            }
-
-            .footer-links { justify-content: center; }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
+            <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html#methode">Méthode</a></li>
-                <li><a href="../Autotests/autotest.html">Autotests</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="etape-zero.html">L'Étape Zéro</a></li>
+                <li><a href="autotests.html">Autotests</a></li>
                 <li><a href="articles.html" class="active">Analyses</a></li>
-                <li><a href="../etape-zero/accompagnement.html">L'Étape Zéro</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Table of Contents -->
-    <div class="toc-wrapper" id="tocWrapper">
-        <div class="toc">
-            <div class="toc-dot" data-target="section1" data-title="La découverte"></div>
-            <div class="toc-dot" data-target="section2" data-title="Un spectre"></div>
-            <div class="toc-dot" data-target="section3" data-title="Le coût"></div>
-            <div class="toc-dot" data-target="section4" data-title="Le gouffre"></div>
-            <div class="toc-dot" data-target="section5" data-title="Néandertal"></div>
-            <div class="toc-dot" data-target="section6" data-title="La vraie question"></div>
-        </div>
-    </div>
-
-    <!-- Hero -->
-    <header class="hero">
-        <div class="hero-content">
-            <p class="hero-series">Série IV — Neurodiversité</p>
-            <h1 class="hero-title">Et si l'autisme était plus vieux que Sapiens ?</h1>
-            <p class="hero-hook">Pendant que la médecine cherche à « normaliser » les cerveaux autistes, la génétique découvre qu'ils nous accompagnent depuis 40 000 ans.</p>
-            <div class="hero-line"></div>
-            <div class="hero-meta">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-badge reveal">Série IV — Neurodiversité</span>
+            <h1 class="hero-title reveal">Et si l'autisme était plus vieux que Sapiens ?</h1>
+            <p class="hero-subtitle reveal">Pendant que la médecine cherche à « normaliser » les cerveaux autistes, la génétique découvre qu'ils nous accompagnent depuis 40 000 ans.</p>
+            <div class="hero-meta reveal">
                 <span>
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    11 min de lecture
+                    11 min
                 </span>
                 <span>Analyse transdisciplinaire</span>
             </div>
         </div>
-        <a href="#content" class="scroll-indicator">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-    </header>
+    </section>
 
-    <!-- Article Wrapper -->
-    <div class="article-wrapper">
+    <!-- ARTICLE -->
+    <section class="article-section">
+        <div class="article-content">
 
-    <!-- Lead -->
-    <div class="article-lead" id="content">
-        <p>En mai 2024, une étude publiée dans Nature : Molecular Psychiatry a fait l'effet d'une bombe discrète. Des chercheurs de Clemson University et Loyola University ont démontré que certaines variations génétiques héritées de Néandertal sont plus fréquentes chez les personnes autistes que dans la population générale. Pas un peu plus fréquentes. Significativement plus fréquentes.</p>
-    </div>
+            <p class="reveal">En mai 2024, une étude publiée dans Nature : Molecular Psychiatry a fait l'effet d'une bombe discrète. Des chercheurs de Clemson University et Loyola University ont démontré que certaines variations génétiques héritées de Néandertal sont plus fréquentes chez les personnes autistes que dans la population générale. Pas un peu plus fréquentes. Significativement plus fréquentes.</p>
 
-    <!-- Article Content -->
-    <article class="article-content">
+            <h2 class="reveal">Une découverte qui change tout</h2>
 
-        <h2 class="reveal" id="section1">
-            <span class="h2-icon"><svg viewBox="0 0 24 24"><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="M17 6l-2.5-2.5"/><path d="M14 8l-1-1"/><path d="M7 18l2.5 2.5"/><path d="M3.5 14.5l.5.5"/><path d="M20 9l.5.5"/><path d="M6.5 12.5l1 1"/><path d="M10 16l1.5 1.5"/><path d="M2 9c6.667 6 13.333 0 20 6"/></svg></span>
-            Une découverte qui change tout
-        </h2>
+            <p class="reveal">Le professeur Alex Feltus, co-auteur de l'étude, précise immédiatement ce que cette découverte ne signifie pas : les personnes autistes n'ont pas plus d'ADN néandertalien que les autres. Tout le monde en porte environ 2 à 3 %. Ce qui change, c'est la répartition. Vingt-cinq marqueurs génétiques spécifiques liés au développement cérébral apparaissent plus souvent chez les autistes. Des marqueurs vieux de 40 000 ans.</p>
 
-        <p class="reveal drop-cap">Le professeur Alex Feltus, co-auteur de l'étude, précise immédiatement ce que cette découverte ne signifie pas : les personnes autistes n'ont pas plus d'ADN néandertalien que les autres. Tout le monde en porte environ 2 à 3 %. Ce qui change, c'est la répartition. Vingt-cinq marqueurs génétiques spécifiques liés au développement cérébral apparaissent plus souvent chez les autistes. Des marqueurs vieux de 40 000 ans.</p>
+            <p class="reveal">Autrement dit : ce que nous appelons « trouble du spectre de l'autisme » voyage dans le génome humain depuis que Sapiens et Néandertal ont décidé de faire des enfants ensemble.</p>
 
-        <p class="reveal">Autrement dit : ce que nous appelons « trouble du spectre de l'autisme » voyage dans le génome humain depuis que Sapiens et Néandertal ont décidé de faire des enfants ensemble.</p>
+            <div class="separator"><span>✦</span></div>
 
-        <div class="separator reveal"><div class="sep-ornament"></div><div class="sep-line-left"></div><div class="sep-line-right"></div></div>
+            <h2 class="reveal">Un spectre, pas une case</h2>
 
-        <h2 class="reveal" id="section2">
-            <span class="h2-icon"><svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 011.32-4.24 2.5 2.5 0 011.98-3A2.5 2.5 0 019.5 2z"/><path d="M14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-1.32-4.24 2.5 2.5 0 00-1.98-3A2.5 2.5 0 0014.5 2z"/></svg></span>
-            Un spectre, pas une case
-        </h2>
+            <p class="reveal">L'autisme n'est pas une condition unique. C'est un spectre : des milliers de façons d'être au monde, de percevoir, de penser. Certaines personnes autistes ne parlent pas ; d'autres écrivent des livres. Certaines ont besoin d'un accompagnement quotidien ; d'autres dirigent des équipes de recherche ou créent des œuvres qui changent notre regard sur le monde.</p>
 
-        <p class="reveal">L'autisme n'est pas une condition unique. C'est un spectre : des milliers de façons d'être au monde, de percevoir, de penser. Certaines personnes autistes ne parlent pas ; d'autres écrivent des livres. Certaines ont besoin d'un accompagnement quotidien ; d'autres dirigent des équipes de recherche ou créent des œuvres qui changent notre regard sur le monde.</p>
+            <p class="reveal">Ce qui les relie : un fonctionnement neurologique différent. <strong>Pas déficient. Différent.</strong></p>
 
-        <p class="reveal">Ce qui les relie : un fonctionnement neurologique différent. <strong>Pas déficient. Différent.</strong></p>
+            <p class="reveal">Et souvent, des capacités que la norme ignore ou sous-estime : l'attention aux détails que personne d'autre ne voit, la pensée systémique qui démonte les mécanismes cachés, l'honnêteté radicale dans un monde de faux-semblants, la mémoire exceptionnelle, la capacité de concentration intense, la créativité non linéaire.</p>
 
-        <p class="reveal">Et souvent, des capacités que la norme ignore ou sous-estime : l'attention aux détails que personne d'autre ne voit, la pensée systémique qui démonte les mécanismes cachés, l'honnêteté radicale dans un monde de faux-semblants, la mémoire exceptionnelle, la capacité de concentration intense, la créativité non linéaire.</p>
+            <blockquote class="reveal">
+                <p>Les traits autistiques font partie de la nature humaine depuis très longtemps. Certains gènes clés remontent même avant la séparation avec les grands singes.</p>
+                <p>Thomas Bourgeron, généticien à l'Institut Pasteur, le confirme : les gènes associés à l'autisme ont été conservés au cours de l'évolution. <strong>Si ces traits constituaient un « défaut », la sélection naturelle les aurait éliminés depuis des millénaires.</strong> Ils sont toujours là.</p>
+            </blockquote>
 
-        <div class="emphase reveal">
-            <div class="emphase-bar"></div>
-            <div class="corner-bl"></div>
-            <div class="corner-br"></div>
-            <div class="emphase-icon">
-                <svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 011.32-4.24 2.5 2.5 0 011.98-3A2.5 2.5 0 019.5 2z"/><path d="M14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-1.32-4.24 2.5 2.5 0 00-1.98-3A2.5 2.5 0 0014.5 2z"/></svg>
+            <div class="separator"><span>✦</span></div>
+
+            <h2 class="reveal">Le coût invisible de la normalité imposée</h2>
+
+            <p class="reveal">Pendant que les généticiens fouillent dans l'ADN ancien, les personnes autistes vivent dans le présent. Et ce présent a un prix. Pas à cause de l'autisme lui-même, mais à cause de ce qu'on leur demande.</p>
+
+            <p class="reveal">En 2020, une équipe de recherche américaine a posé pour la première fois un cadre scientifique au « burnout autistique ». Ce n'est pas une fatigue ordinaire. Ce n'est pas une dépression classique. C'est une <strong>saturation neurologique spécifique</strong>, caractérisée par un épuisement chronique, une perte temporaire de compétences acquises, et une tolérance aux stimuli qui s'effondre.</p>
+
+            <p class="reveal">La cause principale identifiée par les chercheurs : le masking. Ce terme désigne l'effort constant fourni par les personnes autistes pour imiter les comportements neurotypiques, masquer leurs réactions naturelles, et se fondre dans un environnement qui n'a pas été conçu pour elles.</p>
+
+            <blockquote class="reveal">
+                <p>« La vérité brutale est que pour une personne autiste, le simple fait d'exister dans le monde est épuisant. Sans parler d'essayer de conserver un emploi ou d'avoir une vie sociale. »</p>
+            </blockquote>
+
+            <p class="reveal">Le problème n'est pas l'autisme. <span class="highlight">Le problème, c'est un monde qui exige des personnes autistes qu'elles s'effacent pour paraître « comme tout le monde ».</span></p>
+
+            <div class="separator"><span>✦</span></div>
+
+            <h2 class="reveal">Le spectre et le gouffre</h2>
+
+            <p class="reveal">Le mouvement de la neurodiversité, né à la fin des années 1990 sous l'impulsion de Judy Singer, propose une lecture différente. L'autisme ne serait pas une pathologie à corriger mais une variation neurologique à respecter. Une différence, pas un déficit.</p>
+
+            <p class="reveal">Cette position suscite des réactions. Certains s'inquiètent qu'elle minimise les besoins d'accompagnement des personnes autistes les plus vulnérables. C'est un point légitime : reconnaître la valeur de la neurodiversité ne signifie pas nier que certaines personnes ont besoin de soutien. Les deux ne s'excluent pas.</p>
+
+            <p class="reveal">Mais la vraie tension est ailleurs.</p>
+
+            <div class="aside-box reveal">
+                En France, à l'Hôpital américain de Paris, des consultations proposent désormais un dépistage prénatal des marqueurs génétiques associés à l'autisme. Une enquête anonyme auprès de leur clientèle révèle que <strong>85 % des couples seraient favorables à une interruption médicale de grossesse</strong> si ces marqueurs étaient détectés.
             </div>
-            <p>Les traits autistiques font partie de la nature humaine depuis très longtemps. Certains gènes clés remontent même avant la séparation avec les grands singes.</p>
-            <p>Thomas Bourgeron, généticien à l'Institut Pasteur et pionnier de la recherche génétique sur l'autisme, le confirme : les gènes associés à l'autisme ont été conservés au cours de l'évolution. <strong>Si ces traits constituaient un « défaut », la sélection naturelle les aurait éliminés depuis des millénaires.</strong> Ils sont toujours là.</p>
-        </div>
 
-        <div class="separator reveal"><div class="sep-ornament"></div><div class="sep-line-left"></div><div class="sep-line-right"></div></div>
+            <p class="reveal">Hans Asperger, qui a décrit l'autisme pour la première fois en 1943, travaillait sous le régime nazi. La bipartition qu'il a introduite entre autistes « utiles » et autistes « irrécupérables » n'a jamais vraiment disparu. Elle s'est simplement déplacée vers la génétique.</p>
 
-        <h2 class="reveal" id="section3">
-            <span class="h2-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-            Le coût invisible de la normalité imposée
-        </h2>
+            <blockquote class="reveal">
+                <p>La même société qui célèbre Temple Grandin ou Greta Thunberg finance des recherches pour que des enfants comme elles ne naissent plus.</p>
+            </blockquote>
 
-        <p class="reveal">Pendant que les généticiens fouillent dans l'ADN ancien, les personnes autistes vivent dans le présent. Et ce présent a un prix. Pas à cause de l'autisme lui-même, mais à cause de ce qu'on leur demande.</p>
+            <div class="separator"><span>✦</span></div>
 
-        <p class="reveal">En 2020, une équipe de recherche américaine a posé pour la première fois un cadre scientifique au « burnout autistique ». Ce n'est pas une fatigue ordinaire. Ce n'est pas une dépression classique. C'est une <strong>saturation neurologique spécifique</strong>, caractérisée par un épuisement chronique, une perte temporaire de compétences acquises, et une tolérance aux stimuli qui s'effondre.</p>
+            <h2 class="reveal">Ce que Néandertal savait peut-être</h2>
 
-        <p class="reveal">La cause principale identifiée par les chercheurs : le <em>masking</em>. Ce terme désigne l'effort constant fourni par les personnes autistes pour imiter les comportements neurotypiques, masquer leurs réactions naturelles, et se fondre dans un environnement qui n'a pas été conçu pour elles.</p>
+            <p class="reveal">Revenons à nos ancêtres. Néandertal possédait un cerveau plus volumineux que le nôtre. Il fabriquait des outils, enterrait ses morts, produisait des pigments symboliques. Pendant des décennies, nous l'avons décrit comme une brute épaisse pour glorifier Sapiens.</p>
 
-        <div class="pull-quote reveal">
-            <span class="quote-mark">
-                <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
-            </span>
-            <p>« La vérité brutale est que pour une personne autiste, le simple fait d'exister dans le monde est épuisant. Sans parler d'essayer de conserver un emploi ou d'avoir une vie sociale. »</p>
-            <div class="quote-line"></div>
-        </div>
+            <p class="reveal">Les découvertes récentes racontent autre chose. <strong>Néandertal n'était pas inférieur. Il était différent.</strong></p>
 
-        <p class="reveal">Le problème n'est pas l'autisme. <span class="highlight">Le problème, c'est un monde qui exige des personnes autistes qu'elles s'effacent pour paraître « comme tout le monde ».</span></p>
+            <p class="reveal">Sa disparition n'est probablement pas due à une déficience cognitive. Les hypothèses actuelles évoquent des facteurs démographiques, climatiques, ou simplement le hasard des épidémies. Sapiens n'a pas « gagné » grâce à son génie. Il a survécu.</p>
 
-        <div class="separator reveal"><div class="sep-ornament"></div><div class="sep-line-left"></div><div class="sep-line-right"></div></div>
+            <p class="reveal">Et dans cette survie, il a emporté des fragments d'ADN néandertalien. Des fragments qui, 40 000 ans plus tard, influencent encore le développement de certains cerveaux humains. Des cerveaux qui voient le monde autrement, qui pensent autrement, qui créent autrement.</p>
 
-        <h2 class="reveal" id="section4">
-            <span class="h2-icon"><svg viewBox="0 0 24 24"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>
-            Le spectre et le gouffre
-        </h2>
-
-        <p class="reveal">Le mouvement de la neurodiversité, né à la fin des années 1990 sous l'impulsion de Judy Singer, propose une lecture différente. L'autisme ne serait pas une pathologie à corriger mais une variation neurologique à respecter. Une différence, pas un déficit.</p>
-
-        <p class="reveal">Cette position suscite des réactions. Certains s'inquiètent qu'elle minimise les besoins d'accompagnement des personnes autistes les plus vulnérables. C'est un point légitime : reconnaître la valeur de la neurodiversité ne signifie pas nier que certaines personnes ont besoin de soutien. Les deux ne s'excluent pas.</p>
-
-        <p class="reveal">Mais la vraie tension est ailleurs.</p>
-
-        <div class="parenthese reveal">
-            <span class="aside-icon">✦</span>
-            En France, à l'Hôpital américain de Paris, des consultations proposent désormais un dépistage prénatal des marqueurs génétiques associés à l'autisme. Une enquête anonyme auprès de leur clientèle révèle que <strong>85 % des couples seraient favorables à une interruption médicale de grossesse</strong> si ces marqueurs étaient détectés.
-        </div>
-
-        <p class="reveal">Hans Asperger, qui a décrit l'autisme pour la première fois en 1943, travaillait sous le régime nazi. La bipartition qu'il a introduite entre autistes « utiles » et autistes « irrécupérables » n'a jamais vraiment disparu. Elle s'est simplement déplacée vers la génétique.</p>
-
-        <div class="pull-quote reveal">
-            <span class="quote-mark">
-                <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
-            </span>
-            <p>On ne parle pas de soigner. On parle d'effacer.</p>
-            <div class="quote-line"></div>
-        </div>
-
-        <div class="separator reveal"><div class="sep-ornament"></div><div class="sep-line-left"></div><div class="sep-line-right"></div></div>
-
-        <h2 class="reveal" id="section5">
-            <span class="h2-icon"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></span>
-            Ce que Néandertal savait peut-être
-        </h2>
-
-        <p class="reveal">Revenons à nos ancêtres. Néandertal possédait un cerveau plus volumineux que le nôtre. Il fabriquait des outils, enterrait ses morts, produisait des pigments symboliques. Pendant des décennies, nous l'avons décrit comme une brute épaisse pour glorifier Sapiens.</p>
-
-        <p class="reveal">Les découvertes récentes racontent autre chose. <strong>Néandertal n'était pas inférieur. Il était différent.</strong></p>
-
-        <p class="reveal">Sa disparition n'est probablement pas due à une déficience cognitive. Les hypothèses actuelles évoquent des facteurs démographiques, climatiques, ou simplement le hasard des épidémies. Sapiens n'a pas « gagné » grâce à son génie. Il a survécu.</p>
-
-        <p class="reveal">Et dans cette survie, il a emporté des fragments d'ADN néandertalien. Des fragments qui, 40 000 ans plus tard, influencent encore le développement de certains cerveaux humains. Des cerveaux qui voient le monde autrement, qui pensent autrement, qui créent autrement.</p>
-
-        <div class="parenthese reveal">
-            <span class="aside-icon">✦</span>
-            Certains archéologues considèrent que des traces préhistoriques trahissant une grande minutie et une bonne mémoire visuelle pourraient être les indices d'une présence autiste parmi nos ancêtres. Si c'est vrai, l'autisme n'est pas un bug du système. C'est une fonctionnalité que l'évolution a jugé utile de conserver.
-        </div>
-
-        <div class="separator reveal"><div class="sep-ornament"></div><div class="sep-line-left"></div><div class="sep-line-right"></div></div>
-
-        <h2 class="reveal" id="section6">
-            <span class="h2-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-            La vraie question
-        </h2>
-
-        <p class="reveal drop-cap">Le problème n'est pas de savoir si l'autisme « vient » de Néandertal. L'hybridation entre espèces humaines a produit des milliers de variations génétiques, dont certaines sont associées à des maladies auto-immunes ou à des réponses sévères au COVID-19.</p>
-
-        <p class="reveal">La vraie question est ailleurs.</p>
-
-        <ul class="liste-mecanismes reveal">
-            <li>
-                <strong>Pourquoi acceptons-nous que des traits génétiques vieux de 40 000 ans soient traités comme une erreur à éliminer ?</strong>
-            </li>
-            <li>
-                <strong>Pourquoi finançons-nous des recherches pour « normaliser » des cerveaux dont la différence a traversé des millénaires de sélection naturelle ?</strong>
-            </li>
-            <li>
-                <strong>Et surtout : à qui appartient le droit de décider ce qu'est un cerveau « acceptable » ?</strong>
-            </li>
-        </ul>
-
-        <p class="reveal">Josef Schovanec, philosophe et auteur autiste, pose la question autrement : « L'autisme en tant que tel ne vous fait pas souffrir. Ce qui vous fait souffrir, c'est l'exclusion. C'est le rejet. »</p>
-
-        <div class="pull-quote reveal">
-            <span class="quote-mark">
-                <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
-            </span>
-            <p>Si demain les cerveaux autistes disparaissaient du génome humain, avec leur façon unique de voir les patterns invisibles, de creuser les sujets jusqu'à l'os, de dire ce que les autres n'osent pas voir, qu'est-ce que l'humanité perdrait sans même le savoir ?</p>
-            <div class="quote-line"></div>
-        </div>
-
-        <!-- CTA Autotest -->
-        <div class="cta-autotest reveal">
-            <div class="cta-corner cta-corner--tl"></div>
-            <div class="cta-corner cta-corner--tr"></div>
-            <div class="cta-corner cta-corner--bl"></div>
-            <div class="cta-corner cta-corner--br"></div>
-            <div class="cta-icon">
-                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <div class="aside-box reveal">
+                Certains archéologues considèrent que des traces préhistoriques trahissant une grande minutie et une bonne mémoire visuelle pourraient être les indices d'une présence autiste parmi nos ancêtres. Si c'est vrai, l'autisme n'est pas un bug du système. C'est une fonctionnalité que l'évolution a jugé utile de conserver.
             </div>
-            <h3>Explorer vos mécanismes</h3>
-            <p>Les autotests Noesis Kintsugi permettent d'identifier où la normalité imposée vous a contraint à vous effacer. Pas de diagnostic — juste une cartographie de vos fonctionnements.</p>
-            <a href="../Autotests/autotest.html" class="btn btn-primary">
-                Découvrir les autotests
-                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-        </div>
 
-        <!-- Actions -->
-        <div class="article-actions reveal">
-            <a href="articles.html">
-                <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Retour aux analyses
-            </a>
-            <a href="#" onclick="navigator.share ? navigator.share({title: document.title, url: window.location.href}) : null; return false;">
-                <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-                Partager
-            </a>
-        </div>
+            <div class="separator"><span>✦</span></div>
 
-    </article>
+            <h2 class="reveal">La vraie question</h2>
 
-    </div><!-- Fin article-wrapper -->
+            <p class="reveal">Le problème n'est pas de savoir si l'autisme « vient » de Néandertal. L'hybridation entre espèces humaines a produit des milliers de variations génétiques, dont certaines sont associées à des maladies auto-immunes ou à des réponses sévères au COVID-19.</p>
 
-    <!-- Articles liés -->
-    <section class="related-articles">
-        <h2>Continuer la lecture</h2>
-        <div class="related-grid">
-            <a href="article-diagnostic-tardif-luxe.html" class="related-item">
-                <span class="series-tag">Série IV — Diagnostic tardif</span>
-                <h3>Vingt ans, huit experts, zéro diagnostic : anatomie d'un effondrement fabriqué</h3>
-            </a>
-            <a href="article-jugement.html" class="related-item">
-                <span class="series-tag">Série I — Doute de soi</span>
-                <h3>Le moment précis où j'ai arrêté de faire confiance à mon propre jugement</h3>
-            </a>
-            <a href="#" class="related-item">
-                <span class="series-tag">Série IV — Faux diagnostic</span>
-                <h3>« On m'a dit burn-out. Personne n'a regardé ce qui m'empêchait d'agir. »</h3>
-            </a>
+            <p class="reveal">La vraie question est ailleurs.</p>
+
+            <ul class="reveal">
+                <li><strong>Pourquoi acceptons-nous que des traits génétiques vieux de 40 000 ans soient traités comme une erreur à éliminer ?</strong></li>
+                <li><strong>Pourquoi finançons-nous des recherches pour « normaliser » des cerveaux dont la différence a traversé des millénaires de sélection naturelle ?</strong></li>
+                <li><strong>Et surtout : à qui appartient le droit de décider ce qu'est un cerveau « acceptable » ?</strong></li>
+            </ul>
+
+            <p class="reveal">Josef Schovanec, philosophe et auteur autiste, pose la question autrement : « L'autisme en tant que tel ne vous fait pas souffrir. Ce qui vous fait souffrir, c'est l'exclusion. C'est le rejet. »</p>
+
+            <blockquote class="reveal">
+                <p>Si demain les cerveaux autistes disparaissaient du génome humain, avec leur façon unique de voir les patterns invisibles, de creuser les sujets jusqu'à l'os, de dire ce que les autres n'osent pas voir, qu'est-ce que l'humanité perdrait sans même le savoir ?</p>
+            </blockquote>
+
+            <p class="reveal" style="text-align: center; font-style: italic; color: var(--gris-pierre); margin-top: 3rem;">Tu penses différemment. Peut-être que c'est parce que ton cerveau porte l'écho de voix anciennes que le monde moderne a oublié d'écouter.</p>
+
+            <!-- CTA -->
+            <div class="cta-box reveal">
+                <h3>Explorer tes mécanismes</h3>
+                <p>Les autotests Noesis Kintsugi permettent d'identifier où la normalité imposée t'a contraint à t'effacer. Pas de diagnostic, juste une cartographie de tes fonctionnements.</p>
+                <a href="autotests.html" class="btn-primary">
+                    Découvrir les autotests
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="article-actions reveal">
+                <a href="articles.html">
+                    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Retour aux analyses
+                </a>
+                <a href="#" onclick="navigator.share ? navigator.share({title: document.title, url: window.location.href}) : null; return false;">
+                    <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    Partager
+                </a>
+            </div>
+
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
-                <p class="footer-tagline">Noesis ne soigne pas. Noesis clarifie.</p>
-            </div>
-            <nav class="footer-links">
-                <a href="../Autotests/autotest.html">Autotests</a>
-                <a href="articles.html">Analyses</a>
-                <a href="../etape-zero/accompagnement.html">L'Étape Zéro</a>
-                <a href="../index.html#contact">Contact</a>
-            </nav>
-            <div class="footer-social">
-                <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
-                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
-                    </svg>
+    <!-- RELATED -->
+    <section class="related-section">
+        <div class="container">
+            <h2 class="related-title reveal">Continuer la lecture</h2>
+            <div class="related-grid">
+                <a href="articles/diagnostic-tardif.html" class="related-card reveal">
+                    <span class="related-card-series">Série IV — Diagnostic tardif</span>
+                    <h4>Vingt ans, huit experts, zéro diagnostic : anatomie d'un effondrement fabriqué</h4>
                 </a>
-                <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
-                    </svg>
+                <a href="articles/doute-jugement.html" class="related-card reveal">
+                    <span class="related-card-series">Série I — Capture cognitive</span>
+                    <h4>Le moment précis où j'ai arrêté de faire confiance à mon propre jugement</h4>
                 </a>
-                <a href="#" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                    </svg>
+                <a href="articles/faux-diagnostic.html" class="related-card reveal">
+                    <span class="related-card-series">Série IV — Faux diagnostic</span>
+                    <h4>« On m'a dit burn-out. Personne n'a regardé ce qui m'empêchait d'agir. »</h4>
                 </a>
             </div>
         </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                <p class="footer-tagline">Un traducteur entre ton vécu et le monde.</p>
+            </div>
+            <nav class="footer-links">
+                <a href="services.html">Services</a>
+                <a href="etape-zero.html">L'Étape Zéro</a>
+                <a href="autotests.html">Autotests</a>
+                <a href="articles.html">Analyses</a>
+                <a href="legal.html">Mentions légales</a>
+            </nav>
+        </div>
         <div class="footer-bottom">
-            <p class="footer-copyright">© 2025 Noesis Kintsugi. Tous droits réservés.</p>
+            <p class="footer-copyright">© 2026 Noesis Kintsugi. Tous droits réservés.</p>
             <p class="footer-baseline">La paix sans vérité est une anesthésie.</p>
         </div>
     </footer>
 
     <script>
-        // Progress bar & TOC
+        // Progress bar
         const progressBar = document.getElementById('progressBar');
-        const tocWrapper = document.getElementById('tocWrapper');
-
         window.addEventListener('scroll', () => {
             const scrollTop = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const progress = (scrollTop / docHeight) * 100;
             progressBar.style.width = progress + '%';
-
-            tocWrapper.classList.toggle('visible', scrollTop > window.innerHeight);
             document.getElementById('nav').classList.toggle('scrolled', scrollTop > 100);
-            updateActiveTocDot();
         });
 
-        document.querySelectorAll('.toc-dot').forEach(dot => {
-            dot.addEventListener('click', () => {
-                const target = document.getElementById(dot.dataset.target);
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
+        // Navigation
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
 
-        function updateActiveTocDot() {
-            const sections = document.querySelectorAll('h2[id]');
-            const dots = document.querySelectorAll('.toc-dot');
-            let currentSection = '';
-            sections.forEach(section => {
-                if (section.getBoundingClientRect().top <= 200) currentSection = section.id;
-            });
-            dots.forEach(dot => dot.classList.toggle('active', dot.dataset.target === currentSection));
-        }
-
-        // Mobile nav
-        document.getElementById('navToggle').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('active');
-        });
-
-        // Reveal animations
+        // Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
-
 </body>
 </html>
