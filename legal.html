@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions légales & CGV | Noesis Kintsugi</title>
+    <meta name="description" content="Mentions légales, conditions générales de vente, politique de confidentialité et charte de positionnement de Noesis Kintsugi.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --noir-principal: #1c1f21;
+            --noir-profond: #16191a;
+            --gris-anthracite: #2d3133;
+            --gris-ceramique: #353a3c;
+            --gris-moyen: #4a5154;
+            --gris-pierre: #8a9094;
+            --or-vieilli: #a07830;
+            --or-mat: #aa8555;
+            --or-clair: #d4b896;
+            --or-eclatant: #e8d4a8;
+            --or-intense: #f0ddb0;
+            --texte-principal: #f5f3ef;
+            --texte-secondaire: #c5c2bc;
+            --blanc-casse: #e8e5e0;
+            --fond-clair: #f8f6f2;
+            --rouge-alerte: #c44536;
+            --vert-ok: #4a7c59;
+            --glow-or: 0 0 25px rgba(212, 184, 150, 0.25);
+            --shadow-gold: 0 4px 24px rgba(160, 120, 48, 0.2);
+            --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
+            --font-display: 'Megrim', cursive;
+            --font-body: 'Crimson Pro', Georgia, serif;
+            --section-padding: clamp(60px, 10vh, 100px);
+            --container-max: 900px;
+            --container-padding: clamp(20px, 5vw, 60px);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--noir-principal);
+            color: var(--texte-principal);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--or-vieilli); color: var(--noir-principal); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--noir-profond); }
+        ::-webkit-scrollbar-thumb { background: var(--or-vieilli); border-radius: 4px; }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* NAVIGATION */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            background: rgba(28, 31, 33, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 184, 150, 0.1);
+            transition: var(--transition-smooth);
+        }
+
+        .nav.scrolled { padding: 0.75rem 0; background: rgba(22, 25, 26, 0.98); }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--texte-principal);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .logo span { color: var(--or-clair); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--texte-secondaire);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--or-clair); }
+
+        /* HERO */
+        .hero-page {
+            padding: 9rem 0 4rem;
+            background: var(--noir-principal);
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-page::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+        }
+
+        .hero-page::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(28,31,33,0.4) 0%, rgba(28,31,33,0.95) 100%);
+        }
+
+        .hero-page .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-page-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            color: var(--or-eclatant);
+            margin-bottom: 1rem;
+        }
+
+        .hero-page-subtitle {
+            font-size: 1.15rem;
+            color: var(--texte-secondaire);
+            font-style: italic;
+        }
+
+        /* INTRO SECTION */
+        .intro-section {
+            padding: 3rem 0;
+            background: var(--gris-anthracite);
+            border-bottom: 1px solid rgba(212, 184, 150, 0.1);
+        }
+
+        .intro-box {
+            background: rgba(160, 120, 48, 0.1);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            border-left: 4px solid var(--or-vieilli);
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-box p {
+            font-size: 1.05rem;
+            color: var(--texte-principal);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .intro-box strong {
+            color: var(--or-clair);
+        }
+
+        .intro-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .intro-nav a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--gris-ceramique);
+            border: 1px solid rgba(212, 184, 150, 0.15);
+            color: var(--texte-secondaire);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        .intro-nav a:hover {
+            border-color: var(--or-clair);
+            color: var(--or-clair);
+        }
+
+        /* LEGAL CONTENT */
+        .legal-section {
+            padding: var(--section-padding) 0;
+            background: var(--noir-principal);
+        }
+
+        /* ACCORDION */
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .accordion-item {
+            background: var(--gris-anthracite);
+            border: 1px solid rgba(212, 184, 150, 0.1);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(212, 184, 150, 0.25);
+        }
+
+        .accordion-item.active {
+            border-color: var(--or-vieilli);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: transparent;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .accordion-header:hover {
+            background: rgba(160, 120, 48, 0.05);
+        }
+
+        .accordion-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--or-eclatant);
+            text-align: left;
+            letter-spacing: 0.02em;
+        }
+
+        .accordion-badge {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--or-vieilli);
+            color: var(--noir-principal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-left: 0.75rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+        }
+
+        .accordion-badge.essentiel {
+            background: var(--rouge-alerte);
+            color: white;
+        }
+
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            stroke: var(--or-clair);
+            stroke-width: 2;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 5000px;
+        }
+
+        .accordion-body {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        /* LEGAL TEXT STYLES */
+        .legal-article {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(212, 184, 150, 0.1);
+        }
+
+        .legal-article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .legal-article-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: var(--or-clair);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(212, 184, 150, 0.15);
+        }
+
+        .legal-subtitle {
+            font-size: 1rem;
+            color: var(--or-eclatant);
+            margin: 1.25rem 0 0.75rem;
+            font-weight: 600;
+        }
+
+        .legal-text {
+            font-size: 0.95rem;
+            color: var(--texte-principal);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .legal-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-text strong {
+            color: var(--or-clair);
+        }
+
+        .legal-list {
+            list-style: none;
+            margin: 1rem 0;
+            padding-left: 0;
+        }
+
+        .legal-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--texte-principal);
+            line-height: 1.7;
+        }
+
+        .legal-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--or-clair);
+        }
+
+        /* ALERT BOX */
+        .alert-box {
+            background: rgba(160, 120, 48, 0.12);
+            border: 1px solid rgba(212, 184, 150, 0.25);
+            border-left: 4px solid var(--or-vieilli);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .alert-box p {
+            font-size: 0.95rem;
+            color: var(--texte-principal);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .alert-box.critical {
+            background: rgba(196, 69, 54, 0.1);
+            border-color: rgba(196, 69, 54, 0.3);
+            border-left-color: var(--rouge-alerte);
+        }
+
+        .alert-box.critical p {
+            color: #f0d0cc;
+        }
+
+        /* TABLE */
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .legal-table th,
+        .legal-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border: 1px solid rgba(212, 184, 150, 0.15);
+        }
+
+        .legal-table th {
+            background: rgba(160, 120, 48, 0.15);
+            color: var(--or-clair);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .legal-table td {
+            color: var(--texte-principal);
+            background: rgba(45, 49, 51, 0.5);
+        }
+
+        .legal-table tr:hover td {
+            background: rgba(45, 49, 51, 0.8);
+        }
+
+        /* COMPARISON GRID */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-column {
+            padding: 1.25rem;
+            border: 1px solid rgba(212, 184, 150, 0.15);
+        }
+
+        .comparison-column.oui {
+            border-top: 3px solid var(--vert-ok);
+            background: rgba(74, 124, 89, 0.08);
+        }
+
+        .comparison-column.non {
+            border-top: 3px solid var(--rouge-alerte);
+            background: rgba(196, 69, 54, 0.08);
+        }
+
+        .comparison-column h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-column.oui h4 { color: var(--vert-ok); }
+        .comparison-column.non h4 { color: var(--rouge-alerte); }
+
+        .comparison-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comparison-column li {
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: var(--texte-principal);
+            border-bottom: 1px solid rgba(212, 184, 150, 0.08);
+        }
+
+        .comparison-column li:last-child {
+            border-bottom: none;
+        }
+
+        /* URGENCE BOX */
+        .urgence-box {
+            background: var(--rouge-alerte);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .urgence-box h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .urgence-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .urgence-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+        }
+
+        .urgence-number {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: white;
+            display: block;
+        }
+
+        .urgence-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        /* INFO BOX */
+        .info-box {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--gris-ceramique);
+            border: 1px solid rgba(212, 184, 150, 0.1);
+            margin: 1rem 0;
+        }
+
+        .info-box-icon {
+            width: 24px;
+            height: 24px;
+            stroke: var(--or-clair);
+            stroke-width: 2;
+            fill: none;
+            flex-shrink: 0;
+        }
+
+        .info-box-content {
+            font-size: 0.9rem;
+            color: var(--texte-secondaire);
+            line-height: 1.6;
+        }
+
+        .info-box-content strong {
+            color: var(--or-clair);
+        }
+
+        /* CHECKBOX LIST */
+        .checkbox-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .checkbox-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(212, 184, 150, 0.08);
+            font-size: 0.95rem;
+            color: var(--texte-principal);
+        }
+
+        .checkbox-list li::before {
+            content: '☐';
+            color: var(--or-clair);
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 3rem 0 2rem;
+            background: var(--gris-anthracite);
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-tagline {
+            font-size: 0.95rem;
+            color: var(--texte-secondaire);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--texte-secondaire);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover { color: var(--or-clair); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding: 1.5rem var(--container-padding) 0;
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
+            text-align: center;
+        }
+
+        .footer-copyright { font-size: 0.85rem; color: var(--gris-pierre); }
+        .footer-baseline { font-size: 0.9rem; color: var(--or-mat); font-style: italic; margin-top: 0.5rem; }
+
+        /* PRINT STYLES */
+        @media print {
+            .nav, .footer { display: none; }
+            .accordion-content { max-height: none !important; }
+            .accordion-item { break-inside: avoid; }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .urgence-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .legal-table {
+                font-size: 0.8rem;
+            }
+
+            .legal-table th,
+            .legal-table td {
+                padding: 0.5rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* REVEAL ANIMATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+            <ul class="nav-links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="etape-zero.html">L'Étape Zéro</a></li>
+                <li><a href="Autotests/autotest.html">Autotests</a></li>
+                <li><a href="Analyses/articles.html">Analyses</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-page">
+        <div class="container">
+            <h1 class="hero-page-title">Informations légales</h1>
+            <p class="hero-page-subtitle">Transparence, protection, conformité</p>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-box">
+                <p><strong>Noesis Kintsugi</strong> s'engage à une transparence totale sur la nature de ses services, leurs limites, et le traitement de vos données. Ces documents constituent le cadre légal de notre relation.</p>
+            </div>
+            <nav class="intro-nav">
+                <a href="#mentions-legales">Mentions légales</a>
+                <a href="#charte">Charte de positionnement</a>
+                <a href="#cgu">CGU</a>
+                <a href="#cgv">CGV</a>
+                <a href="#rgpd">Confidentialité</a>
+                <a href="#limites">Limites</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- LEGAL CONTENT -->
+    <section class="legal-section">
+        <div class="container">
+            <div class="accordion">
+
+                <!-- MENTIONS LÉGALES -->
+                <div class="accordion-item reveal" id="mentions-legales">
+                    <button class="accordion-header">
+                        <span class="accordion-title">Mentions légales <span class="accordion-badge">Obligatoire</span></span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="legal-text" style="font-style: italic; color: var(--texte-secondaire);">Conformément à l'article 6 de la loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN)</p>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Éditeur du site</h3>
+                                <p class="legal-text"><strong>Noesis Kintsugi</strong><br>
+                                Entrepreneur individuel</p>
+                                <ul class="legal-list">
+                                    <li><strong>Responsable de publication :</strong> [VOTRE NOM COMPLET]</li>
+                                    <li><strong>Adresse :</strong> [VOTRE ADRESSE POSTALE]</li>
+                                    <li><strong>Email :</strong> contact@noesiskintsugi.com</li>
+                                    <li><strong>SIRET :</strong> [NUMÉRO SIRET]</li>
+                                    <li><strong>TVA :</strong> Non assujetti (article 293 B du CGI)</li>
+                                </ul>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Hébergeur</h3>
+                                <ul class="legal-list">
+                                    <li><strong>Raison sociale :</strong> [NOM HÉBERGEUR]</li>
+                                    <li><strong>Adresse :</strong> [ADRESSE HÉBERGEUR]</li>
+                                    <li><strong>Téléphone :</strong> [TÉLÉPHONE HÉBERGEUR]</li>
+                                </ul>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Nature de l'activité</h3>
+                                <p class="legal-text">Noesis Kintsugi propose des services d'<strong>information</strong>, de <strong>structuration de récit</strong> et d'<strong>accompagnement à la clarification cognitive</strong>. Ces services sont de nature pédagogique et organisationnelle.</p>
+                                
+                                <div class="alert-box critical">
+                                    <p><strong>AVERTISSEMENT ESSENTIEL :</strong> Noesis Kintsugi n'exerce aucune profession réglementée. L'éditeur n'est PAS psychologue, psychothérapeute, médecin, psychiatre ou avocat. Aucun diagnostic n'est posé. Aucun traitement n'est délivré.</p>
+                                </div>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Propriété intellectuelle</h3>
+                                <p class="legal-text">L'ensemble du contenu du site (textes, images, graphismes, logo, etc.) est la propriété exclusive de Noesis Kintsugi et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.</p>
+                                <p class="legal-text">Toute reproduction non autorisée est constitutive d'une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHARTE DE POSITIONNEMENT -->
+                <div class="accordion-item reveal" id="charte">
+                    <button class="accordion-header">
+                        <span class="accordion-title">Charte de positionnement <span class="accordion-badge essentiel">Essentiel</span></span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="alert-box">
+                                <p><strong>Document fondamental :</strong> Cette charte définit précisément ce que Noesis Kintsugi est et ce qu'elle n'est pas. Elle constitue un élément essentiel du contrat entre Noesis Kintsugi et ses utilisateurs.</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Ce que nous sommes</h3>
+                                <p class="legal-text">Noesis Kintsugi est une <strong>plateforme de clarification cognitive et d'aide à la structuration</strong>.</p>
+                                <p class="legal-text">Notre activité consiste à :</p>
+                                <ul class="legal-list">
+                                    <li><strong>Informer</strong> sur les mécanismes psychologiques (emprise, manipulation, trauma...)</li>
+                                    <li><strong>Aider à mettre des mots</strong> sur des vécus difficiles</li>
+                                    <li><strong>Structurer</strong> des récits pour faciliter la communication avec des professionnels</li>
+                                    <li><strong>Accompagner</strong> dans l'organisation de démarches administratives</li>
+                                    <li><strong>Fournir des outils</strong> d'auto-réflexion et d'orientation</li>
+                                </ul>
+                                <div class="info-box">
+                                    <svg class="info-box-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                                    <div class="info-box-content">Notre rôle s'apparente à celui d'un <strong>écrivain public spécialisé</strong> : nous aidons à formuler et organiser, nous n'exerçons pas les professions auxquelles nous préparons.</div>
+                                </div>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Ce que nous ne sommes PAS</h3>
+                                <div class="comparison-grid">
+                                    <div class="comparison-column oui">
+                                        <h4>✓ Ce que NK fait</h4>
+                                        <ul>
+                                            <li>Informer sur les mécanismes</li>
+                                            <li>Structurer un récit</li>
+                                            <li>Organiser un dossier</li>
+                                            <li>Préparer un RDV professionnel</li>
+                                            <li>Clarifier les pensées</li>
+                                            <li>Orienter vers les bons interlocuteurs</li>
+                                        </ul>
+                                    </div>
+                                    <div class="comparison-column non">
+                                        <h4>✗ Ce que NK ne fait JAMAIS</h4>
+                                        <ul>
+                                            <li>Poser un diagnostic</li>
+                                            <li>Prescrire un traitement</li>
+                                            <li>Faire une psychothérapie</li>
+                                            <li>Donner un avis juridique</li>
+                                            <li>Gérer une crise/urgence</li>
+                                            <li>Se substituer à un professionnel</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Cadre juridique respecté</h3>
+                                <table class="legal-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Texte de loi</th>
+                                            <th>Ce que NK respecte</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Art. L4161-1 Code santé publique</td>
+                                            <td>Aucun diagnostic, aucun traitement médical</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Loi n°85-772 (titre psychologue)</td>
+                                            <td>N'utilise pas le titre de "psychologue"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Art. 52 loi n°2004-806 (psychothérapeute)</td>
+                                            <td>N'utilise pas le titre de "psychothérapeute"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Loi n°71-1130 (conseil juridique)</td>
+                                            <td>Aucune consultation juridique</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Les autotests : ce qu'ils sont et ne sont pas</h3>
+                                <table class="legal-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Ce que c'est</th>
+                                            <th>Ce que ce n'est PAS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Outils d'auto-réflexion</td>
+                                            <td>Tests diagnostiques</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aide à l'orientation</td>
+                                            <td>Évaluation clinique</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Support de discussion</td>
+                                            <td>Substitut à un bilan professionnel</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Information pédagogique</td>
+                                            <td>Avis médical</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="alert-box">
+                                    <p><strong>Limite claire :</strong> Les résultats d'un autotest ne peuvent JAMAIS constituer un diagnostic. Ils visent uniquement à orienter votre réflexion personnelle.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CGU -->
+                <div class="accordion-item reveal" id="cgu">
+                    <button class="accordion-header">
+                        <span class="accordion-title">Conditions Générales d'Utilisation</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="legal-text" style="font-style: italic; color: var(--texte-secondaire);">L'accès au site implique l'acceptation pleine et entière des présentes CGU.</p>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 1 — Objet</h3>
+                                <p class="legal-text">Les présentes CGU ont pour objet de définir les conditions d'accès et d'utilisation du site noesiskintsugi.com, ainsi que les droits et obligations des utilisateurs.</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 2 — Nature des services</h3>
+                                <p class="legal-text">Le site propose des contenus informatifs et éducatifs, des outils d'auto-évaluation (autotests), des services d'accompagnement à la structuration du récit, et des ressources documentaires.</p>
+                                <div class="alert-box critical">
+                                    <p><strong>CLAUSE ESSENTIELLE :</strong> Noesis Kintsugi n'exerce pas la médecine (art. L4161-1 CSP), n'exerce pas la psychologie ni la psychothérapie (titres protégés), et ne délivre pas de conseil juridique (loi n°71-1130). L'utilisation du site ne crée aucune relation thérapeutique.</p>
+                                </div>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 3 — Limitation de responsabilité</h3>
+                                <p class="legal-text">Les informations diffusées sur le site sont fournies à titre purement informatif et ne sauraient constituer un avis médical, psychologique ou juridique.</p>
+                                <p class="legal-text">L'éditeur ne pourra être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site, de l'utilisation des autotests ou de leurs résultats, des décisions prises par l'utilisateur sur la base des contenus du site.</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 4 — Comportement de l'utilisateur</h3>
+                                <p class="legal-text">L'utilisateur s'engage à utiliser le site de manière conforme à sa destination, à ne pas porter atteinte à l'ordre public, et à ne pas tenter de nuire au bon fonctionnement du site.</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 5 — Droit applicable</h3>
+                                <p class="legal-text">Les présentes CGU sont régies par le droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CGV -->
+                <div class="accordion-item reveal" id="cgv">
+                    <button class="accordion-header">
+                        <span class="accordion-title">Conditions Générales de Vente <span class="accordion-badge">Obligatoire</span></span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="legal-text" style="font-style: italic; color: var(--texte-secondaire);">Applicables à toute commande de service passée sur le site ou par email.</p>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 1 — Parties</h3>
+                                <p class="legal-text"><strong>Le Prestataire :</strong> Noesis Kintsugi, [NOM], [ADRESSE], SIRET [NUMÉRO]</p>
+                                <p class="legal-text"><strong>Le Client :</strong> Toute personne physique majeure passant commande d'un service.</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 2 — Services et limites</h3>
+                                <p class="legal-text">Les services proposés comprennent : appels d'orientation, entretiens de clarification, récits structurés, dossiers MDPH, éléments pour avocat, L'Étape Zéro, etc.</p>
+                                <div class="alert-box critical">
+                                    <p><strong>AVERTISSEMENT CONTRACTUEL :</strong> Ces services sont des services de structuration, d'information et d'accompagnement méthodologique. Ils ne constituent en aucun cas une prestation de soins, une psychothérapie, un diagnostic, ou un conseil juridique. Aucune garantie de résultat n'est donnée quant à l'issue des démarches.</p>
+                                </div>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 3 — Prix et paiement</h3>
+                                <p class="legal-text">Les prix sont indiqués en euros TTC sur le site. Le paiement s'effectue par virement bancaire ou PayPal. Certains services peuvent faire l'objet d'un paiement échelonné.</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 4 — Droit de rétractation</h3>
+                                <p class="legal-text">Conformément aux articles L221-18 et suivants du Code de la consommation, le Client dispose d'un délai de <strong>14 jours</strong> pour exercer son droit de rétractation, à compter de la conclusion du contrat.</p>
+                                <p class="legal-text">Ce droit ne s'applique pas aux services pleinement exécutés avant la fin du délai, si l'exécution a commencé avec l'accord préalable exprès du Client.</p>
+                                <p class="legal-text">Pour exercer ce droit : contact@noesiskintsugi.com</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 5 — Responsabilité</h3>
+                                <p class="legal-text">Noesis Kintsugi est tenue à une <strong>obligation de moyens</strong>, non de résultat. Le Prestataire ne peut être tenu responsable des décisions prises par le Client, de l'issue des démarches (MDPH, justice...), ou de tout préjudice indirect.</p>
+                                <p class="legal-text">La responsabilité est limitée au montant des sommes versées pour le service concerné.</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Article 6 — Médiation</h3>
+                                <p class="legal-text">En cas de litige, le Client peut recourir gratuitement à un médiateur de la consommation conformément à l'article L612-1 du Code de la consommation.</p>
+                                <p class="legal-text"><strong>Médiateur :</strong> [NOM ET COORDONNÉES DU MÉDIATEUR]</p>
+                                <p class="legal-text">Plateforme européenne : <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" style="color: var(--or-clair);">ec.europa.eu/consumers/odr</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RGPD -->
+                <div class="accordion-item reveal" id="rgpd">
+                    <button class="accordion-header">
+                        <span class="accordion-title">Politique de confidentialité (RGPD) <span class="accordion-badge">Obligatoire</span></span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="legal-text" style="font-style: italic; color: var(--texte-secondaire);">Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi n°78-17 du 6 janvier 1978 modifiée.</p>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Responsable du traitement</h3>
+                                <p class="legal-text"><strong>Noesis Kintsugi</strong> — [NOM] — contact@noesiskintsugi.com</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Données collectées</h3>
+                                <h4 class="legal-subtitle">Données d'identification</h4>
+                                <p class="legal-text">Nom, prénom, adresse email, téléphone (facultatif), adresse postale (si nécessaire).</p>
+                                
+                                <h4 class="legal-subtitle">Données relatives aux services</h4>
+                                <p class="legal-text">Informations communiquées lors des entretiens, réponses aux questionnaires, documents transmis, correspondances.</p>
+                                
+                                <h4 class="legal-subtitle">Données sensibles</h4>
+                                <p class="legal-text">Dans le cadre de nos services, vous pouvez communiquer des données sensibles (santé, vie privée). Ces données ne sont collectées qu'avec votre <strong>consentement explicite</strong> et sont strictement nécessaires à l'exécution des services.</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Finalités et bases légales</h3>
+                                <table class="legal-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Finalité</th>
+                                            <th>Base légale</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Exécution des services commandés</td>
+                                            <td>Exécution du contrat (art. 6.1.b)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Réponse aux demandes de contact</td>
+                                            <td>Intérêt légitime (art. 6.1.f)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Traitement données sensibles</td>
+                                            <td>Consentement explicite (art. 9.2.a)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Durée de conservation</h3>
+                                <table class="legal-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Type de données</th>
+                                            <th>Durée</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Données clients (contrat)</td>
+                                            <td>5 ans après fin de la relation</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Documents comptables</td>
+                                            <td>10 ans (obligation légale)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Correspondances</td>
+                                            <td>3 ans</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Données de navigation</td>
+                                            <td>13 mois maximum</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Vos droits</h3>
+                                <p class="legal-text">Conformément au RGPD, vous disposez des droits suivants :</p>
+                                <ul class="legal-list">
+                                    <li><strong>Accès :</strong> obtenir une copie de vos données (art. 15)</li>
+                                    <li><strong>Rectification :</strong> corriger des données inexactes (art. 16)</li>
+                                    <li><strong>Effacement :</strong> demander la suppression (art. 17)</li>
+                                    <li><strong>Limitation :</strong> limiter le traitement (art. 18)</li>
+                                    <li><strong>Portabilité :</strong> recevoir vos données (art. 20)</li>
+                                    <li><strong>Opposition :</strong> vous opposer au traitement (art. 21)</li>
+                                </ul>
+                                <p class="legal-text">Pour exercer vos droits : <strong>contact@noesiskintsugi.com</strong> (objet : "Protection des données")</p>
+                                <p class="legal-text">Délai de réponse : 1 mois.</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Réclamation</h3>
+                                <p class="legal-text">Vous pouvez introduire une réclamation auprès de la CNIL :</p>
+                                <p class="legal-text"><strong>Commission Nationale de l'Informatique et des Libertés</strong><br>
+                                3 Place de Fontenoy - TSA 80715<br>
+                                75334 PARIS CEDEX 07<br>
+                                <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color: var(--or-clair);">www.cnil.fr</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LIMITES ET URGENCES -->
+                <div class="accordion-item reveal" id="limites">
+                    <button class="accordion-header">
+                        <span class="accordion-title">Limites et situations d'urgence <span class="accordion-badge essentiel">Essentiel</span></span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="alert-box critical">
+                                <p><strong>Clause essentielle :</strong> Noesis Kintsugi n'est PAS un service de santé et n'est PAS équipée pour gérer les situations d'urgence. L'utilisation de ce site ne crée pas de relation thérapeutique.</p>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Situations nécessitant une orientation immédiate</h3>
+                                <p class="legal-text">Noesis Kintsugi orientera systématiquement vers des professionnels compétents dans les cas suivants :</p>
+                                
+                                <h4 class="legal-subtitle">Santé mentale</h4>
+                                <ul class="legal-list">
+                                    <li>Idées suicidaires ou d'automutilation</li>
+                                    <li>Symptômes psychotiques (hallucinations, délires)</li>
+                                    <li>Dépression sévère ou anxiété paralysante</li>
+                                    <li>Troubles du comportement alimentaire sévères</li>
+                                    <li>Addictions actives</li>
+                                </ul>
+
+                                <h4 class="legal-subtitle">Situations légales</h4>
+                                <ul class="legal-list">
+                                    <li>Besoin de conseil juridique personnalisé</li>
+                                    <li>Représentation en justice</li>
+                                    <li>Rédaction d'actes juridiques</li>
+                                </ul>
+
+                                <h4 class="legal-subtitle">Danger</h4>
+                                <ul class="legal-list">
+                                    <li>Situation de violence active</li>
+                                    <li>Danger pour des mineurs</li>
+                                    <li>Risque immédiat pour soi ou autrui</li>
+                                </ul>
+                            </div>
+
+                            <div class="urgence-box">
+                                <h4>NUMÉROS D'URGENCE</h4>
+                                <div class="urgence-grid">
+                                    <div class="urgence-item">
+                                        <span class="urgence-number">15</span>
+                                        <span class="urgence-label">SAMU - Urgences médicales</span>
+                                    </div>
+                                    <div class="urgence-item">
+                                        <span class="urgence-number">3919</span>
+                                        <span class="urgence-label">Violences conjugales</span>
+                                    </div>
+                                    <div class="urgence-item">
+                                        <span class="urgence-number">3114</span>
+                                        <span class="urgence-label">Prévention suicide</span>
+                                    </div>
+                                    <div class="urgence-item">
+                                        <span class="urgence-number">112</span>
+                                        <span class="urgence-label">Urgences européennes</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="legal-article">
+                                <h3 class="legal-article-title">Obligation de signalement</h3>
+                                <p class="legal-text">Conformément à la loi (article 434-3 du Code pénal), Noesis Kintsugi pourra être amenée à alerter les autorités en cas de :</p>
+                                <ul class="legal-list">
+                                    <li>Connaissance d'un crime ou délit en cours ou imminent</li>
+                                    <li>Situation de danger pour un mineur</li>
+                                    <li>Situation de danger pour une personne vulnérable</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <p style="text-align: center; color: var(--gris-pierre); font-size: 0.9rem; margin-top: 3rem;">Dernière mise à jour : Janvier 2026</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                <p class="footer-tagline">Un traducteur entre ton vécu et le monde.</p>
+            </div>
+            <nav class="footer-links">
+                <a href="services.html">Services</a>
+                <a href="etape-zero.html">L'Étape Zéro</a>
+                <a href="Autotests/autotest.html">Autotests</a>
+                <a href="Analyses/articles.html">Analyses</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Noesis Kintsugi. Tous droits réservés.</p>
+            <p class="footer-baseline">La paix sans vérité est une anesthésie.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Accordion
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Open clicked if wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Open accordion from URL hash
+        if (window.location.hash) {
+            const target = document.querySelector(window.location.hash);
+            if (target && target.classList.contains('accordion-item')) {
+                target.classList.add('active');
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+
+        // Reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
