@@ -273,70 +273,128 @@
            SECTION 3 POINTS CLÉS
            ═══════════════════════════════════════════════════════════════ */
         .trois-points {
-            padding: 5rem 0;
+            padding: 6rem 0;
             background: var(--gris-anthracite);
             position: relative;
+            overflow: hidden;
         }
 
-        .trois-points::before,
+        .trois-points::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.12;
+        }
+
         .trois-points::after {
             content: '';
             position: absolute;
+            bottom: 0;
             left: 10%;
             right: 10%;
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
         }
-        .trois-points::before { top: 0; }
-        .trois-points::after { bottom: 0; }
 
         .trois-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .trois-card {
             text-align: center;
-            padding: 2.5rem 2rem;
-            background: rgba(28, 31, 33, 0.6);
-            border: 1px solid rgba(212, 184, 150, 0.1);
+            padding: 3rem 2rem 2.5rem;
+            background: linear-gradient(145deg, rgba(45, 49, 51, 0.9) 0%, rgba(28, 31, 33, 0.95) 100%);
+            border: 1px solid rgba(212, 184, 150, 0.15);
+            border-radius: 4px;
             transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .trois-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-or);
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .trois-card:hover {
-            border-color: rgba(212, 184, 150, 0.3);
-            transform: translateY(-4px);
+            border-color: rgba(212, 184, 150, 0.35);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(160, 120, 48, 0.1);
+        }
+
+        .trois-card:hover::before {
+            opacity: 1;
         }
 
         .trois-icon {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 1.5rem;
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 1.75rem;
+            position: relative;
+        }
+
+        .trois-icon::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            border-radius: 50%;
+            transition: var(--transition-smooth);
+        }
+
+        .trois-card:hover .trois-icon::before {
+            border-color: rgba(212, 184, 150, 0.4);
+            transform: scale(1.1);
         }
 
         .trois-icon svg {
             width: 100%;
             height: 100%;
             stroke: var(--or-clair);
-            stroke-width: 1.5;
+            stroke-width: 1.2;
             fill: none;
+            transition: var(--transition-smooth);
+        }
+
+        .trois-card:hover .trois-icon svg {
+            stroke: var(--or-eclatant);
+            transform: scale(1.05);
         }
 
         .trois-card h3 {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--or-eclatant);
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.02em;
         }
 
         .trois-card p {
             font-size: 1.05rem;
             color: var(--texte-principal);
-            line-height: 1.75;
+            line-height: 1.8;
         }
 
-        .trois-card strong { color: var(--or-clair); }
+        .trois-card strong { 
+            color: var(--or-clair);
+            font-weight: 500;
+        }
 
         /* ═══════════════════════════════════════════════════════════════
            TITRES DE SECTIONS (style commun)
@@ -559,6 +617,182 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
+           SECTION L'ÉTAPE ZÉRO — Service premium
+           ═══════════════════════════════════════════════════════════════ */
+        .etape-zero {
+            padding: var(--section-padding) 0;
+            background: var(--noir-profond);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .etape-zero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+        }
+
+        .etape-zero-inner {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .etape-zero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .etape-zero-content .surtitre {
+            text-align: left;
+        }
+
+        .etape-zero-content .titre-section {
+            display: block;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+        }
+
+        .etape-zero-content .titre-section::after {
+            left: 0;
+            transform: none;
+        }
+
+        .etape-zero-tagline {
+            font-size: 1.2rem;
+            color: var(--texte-secondaire);
+            font-style: italic;
+            margin: 1.5rem 0 2rem;
+            line-height: 1.7;
+        }
+
+        .etape-zero-problem {
+            font-size: 1rem;
+            color: var(--texte-principal);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(160, 120, 48, 0.08);
+            border-left: 3px solid var(--or-vieilli);
+        }
+
+        .etape-zero-solution {
+            font-size: 1.1rem;
+            color: var(--or-clair);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .etape-zero-note {
+            font-size: 0.95rem;
+            color: var(--texte-secondaire);
+            line-height: 1.7;
+        }
+
+        .etape-zero-box {
+            position: relative;
+            z-index: 1;
+            background: var(--gris-anthracite);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            padding: 2.5rem;
+        }
+
+        .etape-zero-box::before {
+            content: 'Service phare';
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: var(--gradient-or);
+            color: var(--noir-principal);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.75rem;
+        }
+
+        .etape-zero-box-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(212, 184, 150, 0.15);
+        }
+
+        .etape-zero-box-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--or-eclatant);
+            margin-bottom: 0.5rem;
+        }
+
+        .etape-zero-box-price {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--or-clair);
+            line-height: 1;
+        }
+
+        .etape-zero-box-note {
+            font-size: 0.85rem;
+            color: var(--gris-pierre);
+            margin-top: 0.5rem;
+        }
+
+        .etape-zero-includes {
+            margin-bottom: 2rem;
+        }
+
+        .etape-zero-includes h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: var(--or-clair);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .etape-zero-include-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--texte-principal);
+            line-height: 1.5;
+        }
+
+        .etape-zero-include-item svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--or-clair);
+            stroke-width: 2;
+            fill: none;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .etape-zero-box .btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        .etape-zero-box-disclaimer {
+            font-size: 0.8rem;
+            color: var(--gris-pierre);
+            text-align: center;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
            SECTION CE QU'ON FAIT / NE FAIT PAS
            ═══════════════════════════════════════════════════════════════ */
         .positionnement {
@@ -691,41 +925,64 @@
 
         .axes-group h3 {
             font-family: var(--font-display);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--or-clair);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
             padding-bottom: 0.75rem;
-            border-bottom: 1px solid rgba(212, 184, 150, 0.2);
+            border-bottom: 2px solid rgba(212, 184, 150, 0.25);
+            letter-spacing: 0.03em;
         }
 
         .axe-item {
             display: flex;
-            gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(212, 184, 150, 0.08);
+            gap: 1.25rem;
+            padding: 1.25rem;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(145deg, rgba(45, 49, 51, 0.6) 0%, rgba(28, 31, 33, 0.8) 100%);
+            border: 1px solid rgba(212, 184, 150, 0.08);
+            border-left: 3px solid var(--or-vieilli);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
         }
 
-        .axe-item:last-child { border-bottom: none; }
+        .axe-item:hover {
+            background: linear-gradient(145deg, rgba(45, 49, 51, 0.8) 0%, rgba(28, 31, 33, 0.9) 100%);
+            border-color: rgba(212, 184, 150, 0.2);
+            border-left-color: var(--or-clair);
+            transform: translateX(8px);
+            box-shadow: -4px 0 20px rgba(160, 120, 48, 0.15);
+        }
+
+        .axe-item:last-child { margin-bottom: 0; }
 
         .axe-numero {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--or-vieilli);
-            width: 32px;
+            width: 40px;
             flex-shrink: 0;
+            line-height: 1;
+            opacity: 0.7;
+            transition: var(--transition-smooth);
+        }
+
+        .axe-item:hover .axe-numero {
+            color: var(--or-clair);
+            opacity: 1;
         }
 
         .axe-content strong {
             display: block;
             color: var(--or-eclatant);
-            font-size: 1.05rem;
-            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.35rem;
+            font-weight: 500;
         }
 
         .axe-content span {
             font-size: 0.9rem;
             color: var(--texte-secondaire);
-            line-height: 1.5;
+            line-height: 1.55;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -735,6 +992,7 @@
             padding: var(--section-padding) 0;
             background: var(--gris-ceramique);
             position: relative;
+            overflow: hidden;
         }
 
         .autotests::before {
@@ -743,12 +1001,11 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 450px;
+            height: 100%;
             background-image: url('assets/bg-kintsugi.png');
             background-size: cover;
-            opacity: 0.18;
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
+            background-position: center;
+            opacity: 0.2;
         }
 
         .autotests-inner {
@@ -756,6 +1013,8 @@
             grid-template-columns: 1.2fr 1fr;
             gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .autotests-content .surtitre {
@@ -809,32 +1068,45 @@
         .autotests-visual {
             display: flex;
             justify-content: center;
+            perspective: 1000px;
         }
 
         .test-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 8px;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(212, 184, 150, 0.1);
+            gap: 10px;
+            padding: 2.5rem;
+            background: linear-gradient(145deg, rgba(28, 31, 33, 0.9) 0%, rgba(22, 25, 26, 0.95) 100%);
+            border: 1px solid rgba(212, 184, 150, 0.15);
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            transform: rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .test-grid:hover {
+            transform: rotateY(0) rotateX(0);
         }
 
         .test-cell {
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--gris-moyen);
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(138, 144, 148, 0.4);
+            border-radius: 3px;
             position: relative;
             transition: var(--transition-smooth);
+            background: rgba(45, 49, 51, 0.5);
         }
 
         .test-cell:hover {
             border-color: var(--or-clair);
-            transform: scale(1.1);
+            transform: scale(1.15);
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(212, 184, 150, 0.3);
         }
 
         .test-cell.checked {
-            background: rgba(212, 184, 150, 0.15);
+            background: linear-gradient(135deg, rgba(160, 120, 48, 0.2) 0%, rgba(212, 184, 150, 0.1) 100%);
             border-color: var(--or-clair);
         }
 
@@ -845,13 +1117,20 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: var(--or-clair);
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: 600;
         }
 
         .test-cell.critical {
-            background: linear-gradient(135deg, transparent 40%, rgba(232, 212, 168, 0.25) 100%);
+            background: linear-gradient(135deg, rgba(160, 120, 48, 0.15) 0%, rgba(232, 212, 168, 0.25) 100%);
             border-color: var(--or-eclatant);
-            box-shadow: 0 0 12px rgba(232, 212, 168, 0.2);
+            box-shadow: 0 0 15px rgba(232, 212, 168, 0.25);
+            animation: pulse-gold 2s infinite;
+        }
+
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 15px rgba(232, 212, 168, 0.25); }
+            50% { box-shadow: 0 0 25px rgba(232, 212, 168, 0.4); }
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1143,6 +1422,7 @@
             background-image: url('assets/bg-kintsugi.png');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             position: relative;
         }
 
@@ -1150,7 +1430,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(28, 31, 33, 0.75);
+            background: linear-gradient(180deg, rgba(28, 31, 33, 0.7) 0%, rgba(22, 25, 26, 0.85) 100%);
         }
 
         .contact .container {
@@ -1161,20 +1441,41 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: 2rem;
+            gap: 2.5rem;
             align-items: start;
         }
 
         .contact-main {
-            background: var(--noir-principal);
+            background: linear-gradient(145deg, rgba(28, 31, 33, 0.95) 0%, rgba(22, 25, 26, 0.98) 100%);
             padding: 3rem;
             border: 1px solid rgba(212, 184, 150, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .contact-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-or);
         }
 
         .contact-main-icon {
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .contact-main-icon::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            border-radius: 50%;
         }
 
         .contact-main-icon svg {
@@ -1202,13 +1503,39 @@
         .contact-secondary {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.25rem;
         }
 
         .contact-card {
-            background: var(--fond-clair);
-            padding: 1.5rem 2rem;
-            border-left: 3px solid var(--or-clair);
+            background: linear-gradient(145deg, rgba(248, 246, 242, 0.98) 0%, rgba(232, 229, 223, 0.95) 100%);
+            padding: 1.75rem 2rem;
+            border-left: 4px solid var(--or-vieilli);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(160, 120, 48, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateX(8px);
+            border-left-color: var(--or-clair);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2), -4px 0 20px rgba(160, 120, 48, 0.1);
+        }
+
+        .contact-card:hover::before {
+            opacity: 1;
         }
 
         .contact-card-header {
@@ -1219,8 +1546,8 @@
         }
 
         .contact-card-header svg {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             stroke: var(--or-vieilli);
             stroke-width: 1.5;
             fill: none;
@@ -1228,7 +1555,7 @@
 
         .contact-card h4 {
             font-family: var(--font-display);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--noir-principal);
             letter-spacing: 0.05em;
         }
@@ -1236,7 +1563,7 @@
         .contact-card p {
             font-size: 0.95rem;
             color: var(--gris-moyen);
-            line-height: 1.6;
+            line-height: 1.65;
             margin-bottom: 0.75rem;
         }
 
@@ -1246,7 +1573,13 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.25rem;
+            gap: 0.35rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--or-mat);
         }
 
         .contact-card a:hover {
@@ -1429,6 +1762,28 @@
                 grid-template-columns: 1fr;
             }
 
+            .etape-zero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .etape-zero-box {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .etape-zero-content {
+                text-align: center;
+            }
+
+            .etape-zero-content .surtitre {
+                text-align: center;
+            }
+
+            .etape-zero-content .titre-section::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
             .autotests-visual {
                 order: -1;
                 margin-bottom: 2rem;
@@ -1489,9 +1844,9 @@
                 <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
                 <ul class="nav-links">
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="#autotests">Autotests</a></li>
-                    <li><a href="#articles">Analyses</a></li>
-                    <li><a href="#methode">Méthode</a></li>
+                    <li><a href="etape-zero.html">L'Étape Zéro</a></li>
+                    <li><a href="Autotests/autotest.html">Autotests</a></li>
+                    <li><a href="Analyses/articles.html">Analyses</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -1628,6 +1983,63 @@
             <div class="services-cta reveal">
                 <a href="services.html" class="btn btn-primary">Voir les prestations détaillées</a>
                 <a href="#contact" class="link-subtle">Ou poser une question →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- L'ÉTAPE ZÉRO -->
+    <section class="etape-zero" id="etape-zero">
+        <div class="container">
+            <div class="etape-zero-inner">
+                <div class="etape-zero-content reveal">
+                    <p class="surtitre">Service phare</p>
+                    <h2 class="titre-section">L'Étape Zéro</h2>
+                    
+                    <p class="etape-zero-tagline">Du chaos vécu au récit structuré. En un seul parcours.</p>
+                    
+                    <div class="etape-zero-problem">
+                        Tu as peut-être passé des heures à scroller des symptômes en ligne, à te reconnaître dans trois troubles différents. Les mots manquent, la chronologie s'effondre, les preuves sont dispersées.
+                    </div>
+                    
+                    <p class="etape-zero-solution">L'Étape Zéro transforme le chaos vécu en récit structuré — pour toi, ton psy, ton avocat, ton médecin.</p>
+                    
+                    <p class="etape-zero-note">Pas de coaching motivant. Pas de développement personnel. Du travail de structuration cognitive, point. Tu arrives avec la confusion. Tu repars avec une cartographie claire, un lexique personnalisé, et un récit qui tient debout.</p>
+                </div>
+                
+                <div class="etape-zero-box reveal">
+                    <div class="etape-zero-box-header">
+                        <h3 class="etape-zero-box-title">L'Étape Zéro</h3>
+                        <div class="etape-zero-box-price">250 €</div>
+                        <p class="etape-zero-box-note">Payable en 3× · Délai moyen : 2 semaines</p>
+                    </div>
+                    
+                    <div class="etape-zero-includes">
+                        <h4>Inclus</h4>
+                        <div class="etape-zero-include-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Questionnaire préparatoire structuré</span>
+                        </div>
+                        <div class="etape-zero-include-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Entretien visio de 90 minutes</span>
+                        </div>
+                        <div class="etape-zero-include-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Cartographie écrite personnalisée</span>
+                        </div>
+                        <div class="etape-zero-include-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Lexique de tes mécanismes identifiés</span>
+                        </div>
+                        <div class="etape-zero-include-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Axes de travail pour les professionnels</span>
+                        </div>
+                    </div>
+                    
+                    <a href="etape-zero.html" class="btn btn-primary">Découvrir L'Étape Zéro</a>
+                    <p class="etape-zero-box-disclaimer">Places limitées · Réponse sous 48h</p>
+                </div>
             </div>
         </div>
     </section>
