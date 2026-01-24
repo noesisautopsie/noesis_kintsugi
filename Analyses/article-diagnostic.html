@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Vingt ans, huit experts, zéro diagnostic — Noesis Kintsugi</title>
     <meta name="description" content="Anatomie neurologique d'un effondrement fabriqué. Quand le système médico-éducatif rate l'autisme pendant vingt ans, l'anxiodépression n'est pas une faiblesse — c'est leur facture.">
-=======
-    <title>Vingt ans, huit experts, zéro diagnostic : anatomie neurologique d'un effondrement fabriqué — Noesis Kintsugi</title>
-    <meta name="description" content="Mon fils a vu des pédopsychiatres, psychologues scolaires, infirmières psy, éducateurs. Pendant vingt ans, des professionnels payés pour observer les enfants l'ont ignoré.">
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,21 +30,15 @@
             --gris-clair-bg: #E8E8E8;
             --blanc-casse: #C9CBCB;
             --ivoire: #CBCBC9;
-<<<<<<< HEAD
             --rouge-doux: #9B4D4D;
             --vert-doux: #5D7A5D;
-=======
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
             --gradient-or-vertical: linear-gradient(180deg, var(--or-eclatant) 0%, var(--or-clair) 50%, var(--or-vieilli) 100%);
             --font-display: 'Megrim', cursive;
             --font-body: 'Crimson Pro', serif;
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-<<<<<<< HEAD
             --shadow-luxe: 0 10px 40px rgba(0, 0, 0, 0.2), 0 2px 10px rgba(0, 0, 0, 0.1);
             --shadow-or: 0 0 30px rgba(201, 170, 110, 0.15);
-=======
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         *, *::before, *::after {
@@ -100,18 +89,14 @@
             transition: var(--transition-smooth);
         }
 
-<<<<<<< HEAD
         /* ═══════════════════════════════════════════════════════════════
            PROGRESS BAR
            ═══════════════════════════════════════════════════════════════ */
-=======
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         .progress-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 0%;
-<<<<<<< HEAD
             height: 3px;
             background: var(--gradient-or);
             z-index: 1001;
@@ -122,15 +107,6 @@
         /* ═══════════════════════════════════════════════════════════════
            NAVIGATION
            ═══════════════════════════════════════════════════════════════ */
-=======
-            height: 2px;
-            background: var(--gradient-or);
-            z-index: 1001;
-            transition: width 0.1s ease-out;
-            box-shadow: 0 0 10px rgba(201, 170, 110, 0.5);
-        }
-
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         .nav {
             position: fixed;
             top: 0;
@@ -214,12 +190,9 @@
             background: var(--blanc-casse);
         }
 
-<<<<<<< HEAD
         /* ═══════════════════════════════════════════════════════════════
            HERO
            ═══════════════════════════════════════════════════════════════ */
-=======
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         .hero {
             position: relative;
             min-height: 100vh;
@@ -353,12 +326,9 @@
             50% { transform: translateX(-50%) translateY(8px); }
         }
 
-<<<<<<< HEAD
         /* ═══════════════════════════════════════════════════════════════
            TOC STICKY
            ═══════════════════════════════════════════════════════════════ */
-=======
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         .toc-wrapper {
             position: fixed;
             left: 2rem;
@@ -416,7 +386,6 @@
             opacity: 1;
         }
 
-<<<<<<< HEAD
         /* ═══════════════════════════════════════════════════════════════
            ARTICLE WRAPPER (fond gris moyen-foncé)
            ═══════════════════════════════════════════════════════════════ */
@@ -444,143 +413,12 @@
            ═══════════════════════════════════════════════════════════════ */
         .article-lead {
             padding: 6rem 2rem;
-=======
-        .article-wrapper {
-            background-color: var(--gris-moyen-fonce);
-            padding: 1px 0;
-        }
-
-        .article-wrapper .article-lead p {
-            color: var(--blanc-casse);
-        }
-
-        .article-wrapper .article-content p {
-            color: rgba(201, 203, 203, 0.95);
-        }
-
-        .article-wrapper .article-content em {
-            color: var(--gris-pierre);
-        }
-
-        .article-wrapper .article-content strong {
-            color: var(--or-clair);
-        }
-
-        .article-wrapper .article-content h2 {
-            color: var(--or-eclatant);
-        }
-
-        .article-wrapper .parenthese {
-            background: linear-gradient(135deg, rgba(30, 32, 32, 0.6) 0%, rgba(40, 42, 44, 0.7) 100%);
-            border-color: rgba(153, 107, 38, 0.3);
-            color: var(--gris-pierre);
-        }
-
-        .article-wrapper .parenthese .aside-icon {
-            background: var(--gris-moyen-fonce);
-        }
-
-        .article-wrapper .pull-quote {
-            background: linear-gradient(180deg, rgba(153, 107, 38, 0.15) 0%, rgba(153, 107, 38, 0.06) 50%, rgba(153, 107, 38, 0.12) 100%);
-        }
-
-        .article-wrapper .pull-quote .quote-mark {
-            background: var(--gris-moyen-fonce);
-        }
-
-        .article-wrapper .pull-quote p {
-            color: var(--or-clair);
-        }
-
-        .article-wrapper .emphase {
-            background:
-                linear-gradient(135deg, rgba(30, 32, 32, 0.85) 0%, rgba(40, 42, 44, 0.9) 100%),
-                repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 10px,
-                    rgba(153, 107, 38, 0.04) 10px,
-                    rgba(153, 107, 38, 0.04) 20px
-                );
-            border-color: rgba(153, 107, 38, 0.35);
-        }
-
-        .article-wrapper .emphase .emphase-icon {
-            background: var(--gris-moyen-fonce);
-        }
-
-        .article-wrapper .liste-mecanismes li {
-            background: linear-gradient(135deg, rgba(30, 32, 32, 0.5) 0%, rgba(40, 42, 44, 0.4) 100%);
-            border-color: rgba(153, 107, 38, 0.2);
-            color: rgba(201, 203, 203, 0.95);
-        }
-
-        .article-wrapper .liste-mecanismes li:hover {
-            background: linear-gradient(135deg, rgba(35, 37, 39, 0.7) 0%, rgba(45, 47, 49, 0.6) 100%);
-        }
-
-        .article-wrapper .liste-mecanismes li::before {
-            background: linear-gradient(135deg, rgba(153, 107, 38, 0.25) 0%, rgba(153, 107, 38, 0.15) 100%);
-        }
-
-        .article-wrapper .liste-mecanismes li strong {
-            color: var(--or-clair);
-        }
-
-        .article-wrapper .separator::before,
-        .article-wrapper .separator::after {
-            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.4) 50%, transparent);
-        }
-
-        .article-wrapper .cta-autotest {
-            background: linear-gradient(135deg, rgba(25, 27, 28, 0.95) 0%, rgba(35, 37, 39, 0.98) 100%);
-            border-color: rgba(153, 107, 38, 0.4);
-        }
-
-        .article-wrapper .cta-autotest::before {
-            border-color: rgba(153, 107, 38, 0.25);
-        }
-
-        .article-wrapper .cta-autotest .cta-icon {
-            background: linear-gradient(135deg, rgba(153, 107, 38, 0.2) 0%, rgba(50, 52, 54, 0.5) 100%);
-        }
-
-        .article-wrapper .cta-autotest p {
-            color: var(--gris-pierre);
-        }
-
-        .article-wrapper .article-actions {
-            border-color: rgba(153, 107, 38, 0.25);
-        }
-
-        .article-wrapper .article-actions a {
-            color: var(--gris-pierre);
-        }
-
-        .article-wrapper .article-actions a:hover {
-            color: var(--or-clair);
-        }
-
-        .article-wrapper .highlight {
-            background: linear-gradient(transparent 60%, rgba(201, 170, 110, 0.3) 60%);
-        }
-
-        .article-wrapper .article-lead::before,
-        .article-wrapper .article-lead::after {
-            color: var(--or-clair);
-            opacity: 0.4;
-        }
-
-        .article-lead {
-            padding: 5rem 2rem;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             text-align: center;
             max-width: 850px;
             margin: 0 auto;
             position: relative;
         }
 
-<<<<<<< HEAD
         .article-lead::before {
             content: '';
             position: absolute;
@@ -674,73 +512,10 @@
             position: relative;
             border-top: 1px solid rgba(153, 107, 38, 0.3);
             border-bottom: 1px solid rgba(153, 107, 38, 0.3);
-=======
-        .article-lead::before,
-        .article-lead::after {
-            content: '"';
-            font-family: var(--font-display);
-            font-size: 4rem;
-            color: var(--or-vieilli);
-            opacity: 0.3;
-            position: absolute;
-        }
-
-        .article-lead::before {
-            top: 2rem;
-            left: 1rem;
-        }
-
-        .article-lead::after {
-            content: '"';
-            bottom: 2rem;
-            right: 1rem;
-        }
-
-        .article-lead p {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--gris-pierre);
-            line-height: 1.9;
-        }
-
-        .article-content {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 2rem 4rem;
-        }
-
-        .article-content p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--blanc-casse);
-            line-height: 1.85;
-        }
-
-        .article-content .drop-cap::first-letter {
-            float: left;
-            font-family: var(--font-display);
-            font-size: 4rem;
-            line-height: 0.8;
-            padding-right: 0.75rem;
-            padding-top: 0.25rem;
-            color: var(--or-eclatant);
-        }
-
-        .article-content h2 {
-            font-family: var(--font-body);
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--or-eclatant);
-            margin: 4rem 0 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .article-content h2::before {
             content: '';
-<<<<<<< HEAD
             width: 28px;
             height: 28px;
             background-size: contain;
@@ -761,14 +536,6 @@
             color: var(--or-clair);
             background: var(--gris-moyen-fonce);
             padding: 0 1rem;
-=======
-            width: 24px;
-            height: 24px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            flex-shrink: 0;
-            opacity: 0.7;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .article-content h2[data-icon="brain"]::before {
@@ -787,7 +554,6 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E");
         }
 
-<<<<<<< HEAD
         .article-content h2[data-icon="users"]::before {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 00-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 010 7.75'/%3E%3C/svg%3E");
         }
@@ -798,31 +564,14 @@
 
         .article-content h2[data-icon="zap"]::before {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E");
-=======
-        .article-content h2[data-icon="heart"]::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z'/%3E%3C/svg%3E");
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .article-content h2[data-icon="question"]::before {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
         }
 
-<<<<<<< HEAD
         .article-content h2[data-icon="heart"]::before {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z'/%3E%3C/svg%3E");
-=======
-        .article-content h2[data-icon="users"]::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpath d='M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 00-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 010 7.75'/%3E%3C/svg%3E");
-        }
-
-        .article-content h2[data-icon="zap"]::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E");
-        }
-
-        .article-content h2[data-icon="target"]::before {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9AA6E' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E");
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .article-content h2[data-icon="compass"]::before {
@@ -837,7 +586,6 @@
         .article-content strong {
             font-weight: 600;
             color: var(--or-clair);
-<<<<<<< HEAD
             letter-spacing: 0.01em;
         }
 
@@ -868,20 +616,6 @@
             box-shadow: 
                 var(--shadow-luxe),
                 inset 0 0 30px rgba(0, 0, 0, 0.2);
-=======
-        }
-
-        .parenthese {
-            position: relative;
-            margin: 2.5rem 0;
-            padding: 1.75rem 2rem 1.75rem 2.5rem;
-            background: linear-gradient(135deg, rgba(46, 49, 48, 0.5) 0%, rgba(30, 32, 31, 0.6) 100%);
-            border: 1px solid rgba(153, 107, 38, 0.15);
-            font-style: italic;
-            color: var(--gris-pierre);
-            font-size: 1.05rem;
-            line-height: 1.8;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .parenthese::before {
@@ -889,17 +623,10 @@
             position: absolute;
             top: -1px;
             left: -1px;
-<<<<<<< HEAD
             width: 40px;
             height: 40px;
             border-top: 3px solid var(--or-vieilli);
             border-left: 3px solid var(--or-vieilli);
-=======
-            width: 30px;
-            height: 30px;
-            border-top: 2px solid var(--or-vieilli);
-            border-left: 2px solid var(--or-vieilli);
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .parenthese::after {
@@ -907,22 +634,14 @@
             position: absolute;
             bottom: -1px;
             right: -1px;
-<<<<<<< HEAD
             width: 40px;
             height: 40px;
             border-bottom: 3px solid var(--or-vieilli);
             border-right: 3px solid var(--or-vieilli);
-=======
-            width: 30px;
-            height: 30px;
-            border-bottom: 2px solid var(--or-vieilli);
-            border-right: 2px solid var(--or-vieilli);
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .parenthese .aside-icon {
             position: absolute;
-<<<<<<< HEAD
             top: -15px;
             left: 25px;
             background: var(--gris-moyen-fonce);
@@ -982,50 +701,10 @@
                 transparent 100%
             );
             opacity: 0.7;
-=======
-            top: -12px;
-            left: 20px;
-            background: var(--noir-principal);
-            padding: 0 0.5rem;
-            color: var(--or-clair);
-            font-size: 1.2rem;
-            font-style: normal;
-        }
-
-        .pull-quote {
-            position: relative;
-            margin: 3.5rem -2rem;
-            padding: 3rem 3.5rem;
-            background: linear-gradient(180deg, rgba(153, 107, 38, 0.08) 0%, rgba(153, 107, 38, 0.02) 50%, rgba(153, 107, 38, 0.06) 100%);
-            text-align: center;
-        }
-
-        .pull-quote::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(180deg, var(--or-clair) 0%, transparent 50%, var(--or-vieilli) 100%);
-            opacity: 0.6;
-        }
-
-        .pull-quote::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(180deg, var(--or-vieilli) 0%, transparent 50%, var(--or-clair) 100%);
-            opacity: 0.6;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .pull-quote .quote-mark {
             position: absolute;
-<<<<<<< HEAD
             top: -30px;
             left: 50%;
             transform: translateX(-50%);
@@ -1051,38 +730,12 @@
             font-style: italic;
             color: var(--or-clair);
             line-height: 1.7;
-=======
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            background: var(--noir-principal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pull-quote .quote-mark svg {
-            width: 30px;
-            height: 30px;
-            fill: var(--or-clair);
-            opacity: 0.8;
-        }
-
-        .pull-quote p {
-            font-size: 1.4rem;
-            font-style: italic;
-            color: var(--or-clair);
-            line-height: 1.6;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             margin: 0;
             position: relative;
             z-index: 1;
         }
 
         .pull-quote .quote-line {
-<<<<<<< HEAD
             width: 100px;
             height: 2px;
             background: var(--gradient-or);
@@ -1108,41 +761,12 @@
         }
 
         /* Coins dorés */
-=======
-            width: 80px;
-            height: 1px;
-            background: var(--gradient-or);
-            margin: 1.5rem auto 0;
-        }
-
-        .emphase {
-            position: relative;
-            margin: 3rem 0;
-            padding: 2.5rem;
-            background:
-                linear-gradient(135deg, rgba(17, 19, 19, 0.95) 0%, rgba(22, 24, 23, 0.95) 100%),
-                repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 10px,
-                    rgba(153, 107, 38, 0.02) 10px,
-                    rgba(153, 107, 38, 0.02) 20px
-                );
-            border: 1px solid rgba(153, 107, 38, 0.2);
-            box-shadow:
-                0 0 0 1px rgba(153, 107, 38, 0.05),
-                0 10px 40px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(201, 170, 110, 0.05);
-        }
-
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         .emphase::before,
         .emphase::after,
         .emphase .corner-bl,
         .emphase .corner-br {
             content: '';
             position: absolute;
-<<<<<<< HEAD
             width: 25px;
             height: 25px;
         }
@@ -1195,101 +819,34 @@
             height: 36px;
             background: linear-gradient(135deg, var(--gris-moyen-fonce) 0%, var(--noir-clair) 100%);
             border: 2px solid var(--or-vieilli);
-=======
-            width: 20px;
-            height: 20px;
-        }
-
-        .emphase::before {
-            top: 8px;
-            left: 8px;
-            border-top: 1px solid var(--or-clair);
-            border-left: 1px solid var(--or-clair);
-        }
-
-        .emphase::after {
-            top: 8px;
-            right: 8px;
-            border-top: 1px solid var(--or-clair);
-            border-right: 1px solid var(--or-clair);
-        }
-
-        .emphase .corner-bl {
-            bottom: 8px;
-            left: 8px;
-            border-bottom: 1px solid var(--or-clair);
-            border-left: 1px solid var(--or-clair);
-        }
-
-        .emphase .corner-br {
-            bottom: 8px;
-            right: 8px;
-            border-bottom: 1px solid var(--or-clair);
-            border-right: 1px solid var(--or-clair);
-        }
-
-        .emphase .emphase-bar {
-            position: absolute;
-            top: 20px;
-            bottom: 20px;
-            left: 0;
-            width: 3px;
-            background: var(--gradient-or-vertical);
-            box-shadow: 0 0 15px rgba(201, 170, 110, 0.3);
-        }
-
-        .emphase .emphase-icon {
-            position: absolute;
-            top: -15px;
-            right: 30px;
-            width: 30px;
-            height: 30px;
-            background: var(--noir-principal);
-            border: 1px solid var(--or-vieilli);
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-<<<<<<< HEAD
             box-shadow: var(--shadow-or);
         }
 
         .emphase .emphase-icon svg {
             width: 18px;
             height: 18px;
-=======
-        }
-
-        .emphase .emphase-icon svg {
-            width: 16px;
-            height: 16px;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             stroke: var(--or-clair);
             stroke-width: 1.5;
             fill: none;
         }
 
         .emphase p {
-<<<<<<< HEAD
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
             color: var(--blanc-casse);
             font-size: 1.15rem;
             line-height: 1.9;
-=======
-            margin-bottom: 1.25rem;
-            position: relative;
-            z-index: 1;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .emphase p:last-of-type {
             margin-bottom: 0;
         }
 
-<<<<<<< HEAD
         .emphase p strong {
             color: var(--or-clair);
         }
@@ -1299,10 +856,6 @@
            ═══════════════════════════════════════════════════════════════ */
         .liste-mecanismes {
             margin: 3rem 0;
-=======
-        .liste-mecanismes {
-            margin: 2.5rem 0;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             padding: 0;
             list-style: none;
             counter-reset: mechanism;
@@ -1310,7 +863,6 @@
 
         .liste-mecanismes li {
             position: relative;
-<<<<<<< HEAD
             padding: 2rem 2rem 2rem 5.5rem;
             margin-bottom: 1.25rem;
             background: linear-gradient(135deg, 
@@ -1335,22 +887,6 @@
             border-color: rgba(153, 107, 38, 0.35);
             transform: translateX(5px);
             box-shadow: var(--shadow-luxe);
-=======
-            padding: 1.75rem 1.5rem 1.75rem 5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, rgba(46, 49, 48, 0.3) 0%, rgba(30, 32, 31, 0.2) 100%);
-            border: 1px solid rgba(153, 107, 38, 0.1);
-            border-left: none;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            counter-increment: mechanism;
-            transition: var(--transition-smooth);
-        }
-
-        .liste-mecanismes li:hover {
-            background: linear-gradient(135deg, rgba(46, 49, 48, 0.5) 0%, rgba(30, 32, 31, 0.4) 100%);
-            border-color: rgba(153, 107, 38, 0.2);
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .liste-mecanismes li::before {
@@ -1359,16 +895,11 @@
             left: 0;
             top: 0;
             bottom: 0;
-<<<<<<< HEAD
             width: 55px;
-=======
-            width: 50px;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: var(--font-display);
-<<<<<<< HEAD
             font-size: 1.8rem;
             color: var(--or-eclatant);
             background: linear-gradient(180deg, 
@@ -1376,18 +907,11 @@
                 rgba(153, 107, 38, 0.1) 100%
             );
             border-right: 3px solid var(--or-vieilli);
-=======
-            font-size: 1.5rem;
-            color: var(--or-eclatant);
-            background: linear-gradient(135deg, rgba(153, 107, 38, 0.15) 0%, rgba(153, 107, 38, 0.05) 100%);
-            border-right: 2px solid var(--or-vieilli);
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .liste-mecanismes li strong {
             color: var(--or-clair);
             display: block;
-<<<<<<< HEAD
             font-size: 1.15rem;
             margin-bottom: 0.5rem;
             letter-spacing: 0.02em;
@@ -1520,17 +1044,10 @@
         /* ═══════════════════════════════════════════════════════════════
            SEPARATEUR - Élégant Art Déco
            ═══════════════════════════════════════════════════════════════ */
-=======
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         .separator {
             display: flex;
             align-items: center;
             justify-content: center;
-<<<<<<< HEAD
             margin: 4.5rem 0;
             height: 40px;
             position: relative;
@@ -1664,80 +1181,16 @@
             overflow: hidden;
             transition: var(--transition-smooth);
             box-shadow: var(--shadow-luxe);
-=======
-            margin: 3.5rem 0;
-            gap: 1.5rem;
-        }
-
-        .separator::before,
-        .separator::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gris-anthracite) 50%, transparent);
-        }
-
-        .separator .sep-icon {
-            width: 40px;
-            height: 40px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .separator .sep-icon::before {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border: 1px solid var(--or-vieilli);
-            transform: rotate(45deg);
-        }
-
-        .separator .sep-icon::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: var(--or-clair);
-            transform: rotate(45deg);
-        }
-
-        .highlight {
-            background: linear-gradient(transparent 60%, rgba(201, 170, 110, 0.2) 60%);
-            padding: 0 2px;
-        }
-
-        .cta-autotest {
-            position: relative;
-            margin: 4rem 0;
-            padding: 3rem;
-            background:
-                linear-gradient(135deg, rgba(17, 19, 19, 0.98) 0%, rgba(22, 24, 23, 0.95) 100%);
-            border: 1px solid rgba(153, 107, 38, 0.25);
-            text-align: center;
-            overflow: hidden;
-            transition: var(--transition-smooth);
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .cta-autotest::before {
             content: '';
             position: absolute;
-<<<<<<< HEAD
             top: 8px;
             left: 8px;
             right: 8px;
             bottom: 8px;
             border: 1px dashed rgba(153, 107, 38, 0.25);
-=======
-            top: 6px;
-            left: 6px;
-            right: 6px;
-            bottom: 6px;
-            border: 1px solid rgba(153, 107, 38, 0.15);
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             pointer-events: none;
         }
 
@@ -1747,7 +1200,6 @@
             top: 0;
             left: 0;
             width: 100%;
-<<<<<<< HEAD
             height: 4px;
             background: var(--gradient-or);
             box-shadow: var(--shadow-or);
@@ -1778,99 +1230,28 @@
             margin: 0 auto 2rem;
             background: linear-gradient(135deg, rgba(153, 107, 38, 0.15) 0%, rgba(30, 32, 31, 0.5) 100%);
             border: 2px solid var(--or-vieilli);
-=======
-            height: 3px;
-            background: var(--gradient-or);
-            box-shadow: 0 0 20px rgba(201, 170, 110, 0.4);
-        }
-
-        .cta-autotest:hover {
-            border-color: rgba(153, 107, 38, 0.4);
-            box-shadow:
-                0 0 0 1px rgba(153, 107, 38, 0.1),
-                0 20px 50px rgba(0, 0, 0, 0.3);
-            transform: translateY(-3px);
-        }
-
-        .cta-autotest .cta-corner {
-            position: absolute;
-            width: 25px;
-            height: 25px;
-        }
-
-        .cta-autotest .cta-corner--tl {
-            top: 12px;
-            left: 12px;
-            border-top: 2px solid var(--or-clair);
-            border-left: 2px solid var(--or-clair);
-        }
-
-        .cta-autotest .cta-corner--tr {
-            top: 12px;
-            right: 12px;
-            border-top: 2px solid var(--or-clair);
-            border-right: 2px solid var(--or-clair);
-        }
-
-        .cta-autotest .cta-corner--bl {
-            bottom: 12px;
-            left: 12px;
-            border-bottom: 2px solid var(--or-clair);
-            border-left: 2px solid var(--or-clair);
-        }
-
-        .cta-autotest .cta-corner--br {
-            bottom: 12px;
-            right: 12px;
-            border-bottom: 2px solid var(--or-clair);
-            border-right: 2px solid var(--or-clair);
-        }
-
-        .cta-autotest .cta-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1.5rem;
-            border: 1px solid var(--or-vieilli);
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-<<<<<<< HEAD
             position: relative;
             box-shadow: var(--shadow-or);
-=======
-            background: linear-gradient(135deg, rgba(153, 107, 38, 0.1) 0%, transparent 100%);
-            position: relative;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .cta-autotest .cta-icon::before {
             content: '';
             position: absolute;
-<<<<<<< HEAD
             top: -8px;
             left: -8px;
             right: -8px;
             bottom: -8px;
-=======
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             border: 1px solid rgba(153, 107, 38, 0.2);
             border-radius: 50%;
         }
 
         .cta-autotest .cta-icon svg {
-<<<<<<< HEAD
             width: 32px;
             height: 32px;
-=======
-            width: 28px;
-            height: 28px;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             stroke: var(--or-clair);
             stroke-width: 1.5;
             fill: none;
@@ -1878,7 +1259,6 @@
 
         .cta-autotest h3 {
             font-family: var(--font-display);
-<<<<<<< HEAD
             font-size: 1.4rem;
             font-weight: 400;
             letter-spacing: 0.1em;
@@ -1895,44 +1275,18 @@
             margin-left: auto;
             margin-right: auto;
             line-height: 1.8;
-=======
-            font-size: 1.3rem;
-            font-weight: 400;
-            letter-spacing: 0.08em;
-            color: var(--or-eclatant);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .cta-autotest p {
-            color: var(--gris-pierre);
-            font-size: 1.05rem;
-            margin-bottom: 2rem !important;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-<<<<<<< HEAD
             padding: 1.1rem 2.75rem;
             font-family: var(--font-body);
             font-size: 1.05rem;
             font-weight: 500;
             letter-spacing: 0.03em;
             border-radius: 3px;
-=======
-            padding: 1rem 2.5rem;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            border-radius: 2px;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             cursor: pointer;
             transition: var(--transition-smooth);
             position: relative;
@@ -1943,10 +1297,7 @@
             background: var(--gradient-or);
             color: var(--noir-principal);
             border: none;
-<<<<<<< HEAD
             box-shadow: 0 4px 15px rgba(143, 107, 46, 0.2);
-=======
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .btn-primary::before {
@@ -1956,13 +1307,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-<<<<<<< HEAD
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: 0.6s;
-=======
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .btn-primary:hover::before {
@@ -1970,7 +1316,6 @@
         }
 
         .btn-primary:hover {
-<<<<<<< HEAD
             transform: translateY(-3px);
             box-shadow: 
                 0 8px 25px rgba(143, 107, 46, 0.3),
@@ -1980,23 +1325,11 @@
         .btn-primary svg {
             width: 20px;
             height: 20px;
-=======
-            transform: translateY(-2px);
-            box-shadow:
-                0 4px 15px rgba(143, 107, 46, 0.3),
-                0 0 30px rgba(201, 170, 110, 0.2);
-        }
-
-        .btn-primary svg {
-            width: 18px;
-            height: 18px;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             stroke: currentColor;
             stroke-width: 2;
             fill: none;
         }
 
-<<<<<<< HEAD
         /* ═══════════════════════════════════════════════════════════════
            CONCLUSION POETIQUE
            ═══════════════════════════════════════════════════════════════ */
@@ -2032,26 +1365,17 @@
         /* ═══════════════════════════════════════════════════════════════
            ARTICLE ACTIONS
            ═══════════════════════════════════════════════════════════════ */
-=======
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         .article-actions {
             display: flex;
             justify-content: space-between;
             align-items: center;
-<<<<<<< HEAD
             padding: 1.75rem 0;
             border-top: 1px solid rgba(153, 107, 38, 0.25);
             border-bottom: 1px solid rgba(153, 107, 38, 0.25);
-=======
-            padding: 1.5rem 0;
-            border-top: 1px solid var(--gris-anthracite);
-            border-bottom: 1px solid var(--gris-anthracite);
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             margin: 3rem 0;
         }
 
         .article-actions a {
-<<<<<<< HEAD
             color: var(--gris-pierre);
             font-size: 1rem;
             display: flex;
@@ -2060,42 +1384,24 @@
             padding: 0.5rem 1rem;
             border-radius: 3px;
             transition: var(--transition-smooth);
-=======
-            color: var(--gris-medium);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .article-actions a:hover {
             color: var(--or-clair);
-<<<<<<< HEAD
             background: rgba(153, 107, 38, 0.1);
         }
 
         .article-actions a svg {
             width: 18px;
             height: 18px;
-=======
-        }
-
-        .article-actions a svg {
-            width: 16px;
-            height: 16px;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             stroke: currentColor;
             stroke-width: 1.5;
             fill: none;
         }
 
-<<<<<<< HEAD
         /* ═══════════════════════════════════════════════════════════════
            RELATED ARTICLES
            ═══════════════════════════════════════════════════════════════ */
-=======
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         .related-articles {
             padding: 5rem 2rem;
             background: var(--noir-profond);
@@ -2167,12 +1473,9 @@
             line-height: 1.5;
         }
 
-<<<<<<< HEAD
         /* ═══════════════════════════════════════════════════════════════
            FOOTER
            ═══════════════════════════════════════════════════════════════ */
-=======
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         .footer {
             background: var(--noir-profond);
             border-top: 1px solid var(--gris-anthracite);
@@ -2262,7 +1565,6 @@
             color: var(--gris-pierre);
         }
 
-<<<<<<< HEAD
         /* ═══════════════════════════════════════════════════════════════
            ANIMATIONS
            ═══════════════════════════════════════════════════════════════ */
@@ -2270,12 +1572,6 @@
             opacity: 0;
             transform: translateY(25px);
             transition: opacity 0.7s ease, transform 0.7s ease;
-=======
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         }
 
         .reveal.visible {
@@ -2283,7 +1579,6 @@
             transform: translateY(0);
         }
 
-<<<<<<< HEAD
         /* Délais échelonnés pour un effet cascade */
         .reveal:nth-child(2n) { transition-delay: 0.1s; }
         .reveal:nth-child(3n) { transition-delay: 0.15s; }
@@ -2291,8 +1586,6 @@
         /* ═══════════════════════════════════════════════════════════════
            RESPONSIVE
            ═══════════════════════════════════════════════════════════════ */
-=======
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         @media (max-width: 1200px) {
             .toc-wrapper { display: none; }
         }
@@ -2315,7 +1608,6 @@
             .nav-links.active { display: flex; }
             .nav-toggle { display: flex; }
 
-<<<<<<< HEAD
             .hero-title { font-size: clamp(1.4rem, 5vw, 2rem); }
             .hero-meta { flex-direction: column; gap: 0.5rem; }
 
@@ -2348,30 +1640,6 @@
 
             .cta-autotest {
                 padding: 2.5rem 1.5rem;
-=======
-            .hero-title { font-size: clamp(1.5rem, 6vw, 2.5rem); }
-            .hero-meta { flex-direction: column; gap: 0.5rem; }
-
-            .article-content h2 { font-size: 1.2rem; }
-
-            .pull-quote {
-                margin: 2rem -1rem;
-                padding: 2.5rem 1.5rem;
-            }
-
-            .pull-quote p { font-size: 1.2rem; }
-
-            .liste-mecanismes li {
-                padding-left: 4rem;
-            }
-
-            .liste-mecanismes li::before {
-                width: 40px;
-            }
-
-            .cta-autotest {
-                padding: 2rem 1.5rem;
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             }
 
             .article-actions {
@@ -2400,19 +1668,11 @@
         <div class="nav-inner">
             <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
             <ul class="nav-links" id="navLinks">
-<<<<<<< HEAD
-                <li><a href="../index.html#piliers">Méthode</a></li>
+                <li><a href="../index.html#methode">Méthode</a></li>
                 <li><a href="../Autotests/autotest.html">Autotests</a></li>
                 <li><a href="articles.html" class="active">Analyses</a></li>
                 <li><a href="../etape-zero/accompagnement.html">L'Étape Zéro</a></li>
                 <li><a href="#">Contact</a></li>
-=======
-                <li><a href="../index.html#piliers">Methode</a></li>
-                <li><a href="../Autotests/autotest.html">Autotests</a></li>
-                <li><a href="articles.html" class="active">Analyses</a></li>
-                <li><a href="../etape-zero/accompagnement.html">L'Etape Zero</a></li>
-                <li><a href="#contact">Contact</a></li>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             </ul>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
@@ -2426,7 +1686,6 @@
     <div class="toc-wrapper" id="tocWrapper">
         <div class="toc">
             <div class="toc-dot" data-target="section1" data-title="Le cortisol"></div>
-<<<<<<< HEAD
             <div class="toc-dot" data-target="section2" data-title="Système polyvagal"></div>
             <div class="toc-dot" data-target="section3" data-title="Le piège du QI"></div>
             <div class="toc-dot" data-target="section4" data-title="Chaîne des aveugles"></div>
@@ -2437,42 +1696,20 @@
             <div class="toc-dot" data-target="section9" data-title="Clés pour l'entourage"></div>
             <div class="toc-dot" data-target="section10" data-title="Qui a fabriqué ?"></div>
             <div class="toc-dot" data-target="section11" data-title="Ce qu'on cherche"></div>
-=======
-            <div class="toc-dot" data-target="section2" data-title="Systeme polyvagal"></div>
-            <div class="toc-dot" data-target="section3" data-title="Le piege du QI"></div>
-            <div class="toc-dot" data-target="section4" data-title="Chaine des aveugles"></div>
-            <div class="toc-dot" data-target="section5" data-title="Gaslighting"></div>
-            <div class="toc-dot" data-target="section6" data-title="Protecteurs complices"></div>
-            <div class="toc-dot" data-target="section7" data-title="Memoire traumatique"></div>
-            <div class="toc-dot" data-target="section8" data-title="Mythe de la volonte"></div>
-            <div class="toc-dot" data-target="section9" data-title="Qui a fabrique"></div>
-            <div class="toc-dot" data-target="section10" data-title="Ce qu'on cherche"></div>
-            <div class="toc-dot" data-target="section11" data-title="La derniere question"></div>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         </div>
     </div>
 
     <!-- Hero -->
     <header class="hero">
         <div class="hero-content">
-<<<<<<< HEAD
             <p class="hero-series">Série IV — Diagnostic tardif</p>
             <h1 class="hero-title">Vingt ans, huit experts, zéro diagnostic : anatomie neurologique d'un effondrement fabriqué</h1>
             <p class="hero-hook">Mon fils a vu des pédopsychiatres, psychologues scolaires, infirmières psy, éducateurs. Pendant vingt ans, des professionnels payés pour observer les enfants l'ont regardé sans le voir.</p>
-=======
-            <p class="hero-series">Neurodiversite — Diagnostic tardif</p>
-            <h1 class="hero-title">Vingt ans, huit experts, zero diagnostic : anatomie neurologique d'un effondrement fabrique</h1>
-            <p class="hero-hook">Mon fils a vu des pedopsychiatres, psychologues scolaires, infirmieres psy, educateurs. Pendant vingt ans, des professionnels payes pour observer les enfants l'ont ignore.</p>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             <div class="hero-line"></div>
             <div class="hero-meta">
                 <span>
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-<<<<<<< HEAD
                     14 min de lecture
-=======
-                    18 min de lecture
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
                 </span>
                 <span>Analyse transdisciplinaire</span>
             </div>
@@ -2482,26 +1719,17 @@
         </a>
     </header>
 
-<<<<<<< HEAD
     <!-- Article Wrapper (fond gris clair) -->
-=======
-    <!-- Article Wrapper -->
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
     <div class="article-wrapper">
 
     <!-- Lead -->
     <div class="article-lead" id="content">
-<<<<<<< HEAD
         <p>Cet été, Alex a reçu son diagnostic. Autiste. À vingt ans. Pas un autisme « invisible ». Un autisme que tout le monde voyait sans le nommer. Ses enseignants disaient qu'il était « à part ». Ses camarades le harcelaient. Les adultes censés le protéger lui expliquaient que c'était de sa faute. Aujourd'hui, il est anxiodépressif. Et je refuse de croire que c'est une coïncidence.</p>
-=======
-        <p>Cet ete, a vingt ans, il a enfin recu son diagnostic : autiste. Pas un autisme « invisible ». Un autisme que tout le monde voyait sans le nommer. Ses enseignants disaient qu'il etait « a part ». Ses camarades le harcelaient. Les adultes censes le proteger lui expliquaient que c'etait de sa faute. Aujourd'hui, il est anxiodepressif. Et je refuse de croire que c'est une coincidence.</p>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
     </div>
 
     <!-- Article Content -->
     <article class="article-content">
 
-<<<<<<< HEAD
         <p class="reveal">Quand on comprend comment fonctionne un cerveau soumis à vingt ans de stress chronique, on comprend que cette dépression n'est pas un mystère. <span class="highlight">C'est une facture. Celle d'un système incompétent et aveugle.</span></p>
 
         <h2 class="reveal" data-icon="brain" id="section1">Ce que le cortisol fait à un enfant qui doit simuler</h2>
@@ -2531,28 +1759,12 @@
         <p class="reveal">Un enfant neurotypique navigue entre ces états selon les situations. Un enfant autiste non diagnostiqué, plongé dans un environnement qu'il ne décode pas, oscille entre le deuxième et le troisième. <strong>Mobilisation permanente. Puis effondrement.</strong></p>
 
         <p class="reveal">Quand un adulte disait à Alex « fais des efforts pour t'intégrer », il demandait à un système nerveux en mode survie de passer en mode connexion sociale.</p>
-=======
-        <p class="reveal drop-cap">Quand on comprend comment fonctionne un cerveau soumis a vingt ans de stress chronique, on comprend que cette depression n'est pas un mystere. C'est le resultat d'un systeme incompetent et aveugle.</p>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="brain" id="section1">Ce que le cortisol fait a un enfant qui doit simuler</h2>
-
-        <p class="reveal">Le masking, ce n'est pas de la timidite. Ce n'est pas de l'introversion. <strong>C'est une strategie de survie neurologique.</strong></p>
-
-        <p class="reveal">Un enfant autiste non diagnostique percoit le monde social comme une menace permanente. Chaque interaction est un decodage. Chaque recreation est un terrain mine. Son amygdale, la sentinelle du cerveau, reste en alerte constante. Et quand l'amygdale sonne l'alarme, le cortisol inonde le systeme.</p>
-
-        <p class="reveal">Le cortisol, c'est l'hormone du « danger imminent ». Utile pour fuir un predateur. <span class="highlight">Destructrice quand elle coule en continu pendant des annees.</span></p>
-
-        <p class="reveal">A court terme, le cortisol aiguise l'attention. A long terme, il erode la memoire, deregle le sommeil, epuise les capacites de regulation emotionnelle. Le cerveau d'Alex n'a pas dysfonctionne. Il a fonctionne exactement comme un cerveau humain fonctionne quand on le maintient en etat d'alerte pendant deux decennies.</p>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
 
         <div class="emphase reveal">
             <div class="emphase-bar"></div>
             <div class="corner-bl"></div>
             <div class="corner-br"></div>
             <div class="emphase-icon">
-<<<<<<< HEAD
                 <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
             <p><strong>C'est comme demander à quelqu'un qui se noie de nager plus élégamment.</strong></p>
@@ -2576,26 +1788,11 @@
         <p class="reveal">Cette hyper-adaptation cognitive a un coût : <strong>la charge mentale.</strong></p>
 
         <p class="reveal">Un neurotypique traverse une journée sociale en mode automatique. Alex traversait chaque journée en mode traduction simultanée. Chaque micro-interaction exigeait un effort conscient.</p>
-=======
-                <svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 011.32-4.24 2.5 2.5 0 011.98-3A2.5 2.5 0 019.5 2z"/><path d="M14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-1.32-4.24 2.5 2.5 0 00-1.98-3A2.5 2.5 0 0014.5 2z"/></svg>
-            </div>
-            <p>Son anxiodepression n'est pas une faiblesse de caractere. C'est de la biochimie. C'est le resultat previsible d'un organisme qui a epuise ses reserves de stress.</p>
-        </div>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="alert" id="section2">Le systeme polyvagal : pourquoi « faire des efforts » ne sert a rien</h2>
-
-        <p class="reveal">Stephen Porges a decrit trois etats du systeme nerveux autonome. Le premier : connexion sociale, securite, detente. Le deuxieme : mobilisation, combat ou fuite. Le troisieme : effondrement, dissociation, retrait.</p>
-
-        <p class="reveal">Un enfant neurotypique navigue entre ces etats selon les situations. Un enfant autiste non diagnostique, plonge dans un environnement qu'il ne decode pas, oscille entre le deuxieme et le troisieme. <strong>Mobilisation permanente. Puis effondrement.</strong></p>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
 
         <div class="pull-quote reveal">
             <span class="quote-mark">
                 <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
             </span>
-<<<<<<< HEAD
             <p>Imaginez parler une langue étrangère huit heures par jour, tous les jours, pendant vingt ans, sans jamais pouvoir dire « je suis fatigué de traduire ».</p>
             <div class="quote-line"></div>
         </div>
@@ -2810,42 +2007,6 @@
         <p class="reveal">On parle beaucoup de « neurodiversité ». De « bienveillance ». D'« inclusion ». Les institutions multiplient les chartes et les formations.</p>
 
         <p class="reveal">Pendant ce temps, des enfants comme Alex traversent le système entier sans être vus. Ils s'épuisent à simuler la normalité. Leur amygdale reste en alerte. Leur cortisol s'accumule. Leur mémoire encode des traumatismes. Et quand ils s'effondrent à l'âge adulte, on diagnostique leur effondrement comme une maladie psychiatrique, au lieu de le reconnaître comme une conséquence biologique prévisible.</p>
-=======
-            <p>Quand un adulte disait a Alex « fais des efforts pour t'integrer », il demandait a un systeme nerveux en mode survie de passer en mode connexion sociale. C'est comme demander a quelqu'un qui se noie de nager plus elegamment.</p>
-            <div class="quote-line"></div>
-        </div>
-
-        <p class="reveal">Le systeme polyvagal ne repond pas a la volonte. Il repond a la perception de securite. Alex n'a jamais percu l'ecole comme un lieu sur. Son corps le savait. Les adultes, eux, voyaient un enfant « qui ne faisait pas d'efforts ».</p>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="eye" id="section3">Le piege du garcon intelligent : quand le QI devient un ecran de fumee</h2>
-
-        <p class="reveal">Alex a passe des tests de QI. Resultats au-dessus de la moyenne. Dossier classe.</p>
-
-        <p class="reveal">Voila comment fonctionne le filtre institutionnel : un enfant intelligent ne peut pas etre autiste. Comme si l'intelligence compensait magiquement un cablage neurologique different. Comme si savoir resoudre une equation signifiait savoir decoder un regard.</p>
-
-        <p class="reveal">L'intelligence d'Alex n'a jamais compense quoi que ce soit. Elle lui a permis de construire un masque plus sophistique. D'analyser les patterns sociaux. De creer des scripts mentaux pour chaque situation. D'anticiper les reponses attendues.</p>
-
-        <div class="parenthese reveal">
-            <span class="aside-icon">&#10022;</span>
-            Cette hyper-adaptation cognitive a un cout : la charge mentale. Un neurotypique traverse une journee sociale en mode automatique. Alex traversait chaque journee en mode traduction simultanee. Chaque micro-interaction exigeait un effort conscient.
-        </div>
-
-        <p class="reveal">Imaginez parler une langue etrangere huit heures par jour, tous les jours, pendant vingt ans, sans jamais pouvoir dire « je suis fatigue de traduire ».</p>
-
-        <p class="reveal">Les experts ont vu un garcon « vif ». <span class="highlight">Ils n'ont pas vu l'epuisement cognitif derriere la performance.</span></p>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="users" id="section4">La chaine des aveugles : quand chaque specialiste voit son propre reflet</h2>
-
-        <p class="reveal">Recapitulons. Un pedopsychiatre regarde Alex : il voit de l'anxiete. Un psychologue scolaire regarde Alex : il voit des difficultes d'adaptation. Une infirmiere regarde Alex : elle voit de la nervosite. Un educateur regarde Alex : il voit un enfant « difficile ».</p>
-
-        <p class="reveal"><strong>Chacun a regarde par sa lorgnette. Chacun a traite le symptome comme s'il etait la cause.</strong></p>
-
-        <p class="reveal">C'est un biais cognitif classique : on voit ce qu'on est forme a voir. Le marteau voit des clous partout. Le psychiatre forme sur les troubles de l'humeur voit des troubles de l'humeur. Le psychologue scolaire forme sur les difficultes d'apprentissage voit des difficultes d'apprentissage.</p>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
 
         <div class="emphase reveal">
             <div class="emphase-bar"></div>
@@ -2854,162 +2015,12 @@
             <div class="emphase-icon">
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
-<<<<<<< HEAD
             <p><strong>Combien de diagnostics de dépression ne sont en réalité que des cerveaux autistes épuisés d'avoir tenté de fonctionner dans un monde qui ne leur a jamais fait de place ?</strong></p>
             <p>Mon fils n'a pas échoué à se faire comprendre. Ce sont les experts qui ont échoué à faire leur travail. Et son anxiodépression n'est pas sa fragilité. <strong>C'est leur facture.</strong></p>
         </div>
 
         <div class="conclusion-poetique reveal">
             <p>Tu connais peut-être un Alex. Peut-être es-tu un Alex.<br>Ton épuisement n'est pas une faiblesse.<br>C'est la réponse normale d'un cerveau normal à une situation anormale.</p>
-=======
-            <p>La psychiatrie francaise prefere diagnostiquer une depression qu'un autisme. Une depression, ca se traite. Ca se medicamente. Ca rentre dans les cases administratives et les protocoles existants. Un autisme sans deficience intellectuelle, ca oblige a remettre en question l'environnement. Ca demande des amenagements. Ca coute cher. Ca complique.</p>
-            <p><strong>Alors on a soigne la fumee. L'incendie, lui, a continue de bruler.</strong></p>
-        </div>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="zap" id="section5">Le gaslighting institutionnel : quand la realite de l'enfant est niee</h2>
-
-        <p class="reveal">Alex savait qu'il etait different. Il le sentait. Il voyait bien que les autres enfants ne faisaient pas les memes efforts que lui pour comprendre les codes. Il voyait bien que quelque chose clochait.</p>
-
-        <p class="reveal">Mais chaque adulte lui renvoyait le meme message : « Tu es trop sensible. » « Tu te fais des idees. » « Les autres enfants sont comme toi, ils font juste moins de cinema. »</p>
-
-        <div class="pull-quote reveal">
-            <span class="quote-mark">
-                <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
-            </span>
-            <p>C'est la definition du gaslighting : faire douter quelqu'un de sa propre perception alors que cette perception est exacte.</p>
-            <div class="quote-line"></div>
-        </div>
-
-        <p class="reveal">Alex percevait correctement sa difference. Le systeme lui a appris a se mefier de ses propres sensations. A considerer son ressenti comme exagere, pathologique, honteux. <span class="highlight">A vingt ans, il ne sait plus comment faire confiance a ce qu'il eprouve.</span></p>
-
-        <p class="reveal">La dissonance cognitive qui en resulte est epuisante. D'un cote, son experience vecue : « quelque chose ne va pas, je ne fonctionne pas comme les autres ». De l'autre, le message institutionnel : « tu es normal, tu dois juste faire plus d'efforts ». Le cerveau humain ne supporte pas longtemps cette contradiction. Il finit par douter de lui-meme.</p>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="shield" id="section6">Quand les protecteurs deviennent complices</h2>
-
-        <p class="reveal">Alex etait harcele. Ca arrive a beaucoup d'enfants. Ce qui arrive moins souvent : les adultes qui prennent le parti des harceleurs.</p>
-
-        <p class="reveal">« Tu dois apprendre a t'integrer. » « Tu provoques sans t'en rendre compte. » « Fais des efforts. »</p>
-
-        <p class="reveal">Les agresseurs, eux, « faisaient des betises ». Des « chamailleries entre gamins ». Rien de grave.</p>
-
-        <div class="parenthese reveal">
-            <span class="aside-icon">&#10022;</span>
-            Les adultes ont vu dans les harceleurs le reflet d'une norme qu'ils approuvaient : l'aisance sociale, la capacite a dominer un groupe. En Alex, ils voyaient l'anomalie. Le grain de sable. Celui qui complique la gestion de classe parce qu'il ne reagit pas comme prevu.
-        </div>
-
-        <p class="reveal">C'est un mecanisme anthropologique vieux comme le monde : le groupe designe un bouc emissaire pour renforcer sa cohesion. Les harceleurs remplissaient une fonction sociale. Alex, lui, la mettait en danger par sa simple existence differente.</p>
-
-        <p class="reveal"><strong>Le harcelement est devenu un outil de « nettoyage » social. Les adultes l'ont laisse faire. Certains l'ont encourage.</strong> Un enfant qui ne rentre pas dans le moule, on le plie ou on le casse. La culture scolaire francaise n'a jamais vraiment abandonne cette logique.</p>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="heart" id="section7">La memoire traumatique : pourquoi le passe ne passe pas</h2>
-
-        <p class="reveal">Le cerveau humain stocke les souvenirs de deux manieres. Les souvenirs ordinaires sont contextualises : on sait quand et ou ils se sont produits, ils appartiennent au passe. Les souvenirs traumatiques, eux, restent fragmentes, intrusifs, decontextualises. Ils resurgissent comme si l'evenement se produisait maintenant.</p>
-
-        <p class="reveal">Alex n'a pas « un mauvais souvenir » de l'ecole. <span class="highlight">Il a une memoire traumatique de l'ecole.</span></p>
-
-        <p class="reveal">Son amygdale a encode des centaines de micro-agressions comme des menaces vitales. Chaque situation sociale qui ressemble, meme de loin, a une situation passee reactive l'alerte. Le corps se tend. Le coeur s'accelere. Le cortisol monte. Pas parce qu'Alex « se complait dans le passe ». Parce que son cerveau n'a jamais pu classer ces souvenirs comme termines.</p>
-
-        <p class="reveal">La dissociation, cette sensation de « ne plus etre vraiment la », est un mecanisme de protection. Quand le stress depasse les capacites de traitement, le cerveau debranche. Alex a appris a se dissocier pour survivre aux cours, aux recreations, aux reunions de famille. Cette competence de survie est devenue un handicap : <strong>il ne sait plus comment rester present.</strong></p>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="target" id="section8">Le mythe de la volonte : pourquoi « il suffit de vouloir » est une escroquerie intellectuelle</h2>
-
-        <p class="reveal">Notre culture adore l'idee que tout est question de volonte. Tu veux t'integrer ? Fais des efforts. Tu veux guerir ? Sois positif. Tu veux reussir ? Travaille plus.</p>
-
-        <p class="reveal">Cette croyance ignore tout ce que les neurosciences ont etabli sur le fonctionnement du cerveau humain.</p>
-
-        <div class="emphase reveal">
-            <div class="emphase-bar"></div>
-            <div class="corner-bl"></div>
-            <div class="corner-br"></div>
-            <div class="emphase-icon">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </div>
-            <p>Un systeme nerveux en mode survie ne « choisit » pas de rester en alerte. Une amygdale hyperactivee ne « decide » pas de se calmer. Un taux de cortisol chroniquement eleve ne « fait pas expres » d'epuiser les ressources cognitives.</p>
-            <p>Dire a Alex « fais des efforts » revenait a lui demander de modifier sa biochimie par la pensee. <strong>C'est aussi efficace que demander a un diabetique de produire de l'insuline par la force de la volonte.</strong></p>
-        </div>
-
-        <p class="reveal">Le probleme n'a jamais ete le manque d'efforts d'Alex. Le probleme etait un environnement inadapte a son fonctionnement neurologique, et un systeme medico-educatif incapable de le reconnaitre.</p>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="question" id="section9">La question qui derange : qui a fabrique cette depression ?</h2>
-
-        <p class="reveal drop-cap">L'anxiodepression d'Alex n'est pas tombee du ciel. Elle n'est pas genetique. Elle n'est pas le fruit d'une « fragilite » mysterieuse.</p>
-
-        <p class="reveal">Elle est le resultat mesurable, previsible, documente, de ce qui arrive a un cerveau humain quand :</p>
-
-        <ul class="liste-mecanismes reveal">
-            <li>
-                <strong>On le soumet a un stress social chronique pendant vingt ans</strong>
-            </li>
-            <li>
-                <strong>On nie sa perception de la realite a chaque fois qu'il l'exprime</strong>
-            </li>
-            <li>
-                <strong>On le force a simuler un fonctionnement qui n'est pas le sien</strong>
-            </li>
-            <li>
-                <strong>On le punit quand il echoue a cette simulation</strong>
-            </li>
-            <li>
-                <strong>On refuse de nommer ce qui le differencie des autres</strong>
-            </li>
-        </ul>
-
-        <p class="reveal">Le diagnostic tardif n'est pas une solution. <span class="highlight">C'est le constat d'un echec collectif.</span></p>
-
-        <p class="reveal">Huit professionnels. Vingt ans. Des tests. Des consultations. Des reunions. Et a la fin, un jeune homme brise qui doit maintenant reconstruire son identite sur les ruines d'une enfance ou on lui a appris a se mefier de lui-meme.</p>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="compass" id="section10">Ce que cherchent les familles comme la notre</h2>
-
-        <p class="reveal">Nous ne cherchons pas une etiquette. Nous ne cherchons pas non plus la « guerison » d'Alex.</p>
-
-        <p class="reveal"><strong>Nous cherchons la validation.</strong> Pendant vingt ans, le monde a dit a Alex que son probleme etait sa « sensibilite », son « manque d'effort », sa « fragilite ». Le diagnostic transforme enfin la plainte en fait neurologique. Le statut de coupable en statut de victime d'un environnement inadapte.</p>
-
-        <p class="reveal"><strong>Nous cherchons le droit au repos.</strong> Alex s'est epuise a ressembler aux autres. Il a besoin d'un cadre qui dise : tu n'as plus a simuler. Ton systeme nerveux a le droit de se reguler. Ta perception du monde est valide.</p>
-
-        <p class="reveal"><strong>Nous cherchons des reponses.</strong> Pourquoi huit professionnels formes ont-ils rate l'evidence ? Pourquoi les criteres diagnostiques excluent-ils encore les profils sans deficience intellectuelle ? Pourquoi forme-t-on des psys sur des modeles cliniques vieux de quarante ans ?</p>
-
-        <p class="reveal"><strong>Et nous cherchons que ca change.</strong> Pas pour Alex, c'est trop tard. Pour les enfants qui, en ce moment meme, traversent le systeme en epuisant leurs reserves de cortisol a force de simuler la normalite.</p>
-
-        <div class="separator reveal"><div class="sep-icon"></div></div>
-
-        <h2 class="reveal" data-icon="question" id="section11">La derniere question</h2>
-
-        <p class="reveal">On parle beaucoup de « neurodiversite ». De « bienveillance ». D'« inclusion ». Les institutions multiplient les chartes et les formations.</p>
-
-        <p class="reveal">Pendant ce temps, des enfants comme Alex traversent le systeme entier sans etre vus. Ils s'epuisent a simuler la normalite. Leur amygdale reste en alerte. Leur cortisol s'accumule. Leur memoire encode des traumatismes. Et quand ils s'effondrent a l'age adulte, on diagnostique leur effondrement comme une maladie psychiatrique, au lieu de le reconnaitre comme une consequence biologique previsible.</p>
-
-        <div class="pull-quote reveal">
-            <span class="quote-mark">
-                <svg viewBox="0 0 24 24"><path d="M10 11H6a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4M22 11h-4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011 1v7c0 2.21-1.79 4-4 4"/></svg>
-            </span>
-            <p>Combien de diagnostics de depression ne sont en realite que des cerveaux autistes epuises d'avoir tente de fonctionner dans un monde qui ne leur a jamais fait de place ?</p>
-            <div class="quote-line"></div>
-        </div>
-
-        <p class="reveal"><strong>Mon fils n'a pas echoue a se faire comprendre. Ce sont les experts qui ont echoue a faire leur travail.</strong> Et son anxiodepression n'est pas sa fragilite. C'est leur facture.</p>
-
-        <div class="emphase reveal">
-            <div class="emphase-bar"></div>
-            <div class="corner-bl"></div>
-            <div class="corner-br"></div>
-            <div class="emphase-icon">
-                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </div>
-            <p>Vous connaissez un Alex. Peut-etre etes-vous un Alex. Votre epuisement n'est pas une faiblesse. C'est la reponse normale d'un cerveau normal a une situation anormale.</p>
-            <p><strong>Qu'est-ce qui vous a manque pour etre vu a temps ?</strong></p>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         </div>
 
         <!-- CTA Autotest -->
@@ -3021,17 +2032,10 @@
             <div class="cta-icon">
                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-<<<<<<< HEAD
             <h3>Qu'est-ce qui t'a manqué pour être vu à temps ?</h3>
             <p>Les autotests Noesis Kintsugi permettent de cartographier les mécanismes que tu as développés pour survivre. Pas de diagnostic — juste une clarification.</p>
             <a href="../Autotests/autotest.html" class="btn btn-primary">
                 Découvrir les autotests
-=======
-            <h3>Explorer vos mecanismes</h3>
-            <p>Les autotests Noesis Kintsugi permettent d'identifier ou la normalite imposee vous a contraint a vous effacer. Pas de diagnostic — juste une cartographie de vos fonctionnements.</p>
-            <a href="../Autotests/autotest.html" class="btn btn-primary">
-                Decouvrir les autotests
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
                 <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
         </div>
@@ -3052,16 +2056,11 @@
 
     </div><!-- Fin article-wrapper -->
 
-<<<<<<< HEAD
     <!-- Articles liés -->
-=======
-    <!-- Articles lies -->
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
     <section class="related-articles">
         <h2>Continuer la lecture</h2>
         <div class="related-grid">
             <a href="article-autisme.html" class="related-item">
-<<<<<<< HEAD
                 <span class="series-tag">Série IV — Neurodiversité</span>
                 <h3>Et si l'autisme était plus vieux que Sapiens ?</h3>
             </a>
@@ -3072,18 +2071,6 @@
             <a href="#" class="related-item">
                 <span class="series-tag">Série IV — Faux diagnostic</span>
                 <h3>« On m'a dit burn-out. Personne n'a regardé ce qui m'empêchait d'agir. »</h3>
-=======
-                <span class="series-tag">Neurodiversite</span>
-                <h3>Et si l'autisme etait plus vieux que Sapiens ?</h3>
-            </a>
-            <a href="article-jugement.html" class="related-item">
-                <span class="series-tag">Serie I</span>
-                <h3>Le moment precis ou j'ai arrete de faire confiance a mon propre jugement</h3>
-            </a>
-            <a href="#" class="related-item">
-                <span class="series-tag">Serie IV</span>
-                <h3>« On m'a dit burn-out. Personne n'a regarde ce qui m'empechait d'agir. »</h3>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             </a>
         </div>
     </section>
@@ -3098,13 +2085,8 @@
             <nav class="footer-links">
                 <a href="../Autotests/autotest.html">Autotests</a>
                 <a href="articles.html">Analyses</a>
-<<<<<<< HEAD
                 <a href="../etape-zero/accompagnement.html">L'Étape Zéro</a>
                 <a href="#">Contact</a>
-=======
-                <a href="../etape-zero/accompagnement.html">L'Etape Zero</a>
-                <a href="mailto:contact@noesisanalyse.com">Contact</a>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             </nav>
             <div class="footer-social">
                 <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener">
@@ -3128,13 +2110,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-<<<<<<< HEAD
             <p class="footer-copyright">© 2025 Noesis Kintsugi. Tous droits réservés.</p>
             <p class="footer-baseline">La paix sans vérité est une anesthésie.</p>
-=======
-            <p class="footer-copyright">© 2025 Noesis Kintsugi. Tous droits reserves.</p>
-            <p class="footer-baseline">La paix sans verite est une anesthesie.</p>
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
         </div>
     </footer>
 
@@ -3179,13 +2156,9 @@
         // Reveal animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-<<<<<<< HEAD
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
-=======
-                if (entry.isIntersecting) entry.target.classList.add('visible');
->>>>>>> 58bb3773121f78d72987ec7e68b9313ca43ad68b
             });
         }, { threshold: 0.1 });
 
