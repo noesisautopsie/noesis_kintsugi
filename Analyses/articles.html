@@ -3,117 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyses — Déconstruire les mécanismes | Noesis Kintsugi</title>
-    <meta name="description" content="Analyses transdisciplinaires des mécanismes d'emprise, de manipulation et de violence psychologique invisible. Comprendre pour ne plus subir.">
+    <title>Analyses — Comprendre pour reprendre le pouvoir | Noesis Kintsugi</title>
+    <meta name="description" content="Analyses transdisciplinaires des mécanismes d'emprise, de manipulation et de trauma. Témoignages décryptés, articles de fond, guides pratiques. Sans jargon, sans simplification.">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
     
     <style>
         /* ═══════════════════════════════════════════════════════════════
-           CSS VARIABLES — PALETTE NOESIS KINTSUGI OPTIMISÉE
+           CSS VARIABLES — PALETTE NOESIS KINTSUGI
            ═══════════════════════════════════════════════════════════════ */
         :root {
-            /* ─────────── NOIRS PROFONDS ─────────── */
-            --noir-principal: #121514;
-            --noir-profond: #111313;
-            --noir-clair: #161817;
+            /* GRIS PREMIUM */
+            --noir-principal: #1c1f21;
+            --noir-profond: #16191a;
+            --gris-anthracite: #2d3133;
+            --gris-ceramique: #353a3c;
+            --gris-moyen: #4a5154;
+            --gris-pierre: #8a9094;
             
-            /* ─────────── GRIS ANTHRACITE ─────────── */
-            --gris-anthracite: #2E3130;
-            --gris-ceramique: #2D2F2F;
-            --gris-moyen-fonce: #424446;
+            /* ORS */
+            --or-vieilli: #a07830;
+            --or-mat: #aa8555;
+            --or-clair: #d4b896;
+            --or-eclatant: #e8d4a8;
+            --or-intense: #f0ddb0;
             
-            /* ─────────── GRIS MOYENS ─────────── */
-            --gris-pierre: #97948C;
-            --gris-neutre: #989694;
-            --gris-medium: #999999;
+            /* TEXTE */
+            --texte-principal: #f5f3ef;
+            --texte-secondaire: #c5c2bc;
+            --blanc-casse: #e8e5e0;
             
-            /* ─────────── ORS SOMBRES ─────────── */
-            --or-antique: #8F6B2E;
-            --or-bronze: #967523;
-            --or-vieilli: #996B26;
-            --or-cuivre: #AE752B;
-            
-            /* ─────────── ORS MOYENS ─────────── */
-            --or-moyen: #9D7034;
-            --or-mat: #98764D;
-            --or-terreux: #99845E;
-            
-            /* ─────────── ORS BRILLANTS ─────────── */
-            --or-clair: #C9AA6E;
-            --or-lumineux: #CCA464;
-            --or-eclatant: #D7BE67;
-            --or-intense: #DDB569;
-            
-            /* ─────────── BLANCS/IVOIRE ─────────── */
-            --blanc-casse: #C9CBCB;
-            --ivoire: #CBCBC9;
-            
-            /* ─────────── FOND CLAIR ─────────── */
-            --fond-clair: #f8f7f5;
-            --fond-clair-alt: #f4f3f0;
-            
-            /* ─────────── EFFETS KINTSUGI ─────────── */
-            --glow-or: 0 0 20px rgba(201, 170, 110, 0.3);
-            --glow-or-intense: 0 0 30px rgba(215, 190, 103, 0.4);
-            --shadow-gold: 0 4px 20px rgba(143, 107, 46, 0.25);
-            --shadow-deep: 0 12px 40px rgba(0, 0, 0, 0.4);
+            /* EFFETS */
+            --glow-or: 0 0 25px rgba(212, 184, 150, 0.25);
+            --shadow-gold: 0 4px 24px rgba(160, 120, 48, 0.2);
+            --shadow-deep: 0 12px 48px rgba(0, 0, 0, 0.35);
             --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
-            --gradient-fissure: linear-gradient(90deg, var(--or-vieilli), var(--or-clair), var(--or-intense), var(--or-clair), var(--or-vieilli));
             
-            /* Typography */
+            /* TYPO */
             --font-display: 'Megrim', cursive;
-            --font-body: 'Crimson Pro', serif;
+            --font-body: 'Crimson Pro', Georgia, serif;
             
-            /* Spacing */
+            /* SPACING */
             --section-padding: clamp(80px, 12vh, 140px);
             --container-max: 1200px;
             --container-padding: clamp(20px, 5vw, 60px);
             
-            /* Transitions */
+            /* TRANSITIONS */
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* ═══════════════════════════════════════════════════════════════
-           RESET & BASE
-           ═══════════════════════════════════════════════════════════════ */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html { scroll-behavior: smooth; }
+        
         body {
             font-family: var(--font-body);
-            background-color: var(--gris-moyen-fonce);
-            color: var(--blanc-casse);
-            line-height: 1.65;
-            overflow-x: hidden;
+            background-color: var(--noir-principal);
+            color: var(--texte-principal);
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Texture grain subtile premium */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0.025;
-            z-index: 9999;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
 
         /* Sélection dorée */
@@ -122,251 +72,39 @@
             color: var(--noir-principal);
         }
 
-        ::-moz-selection {
-            background: var(--or-vieilli);
-            color: var(--noir-principal);
-        }
-
-        /* Scrollbar personnalisée */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--noir-profond);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--or-vieilli);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--or-clair);
-        }
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--noir-profond); }
+        ::-webkit-scrollbar-thumb { background: var(--or-vieilli); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--or-clair); }
 
         .container {
             max-width: var(--container-max);
             margin: 0 auto;
             padding: 0 var(--container-padding);
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           TYPOGRAPHY
-           ═══════════════════════════════════════════════════════════════ */
-        .title-display {
-            font-family: var(--font-display);
-            font-weight: 400;
-            letter-spacing: 0.02em;
-            line-height: 1.1;
-        }
-
-        .title-section {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            color: var(--or-clair);
-            margin-bottom: 0.5em;
             position: relative;
-            display: inline-block;
-        }
-
-        .title-section::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: var(--gradient-or);
-        }
-
-        .subtitle {
-            font-family: var(--font-body);
-            font-style: italic;
-            color: var(--gris-medium);
-            font-size: 1.1rem;
-        }
-
-        .surtitre {
-            font-family: var(--font-body);
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--gris-medium);
-            margin-bottom: 1rem;
+            z-index: 1;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           BUTTONS — EFFETS PREMIUM
-           ═══════════════════════════════════════════════════════════════ */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2.5rem;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary {
-            background: var(--or-clair);
-            color: var(--noir-principal);
-        }
-
-        .btn-primary:hover {
-            background: var(--or-eclatant);
-            box-shadow: var(--glow-or), 0 8px 32px rgba(201, 170, 110, 0.25);
-            transform: translateY(-3px);
-        }
-
-        .btn-primary:active {
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--or-clair);
-            color: var(--or-clair);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(201, 170, 110, 0.1);
-            border-color: var(--or-eclatant);
-            color: var(--or-eclatant);
-            box-shadow: var(--glow-or);
-        }
-
-        .link-subtle {
-            color: var(--gris-medium);
-            font-size: 0.95rem;
-            border-bottom: 1px solid transparent;
-            transition: var(--transition-smooth);
-        }
-
-        .link-subtle:hover {
-            color: var(--or-clair);
-            border-bottom-color: var(--or-clair);
-        }
-
-        .link-gold {
-            color: var(--or-clair);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
-            transition: var(--transition-smooth);
-        }
-
-        .link-gold:hover {
-            color: var(--or-eclatant);
-            gap: 0.75rem;
-            text-shadow: 0 0 20px rgba(215, 190, 103, 0.3);
-        }
-
-        .link-gold svg {
-            width: 16px;
-            height: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .link-gold:hover svg {
-            transform: translateX(4px);
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           NAVIGATION — EFFETS PREMIUM
+           NAVIGATION
            ═══════════════════════════════════════════════════════════════ */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             z-index: 1000;
-            padding: 1.5rem 0;
-            transition: var(--transition-smooth);
-        }
-
-        .nav .logo {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--noir-principal);
-            letter-spacing: 0.05em;
-            transition: var(--transition-smooth);
-        }
-
-        .nav .logo span {
-            color: var(--gris-moyen-fonce);
-            font-size: 0.9em;
-            transition: var(--transition-smooth);
-        }
-
-        .nav .nav-links a {
-            font-size: 0.9rem;
-            color: var(--noir-principal);
-            position: relative;
+            padding: 1.25rem 0;
+            background: rgba(28, 31, 33, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 184, 150, 0.1);
             transition: var(--transition-smooth);
         }
 
         .nav.scrolled {
-            background: rgba(17, 19, 19, 0.97);
-            backdrop-filter: blur(12px);
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(153, 107, 38, 0.2);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav.scrolled .logo {
-            color: var(--or-clair);
-        }
-
-        .nav.scrolled .logo:hover {
-            color: var(--or-eclatant);
-            text-shadow: var(--glow-or);
-        }
-
-        .nav.scrolled .logo span {
-            color: var(--gris-medium);
-        }
-
-        .nav.scrolled .nav-links a {
-            color: var(--blanc-casse);
-        }
-
-        .nav.scrolled .nav-links a:hover {
-            color: var(--or-clair);
+            padding: 0.75rem 0;
+            background: rgba(22, 25, 26, 0.98);
         }
 
         .nav-inner {
@@ -375,10 +113,29 @@
             align-items: center;
         }
 
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--texte-principal);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .logo span { color: var(--or-clair); }
+
         .nav-links {
             display: flex;
-            gap: 2.5rem;
             list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--texte-secondaire);
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+            position: relative;
         }
 
         .nav-links a::after {
@@ -388,1449 +145,557 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--gradient-or);
+            background: var(--or-clair);
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .nav-toggle span {
-            width: 24px;
-            height: 1px;
-            background: var(--noir-principal);
-            transition: var(--transition-smooth);
-        }
-
-        .nav.scrolled .nav-toggle span {
-            background: var(--or-clair);
-        }
+        .nav-links a:hover { color: var(--or-clair); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--or-clair); }
+        .nav-links a.active::after { width: 100%; }
 
         /* ═══════════════════════════════════════════════════════════════
-           HERO SECTION — HOOK DE HAUTE QUALITÉ
+           HERO PAGE ANALYSES
            ═══════════════════════════════════════════════════════════════ */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+        .hero-page {
+            padding: 10rem 0 5rem;
+            background: var(--noir-principal);
             position: relative;
-            background: var(--fond-clair);
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background-image: url('assets/bg-kintsugi.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 0;
-        }
-
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, 
-                rgba(248, 247, 245, 0.15) 0%, 
-                rgba(248, 247, 245, 0.02) 50%,
-                rgba(248, 247, 245, 0.2) 100%);
-            pointer-events: none;
-        }
-
-        .hero-inner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10rem 0 8rem;
             text-align: center;
-            position: relative;
-            z-index: 1;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-
-        /* Hook principal */
-        .hero-hook-main {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            color: var(--noir-principal);
-            margin-bottom: 0.3em;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-hook-sub {
-            font-family: var(--font-body);
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
-            color: var(--gris-moyen-fonce);
-            font-style: italic;
-            margin-bottom: 0;
-        }
-
-        /* Ligne de séparation dorée */
-        .hero-divider {
-            width: 80px;
-            height: 2px;
-            background: var(--gradient-or);
-            margin: 2.5rem auto;
-            position: relative;
-        }
-
-        .hero-divider::before,
-        .hero-divider::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 6px;
-            height: 6px;
-            background: var(--or-clair);
-            border-radius: 50%;
-            transform: translateY(-50%);
-        }
-
-        .hero-divider::before {
-            left: -12px;
-        }
-
-        .hero-divider::after {
-            right: -12px;
-        }
-
-        /* Explication */
-        .hero-explain {
-            font-family: var(--font-body);
-            font-size: clamp(1.05rem, 2vw, 1.2rem);
-            color: var(--gris-moyen-fonce);
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
-        }
-
-        /* CTA */
-        .hero-cta {
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero .btn-primary {
-            background: var(--noir-principal);
-            color: var(--or-clair);
-            border: 1px solid var(--noir-principal);
-            padding: 1.1rem 2.5rem;
-            font-size: 1.05rem;
-        }
-
-        .hero .btn-primary:hover {
-            background: var(--gris-anthracite);
-            box-shadow: 0 12px 40px rgba(18, 21, 20, 0.35);
-        }
-
-        .hero .link-subtle {
-            color: var(--gris-moyen-fonce);
-            font-size: 1rem;
-        }
-
-        .hero .link-subtle:hover {
-            color: var(--or-vieilli);
-            border-bottom-color: var(--or-vieilli);
-        }
-
-        /* Animations séquentielles */
-        .reveal-hero {
-            opacity: 0;
-            transform: translateY(25px);
-        }
-
-        .reveal-hero-1 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s; }
-        .reveal-hero-2 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s; }
-        .reveal-hero-3 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.9s; }
-        .reveal-hero-4 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.2s; }
-        .reveal-hero-5 { animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.5s; }
-
-        @keyframes heroReveal {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Scroll indicator amélioré */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            animation-delay: 1.2s;
-        }
-
-        .scroll-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, var(--or-clair), transparent);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .scroll-line::after {
-            content: '';
-            position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background: linear-gradient(to bottom, transparent, var(--or-eclatant), transparent);
-            animation: scrollFlow 2s ease-in-out infinite;
-        }
-
-        @keyframes scrollFlow {
-            0% { top: -50%; opacity: 0; }
-            50% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           SECTION MÉTHODE - 5 AXES
-           ═══════════════════════════════════════════════════════════════ */
-        .methode {
-            padding: var(--section-padding) 0;
-            background: var(--noir-principal);
-            position: relative;
-        }
-
-        .methode::before {
+        .hero-page::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 120px;
-            background: linear-gradient(to bottom, #f8f7f5 0%, var(--noir-principal) 100%);
-            pointer-events: none;
+            height: 100%;
+            background-image: url('../assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
         }
 
-        .methode::after {
+        .hero-page-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-page-surtitre {
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--or-clair);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-page-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--or-eclatant);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-page-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: var(--gradient-or);
+            margin: 1.5rem auto 0;
+        }
+
+        .hero-page-subtitle {
+            font-size: 1.25rem;
+            color: var(--texte-secondaire);
+            font-style: italic;
+            margin-top: 1.5rem;
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTION INTRODUCTION — Ce que tu trouveras
+           ═══════════════════════════════════════════════════════════════ */
+        .intro-section {
+            padding: 5rem 0;
+            background: var(--gris-anthracite);
+            position: relative;
+        }
+
+        .intro-section::before,
+        .intro-section::after {
             content: '';
             position: absolute;
-            top: 60px;
             left: 10%;
             right: 10%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.5), transparent);
+            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
         }
+        .intro-section::before { top: 0; }
+        .intro-section::after { bottom: 0; }
 
-        .methode-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-top: 40px;
-        }
-
-        .methode-header .title-section::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .methode-intro {
+        .intro-text {
             max-width: 800px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 3rem;
             text-align: center;
         }
 
-        .methode-intro p {
-            font-size: 1.1rem;
-            color: var(--blanc-casse);
+        .intro-text p {
+            font-size: 1.15rem;
+            color: var(--texte-principal);
+            line-height: 1.85;
             margin-bottom: 1rem;
-            line-height: 1.75;
         }
 
-        .methode-intro .methode-conclusion {
+        .intro-text strong {
             color: var(--or-clair);
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
         }
 
-        .axes-grid {
+        .types-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
 
-        .axes-bottom {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 820px;
-            margin: 2rem auto 0;
-        }
-
-        .axe {
-            background: var(--noir-clair);
-            padding: 2rem;
-            position: relative;
+        .type-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(28, 31, 33, 0.6);
+            border: 1px solid rgba(212, 184, 150, 0.1);
             transition: var(--transition-smooth);
-            border-left: 2px solid var(--or-vieilli);
         }
 
-        .axe::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -2px;
-            width: 2px;
-            height: 0;
-            background: var(--gradient-or);
-            transition: height 0.4s ease;
+        .type-card:hover {
+            border-color: rgba(212, 184, 150, 0.3);
+            transform: translateY(-4px);
         }
 
-        .axe:hover {
-            transform: translateY(-6px);
-            border-left-color: transparent;
-            box-shadow: var(--shadow-deep), var(--glow-or);
+        .type-card-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 1.25rem;
         }
 
-        .axe:hover::before {
-            height: 100%;
-        }
-
-        .axe-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .axe-icon {
-            width: 48px;
-            height: 48px;
-            flex-shrink: 0;
-        }
-
-        .axe-icon svg {
+        .type-card-icon svg {
             width: 100%;
             height: 100%;
             stroke: var(--or-clair);
             stroke-width: 1.5;
             fill: none;
-            transition: all 0.4s ease;
         }
 
-        .axe:hover .axe-icon svg {
-            stroke: var(--or-eclatant);
-            filter: drop-shadow(0 0 6px rgba(215, 190, 103, 0.3));
-        }
-
-        .axe-title {
+        .type-card h3 {
             font-family: var(--font-display);
-            font-size: 1.4rem;
+            font-size: 1.15rem;
             color: var(--or-eclatant);
-            margin: 0;
+            margin-bottom: 0.75rem;
         }
 
-        .axe-keywords {
-            font-size: 0.85rem;
-            color: var(--or-mat);
-            margin-bottom: 1rem;
+        .type-card p {
+            font-size: 0.9rem;
+            color: var(--texte-secondaire);
             line-height: 1.6;
-            font-style: italic;
-        }
-
-        .axe-text {
-            font-size: 1rem;
-            color: var(--blanc-casse);
-            line-height: 1.7;
-            margin: 0;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SECTION AUTOTEST
+           SECTION PROMESSE
            ═══════════════════════════════════════════════════════════════ */
-        .autotest {
-            padding: var(--section-padding) 0;
-            background: var(--gris-anthracite);
-            position: relative;
+        .promesse-section {
+            padding: 4rem 0;
+            background: var(--noir-principal);
+            text-align: center;
         }
 
-        .autotest::before,
-        .autotest::after {
-            content: '';
-            position: absolute;
-            left: 5%;
-            right: 5%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.6), transparent);
-        }
-
-        .autotest::before { top: 0; }
-        .autotest::after { bottom: 0; }
-
-        .autotest-inner {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .autotest-content {
-            position: relative;
-        }
-
-        .autotest-title {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            color: var(--or-intense);
-            margin-bottom: 1.5rem;
-        }
-
-        .autotest-text {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--blanc-casse);
-        }
-
-        .autotest-specs {
-            font-style: italic;
-            color: var(--gris-medium);
-            margin-bottom: 2rem;
-            font-size: 1rem;
-        }
-
-        .autotest-disclaimer {
-            font-size: 0.85rem;
-            color: var(--gris-medium);
-            font-style: italic;
-            margin-top: 1.5rem;
-        }
-
-        .autotest-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .test-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 8px;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 4px;
-        }
-
-        .test-cell {
-            width: 36px;
-            height: 36px;
-            border: 1px solid var(--gris-moyen-fonce);
-            position: relative;
-            transition: var(--transition-smooth);
-        }
-
-        .test-cell:hover {
-            border-color: var(--or-clair);
-            transform: scale(1.1);
-        }
-
-        .test-cell.checked {
-            background: rgba(201, 170, 110, 0.1);
-            border-color: var(--or-clair);
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-
-        .test-cell.checked::after {
-            content: '✓';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .promesse-quote {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.3rem;
             color: var(--or-clair);
-            font-size: 14px;
-        }
-
-        .test-cell.critical {
-            background: linear-gradient(135deg, transparent 40%, rgba(215, 190, 103, 0.3) 100%);
-            border-color: var(--or-eclatant);
-            box-shadow: 0 0 12px rgba(215, 190, 103, 0.3);
-            animation: pulse-glow 2s ease-in-out infinite;
+            font-style: italic;
+            line-height: 1.8;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SECTION ARTICLES
+           SECTION SÉRIES D'ARTICLES
            ═══════════════════════════════════════════════════════════════ */
-        .articles {
+        .series-section {
             padding: var(--section-padding) 0;
+            position: relative;
+        }
+
+        .series-section:nth-child(odd) {
+            background: var(--gris-ceramique);
+        }
+
+        .series-section:nth-child(even) {
             background: var(--noir-principal);
         }
 
-        .articles-header {
+        .series-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 400px;
+            background-image: url('../assets/bg-kintsugi.png');
+            background-size: cover;
+            opacity: 0.15;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
+        }
+
+        .series-header {
             margin-bottom: 3rem;
         }
 
-        .articles-header .title-section::after {
+        .series-number {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--or-mat);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .series-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            color: var(--or-eclatant);
+            position: relative;
+            display: inline-block;
+        }
+
+        .series-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
             left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-or);
+        }
+
+        .series-intro {
+            max-width: 700px;
+            margin-top: 1.5rem;
+        }
+
+        .series-intro p {
+            font-size: 1.05rem;
+            color: var(--texte-secondaire);
+            line-height: 1.75;
+            font-style: italic;
         }
 
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .article-card {
-            background: var(--noir-clair);
+            background: var(--gris-anthracite);
+            border-left: 3px solid var(--or-vieilli);
+            padding: 1.75rem;
+            text-decoration: none;
+            display: block;
             transition: var(--transition-smooth);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .article-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-or);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
         }
 
         .article-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-deep);
+            transform: translateY(-4px);
+            border-left-color: var(--or-clair);
+            box-shadow: var(--shadow-gold);
         }
 
-        .article-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .article-image {
-            aspect-ratio: 16/9;
-            background: var(--gris-anthracite);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, transparent 50%, rgba(153, 107, 38, 0.15));
-            z-index: 1;
-            transition: var(--transition-smooth);
-        }
-
-        .article-card:hover .article-image::before {
-            background: linear-gradient(135deg, transparent 30%, rgba(153, 107, 38, 0.25));
-        }
-
-        /* Lignes décoratives abstraites dans l'image */
-        .article-image::after {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 10%;
-            width: 80%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
-            opacity: 0.5;
-            transition: var(--transition-smooth);
-        }
-
-        .article-card:hover .article-image::after {
-            opacity: 0.8;
-            box-shadow: var(--glow-or);
-        }
-
-        .article-body {
-            padding: 1.5rem;
-        }
-
-        .article-category {
+        .article-tag {
             font-size: 0.7rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--or-clair);
             margin-bottom: 0.75rem;
+            display: block;
         }
 
-        .article-title {
+        .article-card h4 {
             font-family: var(--font-body);
             font-weight: 600;
             font-size: 1.1rem;
-            color: var(--blanc-casse);
+            color: var(--texte-principal);
             margin-bottom: 0.75rem;
             line-height: 1.4;
             transition: color 0.3s ease;
         }
 
-        .article-card:hover .article-title {
+        .article-card:hover h4 {
             color: var(--or-clair);
         }
 
-        .article-excerpt {
+        .article-card p {
             font-size: 0.9rem;
-            color: var(--gris-medium);
-            line-height: 1.6;
+            color: var(--texte-secondaire);
+            line-height: 1.65;
             margin-bottom: 1rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
 
         .article-link {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--or-clair);
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.25rem;
+            transition: gap 0.3s ease;
         }
 
-        .article-link span {
-            transition: transform 0.3s ease;
+        .article-card:hover .article-link {
+            gap: 0.5rem;
         }
 
-        .article-card:hover .article-link span {
-            transform: translateX(4px);
+        /* Article avec image */
+        .article-card-featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 0;
+            padding: 0;
+            overflow: hidden;
         }
 
-        .articles-footer {
-            text-align: center;
+        .article-card-featured .article-image {
+            height: 100%;
+            min-height: 200px;
+            background: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-mat) 50%, var(--or-clair) 100%);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .article-card-featured:hover .article-image {
+            opacity: 0.7;
+        }
+
+        .article-card-featured .article-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SECTION ÉTAPE ZÉRO
+           SECTION DISCLAIMER
            ═══════════════════════════════════════════════════════════════ */
-        .etape-zero {
-            padding: var(--section-padding) 0;
-            background: linear-gradient(180deg, var(--noir-principal) 0%, var(--noir-clair) 100%);
+        .disclaimer-section {
+            padding: 4rem 0;
+            background: var(--noir-profond);
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
         }
 
-        .etape-inner {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 4rem;
-            align-items: center;
+        .disclaimer-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-left: 3px solid var(--or-vieilli);
+            background: rgba(160, 120, 48, 0.05);
         }
 
-        .etape-content {
-            position: relative;
-        }
-
-        .etape-title {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            color: var(--or-intense);
-            margin-bottom: 0.5rem;
-        }
-
-        .etape-subtitle {
-            font-style: italic;
-            color: var(--blanc-casse);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .etape-text {
-            font-size: 1.1rem;
-            color: var(--blanc-casse);
-            margin-bottom: 1.5rem;
+        .disclaimer-box p {
+            font-size: 1rem;
+            color: var(--texte-secondaire);
             line-height: 1.75;
         }
 
-        .etape-points {
-            font-size: 1rem;
-            color: var(--gris-medium);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .etape-disclaimer {
-            font-size: 0.85rem;
-            color: var(--gris-medium);
-            font-style: italic;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(153, 107, 38, 0.2);
-        }
-
-        .etape-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .document-visual {
-            width: 200px;
-            height: 280px;
-            background: var(--noir-profond);
-            border: 1px solid var(--gris-moyen-fonce);
-            position: relative;
-            box-shadow: 
-                10px 10px 30px rgba(0, 0, 0, 0.3),
-                -5px -5px 20px rgba(46, 49, 48, 0.2);
-        }
-
-        .document-visual::before {
-            content: '';
-            position: absolute;
-            top: 15%;
-            left: 10%;
-            right: 10%;
-            height: 1px;
-            background: var(--or-vieilli);
-            box-shadow: 
-                0 20px 0 var(--gris-moyen-fonce),
-                0 40px 0 var(--gris-moyen-fonce),
-                0 60px 0 var(--gris-moyen-fonce),
-                0 80px 0 var(--or-vieilli),
-                0 100px 0 var(--gris-moyen-fonce),
-                0 120px 0 var(--gris-moyen-fonce),
-                0 140px 0 var(--gris-moyen-fonce),
-                0 160px 0 var(--or-clair);
+        .disclaimer-box strong {
+            color: var(--texte-principal);
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SECTION RÉSEAUX SOCIAUX
+           SECTION CTA
            ═══════════════════════════════════════════════════════════════ */
-        .social {
-            padding: var(--section-padding) 0;
-            background: var(--gris-anthracite);
-            position: relative;
-        }
-
-        .social::before,
-        .social::after {
-            content: '';
-            position: absolute;
-            left: 5%;
-            right: 5%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(153, 107, 38, 0.5), transparent);
-        }
-
-        .social::before { top: 0; }
-        .social::after { bottom: 0; }
-
-        .social-inner {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .social-title {
-            margin-bottom: 1.5rem;
-        }
-
-        .social-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .social-text {
-            font-size: 1.1rem;
-            color: var(--blanc-casse);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.75rem;
-            transition: var(--transition-bounce);
-        }
-
-        .social-link:hover {
-            transform: translateY(-6px);
-        }
-
-        .social-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--or-clair);
-            border-radius: 50%;
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-
-        .social-icon::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 1px solid transparent;
-            transition: var(--transition-smooth);
-        }
-
-        .social-link:hover .social-icon {
-            background: var(--or-clair);
-            border-color: var(--or-eclatant);
-            box-shadow: var(--glow-or-intense);
-        }
-
-        .social-link:hover .social-icon::before {
-            border-color: var(--or-vieilli);
-        }
-
-        .social-icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--or-clair);
-            stroke-width: 1.5;
-            fill: none;
-            transition: var(--transition-smooth);
-        }
-
-        .social-link:hover .social-icon svg {
-            stroke: var(--noir-principal);
-        }
-
-        .social-link.youtube .social-icon {
-            width: 56px;
-            height: 56px;
-        }
-
-        .social-label {
-            font-size: 0.8rem;
-            color: var(--gris-medium);
-            font-style: italic;
-        }
-
-        .social-note {
-            font-size: 0.9rem;
-            color: var(--gris-medium);
-            font-style: italic;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           SECTION CONTACT - FOND CLAIR
-           ═══════════════════════════════════════════════════════════════ */
-        .contact {
-            padding: calc(var(--section-padding) + 40px) 0 calc(var(--section-padding) + 40px);
-            background: #f8f7f5;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: linear-gradient(to bottom, var(--gris-anthracite) 0%, #f8f7f5 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .contact::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: linear-gradient(to bottom, #f8f7f5 0%, var(--noir-profond) 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .contact-bg {
-            position: absolute;
-            inset: 0;
-            background-image: url('assets/bg-kintsugi.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.4;
-            z-index: 0;
-        }
-
-        .contact .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .contact-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-            padding-top: 20px;
-        }
-
-        .contact-title {
-            color: var(--noir-principal);
-        }
-
-        .contact-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .contact-subtitle {
-            font-family: var(--font-body);
-            font-style: italic;
-            color: var(--gris-moyen-fonce);
-            font-size: 1.1rem;
-        }
-
-        .contact-main {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        /* Carte principale Accompagnement */
-        .contact-card-accent {
+        .cta-section {
+            padding: 5rem 0;
             background: var(--noir-principal);
-            padding: 3rem;
-            position: relative;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+            text-align: center;
         }
 
-        .contact-card-accent::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient-or);
+        .cta-section .section-header {
+            margin-bottom: 2rem;
         }
 
-        .contact-card-accent::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(143, 107, 46, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .contact-card-accent-icon {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-card-accent-icon svg {
-            width: 100%;
-            height: 100%;
-            stroke: var(--or-clair);
-            stroke-width: 1.5;
-            fill: none;
-        }
-
-        .contact-card-accent h3 {
+        .cta-title {
             font-family: var(--font-display);
-            font-size: 1.8rem;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
             color: var(--or-eclatant);
             margin-bottom: 1rem;
         }
 
-        .contact-card-accent p {
+        .cta-text {
             font-size: 1.1rem;
-            color: var(--blanc-casse);
-            line-height: 1.75;
-            margin-bottom: 2rem;
-            flex-grow: 1;
+            color: var(--texte-secondaire);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
 
-        .btn-dark {
-            background: var(--or-clair);
-            color: var(--noir-principal);
-            padding: 1rem 2rem;
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
             font-family: var(--font-body);
             font-size: 1rem;
             font-weight: 500;
+            text-decoration: none;
             border: none;
             cursor: pointer;
             transition: var(--transition-smooth);
-            text-align: center;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
         }
 
-        .btn-dark::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-dark:hover {
-            background: var(--or-eclatant);
-            transform: translateY(-3px);
-            box-shadow: var(--glow-or-intense);
-        }
-
-        .btn-dark:hover::before {
-            left: 100%;
-        }
-
-        /* Cartes secondaires */
-        .contact-right {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .contact-card-simple {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            padding: 1.75rem 2rem;
-            border: 1px solid rgba(153, 107, 38, 0.15);
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-card-simple::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 3px;
-            height: 0;
+        .btn-primary {
             background: var(--gradient-or);
-            transition: height 0.4s ease;
-        }
-
-        .contact-card-simple:hover {
-            background: rgba(255, 255, 255, 0.98);
-            border-color: var(--or-clair);
-            transform: translateX(8px);
-            box-shadow: -4px 0 20px rgba(143, 107, 46, 0.15), 0 8px 32px rgba(0, 0, 0, 0.08);
-        }
-
-        .contact-card-simple:hover::before {
-            height: 100%;
-        }
-
-        .contact-card-simple-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .contact-card-simple-header svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--or-vieilli);
-            stroke-width: 1.5;
-            fill: none;
-            flex-shrink: 0;
-            transition: stroke 0.3s ease;
-        }
-
-        .contact-card-simple:hover .contact-card-simple-header svg {
-            stroke: var(--or-clair);
-        }
-
-        .contact-card-simple-header h4 {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
             color: var(--noir-principal);
-            margin: 0;
         }
 
-        .contact-card-simple p {
-            font-size: 0.95rem;
-            color: var(--gris-moyen-fonce);
-            line-height: 1.65;
-            margin-bottom: 0.75rem;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--glow-or);
         }
 
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--or-vieilli);
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
+        .btn-secondary {
+            background: transparent;
             color: var(--or-clair);
-            gap: 0.75rem;
+            border: 1px solid var(--or-clair);
         }
 
-        .contact-link span {
-            transition: transform 0.3s ease;
-        }
-
-        .contact-card-simple:hover .contact-link span {
-            transform: translateX(4px);
+        .btn-secondary:hover {
+            background: var(--or-clair);
+            color: var(--noir-principal);
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           FOOTER — EFFETS PREMIUM
+           FOOTER
            ═══════════════════════════════════════════════════════════════ */
         .footer {
             padding: 4rem 0 2rem;
-            background: var(--noir-profond);
-            position: relative;
+            background: var(--gris-anthracite);
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
         }
 
         .footer-inner {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: 3rem;
-            align-items: start;
-            margin-bottom: 3rem;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 0.75rem;
-            color: var(--or-clair);
-            transition: var(--transition-smooth);
-        }
-
-        .footer-brand .logo:hover {
-            color: var(--or-eclatant);
-            text-shadow: var(--glow-or);
-        }
-
-        .footer-brand .logo span {
-            color: var(--gris-medium);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
         }
 
         .footer-tagline {
+            font-size: 1rem;
+            color: var(--texte-secondaire);
             font-style: italic;
-            color: var(--gris-medium);
-            font-size: 0.95rem;
+            margin-top: 0.5rem;
         }
 
         .footer-links {
             display: flex;
-            justify-content: center;
             gap: 2rem;
-            flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: var(--blanc-casse);
+            color: var(--texte-secondaire);
+            text-decoration: none;
             font-size: 0.95rem;
-            transition: var(--transition-smooth);
-            position: relative;
         }
 
-        .footer-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--or-clair);
-            transition: width 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--or-clair);
-        }
-
-        .footer-links a:hover::after {
-            width: 100%;
-        }
+        .footer-links a:hover { color: var(--or-clair); }
 
         .footer-social {
             display: flex;
-            justify-content: flex-end;
             gap: 1rem;
         }
 
-        .footer-social-icon {
-            width: 32px;
-            height: 32px;
+        .social-link-footer {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition-bounce);
-        }
-
-        .footer-social-icon:hover {
-            transform: translateY(-3px);
-        }
-
-        .footer-social-icon svg {
-            width: 18px;
-            height: 18px;
-            stroke: var(--gris-medium);
-            stroke-width: 1.5;
-            fill: none;
+            color: var(--or-clair);
             transition: var(--transition-smooth);
         }
 
-        .footer-social-icon:hover svg {
-            stroke: var(--or-clair);
-            filter: drop-shadow(0 0 8px rgba(201, 170, 110, 0.4));
-        }
-
-        .footer-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-vieilli), transparent);
-            margin-bottom: 2rem;
-            opacity: 0.4;
+        .social-link-footer:hover {
+            background: rgba(212, 184, 150, 0.1);
+            border-color: var(--or-clair);
         }
 
         .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
+            text-align: center;
         }
 
-        .footer-legal {
-            font-size: 0.8rem;
-            color: var(--gris-medium);
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: var(--gris-pierre);
         }
 
-        .footer-legal a {
-            color: var(--gris-medium);
-            margin-left: 1.5rem;
-            transition: var(--transition-smooth);
-        }
-
-        .footer-legal a:hover {
-            color: var(--or-clair);
-        }
-
-        .footer-disclaimer {
-            font-size: 0.8rem;
-            color: var(--gris-medium);
+        .footer-baseline {
+            font-size: 0.9rem;
+            color: var(--or-mat);
             font-style: italic;
-            max-width: 600px;
-            text-align: right;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           ANIMATIONS PREMIUM
-           ═══════════════════════════════════════════════════════════════ */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { 
-                box-shadow: 0 0 5px rgba(201, 170, 110, 0.2);
-            }
-            50% { 
-                box-shadow: 0 0 20px rgba(201, 170, 110, 0.4), 0 0 40px rgba(201, 170, 110, 0.2);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Intersection Observer animations améliorées */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-        .reveal-delay-4 { transition-delay: 0.4s; }
-        .reveal-delay-5 { transition-delay: 0.5s; }
-
-        /* Effet de ligne dorée animée */
-        .gold-line {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--or-clair), transparent);
-            background-size: 200% 100%;
-            animation: shimmer 3s ease-in-out infinite;
+            margin-top: 0.5rem;
         }
 
         /* ═══════════════════════════════════════════════════════════════
            RESPONSIVE
            ═══════════════════════════════════════════════════════════════ */
         @media (max-width: 1024px) {
-            .hero-inner {
-                padding: 8rem 0 6rem;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                gap: 1.25rem;
-            }
-
-            .axes-grid {
+            .types-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .axes-grid .axe:last-child {
-                grid-column: 1 / -1;
-                max-width: 500px;
-                justify-self: center;
-            }
-
-            .axes-bottom {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-            }
-
-            .autotest-inner,
-            .etape-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .autotest-visual,
-            .etape-visual {
-                order: -1;
-            }
-
             .articles-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .footer-inner {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .footer-disclaimer {
-                text-align: center;
+            .article-card-featured {
+                grid-column: span 2;
             }
         }
 
         @media (max-width: 768px) {
-            .hero-hook-main {
-                font-size: clamp(2rem, 8vw, 3rem);
-            }
-
-            .hero-hook-sub {
-                font-size: 1.1rem;
-            }
-
-            .hero-explain {
-                font-size: 1rem;
-            }
-
-            .axes-grid {
+            .types-grid,
+            .articles-grid {
                 grid-template-columns: 1fr;
             }
 
-            .axes-grid .axe:last-child {
-                max-width: none;
+            .article-card-featured {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
             }
 
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--noir-profond);
+            .article-card-featured .article-image {
+                min-height: 150px;
+            }
+
+            .nav-links { display: none; }
+            
+            .footer-inner {
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                border-bottom: 1px solid rgba(153, 107, 38, 0.2);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                color: var(--blanc-casse) !important;
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .social-icons {
+                text-align: center;
                 gap: 2rem;
             }
 
@@ -1838,596 +703,355 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-
-            .contact-main {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-card-accent {
-                padding: 2rem;
-            }
-
-            .contact-card-simple:hover {
-                transform: translateY(-4px);
-            }
         }
 
-        @media (max-width: 480px) {
-            .btn {
-                padding: 0.875rem 2rem;
-                font-size: 0.95rem;
-            }
-
-            .test-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .test-cell {
-                width: 28px;
-                height: 28px;
-            }
-        }
-    </style>
-</head>
-    <style>
-        /* Styles spécifiques page Analyses */
-        .nav.scrolled .nav-links a.active {
-            color: var(--or-clair);
-        }
-        .nav.scrolled .nav-links a.active::after {
-            width: 100%;
-        }
-        .reveal-hero {
+        /* ═══════════════════════════════════════════════════════════════
+           ANIMATIONS
+           ═══════════════════════════════════════════════════════════════ */
+        .reveal {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
-        /* Séries d'articles */
-        .series-section {
-            margin-bottom: 5rem;
-        }
-        
-        .series-header {
-            display: flex;
-            align-items: baseline;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--gris-anthracite);
-        }
-        
-        .series-number {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            color: var(--or-vieilli);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-        
-        .series-title {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--or-clair);
-        }
-        
-        /* Articles grid */
-        .articles-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-            background: var(--gris-anthracite);
-        }
-        
-        .article-item {
-            display: block;
-            background: var(--noir-principal);
-            padding: 2rem 2.5rem;
-            position: relative;
-            transition: var(--transition-smooth);
-            overflow: hidden;
-        }
-        
-        .article-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 3px;
-            height: 100%;
-            background: var(--gradient-or);
-            transform: scaleY(0);
-            transform-origin: bottom;
-            transition: transform 0.4s ease;
-        }
-        
-        .article-item::after {
-            content: '→';
-            position: absolute;
-            right: 2.5rem;
-            top: 50%;
-            transform: translateY(-50%) translateX(-10px);
-            font-size: 1.5rem;
-            color: var(--or-vieilli);
-            opacity: 0;
-            transition: var(--transition-smooth);
-        }
-        
-        .article-item:hover {
-            background: var(--gris-anthracite);
-            padding-left: 3rem;
-        }
-        
-        .article-item:hover::before {
-            transform: scaleY(1);
-        }
-        
-        .article-item:hover::after {
+
+        .reveal.visible {
             opacity: 1;
-            transform: translateY(-50%) translateX(0);
-        }
-        
-        .article-tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--or-vieilli);
-            margin-bottom: 0.5rem;
-        }
-        
-        .article-title {
-            font-family: var(--font-body);
-            font-size: 1.25rem;
-            color: var(--blanc-casse);
-            font-weight: 500;
-            line-height: 1.4;
-            margin-bottom: 0.5rem;
-            max-width: 85%;
-            transition: var(--transition-smooth);
-        }
-        
-        .article-item:hover .article-title {
-            color: var(--or-clair);
-        }
-        
-        .article-excerpt {
-            font-size: 0.95rem;
-            color: var(--gris-medium);
-            line-height: 1.6;
-            max-width: 75%;
-        }
-        
-        /* Featured article */
-        .featured-article {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            padding: 3rem;
-            background: linear-gradient(135deg, var(--gris-anthracite) 0%, rgba(153, 107, 38, 0.08) 100%);
-            margin-bottom: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .featured-article::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-or);
-        }
-        
-        .featured-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .featured-tag {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--or-clair);
-            margin-bottom: 1rem;
-        }
-        
-        .featured-title {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--or-eclatant);
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        
-        .featured-excerpt {
-            font-size: 1.1rem;
-            color: var(--blanc-casse);
-            line-height: 1.75;
-            margin-bottom: 1.5rem;
-        }
-        
-        .featured-visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .featured-quote {
-            font-family: var(--font-body);
-            font-size: 1.6rem;
-            font-style: italic;
-            color: var(--gris-medium);
-            line-height: 1.5;
-            position: relative;
-            padding-left: 2rem;
-        }
-        
-        .featured-quote::before {
-            content: '"';
-            position: absolute;
-            left: 0;
-            top: -0.5rem;
-            font-family: var(--font-display);
-            font-size: 4rem;
-            color: var(--or-vieilli);
-            opacity: 0.5;
-            line-height: 1;
-        }
-        
-        /* Stats intro */
-        .intro-line {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .intro-stat {
-            text-align: center;
-        }
-        
-        .intro-stat-number {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            color: var(--or-eclatant);
-            display: block;
-        }
-        
-        .intro-stat-label {
-            font-size: 0.85rem;
-            color: var(--gris-medium);
-        }
-        
-        @media (max-width: 900px) {
-            .featured-article {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .featured-visual {
-                order: -1;
-            }
-            .article-item::after {
-                display: none;
-            }
-            .article-title, .article-excerpt {
-                max-width: 100%;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .series-header {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            .article-item {
-                padding: 1.5rem;
-            }
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="nav scrolled" id="nav">
+    <!-- NAVIGATION -->
+    <nav class="nav">
         <div class="container">
             <div class="nav-inner">
                 <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="../index.html#piliers">Méthode</a></li>
+                <ul class="nav-links">
+                    <li><a href="../index.html#services">Services</a></li>
                     <li><a href="../Autotests/autotest.html">Autotests</a></li>
                     <li><a href="articles.html" class="active">Analyses</a></li>
-                    <li><a href="../etape-zero/accompagnement.html">L'Étape Zéro</a></li>
-                    <li><a href="mailto:contact@noesiskintsugi.com">Contact</a></li>
+                    <li><a href="../index.html#methode">Méthode</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
-                <div class="nav-toggle" id="navToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" style="min-height: 65vh;">
-        <div class="hero-bg" style="opacity: 0.25;"></div>
+    <!-- HERO PAGE -->
+    <section class="hero-page">
         <div class="container">
-            <div class="hero-inner" style="padding: 12rem 0 5rem;">
-                <div class="hero-content">
-                    <p class="surtitre reveal-hero" style="color: var(--or-vieilli);">Déconstruire les mécanismes</p>
-                    <h1 class="hero-hook-main reveal-hero">Analyses</h1>
-                    <p class="hero-hook-sub reveal-hero">Nommer ce qui n'avait pas de nom.<br>Comprendre ce qu'on vous a fait croire incompréhensible.</p>
+            <div class="hero-page-content reveal">
+                <p class="hero-page-surtitre">Ressources gratuites</p>
+                <h1 class="hero-page-title">Analyses</h1>
+                <p class="hero-page-subtitle">Sans jargon opaque. Sans simplification abusive. Sans te prendre pour un idiot.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRODUCTION — Ce que tu trouveras -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-text reveal">
+                <p>Tu cherches à comprendre ce qui t'est arrivé. Pas des conseils vagues. Pas des injonctions au bonheur. Des <strong>explications qui tiennent la route</strong>, sourcées, vérifiables, qui respectent ton intelligence.</p>
+                <p>Ici, chaque affirmation est documentée. Chaque mécanisme est expliqué. Et tu décides quoi en faire.</p>
+            </div>
+
+            <div class="types-grid">
+                <div class="type-card reveal">
+                    <div class="type-card-icon">
+                        <svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="12"/><path d="M16 52c0-12 8-18 16-18s16 6 16 18"/></svg>
+                    </div>
+                    <h3>Témoignages analysés</h3>
+                    <p>Des récits anonymisés décryptés à travers les 10 axes. Pour reconnaître les mécanismes.</p>
+                </div>
+                <div class="type-card reveal">
+                    <div class="type-card-icon">
+                        <svg viewBox="0 0 64 64"><rect x="12" y="8" width="40" height="48" rx="2"/><line x1="20" y1="20" x2="44" y2="20"/><line x1="20" y1="28" x2="44" y2="28"/><line x1="20" y1="36" x2="44" y2="36"/></svg>
+                    </div>
+                    <h3>Articles de fond</h3>
+                    <p>Analyses transdisciplinaires sourcées sur l'emprise, le trauma, la manipulation.</p>
+                </div>
+                <div class="type-card reveal">
+                    <div class="type-card-icon">
+                        <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20"/><path d="M32 20v12l8 8"/></svg>
+                    </div>
+                    <h3>Décryptages d'actualité</h3>
+                    <p>Faits divers et affaires médiatiques analysés. Pour comprendre ce que ça révèle du système.</p>
+                </div>
+                <div class="type-card reveal">
+                    <div class="type-card-icon">
+                        <svg viewBox="0 0 64 64"><path d="M12 52V20l20-12 20 12v32"/><rect x="24" y="32" width="16" height="20"/></svg>
+                    </div>
+                    <h3>Guides pratiques</h3>
+                    <p>Protocoles concrets : dossier MDPH, rendez-vous avocat, documentation des preuves.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Introduction -->
-    <section class="methode" style="background: var(--noir-principal); padding-top: 4rem; padding-bottom: 3rem;">
+    <!-- PROMESSE -->
+    <section class="promesse-section">
         <div class="container">
-            <div class="reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <p style="font-size: 1.15rem; line-height: 1.85; color: var(--blanc-casse);">Chaque article est une dissection. Pas de pathos, pas de consolation prématurée. Juste le mécanisme, exposé, nommé, rendu visible. Une fois qu'on voit, on ne peut plus ignorer.</p>
+            <blockquote class="promesse-quote reveal">
+                « Ici, on ne te dit pas quoi penser. On te donne les éléments pour penser par toi-même. »
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- SÉRIE 1 — Capture cognitive -->
+    <section class="series-section">
+        <div class="container">
+            <div class="series-header reveal">
+                <span class="series-number">Série I</span>
+                <h2 class="series-title">Capture cognitive — le piratage silencieux</h2>
+                <div class="series-intro">
+                    <p>Comment quelqu'un peut prendre le contrôle de ta perception sans que tu t'en rendes compte. Les mécanismes de l'emprise expliqués par la neuropsychologie et la psychologie cognitive.</p>
+                </div>
             </div>
-            
-            <div class="intro-line reveal">
-                <div class="intro-stat">
-                    <span class="intro-stat-number">4</span>
-                    <span class="intro-stat-label">séries thématiques</span>
-                </div>
-                <div class="intro-stat">
-                    <span class="intro-stat-number">20</span>
-                    <span class="intro-stat-label">analyses disponibles</span>
-                </div>
-                <div class="intro-stat">
-                    <span class="intro-stat-number">0</span>
-                    <span class="intro-stat-label">injonction au pardon</span>
-                </div>
+
+            <div class="articles-grid">
+                <a href="article-gaslighting.html" class="article-card reveal">
+                    <span class="article-tag">Gaslighting</span>
+                    <h4>« Tu es trop sensible » — Anatomie d'une phrase qui détruit</h4>
+                    <p>Comment une phrase apparemment anodine peut démanteler ta confiance en ta propre perception.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="article-dissociation.html" class="article-card reveal">
+                    <span class="article-tag">Dissociation</span>
+                    <h4>La dissociation n'est pas une faiblesse. C'est ton cerveau qui te sauve.</h4>
+                    <p>Pourquoi tu as « regardé la scène comme si tu n'y étais pas ». Ce que ton système nerveux a fait pour te protéger.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Trauma bonding</span>
+                    <h4>Tu n'es pas resté·e par faiblesse. Tu es resté·e par biologie.</h4>
+                    <p>Le trauma bonding n'est pas de l'amour. C'est une réponse neurologique à un stress chronique imprévisible.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Dissonance cognitive</span>
+                    <h4>Le moment précis où j'ai arrêté de faire confiance à mon propre jugement</h4>
+                    <p>Ce n'est pas arrivé d'un coup. C'est arrivé par accumulation de micro-invalidations.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Mémoire traumatique</span>
+                    <h4>« Je ne me souviens plus de rien » — ce que ça dit vraiment de ton cerveau</h4>
+                    <p>L'amnésie traumatique n'est pas un mensonge. C'est un mécanisme de protection documenté.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Lovebombing</span>
+                    <h4>« Au début c'était parfait » — le piège neurochimique de l'idéalisation</h4>
+                    <p>Pourquoi la phase d'idéalisation crée une dépendance. Et pourquoi tu n'aurais pas pu le voir venir.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Featured Article -->
-    <section style="background: var(--noir-principal); padding: 0 0 4rem;">
+    <!-- SÉRIE 2 — Violence institutionnelle -->
+    <section class="series-section">
         <div class="container">
-            <a href="article-diagnostic.html" class="featured-article reveal">
-                <div class="featured-content">
-                    <span class="featured-tag">À la une — Diagnostic tardif</span>
-                    <h2 class="featured-title">Vingt ans, huit experts, zéro diagnostic : anatomie neurologique d'un effondrement fabriqué</h2>
-                    <p class="featured-excerpt">Mon fils a vu des pédopsychiatres, psychologues scolaires, infirmières psy, éducateurs. Pendant vingt ans, des professionnels payés pour observer les enfants l'ont ignoré. Cet été, à vingt ans, il a enfin reçu son diagnostic : autiste.</p>
-                    <span class="btn btn-secondary" style="align-self: flex-start;">Lire l'analyse</span>
+            <div class="series-header reveal">
+                <span class="series-number">Série II</span>
+                <h2 class="series-title">Violence institutionnelle — quand le système broie</h2>
+                <div class="series-intro">
+                    <p>La violence n'est pas toujours individuelle. Elle peut être administrative, judiciaire, médicale. Et elle laisse les mêmes traces.</p>
                 </div>
-                <div class="featured-visual">
-                    <p class="featured-quote">Mon fils n'a pas échoué à se faire comprendre. Ce sont les experts qui ont échoué à faire leur travail. Et son anxiodépression n'est pas sa fragilité. C'est leur facture.</p>
-                </div>
-            </a>
+            </div>
 
-            <a href="article-diagnostic-tardif.html" class="featured-article reveal" style="margin-top: 2rem;">
-                <div class="featured-content">
-                    <span class="featured-tag">À la une — Diagnostic tardif</span>
-                    <h2 class="featured-title">Vingt ans, huit experts, zéro diagnostic</h2>
-                    <p class="featured-excerpt">Anatomie neurologique d'un effondrement fabriqué. Quand le système médico-éducatif rate l'autisme pendant vingt ans, l'anxiodépression n'est pas une faiblesse — c'est leur facture.</p>
-                    <span class="btn btn-secondary" style="align-self: flex-start;">Lire l'analyse</span>
-                </div>
-                <div class="featured-visual">
-                    <p class="featured-quote">Huit professionnels. Vingt ans. Des tests. Des consultations. Et à la fin, un jeune homme brisé qui doit reconstruire son identité sur les ruines d'une enfance où on lui a appris à se méfier de lui-même.</p>
-                </div>
-            </a>
+            <div class="articles-grid">
+                <a href="#" class="article-card article-card-featured reveal">
+                    <div class="article-image"></div>
+                    <div class="article-content">
+                        <span class="article-tag">Violence judiciaire</span>
+                        <h4>Quand porter plainte devient une seconde agression</h4>
+                        <p>Le parcours judiciaire peut retraumatiser. Pas par accident — par conception. Analyse des mécanismes de victimisation secondaire.</p>
+                        <span class="article-link">Lire →</span>
+                    </div>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Violence médicale</span>
+                    <h4>« C'est dans votre tête » — le gaslighting médical</h4>
+                    <p>Quand les professionnels de santé invalident tes symptômes. Les conséquences documentées.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Violence administrative</span>
+                    <h4>MDPH : le parcours du combattant n'est pas une métaphore</h4>
+                    <p>Pourquoi le système censé t'aider peut devenir une source de stress supplémentaire.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Harcèlement au travail</span>
+                    <h4>« Ce n'est pas du harcèlement, c'est du management »</h4>
+                    <p>Comment le discours managérial masque des pratiques toxiques documentées.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- SÉRIE 1 -->
-    <section style="background: var(--noir-principal); padding: 2rem 0;">
+    <!-- SÉRIE 3 — Violence familiale -->
+    <section class="series-section">
         <div class="container">
-            <div class="series-section reveal">
-                <div class="series-header">
-                    <span class="series-number">Série I</span>
-                    <h2 class="series-title">Quand tu doutes de toi sans raison claire</h2>
-                </div>
-                
-                <div class="articles-grid">
-                    <a href="article-jugement.html" class="article-item">
-                        <span class="article-tag">Doute de soi</span>
-                        <h3 class="article-title">Le moment précis où j'ai arrêté de faire confiance à mon propre jugement</h3>
-                        <p class="article-excerpt">Ce n'est pas arrivé d'un coup. C'est arrivé par accumulation de micro-invalidations, jusqu'à ce que douter de soi devienne le réflexe par défaut.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Capture cognitive</span>
-                        <h3 class="article-title">« Je savais que j'avais raison. Et pourtant j'ai cédé. »</h3>
-                        <p class="article-excerpt">Quand la certitude intérieure ne suffit plus à tenir une position. Le mécanisme précis de la capitulation épistémique.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Agentivité</span>
-                        <h3 class="article-title">« Ce n'est pas que je ne sais pas décider. C'est que décider me coûte trop cher. »</h3>
-                        <p class="article-excerpt">Distinguer l'indécision caractérielle de l'inhibition acquise sous contrainte relationnelle.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Culpabilité induite</span>
-                        <h3 class="article-title">« Pourquoi je m'excuse même quand je n'ai rien fait »</h3>
-                        <p class="article-excerpt">L'excuse préventive comme stratégie de survie. Comment la culpabilité devient un réflexe défensif.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Évitement appris</span>
-                        <h3 class="article-title">« Ce n'est pas de l'indécision. C'est de l'évitement appris. »</h3>
-                        <p class="article-excerpt">Quand chaque choix a été puni, l'absence de choix devient la seule option viable.</p>
-                    </a>
+            <div class="series-header reveal">
+                <span class="series-number">Série III</span>
+                <h2 class="series-title">Violence familiale — les liens qui détruisent</h2>
+                <div class="series-intro">
+                    <p>La famille est censée protéger. Quand elle détruit, les dégâts sont d'autant plus profonds. Et les injonctions au pardon d'autant plus violentes.</p>
                 </div>
             </div>
 
-            <!-- SÉRIE 2 -->
-            <div class="series-section reveal">
-                <div class="series-header">
-                    <span class="series-number">Série II</span>
-                    <h2 class="series-title">Relations qui t'abîment sans jamais exploser</h2>
-                </div>
-                
-                <div class="articles-grid">
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Violence feutrée</span>
-                        <h3 class="article-title">« Il n'y a jamais eu de cris. Juste moi qui disparaissais. »</h3>
-                        <p class="article-excerpt">La violence qui ne laisse pas de traces visibles. Comment l'effacement progressif échappe à toute qualification.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Asymétrie épistémique</span>
-                        <h3 class="article-title">« Tout était discutable. Sauf ce qu'il disait. »</h3>
-                        <p class="article-excerpt">Quand une seule personne détient le monopole de l'interprétation du réel.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Disqualification</span>
-                        <h3 class="article-title">« J'avais toujours tort, mais jamais de la même façon »</h3>
-                        <p class="article-excerpt">La mobilité des critères comme outil de déstabilisation permanente.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Gaslighting</span>
-                        <h3 class="article-title">« J'ai passé des mois à essayer d'expliquer quelque chose d'évident »</h3>
-                        <p class="article-excerpt">Quand l'autre refuse de comprendre ce qu'il comprend parfaitement.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Violence invisible</span>
-                        <h3 class="article-title">« Ce n'était pas toxique. C'était plus discret que ça. »</h3>
-                        <p class="article-excerpt">Au-delà des étiquettes : nommer ce qui détruit sans jamais correspondre aux cases.</p>
-                    </a>
+            <div class="articles-grid">
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Parent toxique</span>
+                    <h4>« C'est quand même ta mère » — pourquoi cette phrase est une violence</h4>
+                    <p>L'injonction au lien familial quand le lien est destructeur. Ce que la société refuse de voir.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Aliénation parentale</span>
+                    <h4>Quand un parent utilise l'enfant comme arme</h4>
+                    <p>Les mécanismes de l'aliénation parentale. Ce que vivent les enfants. Ce que peut faire le parent ciblé.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Inceste</span>
+                    <h4>Le silence qui protège l'agresseur, pas l'enfant</h4>
+                    <p>Pourquoi les victimes d'inceste mettent des décennies à parler. Ce que le silence coûte.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Parentification</span>
+                    <h4>Quand l'enfant devient le parent de son parent</h4>
+                    <p>La parentification : un vol d'enfance invisible. Les conséquences à l'âge adulte.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Violence conjugale</span>
+                    <h4>Pourquoi elle ne part pas ? — la mauvaise question</h4>
+                    <p>Les 7 raisons documentées qui expliquent pourquoi partir n'est pas une question de volonté.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Emprise</span>
+                    <h4>Le cycle de la violence : pourquoi il revient toujours</h4>
+                    <p>Tension, explosion, lune de miel, déni. Le cycle décrit par Lenore Walker, expliqué.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SÉRIE 4 — Neurodiversité et diagnostic -->
+    <section class="series-section">
+        <div class="container">
+            <div class="series-header reveal">
+                <span class="series-number">Série IV</span>
+                <h2 class="series-title">Neurodiversité — comprendre sans pathologiser</h2>
+                <div class="series-intro">
+                    <p>TDAH, autisme, HPI, troubles dys... Quand le diagnostic arrive tard, les dégâts sont déjà là. Et souvent, ce n'est pas toi le problème — c'est le système qui n'a pas su te voir.</p>
                 </div>
             </div>
 
-            <!-- SÉRIE 3 -->
-            <div class="series-section reveal">
-                <div class="series-header">
-                    <span class="series-number">Série III</span>
-                    <h2 class="series-title">Travail, institutions, cadres "normaux" qui détruisent</h2>
-                </div>
-                
-                <div class="articles-grid">
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Contrôle coercitif</span>
-                        <h3 class="article-title">« On ne m'a jamais interdit quoi que ce soit. On a juste rendu tout choix dangereux. »</h3>
-                        <p class="article-excerpt">La liberté formelle comme piège. Comment l'absence d'interdiction explicite masque une contrainte totale.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Harcèlement institutionnel</span>
-                        <h3 class="article-title">« Plus j'étais professionnel, plus on me déstabilisait »</h3>
-                        <p class="article-excerpt">Quand la compétence devient une menace et la rigueur un motif de sanction informelle.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Brown-out</span>
-                        <h3 class="article-title">« Ce n'est pas le travail qui m'a vidé. C'est l'impossibilité de penser librement. »</h3>
-                        <p class="article-excerpt">Distinguer l'épuisement par surcharge de l'effondrement par incohérence imposée.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Violence administrative</span>
-                        <h3 class="article-title">« Tout était 'dans les règles'. Moi, j'étais hors-jeu. »</h3>
-                        <p class="article-excerpt">Comment les procédures deviennent des armes quand elles sont appliquées de manière sélective.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Double contrainte</span>
-                        <h3 class="article-title">« Quand demander une clarification devient une faute »</h3>
-                        <p class="article-excerpt">L'injonction paradoxale au travail : être autonome mais ne jamais questionner.</p>
-                    </a>
-                </div>
-            </div>
-
-            <!-- SÉRIE 4 -->
-            <div class="series-section reveal">
-                <div class="series-header">
-                    <span class="series-number">Série IV</span>
-                    <h2 class="series-title">États secondaires — sans bullshit psy</h2>
-                </div>
-
-                <div class="articles-grid">
-                    <a href="article-diagnostic.html" class="article-item">
-                        <span class="article-tag">Diagnostic tardif</span>
-                        <h3 class="article-title">Vingt ans, huit experts, zéro diagnostic : anatomie neurologique d'un effondrement fabriqué</h3>
-                        <p class="article-excerpt">Mon fils a vu des pédopsychiatres, psychologues scolaires, infirmières psy, éducateurs. Pendant vingt ans, des professionnels payés pour observer les enfants l'ont ignoré.</p>
-                    </a>
-                    <a href="article-autisme.html" class="article-item">
+            <div class="articles-grid">
+                <a href="article-autisme.html" class="article-card article-card-featured reveal">
+                    <div class="article-image"></div>
+                    <div class="article-content">
                         <span class="article-tag">Neurodiversité</span>
-                        <h3 class="article-title">Et si l'autisme était plus vieux que Sapiens ?</h3>
-                        <p class="article-excerpt">Pendant que la médecine cherche à « normaliser » les cerveaux autistes, la génétique découvre qu'ils nous accompagnent depuis 40 000 ans.</p>
-                    </a>
-                    <a href="article-diagnostic-tardif.html" class="article-item">
-                        <span class="article-tag">Diagnostic tardif</span>
-                        <h3 class="article-title">Vingt ans, huit experts, zéro diagnostic : anatomie d'un effondrement fabriqué</h3>
-                        <p class="article-excerpt">Quand le système médico-éducatif rate l'autisme pendant vingt ans, l'anxiodépression n'est pas une faiblesse — c'est leur facture.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Faux diagnostic</span>
-                        <h3 class="article-title">« On m'a dit burn-out. Personne n'a regardé ce qui m'empêchait d'agir. »</h3>
-                        <p class="article-excerpt">Quand le diagnostic masque la cause. Le burn-out comme symptôme, pas comme explication.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Alexithymie acquise</span>
-                        <h3 class="article-title">« Je ne ressens plus grand-chose. Ce n'est pas un trouble, c'est une armure. »</h3>
-                        <p class="article-excerpt">Différencier l'anesthésie émotionnelle défensive d'une alexithymie primaire.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Perte de sens</span>
-                        <h3 class="article-title">« Je n'ai pas perdu le sens. On me l'a retiré. »</h3>
-                        <p class="article-excerpt">Brown-out : quand la désintégration motivationnelle n'est pas un manque d'engagement mais une réponse à l'absurde imposé.</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Sidération</span>
-                        <h3 class="article-title">« Ce n'est pas de la fatigue. C'est de la sidération prolongée. »</h3>
-                        <p class="article-excerpt">Quand le système nerveux reste bloqué en mode survie. Au-delà de l'épuisement : la paralysie défensive.</p>
-                    </a>
-                </div>
+                        <h4>Et si l'autisme était plus vieux que Sapiens ?</h4>
+                        <p>Pendant que la médecine cherche à « normaliser » les cerveaux autistes, la génétique découvre qu'ils nous accompagnent depuis 40 000 ans.</p>
+                        <span class="article-link">Lire →</span>
+                    </div>
+                </a>
+                <a href="article-diagnostic.html" class="article-card reveal">
+                    <span class="article-tag">Diagnostic tardif</span>
+                    <h4>Vingt ans, huit experts, zéro diagnostic</h4>
+                    <p>Mon fils a vu des pédopsychiatres, psychologues, éducateurs. Pendant vingt ans, des professionnels l'ont ignoré.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">TDAH adulte</span>
+                    <h4>« Tu n'es pas paresseux. Ton cerveau fonctionne différemment. »</h4>
+                    <p>Le TDAH chez l'adulte : pourquoi il passe inaperçu, ce qu'il coûte, ce que le diagnostic change.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Masking</span>
+                    <h4>Le prix du camouflage : quand s'adapter épuise</h4>
+                    <p>Le masking chez les personnes autistes et TDAH. Pourquoi ça marche. Pourquoi ça détruit.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Faux diagnostic</span>
+                    <h4>« On m'a dit burn-out. Personne n'a regardé ce qui m'empêchait d'agir. »</h4>
+                    <p>Quand le diagnostic masque la cause. Le burn-out comme symptôme, pas comme explication.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
+                <a href="#" class="article-card reveal">
+                    <span class="article-tag">Femmes et autisme</span>
+                    <h4>Pourquoi les femmes autistes sont diagnostiquées 30 ans trop tard</h4>
+                    <p>Les critères diagnostiques ont été créés pour des garçons. Les conséquences pour les femmes.</p>
+                    <span class="article-link">Lire →</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Section Disclaimer -->
-    <section style="padding: 4rem 0; background: var(--noir-profond); border-top: 1px solid var(--gris-anthracite);">
+    <!-- DISCLAIMER -->
+    <section class="disclaimer-section">
         <div class="container">
-            <div class="reveal" style="max-width: 800px; margin: 0 auto; padding: 2rem; border-left: 3px solid var(--or-vieilli); background: rgba(153, 107, 38, 0.05);">
-                <p style="font-size: 1rem; color: var(--gris-medium); line-height: 1.75;"><strong style="color: var(--blanc-casse);">À propos de ces analyses :</strong> Ces textes sont des outils de clarification, pas des verdicts. Ils décrivent des mécanismes, pas des personnes. Se reconnaître dans un article ne constitue pas un diagnostic — mais c'est souvent le premier pas vers une compréhension qui change tout.</p>
+            <div class="disclaimer-box reveal">
+                <p><strong>À propos de ces analyses :</strong> Ces textes sont des outils de clarification, pas des verdicts. Ils décrivent des mécanismes, pas des personnes. Se reconnaître dans un article ne constitue pas un diagnostic — mais c'est souvent le premier pas vers une compréhension qui change tout.</p>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section style="padding: 5rem 0; background: var(--noir-principal);">
+    <!-- CTA -->
+    <section class="cta-section">
         <div class="container">
-            <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto;">
-                <h2 class="title-section" style="display: block; text-align: center; margin-bottom: 1.5rem;">Vous vous reconnaissez ?</h2>
-                <p style="color: var(--gris-medium); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">Les analyses nomment. Les autotests cartographient. Si vous avez besoin de savoir précisément où vous en êtes, c'est l'étape suivante.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="../Autotests/autotest.html" class="btn btn-primary">Accéder aux autotests</a>
-                    <a href="../etape-zero/accompagnement.html" class="btn btn-secondary">Découvrir L'Étape Zéro</a>
-                </div>
+            <div class="section-header reveal">
+                <h2 class="cta-title">Tu te reconnais ?</h2>
+                <p class="cta-text">Les analyses nomment. Les autotests cartographient. Si tu as besoin de savoir précisément où tu en es, c'est l'étape suivante.</p>
+            </div>
+            <div class="cta-buttons reveal">
+                <a href="../Autotests/autotest.html" class="btn btn-primary">Accéder aux autotests</a>
+                <a href="../index.html#services" class="btn btn-secondary">Découvrir les services</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
                     <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
-                    <p class="footer-tagline">Noesis ne soigne pas. Noesis clarifie.</p>
+                    <p class="footer-tagline">Un traducteur entre ton vécu et le monde.</p>
                 </div>
                 <nav class="footer-links">
+                    <a href="../index.html#services">Services</a>
                     <a href="../Autotests/autotest.html">Autotests</a>
                     <a href="articles.html">Analyses</a>
-                    <a href="../etape-zero/accompagnement.html">L'Étape Zéro</a>
-                    <a href="mailto:contact@noesiskintsugi.com">Contact</a>
+                    <a href="../index.html#contact">Contact</a>
                 </nav>
                 <div class="footer-social">
                     <a href="https://www.youtube.com/@NoesisKintsugi" target="_blank" rel="noopener" class="social-link-footer">
-                        <svg viewBox="0 0 24 24" width="20" height="20">
+                        <svg viewBox="0 0 24 24" width="18" height="18">
                             <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="1.5"/>
                             <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
                         </svg>
                     </a>
                     <a href="https://www.tiktok.com/@noesis_analyse" target="_blank" rel="noopener" class="social-link-footer">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
                         </svg>
                     </a>
                     <a href="#" class="social-link-footer">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
@@ -2436,49 +1060,35 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 Noesis Kintsugi. Tous droits réservés.</p>
+                <p class="footer-copyright">© 2026 Noesis Kintsugi. Tous droits réservés.</p>
                 <p class="footer-baseline">La paix sans vérité est une anesthésie.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Navigation
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Navigation scroll effect
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
         });
 
-        // Reveal animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    el.classList.add('visible');
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Hero reveal animation
-        setTimeout(() => {
-            document.querySelectorAll('.reveal-hero').forEach((el, i) => {
-                setTimeout(() => {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                }, i * 200);
-            });
-        }, 300);
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
     </script>
 </body>
 </html>
