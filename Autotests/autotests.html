@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autotests — Comprendre ce qui m'arrive | Noesis Kintsugi</title>
+    <meta name="description" content="Des outils d'auto-réflexion pour mettre des mots sur ce que vous vivez. Pas des diagnostics, mais des clés de compréhension.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Megrim&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --noir-principal: #1c1f21;
+            --noir-profond: #16191a;
+            --gris-anthracite: #2d3133;
+            --gris-ceramique: #353a3c;
+            --gris-moyen: #4a5154;
+            --gris-pierre: #8a9094;
+            --or-vieilli: #a07830;
+            --or-mat: #aa8555;
+            --or-clair: #d4b896;
+            --or-eclatant: #e8d4a8;
+            --or-intense: #f0ddb0;
+            --texte-principal: #f5f3ef;
+            --texte-secondaire: #c5c2bc;
+            --blanc-casse: #e8e5e0;
+            --fond-clair: #f8f6f2;
+            --vert-disponible: #4a7c59;
+            --glow-or: 0 0 25px rgba(212, 184, 150, 0.25);
+            --shadow-gold: 0 4px 24px rgba(160, 120, 48, 0.2);
+            --gradient-or: linear-gradient(135deg, var(--or-vieilli) 0%, var(--or-clair) 50%, var(--or-eclatant) 100%);
+            --font-display: 'Megrim', cursive;
+            --font-body: 'Crimson Pro', Georgia, serif;
+            --section-padding: clamp(60px, 10vh, 100px);
+            --container-max: 1100px;
+            --container-padding: clamp(20px, 5vw, 60px);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--noir-principal);
+            color: var(--texte-principal);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--or-vieilli); color: var(--noir-principal); }
+
+        /* Supprimer les outlines bleus par défaut */
+        *:focus { outline: none; }
+        *:focus-visible { 
+            outline: 2px solid var(--or-clair); 
+            outline-offset: 2px; 
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--noir-profond); }
+        ::-webkit-scrollbar-thumb { background: var(--or-vieilli); border-radius: 4px; }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* Liens sans soulignement */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover, a:visited, a:active, a:focus {
+            text-decoration: none;
+        }
+
+        /* NAVIGATION */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            background: rgba(28, 31, 33, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 184, 150, 0.1);
+            transition: var(--transition-smooth);
+        }
+
+        .nav.scrolled { padding: 0.75rem 0; background: rgba(22, 25, 26, 0.98); }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--texte-principal);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .logo span { color: var(--or-clair); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--texte-secondaire);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--or-clair); }
+        .nav-links a.active { color: var(--or-clair); }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--or-clair);
+            transition: var(--transition-smooth);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 4rem;
+            background: var(--noir-principal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(28,31,33,0.4) 0%, rgba(28,31,33,0.95) 100%);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: rgba(160, 120, 48, 0.15);
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            color: var(--or-clair);
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--or-eclatant);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--texte-secondaire);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-note {
+            font-size: 0.95rem;
+            color: var(--gris-pierre);
+            font-style: italic;
+        }
+
+        /* INTRO SECTION */
+        .intro-section {
+            padding: 4rem 0;
+            background: var(--gris-anthracite);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .intro-card {
+            padding: 1.5rem;
+            background: rgba(28, 31, 33, 0.6);
+            border: 1px solid rgba(212, 184, 150, 0.1);
+            text-align: center;
+        }
+
+        .intro-card-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            stroke: var(--or-clair);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .intro-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--or-eclatant);
+            margin-bottom: 0.5rem;
+        }
+
+        .intro-card p {
+            font-size: 0.9rem;
+            color: var(--texte-secondaire);
+            line-height: 1.6;
+        }
+
+        /* TESTS SECTION */
+        .tests-section {
+            padding: var(--section-padding) 0;
+            background: var(--noir-principal);
+        }
+
+        /* CATEGORY */
+        .category {
+            margin-bottom: 4rem;
+        }
+
+        .category:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(212, 184, 150, 0.15);
+        }
+
+        .category-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--or-vieilli);
+            line-height: 1;
+            opacity: 0.6;
+        }
+
+        .category-title {
+            font-family: var(--font-body);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--or-eclatant);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .category-subtitle {
+            font-size: 1rem;
+            color: var(--texte-secondaire);
+            font-style: italic;
+        }
+
+        /* TEST CARDS */
+        .tests-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .test-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(45, 49, 51, 0.8) 0%, rgba(28, 31, 33, 0.95) 100%);
+            border: 1px solid rgba(212, 184, 150, 0.1);
+            padding: 1.75rem;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .test-card, .test-card * {
+            text-decoration: none !important;
+        }
+
+        .test-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-or);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .test-card:hover {
+            border-color: rgba(212, 184, 150, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .test-card:hover::before {
+            opacity: 1;
+        }
+
+        .test-card.available {
+            cursor: pointer;
+        }
+
+        .test-card.coming-soon {
+            opacity: 0.6;
+        }
+
+        .test-card.coming-soon:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .test-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .test-badge.disponible {
+            background: var(--vert-disponible);
+            color: white;
+        }
+
+        .test-badge.bientot {
+            background: var(--gris-moyen);
+            color: var(--texte-secondaire);
+        }
+
+        .test-question {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--or-eclatant);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            padding-right: 4rem;
+            text-decoration: none;
+        }
+
+        .test-description {
+            font-size: 0.95rem;
+            color: var(--texte-secondaire);
+            line-height: 1.7;
+            flex-grow: 1;
+            text-decoration: none;
+        }
+
+        .test-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
+        }
+
+        .test-duration {
+            font-size: 0.85rem;
+            color: var(--gris-pierre);
+        }
+
+        .test-duration svg {
+            width: 14px;
+            height: 14px;
+            vertical-align: -2px;
+            margin-right: 0.25rem;
+            stroke: currentColor;
+            fill: none;
+        }
+
+        .test-cta {
+            font-size: 0.85rem;
+            color: var(--or-clair);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .test-cta svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            transition: transform 0.3s ease;
+        }
+
+        .test-card:hover .test-cta svg {
+            transform: translateX(4px);
+        }
+
+        /* DISCLAIMER */
+        .disclaimer-section {
+            padding: 4rem 0;
+            background: var(--gris-anthracite);
+        }
+
+        .disclaimer-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(160, 120, 48, 0.08);
+            border-left: 4px solid var(--or-vieilli);
+        }
+
+        .disclaimer-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--or-clair);
+            margin-bottom: 1rem;
+        }
+
+        .disclaimer-text {
+            font-size: 0.95rem;
+            color: var(--texte-secondaire);
+            line-height: 1.8;
+        }
+
+        .disclaimer-text strong {
+            color: var(--texte-principal);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 5rem 0;
+            background: var(--noir-profond);
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--or-eclatant);
+            margin-bottom: 1rem;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            color: var(--texte-secondaire);
+            max-width: 550px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gradient-or);
+            color: var(--noir-principal);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--glow-or);
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 3rem 0 2rem;
+            background: var(--noir-principal);
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-tagline {
+            font-size: 0.95rem;
+            color: var(--texte-secondaire);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--texte-secondaire);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover { color: var(--or-clair); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding: 1.5rem var(--container-padding) 0;
+            border-top: 1px solid rgba(212, 184, 150, 0.1);
+            text-align: center;
+        }
+
+        .footer-copyright { font-size: 0.85rem; color: var(--gris-pierre); }
+        .footer-baseline { font-size: 0.9rem; color: var(--or-mat); font-style: italic; margin-top: 0.5rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .tests-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { 
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--noir-profond);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(212, 184, 150, 0.1);
+            }
+
+            .nav-links.active { display: flex; }
+            .nav-toggle { display: flex; }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .category-header {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .category-number {
+                font-size: 2rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* REVEAL ANIMATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="etape-zero.html">L'Étape Zéro</a></li>
+                <li><a href="autotests.html" class="active">Autotests</a></li>
+                <li><a href="articles.html">Analyses</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-badge reveal">Outils d'auto-réflexion</span>
+            <h1 class="hero-title reveal">Mettre des mots sur ce que tu vis</h1>
+            <p class="hero-subtitle reveal">Ces questionnaires t'aident à identifier ce qui se passe. Ce ne sont pas des diagnostics, mais des clés de compréhension pour préparer une consultation ou simplement y voir plus clair.</p>
+            <p class="hero-note reveal">Gratuits • Anonymes • Sans inscription</p>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-card reveal">
+                    <svg class="intro-card-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4M12 8h.01"/>
+                    </svg>
+                    <h3>Pas des diagnostics</h3>
+                    <p>Ces outils orientent ta réflexion. Seul un professionnel peut poser un diagnostic.</p>
+                </div>
+                <div class="intro-card reveal">
+                    <svg class="intro-card-icon" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <h3>Confidentiels</h3>
+                    <p>Aucune donnée n'est stockée. Tes réponses restent sur ton appareil.</p>
+                </div>
+                <div class="intro-card reveal">
+                    <svg class="intro-card-icon" viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                    <h3>Utiles pour les pros</h3>
+                    <p>Les résultats peuvent être imprimés pour faciliter une consultation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTS -->
+    <section class="tests-section">
+        <div class="container">
+
+            <!-- CATÉGORIE 1 : Comprendre ce qui m'arrive -->
+            <div class="category reveal">
+                <div class="category-header">
+                    <span class="category-number">01</span>
+                    <div>
+                        <h2 class="category-title">Comprendre ce qui m'arrive</h2>
+                        <p class="category-subtitle">Identifier les mécanismes en jeu dans ta situation</p>
+                    </div>
+                </div>
+
+                <div class="tests-grid">
+                    <a href="tests/emprise.html" class="test-card available">
+                        <span class="test-badge disponible">Disponible</span>
+                        <h3 class="test-question">Est-ce que je vis une situation d'emprise ?</h3>
+                        <p class="test-description">Identifier si quelqu'un exerce un contrôle excessif sur toi, tes décisions, ton quotidien. Ce test distingue une relation difficile d'une relation d'emprise.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                5 min
+                            </span>
+                            <span class="test-cta">Commencer <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        </div>
+                    </a>
+
+                    <a href="tests/doute.html" class="test-card available">
+                        <span class="test-badge disponible">Disponible</span>
+                        <h3 class="test-question">Est-ce que je doute de ma propre perception ?</h3>
+                        <p class="test-description">Quand on te fait sentir que tu exagères, que tu inventes, que tu es « trop sensible ». Ce test identifie les techniques qui te font douter de ce que tu vois.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                5 min
+                            </span>
+                            <span class="test-cta">Commencer <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        </div>
+                    </a>
+
+                    <div class="test-card coming-soon">
+                        <span class="test-badge bientot">Bientôt</span>
+                        <h3 class="test-question">Pourquoi je n'arrive plus à penser clairement ?</h3>
+                        <p class="test-description">Quand le cerveau est saturé d'alertes, de contradictions, de choses à surveiller. Ce test mesure ta charge mentale et identifie ce qui l'alourdit.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                6 min
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="test-card coming-soon">
+                        <span class="test-badge bientot">Bientôt</span>
+                        <h3 class="test-question">Est-ce que je me déconnecte de moi-même ?</h3>
+                        <p class="test-description">Ce moment où tu regardes la scène comme si tu n'y étais pas. Ce test identifie les réactions automatiques de protection face à des situations trop difficiles.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                5 min
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATÉGORIE 2 : Comprendre l'autre -->
+            <div class="category reveal">
+                <div class="category-header">
+                    <span class="category-number">02</span>
+                    <div>
+                        <h2 class="category-title">Comprendre l'autre</h2>
+                        <p class="category-subtitle">Analyser les comportements qui te posent question</p>
+                    </div>
+                </div>
+
+                <div class="tests-grid">
+                    <div class="test-card coming-soon">
+                        <span class="test-badge bientot">Bientôt</span>
+                        <h3 class="test-question">Est-ce que l'autre me manipule ?</h3>
+                        <p class="test-description">Repérer les comportements typiques de manipulation : mensonges, culpabilisation, retournement de situation, alternance chaud-froid. Faits observables, pas jugements.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                7 min
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="test-card coming-soon">
+                        <span class="test-badge bientot">Bientôt</span>
+                        <h3 class="test-question">L'autre souffre-t-il ou me fait-il souffrir ?</h3>
+                        <p class="test-description">Distinguer quelqu'un qui a du mal à gérer ses émotions de quelqu'un qui utilise tes émotions contre toi. Une différence cruciale.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                6 min
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATÉGORIE 3 : Comprendre mes réactions -->
+            <div class="category reveal">
+                <div class="category-header">
+                    <span class="category-number">03</span>
+                    <div>
+                        <h2 class="category-title">Comprendre mes réactions</h2>
+                        <p class="category-subtitle">Ce que tu ressens a une explication</p>
+                    </div>
+                </div>
+
+                <div class="tests-grid">
+                    <div class="test-card coming-soon">
+                        <span class="test-badge bientot">Bientôt</span>
+                        <h3 class="test-question">Pourquoi je reste alors que je souffre ?</h3>
+                        <p class="test-description">Tu n'es pas resté(e) par faiblesse. Ce test identifie les mécanismes qui rendent le départ difficile : isolement, dépendance, peur, espoir, culpabilité.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                6 min
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="test-card coming-soon">
+                        <span class="test-badge bientot">Bientôt</span>
+                        <h3 class="test-question">Pourquoi je me sens coupable de tout ?</h3>
+                        <p class="test-description">Ce sentiment permanent d'avoir fait quelque chose de mal, même quand tu n'as rien fait. Ce test distingue la culpabilité réelle de la culpabilité induite.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                5 min
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="test-card coming-soon">
+                        <span class="test-badge bientot">Bientôt</span>
+                        <h3 class="test-question">Pourquoi je suis épuisé(e) sans raison apparente ?</h3>
+                        <p class="test-description">Un épuisement qui ne vient pas de la charge de travail mais de l'impossibilité d'agir, de l'incohérence permanente, du double-bind quotidien.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                5 min
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="test-card coming-soon">
+                        <span class="test-badge bientot">Bientôt</span>
+                        <h3 class="test-question">Pourquoi je ne ressens plus rien ?</h3>
+                        <p class="test-description">Cette anesthésie émotionnelle, ce vide. Ce test distingue une protection temporaire face au stress d'un problème plus profond nécessitant un accompagnement.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                5 min
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATÉGORIE 4 : Identifier la source -->
+            <div class="category reveal">
+                <div class="category-header">
+                    <span class="category-number">04</span>
+                    <div>
+                        <h2 class="category-title">Identifier la source</h2>
+                        <p class="category-subtitle">D'où vient le problème et que faire ensuite</p>
+                    </div>
+                </div>
+
+                <div class="tests-grid">
+                    <div class="test-card coming-soon">
+                        <span class="test-badge bientot">Bientôt</span>
+                        <h3 class="test-question">D'où vient le problème ?</h3>
+                        <p class="test-description">Identifier si la source est relationnelle (couple, famille), professionnelle (travail, hiérarchie), institutionnelle (administration, justice) ou mixte.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                4 min
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="test-card coming-soon">
+                        <span class="test-badge bientot">Bientôt</span>
+                        <h3 class="test-question">Est-ce que ça peut s'améliorer ?</h3>
+                        <p class="test-description">Évaluer si ta situation peut évoluer positivement dans le contexte actuel, ou si un changement de contexte est nécessaire pour retrouver de la clarté.</p>
+                        <div class="test-footer">
+                            <span class="test-duration">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                5 min
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section class="disclaimer-section">
+        <div class="container">
+            <div class="disclaimer-box reveal">
+                <h3 class="disclaimer-title">Important à savoir</h3>
+                <p class="disclaimer-text">Ces outils d'auto-évaluation sont des <strong>instruments d'orientation</strong>, pas des diagnostics. Les résultats sont indicatifs : ils t'aident à mettre des mots sur ce que tu vis, mais ne remplacent pas l'avis d'un professionnel qualifié (psychologue, psychiatre, médecin).</p>
+                <p class="disclaimer-text" style="margin-top: 1rem;"><strong>En situation de danger immédiat ou de détresse aiguë :</strong> appelle le 15 (SAMU), le 3114 (prévention suicide) ou le 3919 (violences).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2 class="cta-title">Besoin d'aller plus loin ?</h2>
+            <p class="cta-text">Les autotests identifient. L'Étape Zéro structure. Si tu as besoin de transformer ces réflexions en récit cohérent pour un professionnel, c'est la prochaine étape.</p>
+            <a href="etape-zero.html" class="btn-primary">Découvrir L'Étape Zéro</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                <p class="footer-tagline">Un traducteur entre ton vécu et le monde.</p>
+            </div>
+            <nav class="footer-links">
+                <a href="services.html">Services</a>
+                <a href="etape-zero.html">L'Étape Zéro</a>
+                <a href="autotests.html">Autotests</a>
+                <a href="articles.html">Analyses</a>
+                <a href="legal.html">Mentions légales</a>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Noesis Kintsugi. Tous droits réservés.</p>
+            <p class="footer-baseline">La paix sans vérité est une anesthésie.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation
+        const nav = document.querySelector('.nav');
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
