@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Étape Zéro — Noesis Kintsugi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --noir1: #121514;
+            --noir2: #1a1a1a;
+            --gris1: #2E3130;
+            --gris2: #999;
+            --or1: #996B26;
+            --or2: #C9AA6E;
+            --or3: #D7BE67;
+            --blanc: #C9CBCB;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Crimson Pro', Georgia, serif;
+            background-color: var(--noir1);
+            color: var(--blanc);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .bg-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+        
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(18,21,20,0.7) 0%, rgba(18,21,20,0.9) 100%);
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .categorie {
+            color: var(--gris2);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+        }
+        
+        h1 {
+            color: var(--or2);
+            font-size: 2.4rem;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+        
+        .gold-line {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--or2), transparent);
+            margin: 20px auto;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto 15px;
+        }
+        
+        .ideal {
+            color: var(--gris2);
+            font-style: italic;
+        }
+        
+        .prix-box {
+            background: rgba(26, 26, 26, 0.9);
+            border: 2px solid var(--or2);
+            padding: 20px 40px;
+            display: inline-block;
+            margin: 25px 0;
+        }
+        
+        .prix {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--or3);
+        }
+        
+        .paiement {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--blanc);
+            margin-top: 5px;
+        }
+        
+        .section {
+            background: rgba(26, 26, 26, 0.85);
+            border-left: 3px solid var(--or2);
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+        
+        .section h2 {
+            color: var(--or2);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .section ul {
+            list-style: none;
+        }
+        
+        .section li {
+            padding: 6px 0 6px 25px;
+            position: relative;
+        }
+        
+        .section li::before {
+            content: "→";
+            color: var(--or2);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Formulaire */
+        form {
+            background: rgba(26, 26, 26, 0.9);
+            padding: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-box {
+            background: rgba(153, 107, 38, 0.15);
+            border: 1px solid var(--or1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-box h3 {
+            color: var(--or3);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-info {
+            color: var(--gris2);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .form-title {
+            color: var(--or2);
+            text-align: center;
+            margin: 30px 0 20px;
+            font-size: 1.3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 22px;
+        }
+        
+        label {
+            display: block;
+            color: var(--blanc);
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+        
+        .required {
+            color: var(--or2);
+            margin-left: 2px;
+        }
+        
+        .hint {
+            display: block;
+            color: var(--gris2);
+            font-size: 0.88rem;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            background: var(--noir1);
+            border: 1px solid var(--gris1);
+            color: var(--blanc);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--or2);
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        select {
+            cursor: pointer;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--or1), var(--or2));
+            border: none;
+            color: var(--noir1);
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 25px rgba(201, 170, 110, 0.4);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gris1);
+        }
+        
+        footer p {
+            color: var(--gris2);
+            font-size: 0.9rem;
+        }
+        
+        footer .baseline {
+            color: var(--or2);
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .prix { font-size: 1.6rem; }
+            .container { padding: 20px 15px; }
+            form { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-wrapper">
+        <img src="assets/kintsugi-bg.jpg" alt="" class="bg-image">
+        <div class="bg-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <p class="categorie">Service phare</p>
+            <h1>L'Étape Zéro</h1>
+            <div class="gold-line"></div>
+            <p class="description">Du chaos vécu au récit structuré. Tu sais ce qui t'est arrivé, mais quand tu essaies de l'expliquer, les mots se mélangent. L'Étape Zéro transforme ton vécu confus en un document clair et utilisable.</p>
+            <p class="ideal">Idéal pour : Clarifier une situation complexe, préparer un RDV médical ou juridique</p>
+            <div class="prix-box">
+                <span class="prix">250 €</span>
+                <span class="paiement">payable en 3×</span>
+            </div>
+        </header>
+        
+        <div class="section">
+            <h2>Ce qui est inclus</h2>
+            <ul>
+                <li>Questionnaire structuré</li>
+<li>Entretien 90 minutes en visio</li>
+<li>Livrable écrit sous 7 jours</li>
+<li>Chronologie + mécanismes + lexique</li>
+            </ul>
+        </div>
+        
+        <form action="https://formspree.io/f/xqaqjgkr" method="POST">
+            <input type="hidden" name="_subject" value="📩 Demande : L'Étape Zéro">
+            <input type="hidden" name="_service" value="L'Étape Zéro">
+            <input type="hidden" name="_prix" value="250 €">
+            
+            <div class="contact-box">
+                <h3>📬 Tes coordonnées</h3>
+                <p class="contact-info">Je te recontacte sous 48h avec le lien de paiement PayPal.</p>
+                
+                <div class="form-group">
+                    <label>Prénom ou pseudonyme<span class="required">*</span></label>
+                    <input type="text" name="Prénom" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email<span class="required">*</span></label>
+                    <span class="hint">Pour t'envoyer le lien de paiement et ma réponse</span>
+                    <input type="email" name="Email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Téléphone / WhatsApp</label>
+                    <span class="hint">Optionnel — pour des échanges plus fluides</span>
+                    <input type="tel" name="Téléphone" placeholder="06 XX XX XX XX">
+                </div>
+            </div>
+            
+            <h2 class="form-title">📝 Questionnaire</h2>
+            
+            
+            <div class="form-group">
+                <label>Situation actuelle<span class="required">*</span></label>
+                <span class="hint">Pro, familiale, géographique — ce qui te semble pertinent.</span>
+                <textarea name="Situation actuelle" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>As-tu déjà consulté des professionnels ?</label>
+                <span class="hint">Psychiatre, psychologue, thérapeute, coach...</span>
+                <textarea name="As-tu déjà consulté des professionnels ?" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Diagnostics posés ou suspectés ?</label>
+                <span class="hint">TDAH, TSA, dépression, CPTSD, burn-out...</span>
+                <textarea name="Diagnostics posés ou suspectés ?" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Pourquoi L'Étape Zéro maintenant ?<span class="required">*</span></label>
+                <span class="hint">Événement déclencheur ? Accumulation ? Prise de conscience ?</span>
+                <textarea name="Pourquoi L'Étape Zéro maintenant ?" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Qu'espères-tu obtenir ?<span class="required">*</span></label>
+                <span class="hint">Clarté ? Document pour un professionnel ?</span>
+                <textarea name="Qu'espères-tu obtenir ?" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Situation ou relation à clarifier<span class="required">*</span></label>
+                <span class="hint">Familiale, conjugale, professionnelle ?</span>
+                <textarea name="Situation ou relation à clarifier" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Quand est-ce que « ça » a commencé ?</label>
+                <span class="hint">Date ou période approximative.</span>
+                <input type="text" name="Quand est-ce que « ça » a commencé ?" >
+            </div>
+            <div class="form-group">
+                <label>Événement déclencheur identifiable ?</label>
+                <span class="hint">Quelque chose qui a fait basculer.</span>
+                <textarea name="Événement déclencheur identifiable ?" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Événements marquants</label>
+                <span class="hint">Liste dans l'ordre chronologique.</span>
+                <textarea name="Événements marquants" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Périodes floues ou trous de mémoire ?</label>
+                
+                <textarea name="Périodes floues ou trous de mémoire ?" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Symptômes physiques remarqués ?</label>
+                <span class="hint">Fatigue, douleurs, sommeil, tensions...</span>
+                <textarea name="Symptômes physiques remarqués ?" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Symptômes psychologiques ?</label>
+                <span class="hint">Anxiété, dissociation, hypervigilance...</span>
+                <textarea name="Symptômes psychologiques ?" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Impacts sur ta vie quotidienne ?</label>
+                <span class="hint">Travail, relations, santé, finances...</span>
+                <textarea name="Impacts sur ta vie quotidienne ?" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Personnes impliquées</label>
+                <span class="hint">Relation + prénom/pseudonyme.</span>
+                <textarea name="Personnes impliquées" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>À qui montrer le livrable ?</label>
+                <span class="hint">Psy, avocat, MDPH, employeur ?</span>
+                <textarea name="À qui montrer le livrable ?" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Démarches en cours ou prévues ?</label>
+                <span class="hint">MDPH, plainte, divorce, prud'hommes ?</span>
+                <textarea name="Démarches en cours ou prévues ?" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Qu'est-ce qui ferait un succès ?</label>
+                
+                <textarea name="Qu'est-ce qui ferait un succès ?" rows="4" ></textarea>
+            </div>
+            <div class="form-group">
+                <label>Autre chose à me dire ?</label>
+                <span class="hint">Tout ce qui te semble important.</span>
+                <textarea name="Autre chose à me dire ?" rows="4" ></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Envoyer ma demande</button>
+        </form>
+        
+        <footer>
+            <p>Noesis Kintsugi — noesiskintsugi.com</p>
+            <p class="baseline">Tu sais ce que tu as vécu. Tu as juste besoin des mots pour le faire entendre.</p>
+        </footer>
+    </div>
+</body>
+</html>
