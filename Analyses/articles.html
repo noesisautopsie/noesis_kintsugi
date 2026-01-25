@@ -154,6 +154,25 @@
         .nav-links a.active { color: var(--or-clair); }
         .nav-links a.active::after { width: 100%; }
 
+        /* NAV TOGGLE (HAMBURGER) */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--or-clair);
+            transition: var(--transition-smooth);
+        }
+
         /* ═══════════════════════════════════════════════════════════════
            HERO PAGE ANALYSES
            ═══════════════════════════════════════════════════════════════ */
@@ -167,16 +186,11 @@
         .hero-page::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
+            inset: 0;
             background-image: url('../assets/bg-kintsugi.png');
             background-size: cover;
             background-position: center;
-            opacity: 0.6;
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 70%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 70%, transparent 100%);
+            opacity: 0.7;
         }
 
         .hero-page-content {
@@ -691,8 +705,22 @@
                 min-height: 150px;
             }
 
-            .nav-links { display: none; }
-            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--noir-profond);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(212, 184, 150, 0.1);
+            }
+
+            .nav-links.active { display: flex; }
+            .nav-toggle { display: flex; }
+
             .footer-inner {
                 flex-direction: column;
                 text-align: center;
@@ -727,10 +755,15 @@
         <div class="container">
             <div class="nav-inner">
                 <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
-                <ul class="nav-links">
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
                     <li><a href="../Services/services.html">Services</a></li>
                     <li><a href="../etape-zero/accompagnement.html">L'Étape Zéro</a></li>
-                    <li><a href="../Autotests/autotest.html">Autotests</a></li>
+                    <li><a href="../Autotests/autotests.html">Autotests</a></li>
                     <li><a href="articles.html" class="active">Analyses</a></li>
                     <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
@@ -811,13 +844,13 @@
             </div>
 
             <div class="articles-grid">
-                <a href="article-gaslighting.html" class="article-card reveal">
+                <a href="#" class="article-card reveal">
                     <span class="article-tag">Gaslighting</span>
                     <h4>« Tu es trop sensible » — Anatomie d'une phrase qui détruit</h4>
                     <p>Comment une phrase apparemment anodine peut démanteler ta confiance en ta propre perception.</p>
                     <span class="article-link">Lire →</span>
                 </a>
-                <a href="article-dissociation.html" class="article-card reveal">
+                <a href="#" class="article-card reveal">
                     <span class="article-tag">Dissociation</span>
                     <h4>La dissociation n'est pas une faiblesse. C'est ton cerveau qui te sauve.</h4>
                     <p>Pourquoi tu as « regardé la scène comme si tu n'y étais pas ». Ce que ton système nerveux a fait pour te protéger.</p>
@@ -1018,7 +1051,7 @@
                 <p class="cta-text">Les analyses nomment. Les autotests cartographient. Si tu as besoin de savoir précisément où tu en es, c'est l'étape suivante.</p>
             </div>
             <div class="cta-buttons reveal">
-                <a href="../Autotests/autotest.html" class="btn btn-primary">Accéder aux autotests</a>
+                <a href="../Autotests/autotests.html" class="btn btn-primary">Accéder aux autotests</a>
                 <a href="../index.html#services" class="btn btn-secondary">Découvrir les services</a>
             </div>
         </div>
@@ -1034,7 +1067,7 @@
                 </div>
                 <nav class="footer-links">
                     <a href="../index.html#services">Services</a>
-                    <a href="../Autotests/autotest.html">Autotests</a>
+                    <a href="../Autotests/autotests.html">Autotests</a>
                     <a href="articles.html">Analyses</a>
                     <a href="../index.html#contact">Contact</a>
                 </nav>
@@ -1069,12 +1102,27 @@
     <script>
         // Navigation scroll effect
         const nav = document.querySelector('.nav');
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
             }
+        });
+
+        // Mobile menu toggle
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
 
         // Reveal on scroll

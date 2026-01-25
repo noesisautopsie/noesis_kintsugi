@@ -108,6 +108,25 @@
 
         .nav-links a:hover, .nav-links a.active { color: var(--or-clair); }
 
+        /* NAV TOGGLE (HAMBURGER) */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--or-clair);
+            transition: var(--transition-smooth);
+        }
+
         /* HERO */
         .hero-page {
             padding: 10rem 0 6rem;
@@ -126,7 +145,7 @@
             background-image: url('assets/bg-kintsugi.png');
             background-size: cover;
             background-position: center;
-            opacity: 0.5;
+            opacity: 0.7;
         }
 
         .hero-page::after {
@@ -602,7 +621,21 @@
                 grid-template-columns: 1fr;
             }
 
-            .nav-links { display: none; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--noir-profond);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(212, 184, 150, 0.1);
+            }
+
+            .nav-links.active { display: flex; }
+            .nav-toggle { display: flex; }
 
             .footer-inner {
                 flex-direction: column;
@@ -633,10 +666,15 @@
         <div class="container">
             <div class="nav-inner">
                 <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
-                <ul class="nav-links">
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
                     <li><a href="../Services/services.html">Services</a></li>
                     <li><a href="accompagnement.html" class="active">L'Étape Zéro</a></li>
-                    <li><a href="../Autotests/autotest.html">Autotests</a></li>
+                    <li><a href="../Autotests/autotests.html">Autotests</a></li>
                     <li><a href="../Analyses/articles.html">Analyses</a></li>
                     <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
@@ -824,15 +862,15 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">Noesis <span>Kintsugi</span></a>
+                    <a href="../index.html" class="logo">Noesis <span>Kintsugi</span></a>
                     <p class="footer-tagline">Un traducteur entre ton vécu et le monde.</p>
                 </div>
                 <nav class="footer-links">
-                    <a href="services.html">Services</a>
-                    <a href="etape-zero.html">L'Étape Zéro</a>
-                    <a href="Autotests/autotest.html">Autotests</a>
-                    <a href="Analyses/articles.html">Analyses</a>
-                    <a href="index.html#contact">Contact</a>
+                    <a href="../Services/services.html">Services</a>
+                    <a href="accompagnement.html">L'Étape Zéro</a>
+                    <a href="../Autotests/autotests.html">Autotests</a>
+                    <a href="../Analyses/articles.html">Analyses</a>
+                    <a href="../index.html#contact">Contact</a>
                 </nav>
             </div>
             <div class="footer-bottom">
@@ -844,8 +882,23 @@
 
     <script>
         const nav = document.querySelector('.nav');
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu toggle
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
 
         const reveals = document.querySelectorAll('.reveal');
