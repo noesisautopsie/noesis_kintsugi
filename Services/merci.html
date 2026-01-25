@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande envoyée — Noesis Kintsugi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --noir1: #121514;
+            --noir2: #1a1a1a;
+            --gris1: #2E3130;
+            --gris2: #999;
+            --or1: #996B26;
+            --or2: #C9AA6E;
+            --or3: #D7BE67;
+            --blanc: #C9CBCB;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Crimson Pro', Georgia, serif;
+            background-color: var(--noir1);
+            color: var(--blanc);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bg-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+        
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(18,21,20,0.8) 0%, rgba(18,21,20,0.95) 100%);
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 600px;
+        }
+        
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: var(--or2);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .gold-line {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--or2), transparent);
+            margin: 25px auto;
+        }
+        
+        p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            color: var(--or3);
+            font-weight: 600;
+        }
+        
+        .info-box {
+            background: rgba(26, 26, 26, 0.9);
+            border: 1px solid var(--or1);
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .info-box h3 {
+            color: var(--or3);
+            margin-bottom: 15px;
+        }
+        
+        .info-box ul {
+            list-style: none;
+        }
+        
+        .info-box li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+        }
+        
+        .info-box li::before {
+            content: "→";
+            color: var(--or2);
+            position: absolute;
+            left: 0;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: transparent;
+            border: 2px solid var(--or2);
+            color: var(--or2);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background: var(--or2);
+            color: var(--noir1);
+        }
+        
+        footer {
+            margin-top: 50px;
+            color: var(--gris2);
+            font-size: 0.9rem;
+        }
+        
+        footer .baseline {
+            color: var(--or2);
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-wrapper">
+        <img src="assets/kintsugi-bg.jpg" alt="" class="bg-image">
+        <div class="bg-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="icon">✓</div>
+        <h1>Demande bien reçue</h1>
+        <div class="gold-line"></div>
+        
+        <p>Merci pour ta confiance.</p>
+        <p>J'ai bien reçu ta demande et je la lis attentivement.</p>
+        
+        <div class="info-box">
+            <h3>Prochaines étapes</h3>
+            <ul>
+                <li>Je te recontacte sous <span class="highlight">48h maximum</span></li>
+                <li>Tu recevras un email avec le <span class="highlight">lien de paiement PayPal</span></li>
+                <li>Si tu as donné ton numéro, je peux aussi te contacter par <span class="highlight">WhatsApp</span></li>
+            </ul>
+        </div>
+        
+        <p>Si tu as une urgence ou une question, écris-moi directement :</p>
+        <p><span class="highlight">contact@noesiskintsugi.com</span></p>
+        
+        <a href="index.html" class="back-link">Retour à l'accueil</a>
+        
+        <footer>
+            <p>Noesis Kintsugi</p>
+            <p class="baseline">Tu sais ce que tu as vécu. Tu as juste besoin des mots pour le faire entendre.</p>
+        </footer>
+    </div>
+</body>
+</html>
