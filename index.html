@@ -244,6 +244,29 @@
             background: var(--gris-anthracite);
         }
 
+        /* Section Pro avec fond image */
+        .pro-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            z-index: 0;
+        }
+
+        .pro-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(45, 49, 51, 0.7) 0%, rgba(45, 49, 51, 0.9) 100%);
+        }
+
+        #professionnels > .container {
+            position: relative;
+            z-index: 1;
+        }
+
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
@@ -424,12 +447,44 @@
         /* CONTACT */
         .contact {
             padding: var(--section-padding) 0;
-            background: var(--fond-clair);
-            color: var(--noir-principal);
+            background: var(--gris-anthracite);
+            color: var(--texte-principal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/bg-kintsugi.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            z-index: 0;
+        }
+
+        .contact-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(45, 49, 51, 0.7) 0%, rgba(45, 49, 51, 0.9) 100%);
+        }
+
+        .contact .container {
+            position: relative;
+            z-index: 1;
         }
 
         .contact .titre-section {
-            color: var(--noir-principal);
+            color: var(--texte-principal);
+        }
+
+        .contact .surtitre {
+            color: var(--or-clair) !important;
+        }
+
+        .contact .sous-titre {
+            color: var(--texte-secondaire);
         }
 
         .contact-grid {
@@ -441,12 +496,12 @@
         .contact-info h3 {
             font-family: var(--font-display);
             font-size: 1.6rem;
-            color: var(--noir-principal);
+            color: var(--texte-principal);
             margin-bottom: 1rem;
         }
 
         .contact-info p {
-            color: var(--gris-moyen);
+            color: var(--texte-secondaire);
             margin-bottom: 2rem;
             line-height: 1.8;
         }
@@ -456,26 +511,31 @@
             align-items: center;
             gap: 1rem;
             margin-bottom: 1rem;
-            color: var(--gris-moyen);
+            color: var(--texte-secondaire);
         }
 
         .contact-detail svg {
             width: 24px;
             height: 24px;
-            stroke: var(--or-vieilli);
+            stroke: var(--or-clair);
             stroke-width: 1.5;
             fill: none;
         }
 
         .contact-detail a {
-            color: var(--or-vieilli);
+            color: var(--or-clair);
             text-decoration: none;
         }
 
+        .contact-detail a:hover {
+            color: var(--or-eclatant);
+        }
+
         .contact-form {
-            background: white;
+            background: rgba(28, 31, 33, 0.85);
             padding: 2.5rem;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            border: 1px solid rgba(212, 184, 150, 0.15);
         }
 
         .form-group {
@@ -485,7 +545,7 @@
         .form-label {
             display: block;
             font-size: 0.9rem;
-            color: var(--gris-moyen);
+            color: var(--texte-secondaire);
             margin-bottom: 0.5rem;
         }
 
@@ -495,15 +555,22 @@
             padding: 1rem;
             font-family: var(--font-body);
             font-size: 1rem;
-            border: 1px solid #ddd;
-            background: white;
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            background: rgba(22, 25, 26, 0.8);
+            color: var(--texte-principal);
             transition: border-color 0.3s ease;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--gris-pierre);
         }
 
         .form-input:focus,
         .form-textarea:focus {
             outline: none;
-            border-color: var(--or-vieilli);
+            border-color: var(--or-clair);
+            background: rgba(22, 25, 26, 0.95);
         }
 
         .form-textarea {
@@ -604,8 +671,8 @@
                     <span></span>
                 </button>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#particuliers">Particuliers</a></li>
-                    <li><a href="#professionnels">Professionnels</a></li>
+                    <li><a href="Particuliers/particuliers.html">Particuliers</a></li>
+                    <li><a href="Professionnels/professionnels.html">Professionnels</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -623,8 +690,8 @@
                 <div class="hero-divider"></div>
                 <p class="hero-explain">Tu sais ce que tu as vécu. Tu sais ce que tu veux transmettre. Il te manque les mots pour le faire entendre. Noesis Kintsugi transforme le confus en clair, l'invisible en document.</p>
                 <div class="hero-cta">
-                    <a href="#particuliers" class="btn btn-primary">Particuliers</a>
-                    <a href="#professionnels" class="btn btn-secondary">Professionnels</a>
+                    <a href="Particuliers/particuliers.html" class="btn btn-primary">Particuliers</a>
+                    <a href="Professionnels/professionnels.html" class="btn btn-secondary">Professionnels</a>
                 </div>
             </div>
         </div>
@@ -706,6 +773,7 @@
 
     <!-- PROFESSIONNELS -->
     <section class="pilier section-alt" id="professionnels">
+        <div class="pro-bg"></div>
         <div class="container">
             <div class="pilier-grid">
                 <div class="pilier-visual">
@@ -758,11 +826,12 @@
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
+        <div class="contact-bg"></div>
         <div class="container">
             <div class="section-header">
-                <p class="surtitre" style="color: var(--or-vieilli);">Contact</p>
+                <p class="surtitre">Contact</p>
                 <h2 class="titre-section">Parlons de ton projet</h2>
-                <p class="sous-titre" style="color: var(--gris-moyen);">Décris-moi ton besoin, je te réponds sous 48h avec une proposition claire.</p>
+                <p class="sous-titre">Décris-moi ton besoin, je te réponds sous 48h avec une proposition claire.</p>
             </div>
 
             <div class="contact-grid">
@@ -808,9 +877,10 @@
                     <p class="footer-tagline">Mettre des mots justes sur ce qui compte.</p>
                 </div>
                 <nav class="footer-links">
-                    <a href="#particuliers">Particuliers</a>
-                    <a href="#professionnels">Professionnels</a>
+                    <a href="Particuliers/particuliers.html">Particuliers</a>
+                    <a href="Professionnels/professionnels.html">Professionnels</a>
                     <a href="#contact">Contact</a>
+                    <a href="legal.html">Mentions légales</a>
                 </nav>
             </div>
             <div class="footer-bottom">
